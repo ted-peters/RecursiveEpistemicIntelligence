@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 
 from rei0.benchmark import Limits, read_json, run_benchmark, verify_report, load_study
@@ -56,7 +57,14 @@ def main(argv=None) -> int:
                 a["reported_tokens_even_if_failed"] is None for a in relevant),
             "calls_with_provider_error": sum(a["status"] == "failed" for a in relevant),
         }
+    # One stable identity across all shards of a single GitHub workflow attempt.
+    # Local multi-shard invocations must set REI_EXPERIMENT_RUN_ID themselves.
+    experiment_run_id = os.environ.get("REI_EXPERIMENT_RUN_ID")
+    if not experiment_run_id and os.environ.get("GITHUB_RUN_ID"):
+        experiment_run_id = ("github-actions:" + os.environ["GITHUB_RUN_ID"] + ":" +
+                             os.environ.get("GITHUB_RUN_ATTEMPT", "1"))
     summary = {
+        "experiment_run_id": experiment_run_id,
         "model": MODEL_ALIAS, "model_sha256": sha,
         "llama_cpp_commit": a.engine_commit, "run_utc": datetime.now(timezone.utc).isoformat(),
         "method": "schema_constrained_json_v1_applied_to_all_four_arms",
