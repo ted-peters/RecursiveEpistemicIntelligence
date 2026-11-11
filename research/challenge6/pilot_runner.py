@@ -112,9 +112,16 @@ def main(argv=None):
     p.add_argument("--engine-commit", required=True)
     p.add_argument("--output", type=Path, default=Path("challenge6-results/pilot.json"))
     p.add_argument("--verify-only", action="store_true")
+    p.add_argument("--smoke", action="store_true", help="Three fixed cases: arithmetic, evidence, insufficient info")
     args = p.parse_args(argv)
     cases = read_json(BASE / "cases.json")
     keys = read_json(BASE / "keys.json")
+    if args.smoke:
+        chosen = {"c6-01-arith", "c6-05-evidence", "c6-06-unknown"}
+        cases = {"schema": cases["schema"], "cases": [x for x in cases["cases"] if x["id"] in chosen]}
+        keys = {"schema": keys["schema"], "answers": [x for x in keys["answers"] if x["case_id"] in chosen]}
+        if len(cases["cases"]) != 3 or len(keys["answers"]) != 3:
+            raise RuntimeError("Fixed three-case smoke selection mismatch")
     if args.verify_only:
         recorded = json.loads(args.output.read_text())
         info = verify_report(recorded["report"], cases, keys)
@@ -127,6 +134,10 @@ def main(argv=None):
     report = run_benchmark(cases, keys, provider, limits=limits, seed=24011)
     check = verify_report(report, cases, keys)
     env = write_results(args.output, report, sha, args.engine_commit)
+    if args.smoke:
+        saved = json.loads(args.output.read_text())
+        saved["environment"]["study_class"] = "exploratory_3_case_technical_smoke_not_full_study"
+        args.output.write_text(json.dumps(saved, indent=2), encoding="utf-8")
     print("MODEL_JSON_REPORT:", args.output)
     print("VERIFIED:", check)
     print("SUMMARY:", json.dumps(report["summary"], indent=2))
@@ -136,12 +147,12 @@ def main(argv=None):
     if summary:
         with open(summary, "a", encoding="utf-8") as f:
             f.write("## REI Challenge 6 — Real open-weight LLM pilot\n\n")
-            f.write("Model: `Qwen3-4B-Instruct-2507` Q4_K_M, locally run through llama.cpp. Six illustrative tasks; one trial per arm.\n\n")
-            f.write("| Arm | Correct (of 6) | Errors | Model calls | Reported tokens |\n")
+            f.write(f"Model: `Qwen3-4B-Instruct-2507` Q4_K_M, locally run through llama.cpp. {len(cases['cases'])} illustrative tasks; one trial per arm.\n\n")
+            f.write(f"| Arm | Correct (of {len(cases['cases'])}) | Errors | Model calls | Reported tokens |\n")
             f.write("|---|---:|---:|---:|---:|\n")
             for arm in ("baseline", "self_critique", "fixed_depth", "rei"):
                 x = report["summary"][arm]
-                f.write(f"| {arm} | {round(x['overall_success']*6)} | {x['failed_runs']} | {x['total_model_calls']} | {x['total_reported_tokens']} |\n")
+                f.write(f"| {arm} | {round(x['overall_success']*len(cases['cases']))} | {x['failed_runs']} | {x['total_model_calls']} | {x['total_reported_tokens']} |\n")
             f.write("\n**Research limitation:** Small open model, nonblind public questions, no independent evidence access, unequal *consumed* compute, and no established superiority. See downloadable JSON artifact for cases and errors.\n")
     return 0
 

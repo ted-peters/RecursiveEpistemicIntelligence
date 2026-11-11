@@ -1,0 +1,70 @@
+name: REI Challenge 6 — Three-case CPU smoke test
+on:
+  workflow_dispatch:
+  push:
+    branches: [challenge6-open-weight-pilot]
+    paths:
+      - 'research/challenge6/**'
+      - 'tests/test_challenge6.py'
+      - '.github/workflows/challenge6-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  real-model-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify data, benchmark harness and authorization-free setup
+        run: |
+          python -m unittest discover -s tests -p 'test_challenge6.py' -v
+      - name: Install pinned llama.cpp inference engine
+        run: |
+          git clone -q --depth 1 --branch b12242 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+          git -C /tmp/llama.cpp rev-parse HEAD > /tmp/llama_commit.txt
+          cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=OFF -DGGML_NATIVE=ON
+          cmake --build /tmp/llama.cpp/build -j 4 --target llama-server
+      - name: Download independently hosted open-weight model (sha256-pinned)
+        run: |
+          mkdir -p /tmp/c6-model
+          curl -L --fail --retry 2 --connect-timeout 30 \
+            'https://huggingface.co/fzhnk/qwen3-4b-instruct-2507-gguf/resolve/main/qwen3-4b-instruct-2507-q4_K_M.gguf' \
+            -o /tmp/c6-model/model.gguf
+          echo '85e4a5b7b8ef0e48af0e8658f5aaab9c2324c76c1641493f4d1e25fce54b18b9  /tmp/c6-model/model.gguf' | sha256sum -c
+      - name: Start loopback-only inference service
+        run: |
+          /tmp/llama.cpp/build/bin/llama-server -m /tmp/c6-model/model.gguf \
+            --alias qwen3-4b-instruct-2507-q4_k_m \
+            --host 127.0.0.1 --port 8099 -c 8192 -t 4 -np 1 \
+            > /tmp/c6-server.log 2>&1 &
+          echo $! > /tmp/c6-server.pid
+          for n in $(seq 1 90); do
+            if curl --fail -s http://127.0.0.1:8099/health | grep -q 'ok'; then exit 0; fi
+            sleep 2
+          done
+          tail -100 /tmp/c6-server.log
+          exit 1
+      - name: Run actual benchmark over same open-weight language model
+        run: |
+          timeout 700s python research/challenge6/pilot_runner.py \
+            --model-file /tmp/c6-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge6-results/smoke.json --smoke
+          python research/challenge6/pilot_runner.py \
+            --model-file /tmp/c6-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge6-results/smoke.json --smoke --verify-only
+      - name: Preserve independent model outputs and grades
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge6-3case-smoke
+          path: |
+            challenge6-results/smoke.json
+            research/challenge6/cases.json
+            research/challenge6/keys.json
+          if-no-files-found: warn
+          retention-days: 90
