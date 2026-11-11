@@ -73,3 +73,39 @@ jobs:
             research/challenge8/scaled_keys.json
           retention-days: 90
           if-no-files-found: warn
+
+  independently-grade-shards:
+    name: Independently verify and aggregate all 24 cases
+    needs: four-arm-shards
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install REI and verify offline aggregation tests
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge8_aggregate.py -v
+      - name: Download ALL six archived raw reports
+        uses: actions/download-artifact@v4
+        with:
+          pattern: challenge8-24case-shard-*
+          path: challenge8-artifacts
+          merge-multiple: false
+      - name: Independently validate all shard reports and score pairs
+        shell: bash
+        run: |
+          mapfile -t shards < <(find challenge8-artifacts -type f -name 'shard-*.json' | sort)
+          test "${shards[@]}" && test "${#shards[@]}" -eq 6
+          python -m research.challenge8.aggregate "${shards[@]}" \
+            --output challenge8-results/aggregate.json
+      - name: Preserve audit and consolidated results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge8-24case-independent-aggregate
+          path: challenge8-results/aggregate.json
+          retention-days: 90
+          if-no-files-found: warn
