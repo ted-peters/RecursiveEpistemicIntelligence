@@ -260,11 +260,14 @@ def _normal(text: str) -> str:
 class InquiryEngine:
     def __init__(self, model: InquiryModel, limits: InquiryLimits | None = None,
                  *, clock: Callable[[], str] = utc_now,
-                 monotonic: Callable[[], float] = time.monotonic):
+                 monotonic: Callable[[], float] = time.monotonic,
+                 controller: Any | None = None):
         self.model = model
         self.limits = limits or InquiryLimits()
         self.clock = clock
         self.monotonic = monotonic
+        # Explicitly opt-in: original REI-1.0 scheduler is unchanged by default.
+        self.controller = controller
 
     def _origin(self, tag: str) -> Provenance:
         source = _string(self.model.name, "model name", 80)
@@ -378,7 +381,31 @@ class InquiryEngine:
             if not eligible:
                 session.stop_reason = "depth_budget"
                 break
-            current = min(eligible, key=lambda q: (-q.priority, q.depth, q.order))
+            if self.controller is None:
+                current = min(eligible, key=lambda q: (-q.priority, q.depth, q.order))
+            else:
+                decision = self.controller.decide(
+                    session, tuple(eligible),
+                    remaining_calls=self.limits.max_model_calls - session.model_calls,
+                    remaining_tokens=self.limits.max_tokens - session.tokens_used)
+                if not isinstance(decision.audit, dict):
+                    raise InquiryError("adaptive controller must return an audit object")
+                if decision.question_id is None:
+                    if decision.stop_reason not in ("adaptive_low_value", "adaptive_token_reserve"):
+                        raise InquiryError("adaptive controller attempted an invalid stop")
+                    session.stop_reason = decision.stop_reason
+                    session.trace.append({"event": "adaptive_stop",
+                                          "decision": decision.audit})
+                    break
+                if decision.stop_reason is not None:
+                    raise InquiryError("adaptive controller returned both selection and stop")
+                chosen = [q for q in eligible if q.id == decision.question_id]
+                if len(chosen) != 1:
+                    raise InquiryError("adaptive controller selected a noneligible question")
+                current = chosen[0]
+                session.trace.append({"event": "adaptive_select",
+                                      "question_id": current.id,
+                                      "decision": decision.audit})
             context = {"question": session.question, "claim": session.graph.nodes[session.root_id].text,
                        "challenge": session.graph.nodes[current.id].text,
                        "target": session.graph.nodes[current.target_id].text, "depth": current.depth,
