@@ -1,0 +1,170 @@
+{
+  "adapted_evaluation": {
+    "baseline": {
+      "abstention_rate": 0.25,
+      "answerable_accuracy": 0.6666666666666666,
+      "brier_on_answered_with_confidence": 0.24000000000000002,
+      "cases": 8,
+      "confidence_sample_count": 6,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.0,
+      "overall_success": 0.75,
+      "selective_accuracy": 0.6666666666666666,
+      "total_model_calls": 8,
+      "total_reported_tokens": 168
+    },
+    "fixed_depth": {
+      "abstention_rate": 0.25,
+      "answerable_accuracy": 1.0,
+      "brier_on_answered_with_confidence": 0.09000000000000002,
+      "cases": 8,
+      "confidence_sample_count": 6,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.0,
+      "overall_success": 1.0,
+      "selective_accuracy": 1.0,
+      "total_model_calls": 32,
+      "total_reported_tokens": 736
+    },
+    "rei": {
+      "abstention_rate": 0.25,
+      "answerable_accuracy": 0.6666666666666666,
+      "brier_on_answered_with_confidence": 0.2233333333333333,
+      "cases": 8,
+      "confidence_sample_count": 6,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.0,
+      "overall_success": 0.75,
+      "selective_accuracy": 0.6666666666666666,
+      "total_model_calls": 32,
+      "total_reported_tokens": 736
+    },
+    "self_critique": {
+      "abstention_rate": 0.25,
+      "answerable_accuracy": 1.0,
+      "brier_on_answered_with_confidence": 0.09000000000000002,
+      "cases": 8,
+      "confidence_sample_count": 6,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.0,
+      "overall_success": 1.0,
+      "selective_accuracy": 1.0,
+      "total_model_calls": 24,
+      "total_reported_tokens": 472
+    }
+  },
+  "adaptive_thresholds": {
+    "baseline": 0.0,
+    "fixed_depth": 0.0,
+    "rei": 0.0,
+    "self_critique": 0.0
+  },
+  "calibration_cases": 4,
+  "evaluation_cases": 4,
+  "mode": "scripted_fixture_not_empirical",
+  "output": "examples/study_demo_report.json",
+  "paired": {
+    "rei_minus_baseline": {
+      "bootstrap_repetitions": 1000,
+      "case_cluster_bootstrap_95pct": [
+        0.0,
+        0.0
+      ],
+      "distinct_cases": 4,
+      "exact_reported_usage_matched_case_trials": 0,
+      "mean_paired_success_difference": 0.0,
+      "total_case_trials": 8,
+      "trials_per_case": 2
+    },
+    "rei_minus_fixed_depth": {
+      "bootstrap_repetitions": 1000,
+      "case_cluster_bootstrap_95pct": [
+        -0.75,
+        0.0
+      ],
+      "distinct_cases": 4,
+      "exact_reported_usage_matched_case_trials": 8,
+      "mean_paired_success_difference": -0.25,
+      "total_case_trials": 8,
+      "trials_per_case": 2
+    },
+    "rei_minus_self_critique": {
+      "bootstrap_repetitions": 1000,
+      "case_cluster_bootstrap_95pct": [
+        -0.75,
+        0.0
+      ],
+      "distinct_cases": 4,
+      "exact_reported_usage_matched_case_trials": 0,
+      "mean_paired_success_difference": -0.25,
+      "total_case_trials": 8,
+      "trials_per_case": 2
+    }
+  },
+  "raw_evaluation": {
+    "baseline": {
+      "abstention_rate": 0.25,
+      "answerable_accuracy": 0.6666666666666666,
+      "brier_on_answered_with_confidence": 0.24000000000000002,
+      "cases": 8,
+      "confidence_sample_count": 6,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.0,
+      "overall_success": 0.75,
+      "selective_accuracy": 0.6666666666666666,
+      "total_model_calls": 8,
+      "total_reported_tokens": 168
+    },
+    "fixed_depth": {
+      "abstention_rate": 0.25,
+      "answerable_accuracy": 1.0,
+      "brier_on_answered_with_confidence": 0.09000000000000002,
+      "cases": 8,
+      "confidence_sample_count": 6,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.0,
+      "overall_success": 1.0,
+      "selective_accuracy": 1.0,
+      "total_model_calls": 32,
+      "total_reported_tokens": 736
+    },
+    "rei": {
+      "abstention_rate": 0.25,
+      "answerable_accuracy": 0.6666666666666666,
+      "brier_on_answered_with_confidence": 0.2233333333333333,
+      "cases": 8,
+      "confidence_sample_count": 6,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.0,
+      "overall_success": 0.75,
+      "selective_accuracy": 0.6666666666666666,
+      "total_model_calls": 32,
+      "total_reported_tokens": 736
+    },
+    "self_critique": {
+      "abstention_rate": 0.25,
+      "answerable_accuracy": 1.0,
+      "brier_on_answered_with_confidence": 0.09000000000000002,
+      "cases": 8,
+      "confidence_sample_count": 6,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.0,
+      "overall_success": 1.0,
+      "selective_accuracy": 1.0,
+      "total_model_calls": 24,
+      "total_reported_tokens": 472
+    }
+  },
+  "repetitions": 2,
+  "report_sha256": "79fff3b23b889066f592b41bd57026720a7462c00cc7ef4c54c00a8f4837b5a4",
+  "schema": "rei0.study.report.v1",
+  "warning": "Scripted fixture repetitions are identical mock responses, NOT independent stochastic model trials or evidence of model advantage."
+}

@@ -1,0 +1,66 @@
+{
+  "base_release": "0.9.0",
+  "clean_extracted_candidate": {
+    "elapsed_seconds": 84.201,
+    "errors": 0,
+    "failures": 0,
+    "log": "REI10_CLEAN_FULL_TESTS.log",
+    "result": "PASS",
+    "tests_run": 376
+  },
+  "errors": 0,
+  "failures": 0,
+  "final_exact_archive": {
+    "archive_crc": "PASS",
+    "command_line_smoke": "PASS",
+    "errors": 0,
+    "failures": 0,
+    "log": "REI10_EXACT_FINAL_TESTS.log",
+    "manifest": "PASS",
+    "result": "PASS",
+    "tests_run": 376,
+    "validated_from_fresh_extraction": true
+  },
+  "inherited_test_count": 342,
+  "limitations": [
+    "Synthetic fixtures are integration tests, not AI ability measurements",
+    "Research workspace persists model-output reports but does not copy grading keys",
+    "Independent grading requires replay with original held-out datasets and manifest",
+    "Hash-chained local evidence requires an external anchor to detect rollback",
+    "Loopback dashboard is read-only and deliberately unauthenticated",
+    "Live-model experiments need credentials, curated independent tasks and explicit cost consent"
+  ],
+  "new_platform_test_count": 34,
+  "operator_workflow": {
+    "dashboard_read_only_and_host_gate": "PASS",
+    "independent_experiment_import_regrading": "PASS",
+    "legacy_sqlite_and_graph_schemas": "UNCHANGED",
+    "live_provider_calls": 0,
+    "offline_platform_demo": "PASS",
+    "offline_platform_run_and_checkpoint": "PASS"
+  },
+  "release": "1.0.0",
+  "research_claims": {
+    "actual_equal_compute_guaranteed": false,
+    "contains_real_provider_trials": false,
+    "local_hashes_are_trusted_timestamps": false,
+    "proves_rei_more_intelligent": false,
+    "provider_identity_authenticated": false,
+    "reviewer_truth_independently_verified": false
+  },
+  "schema": "rei0.release.validation.v1",
+  "test_command": "python -m unittest discover -s tests -p 'test_*.py' -v",
+  "total_tests_passed": 376,
+  "wheel": {
+    "build": "PASS",
+    "commands": [
+      "platform-demo",
+      "platform-verify",
+      "inquiry-demo",
+      "revision-demo",
+      "experiment-demo"
+    ],
+    "isolated_install": "PASS",
+    "version": "1.0.0"
+  }
+}

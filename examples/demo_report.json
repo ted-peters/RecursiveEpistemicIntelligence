@@ -1,0 +1,96 @@
+{
+  "assessments": [
+    {
+      "attack_evidence": [
+        "observation-b"
+      ],
+      "attack_sources": [
+        "study-b"
+      ],
+      "claim_id": "disputed",
+      "confidence": null,
+      "ignored_edges": [
+        {
+          "edge_id": "s3",
+          "reason": "dependent_or_duplicate_source"
+        }
+      ],
+      "method_version": "rei-0.1",
+      "state": "BOTH",
+      "support_evidence": [
+        "observation-a"
+      ],
+      "support_sources": [
+        "study-a"
+      ]
+    },
+    {
+      "attack_evidence": [],
+      "attack_sources": [],
+      "claim_id": "isolated",
+      "confidence": null,
+      "ignored_edges": [
+        {
+          "edge_id": "m1",
+          "reason": "model_output_not_external_evidence"
+        }
+      ],
+      "method_version": "rei-0.1",
+      "state": "NEITHER",
+      "support_evidence": [],
+      "support_sources": []
+    },
+    {
+      "attack_evidence": [
+        "observation-b"
+      ],
+      "attack_sources": [
+        "study-b"
+      ],
+      "claim_id": "opposed",
+      "confidence": null,
+      "ignored_edges": [],
+      "method_version": "rei-0.1",
+      "state": "ATTACK_ONLY",
+      "support_evidence": [],
+      "support_sources": []
+    },
+    {
+      "attack_evidence": [],
+      "attack_sources": [],
+      "claim_id": "supported",
+      "confidence": null,
+      "ignored_edges": [],
+      "method_version": "rei-0.1",
+      "state": "SUPPORT_ONLY",
+      "support_evidence": [
+        "observation-a"
+      ],
+      "support_sources": [
+        "study-a"
+      ]
+    },
+    {
+      "attack_evidence": [],
+      "attack_sources": [],
+      "claim_id": "unassessed",
+      "confidence": null,
+      "ignored_edges": [],
+      "method_version": "rei-0.1",
+      "state": "NEITHER",
+      "support_evidence": [],
+      "support_sources": []
+    }
+  ],
+  "audit_event_count": 26,
+  "audit_head": "b116834021f657b19ecbe2c8b425dd700dce9c33b58f9e71cc6d005560e7795d",
+  "method_version": "rei-0.1",
+  "notice": "Scripted approval metadata is not independent verification of real-world facts.",
+  "open_questions": [
+    {
+      "id": "open-1",
+      "question": "Are observation A and observation B independently reliable?"
+    }
+  ],
+  "saved_graph": "examples/demo_graph.json"
+}

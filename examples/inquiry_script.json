@@ -1,0 +1,45 @@
+{
+  "initial": {
+    "payload": {
+      "claim": "An AI explanation may improve trust only when its reliability can be independently evaluated.",
+      "questions": [
+        {"text": "Why should an explanation increase trust?", "target": "claim", "priority": 9},
+        {"text": "What observation could falsify this claim?", "target": "claim", "priority": 3}
+      ]
+    },
+    "tokens_used": 36
+  },
+  "responses": [
+    {
+      "payload": {
+        "reasons": ["An explanation may expose assumptions that a reader can challenge."],
+        "objections": ["A convincing explanation might not represent the model's actual causal process."],
+        "followups": [{"text": "Why trust the reader's challenge method?", "target": "reason", "priority": 10}],
+        "note": "Added a tentative reason, objection, and deeper justification request."
+      }, "tokens_used": 54
+    },
+    {
+      "payload": {
+        "reasons": ["A challenge method could be compared with predictions from controlled intervention tests."],
+        "objections": ["Intervention tests may not cover hidden failure modes."],
+        "followups": [{"text": "Why are controlled tests adequate standards for this domain?", "target": "reason", "priority": 9}],
+        "note": "Questioned the method by which the explanation is evaluated."
+      }, "tokens_used": 51
+    },
+    {
+      "payload": {
+        "reasons": ["We can provisionally trust a test only within its demonstrated measurement scope."],
+        "objections": ["Its scope may be narrower than the claim's intended domain."],
+        "followups": [{"text": "What establishes the scope of these tests?", "target": "reason", "priority": 8}],
+        "note": "Preserved a further epistemic obligation."
+      }, "tokens_used": 47
+    },
+    {
+      "payload": {
+        "reasons": ["An independently constructed counterexample could challenge the original proposition."],
+        "objections": [], "followups": [],
+        "note": "A potential falsification procedure remains to be independently tested."
+      }, "tokens_used": 32
+    }
+  ]
+}

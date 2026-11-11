@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rei0-epistemic-graph"
+version = "1.0.0"
+description = "REI evidence graph, bounded inquiry, public-key review, source capture and integrated, auditable local research workspace and preregistered experiment evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["cryptography>=42,<50"]
+license = {text = "MIT"}
+authors = [{name = "REI Research Project"}]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License"]
+
+[tool.setuptools.packages.find]
+include = ["rei0*"]
+
+[tool.setuptools.package-data]
+rei0 = ["data/*.json"]

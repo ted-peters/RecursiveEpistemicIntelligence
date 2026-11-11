@@ -1,0 +1,91 @@
+{
+  "artifacts": [
+    {
+      "id": "experiment-204a7d766914f404d2bdc9cab378dcc0",
+      "imported_at": "2026-11-10T23:58:29Z",
+      "kind": "experiment",
+      "summary": {
+        "confirmatory_design_eligible": false,
+        "dataset_digests": {
+          "adjudications": "237d68fcbae270a641f5eb1d905e58c725bbc98e8fc5f878dc86a5ed54792ede",
+          "calibration_cases": "401cad6e184c93c845da5bf77b99dfe01e30efd96a23e63549a0c88f5c0426d9",
+          "calibration_keys": "4bef575d4935739a57b2f5a59ff1edb2c823b1fc7067c85be05119bf77bfce0e",
+          "evaluation_cases": "72cf4565e47598609765c887d24668a234c098fa210b1664c0d74f77a655ae83",
+          "evaluation_keys": "938630b508f1a2d5d265079f1d37f0b1db41449d530a5bacc42b4d5b6078b846"
+        },
+        "evaluation_cases": 4,
+        "model": null,
+        "preregistration_sha256": "63319910a124e4e21b2be8dd6582d82f2f91a02fdde3e69ff0f85d45fcfbd12a",
+        "provider_mode": "scripted_fixture_not_empirical",
+        "report_sha256": "ff4936f06ec8d0f5cd60542fd617a487330add9058241306c42851829072ca01",
+        "resource_comparability": "imbalanced",
+        "results": {
+          "baseline": {
+            "abstention_rate": 0.25,
+            "overall_success": 0.75,
+            "total_model_calls": 4,
+            "total_reported_tokens": 84
+          },
+          "fixed_depth": {
+            "abstention_rate": 0.25,
+            "overall_success": 1.0,
+            "total_model_calls": 16,
+            "total_reported_tokens": 368
+          },
+          "rei": {
+            "abstention_rate": 0.25,
+            "overall_success": 0.75,
+            "total_model_calls": 16,
+            "total_reported_tokens": 368
+          },
+          "self_critique": {
+            "abstention_rate": 0.25,
+            "overall_success": 1.0,
+            "total_model_calls": 12,
+            "total_reported_tokens": 236
+          }
+        },
+        "study_id": "REI10-SYNTHETIC-WORKSPACE",
+        "type": "preregistered_experiment",
+        "validation_level": "independently_regraded_at_import",
+        "warning": "Synthetic fixtures are integration tests, not empirical findings."
+      }
+    },
+    {
+      "id": "graph-470b513dad09084d539b9a37e87257a0",
+      "imported_at": "2026-11-10T23:58:29Z",
+      "kind": "graph",
+      "summary": {
+        "audit_head": "2a8cadd5fa6aa6c27aebd954bbb31a47f27b276e9602f718b0c5c76b2906de29",
+        "edges": 0,
+        "method_version": "rei-1.0-demo",
+        "node_types": {
+          "claim": 1
+        },
+        "nodes": 1,
+        "open_questions": 0,
+        "type": "epistemic_graph",
+        "validation_level": "graph_event_replay_only",
+        "warning": "Graph validation flags and claims do not independently establish factual truth."
+      }
+    }
+  ],
+  "counts": {
+    "experiment": 1,
+    "graph": 1
+  },
+  "integrity": {
+    "artifacts": 2,
+    "audit_head": "5822ee29132f4dd5494205c8494e8ce7bbcf0e46b67ca9c5d13d8b6f6dccaa62",
+    "events": 2,
+    "limitation": "Experiment grading was rechecked at import; repeat independent grading with original held-out keys. Hashes are not trusted timestamps.",
+    "valid": true,
+    "validation": "local_hashes_and_graph_or_journal_replay"
+  },
+  "limitations": [
+    "Offline demos do not establish AI superiority",
+    "No raw prompts or private grading keys are displayed",
+    "This dashboard is a local read-only research summary"
+  ],
+  "schema": "rei0.platform.workspace.v1"
+}

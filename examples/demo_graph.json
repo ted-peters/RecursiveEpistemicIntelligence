@@ -1,0 +1,496 @@
+{
+  "events": [
+    {
+      "event_hash": "b08f7f342fb6273167e3d08cce8398997ef128e4bf0b4d7af806f3ce0195787e",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "unassessed",
+        "kind": "claim",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "text": "No admissible evidence has been recorded.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sequence": 1
+    },
+    {
+      "event_hash": "5b593368c89b126785fb8638038a66fb94985777f972c1d99d64e800f4cf7402",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "supported",
+        "kind": "claim",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "text": "The first indicator favors the hypothesis.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "b08f7f342fb6273167e3d08cce8398997ef128e4bf0b4d7af806f3ce0195787e",
+      "sequence": 2
+    },
+    {
+      "event_hash": "43e70dd836e750b74e0fc194b51536a76a1ae4f28e23863b4b78ff9cd4540cb3",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "opposed",
+        "kind": "claim",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "text": "The second indicator contradicts the hypothesis.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "5b593368c89b126785fb8638038a66fb94985777f972c1d99d64e800f4cf7402",
+      "sequence": 3
+    },
+    {
+      "event_hash": "8afe1d60c20a8a3405166b8e823472e582e7898df40ddcc7865461a0d2ac450f",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "disputed",
+        "kind": "claim",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "text": "Two distinct observations disagree about the hypothesis.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "43e70dd836e750b74e0fc194b51536a76a1ae4f28e23863b4b78ff9cd4540cb3",
+      "sequence": 4
+    },
+    {
+      "event_hash": "0b09d30f61694f91cff0acad79d18a4c546354fcf4134be6acae90494f7913de",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "isolated",
+        "kind": "claim",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "text": "An unrelated claim is unaffected by the dispute.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "8afe1d60c20a8a3405166b8e823472e582e7898df40ddcc7865461a0d2ac450f",
+      "sequence": 5
+    },
+    {
+      "event_hash": "1a661009cbf1c2b79e0f8efe6d2d413ed9fef85ecdfeb57cfaf79c8a8fc64bd9",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "observation-a",
+        "kind": "evidence",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://observation-a",
+          "source_group": "study-a",
+          "source_id": "observation-a",
+          "source_kind": "external"
+        },
+        "text": "Observation A supports the hypothesis.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "0b09d30f61694f91cff0acad79d18a4c546354fcf4134be6acae90494f7913de",
+      "sequence": 6
+    },
+    {
+      "event_hash": "48898c8c43348e1b64e06b131fbf683da1dbc5c1d4be32430c33f2f5acc3c4f5",
+      "kind": "validation",
+      "payload": {
+        "entity": "node",
+        "id": "observation-a",
+        "occurred_at": "2026-11-10T00:00:00Z",
+        "reason": "Scripted demo approval; not real-world validation",
+        "status": "verified",
+        "verified_by": "reviewer:example"
+      },
+      "previous_hash": "1a661009cbf1c2b79e0f8efe6d2d413ed9fef85ecdfeb57cfaf79c8a8fc64bd9",
+      "sequence": 7
+    },
+    {
+      "event_hash": "ac116d92f8d445af4ee692d729f44fe365b5d74343eb35deb31bc316f7782ce1",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "observation-a-copy",
+        "kind": "evidence",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://observation-a-copy",
+          "source_group": "study-a",
+          "source_id": "observation-a-copy",
+          "source_kind": "external"
+        },
+        "text": "A republished copy of observation A.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "48898c8c43348e1b64e06b131fbf683da1dbc5c1d4be32430c33f2f5acc3c4f5",
+      "sequence": 8
+    },
+    {
+      "event_hash": "3a6c71c6d202efab8eafb349c7ccf5987b77a2950b492eb116502c05093990f4",
+      "kind": "validation",
+      "payload": {
+        "entity": "node",
+        "id": "observation-a-copy",
+        "occurred_at": "2026-11-10T00:00:00Z",
+        "reason": "Scripted demo approval; not real-world validation",
+        "status": "verified",
+        "verified_by": "reviewer:example"
+      },
+      "previous_hash": "ac116d92f8d445af4ee692d729f44fe365b5d74343eb35deb31bc316f7782ce1",
+      "sequence": 9
+    },
+    {
+      "event_hash": "850758adb659faa72b410a51dcc7192c75ea2d9f34f450be6e325cf03b7ac3fe",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "observation-b",
+        "kind": "evidence",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://observation-b",
+          "source_group": "study-b",
+          "source_id": "observation-b",
+          "source_kind": "external"
+        },
+        "text": "Observation B contradicts the hypothesis.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "3a6c71c6d202efab8eafb349c7ccf5987b77a2950b492eb116502c05093990f4",
+      "sequence": 10
+    },
+    {
+      "event_hash": "78db9326b51a9a939188fb955c34c2bbae1948af427baf2b382f07ffe3fef070",
+      "kind": "validation",
+      "payload": {
+        "entity": "node",
+        "id": "observation-b",
+        "occurred_at": "2026-11-10T00:00:00Z",
+        "reason": "Scripted demo approval; not real-world validation",
+        "status": "verified",
+        "verified_by": "reviewer:example"
+      },
+      "previous_hash": "850758adb659faa72b410a51dcc7192c75ea2d9f34f450be6e325cf03b7ac3fe",
+      "sequence": 11
+    },
+    {
+      "event_hash": "5d1116a402481af27574d4958cbff35fdd2c759b19a3a3391b3159be369e870b",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "model-suggestion",
+        "kind": "evidence",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://model-suggestion",
+          "source_group": "synthetic",
+          "source_id": "model-suggestion",
+          "source_kind": "model"
+        },
+        "text": "A model asserts that the claim is true.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "78db9326b51a9a939188fb955c34c2bbae1948af427baf2b382f07ffe3fef070",
+      "sequence": 12
+    },
+    {
+      "event_hash": "9257aef06f68bdd74dccc5d9027bf2909e3b9c1073e0ac7a5078ffcbc31c5c34",
+      "kind": "validation",
+      "payload": {
+        "entity": "node",
+        "id": "model-suggestion",
+        "occurred_at": "2026-11-10T00:00:00Z",
+        "reason": "Scripted demo approval; not real-world validation",
+        "status": "verified",
+        "verified_by": "reviewer:example"
+      },
+      "previous_hash": "5d1116a402481af27574d4958cbff35fdd2c759b19a3a3391b3159be369e870b",
+      "sequence": 13
+    },
+    {
+      "event_hash": "c1a21842a81d19416ad7f10c1ce425aa298f784ed963860dd8d231b3b32389c2",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "s1",
+        "kind": "supports",
+        "method_version": "rei-0.1",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "source": "observation-a",
+        "target": "supported",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "9257aef06f68bdd74dccc5d9027bf2909e3b9c1073e0ac7a5078ffcbc31c5c34",
+      "sequence": 14
+    },
+    {
+      "event_hash": "ffec7de047b2047ea321a9b7dd2987c4b8ea23245f4eebb27c5e73a423226e4f",
+      "kind": "validation",
+      "payload": {
+        "entity": "edge",
+        "id": "s1",
+        "occurred_at": "2026-11-10T00:00:00Z",
+        "reason": "Scripted demo relation approval",
+        "status": "verified",
+        "verified_by": "reviewer:example"
+      },
+      "previous_hash": "c1a21842a81d19416ad7f10c1ce425aa298f784ed963860dd8d231b3b32389c2",
+      "sequence": 15
+    },
+    {
+      "event_hash": "047d1df1909376d50dc7ec61859831e58ba9d9e7171d6ff8128d08712b1d23d7",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "a1",
+        "kind": "attacks",
+        "method_version": "rei-0.1",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "source": "observation-b",
+        "target": "opposed",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "ffec7de047b2047ea321a9b7dd2987c4b8ea23245f4eebb27c5e73a423226e4f",
+      "sequence": 16
+    },
+    {
+      "event_hash": "ff0390bff78402bb4d5d18f39acc75bd8c6b930a40ec9734fcb38ecc06874f49",
+      "kind": "validation",
+      "payload": {
+        "entity": "edge",
+        "id": "a1",
+        "occurred_at": "2026-11-10T00:00:00Z",
+        "reason": "Scripted demo relation approval",
+        "status": "verified",
+        "verified_by": "reviewer:example"
+      },
+      "previous_hash": "047d1df1909376d50dc7ec61859831e58ba9d9e7171d6ff8128d08712b1d23d7",
+      "sequence": 17
+    },
+    {
+      "event_hash": "807a47cf4c3be410c4582d3007be7bd6b7492e260394d03872b3745e4ce4227a",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "s2",
+        "kind": "supports",
+        "method_version": "rei-0.1",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "source": "observation-a",
+        "target": "disputed",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "ff0390bff78402bb4d5d18f39acc75bd8c6b930a40ec9734fcb38ecc06874f49",
+      "sequence": 18
+    },
+    {
+      "event_hash": "8094f0aa2911d5525e01ee178831e682287df495abc0fb26f10448884d1e4b38",
+      "kind": "validation",
+      "payload": {
+        "entity": "edge",
+        "id": "s2",
+        "occurred_at": "2026-11-10T00:00:00Z",
+        "reason": "Scripted demo relation approval",
+        "status": "verified",
+        "verified_by": "reviewer:example"
+      },
+      "previous_hash": "807a47cf4c3be410c4582d3007be7bd6b7492e260394d03872b3745e4ce4227a",
+      "sequence": 19
+    },
+    {
+      "event_hash": "6df973db01324ceb7dc81afb01935d2d8ca61ab0dfa4caeb84463e25ba0da987",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "s3",
+        "kind": "supports",
+        "method_version": "rei-0.1",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "source": "observation-a-copy",
+        "target": "disputed",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "8094f0aa2911d5525e01ee178831e682287df495abc0fb26f10448884d1e4b38",
+      "sequence": 20
+    },
+    {
+      "event_hash": "265cfe44b4a53bb9d8ce663734210a310e908927a82430bbdf6dd3652dc124d2",
+      "kind": "validation",
+      "payload": {
+        "entity": "edge",
+        "id": "s3",
+        "occurred_at": "2026-11-10T00:00:00Z",
+        "reason": "Scripted demo relation approval",
+        "status": "verified",
+        "verified_by": "reviewer:example"
+      },
+      "previous_hash": "6df973db01324ceb7dc81afb01935d2d8ca61ab0dfa4caeb84463e25ba0da987",
+      "sequence": 21
+    },
+    {
+      "event_hash": "ee14990a53dab1c0720bd619b810197cc07edb678d1a3ac6ea77915a78e7584b",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "a2",
+        "kind": "attacks",
+        "method_version": "rei-0.1",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "source": "observation-b",
+        "target": "disputed",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "265cfe44b4a53bb9d8ce663734210a310e908927a82430bbdf6dd3652dc124d2",
+      "sequence": 22
+    },
+    {
+      "event_hash": "d6e67749d3315ea086fffb98a17fc6adfe90df3894b6a2c446d31a4a9a2e1d13",
+      "kind": "validation",
+      "payload": {
+        "entity": "edge",
+        "id": "a2",
+        "occurred_at": "2026-11-10T00:00:00Z",
+        "reason": "Scripted demo relation approval",
+        "status": "verified",
+        "verified_by": "reviewer:example"
+      },
+      "previous_hash": "ee14990a53dab1c0720bd619b810197cc07edb678d1a3ac6ea77915a78e7584b",
+      "sequence": 23
+    },
+    {
+      "event_hash": "d80f511cd73234d22c45376501fbfb973cb2dde1cbfb121039e412fbf1a82e0c",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "m1",
+        "kind": "supports",
+        "method_version": "rei-0.1",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "source": "model-suggestion",
+        "target": "isolated",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "d6e67749d3315ea086fffb98a17fc6adfe90df3894b6a2c446d31a4a9a2e1d13",
+      "sequence": 24
+    },
+    {
+      "event_hash": "26699a5a44d0b97a1a5a576de83e9e320f387a8dfdd202521d05e0bf2d14c0fe",
+      "kind": "validation",
+      "payload": {
+        "entity": "edge",
+        "id": "m1",
+        "occurred_at": "2026-11-10T00:00:00Z",
+        "reason": "Scripted demo relation approval",
+        "status": "verified",
+        "verified_by": "reviewer:example"
+      },
+      "previous_hash": "d80f511cd73234d22c45376501fbfb973cb2dde1cbfb121039e412fbf1a82e0c",
+      "sequence": 25
+    },
+    {
+      "event_hash": "b116834021f657b19ecbe2c8b425dd700dce9c33b58f9e71cc6d005560e7795d",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T00:00:00Z",
+        "id": "open-1",
+        "kind": "open_question",
+        "provenance": {
+          "observed_at": "2026-11-10T00:00:00Z",
+          "reference": "demo://analyst",
+          "source_group": "analyst",
+          "source_id": "analyst",
+          "source_kind": "human"
+        },
+        "text": "Are observation A and observation B independently reliable?",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "26699a5a44d0b97a1a5a576de83e9e320f387a8dfdd202521d05e0bf2d14c0fe",
+      "sequence": 26
+    }
+  ],
+  "max_edges": 30000,
+  "max_nodes": 10000,
+  "method_version": "rei-0.1",
+  "schema_version": "rei0.graph.v1"
+}

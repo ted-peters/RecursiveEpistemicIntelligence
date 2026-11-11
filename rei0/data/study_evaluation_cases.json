@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "category": "arithmetic",
+      "context": "",
+      "id": "arith-02",
+      "question": "A box has 3 red and 2 blue marbles. One red marble is removed. How many total marbles remain? Answer with the number."
+    },
+    {
+      "category": "arithmetic",
+      "context": "",
+      "id": "arith-03",
+      "question": "What is 2 raised to the fifth power? Answer with the number."
+    },
+    {
+      "category": "uncertainty",
+      "context": "",
+      "id": "unknown-02",
+      "question": "An integer is known only to be even. What is its exact value?"
+    },
+    {
+      "category": "arithmetic",
+      "context": "",
+      "id": "time-01",
+      "question": "In a 24-hour clock, what time is 90 minutes after 13:45? Use HH:MM."
+    }
+  ],
+  "schema": "rei0.benchmark.cases.v1"
+}

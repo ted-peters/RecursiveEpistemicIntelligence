@@ -1,0 +1,17 @@
+{
+  "derived_states": [
+    "SUPPORT_ONLY",
+    "NEITHER",
+    "SUPPORT_ONLY"
+  ],
+  "journal_audit_head": "35cb7a8dae162b8c5f630eb02253e9027f6343303532f31cbfc945a4ec628393",
+  "journal_replay_valid": true,
+  "premise_states": [
+    "SUPPORT_ONLY",
+    "BOTH",
+    "SUPPORT_ONLY"
+  ],
+  "revision_events": 3,
+  "scenario": "synthetic-only",
+  "warning": "Synthetic signed review demonstrates information updates; not a truth test."
+}

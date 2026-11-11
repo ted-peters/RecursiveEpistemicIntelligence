@@ -1,0 +1,549 @@
+{
+  "events": [
+    {
+      "event_hash": "c5c7180b172f880926a0b0c66fedd35984fca625f582e4190e9307bd9b1d3a30",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "claim-00001",
+        "kind": "claim",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/claim-00001",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "An AI explanation may improve trust only when its reliability can be independently evaluated.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sequence": 1
+    },
+    {
+      "event_hash": "61e1353961032d04bc86a9c80c22708ea3fe2ea687149831091179a5e65da85a",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "open_question-00002",
+        "kind": "open_question",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/open_question-00002",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "Why should an explanation increase trust?",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "c5c7180b172f880926a0b0c66fedd35984fca625f582e4190e9307bd9b1d3a30",
+      "sequence": 2
+    },
+    {
+      "event_hash": "929b4d9e1a045a15611947be07c084592570ee94d9e73b513aa6399b63038b82",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00003",
+        "kind": "questions",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00003",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "open_question-00002",
+        "target": "claim-00001",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "61e1353961032d04bc86a9c80c22708ea3fe2ea687149831091179a5e65da85a",
+      "sequence": 3
+    },
+    {
+      "event_hash": "6a16df301de2a07d2ad4f6d0c63ee2df1c7c738bfb73a331c008cd7c5c807e68",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "open_question-00004",
+        "kind": "open_question",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/open_question-00004",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "What observation could falsify this claim?",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "929b4d9e1a045a15611947be07c084592570ee94d9e73b513aa6399b63038b82",
+      "sequence": 4
+    },
+    {
+      "event_hash": "60a2b849695cf9724e60c4648f6870ab73de39718d1151e5311e7e05f1a54705",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00005",
+        "kind": "questions",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00005",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "open_question-00004",
+        "target": "claim-00001",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "6a16df301de2a07d2ad4f6d0c63ee2df1c7c738bfb73a331c008cd7c5c807e68",
+      "sequence": 5
+    },
+    {
+      "event_hash": "365cbf1f9e9c3adf5adaa495bf6ae6362cd05454a0f93db916932897aa232dbd",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "argument-00006",
+        "kind": "argument",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/argument-00006",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "An explanation may expose assumptions that a reader can challenge.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "60a2b849695cf9724e60c4648f6870ab73de39718d1151e5311e7e05f1a54705",
+      "sequence": 6
+    },
+    {
+      "event_hash": "b00ab65a532c2b3665f654703ab26c0e785594515f7a4853ad5981bd4f7e9c60",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00007",
+        "kind": "supports",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00007",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "argument-00006",
+        "target": "claim-00001",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "365cbf1f9e9c3adf5adaa495bf6ae6362cd05454a0f93db916932897aa232dbd",
+      "sequence": 7
+    },
+    {
+      "event_hash": "dbbcb4b402cbf0bbb7bc0eaeb7768b558d1c5f7cbcf4218f1211d158e4f1bf13",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "objection-00008",
+        "kind": "objection",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/objection-00008",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "A convincing explanation might not represent the model's actual causal process.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "b00ab65a532c2b3665f654703ab26c0e785594515f7a4853ad5981bd4f7e9c60",
+      "sequence": 8
+    },
+    {
+      "event_hash": "0422ba226b373dddb2dad35eb1552f92ca84d52aeb1807cabfa04122af9ea013",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00009",
+        "kind": "attacks",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00009",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "objection-00008",
+        "target": "claim-00001",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "dbbcb4b402cbf0bbb7bc0eaeb7768b558d1c5f7cbcf4218f1211d158e4f1bf13",
+      "sequence": 9
+    },
+    {
+      "event_hash": "1564c1b242959a6f89142f352fbc6a530af0a631bef6b2d10ef4c43d871c2959",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "open_question-00010",
+        "kind": "open_question",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/open_question-00010",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "Why trust the reader's challenge method?",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "0422ba226b373dddb2dad35eb1552f92ca84d52aeb1807cabfa04122af9ea013",
+      "sequence": 10
+    },
+    {
+      "event_hash": "05af9fff2f4f955c2eebc30284dd78889007aed8121d6ea61620f767942b1dc8",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00011",
+        "kind": "questions",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00011",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "open_question-00010",
+        "target": "argument-00006",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "1564c1b242959a6f89142f352fbc6a530af0a631bef6b2d10ef4c43d871c2959",
+      "sequence": 11
+    },
+    {
+      "event_hash": "44e7e4391aaeb2938efd033138f3d3fb1ef9b4d159237b1a7f7ef76a33a7c22a",
+      "kind": "explore_question",
+      "payload": {
+        "actor": "inquiry_controller",
+        "id": "open_question-00002",
+        "note": "Investigated; arguments remain provisional and may generate new questions",
+        "occurred_at": "2026-11-10T20:22:33Z"
+      },
+      "previous_hash": "05af9fff2f4f955c2eebc30284dd78889007aed8121d6ea61620f767942b1dc8",
+      "sequence": 12
+    },
+    {
+      "event_hash": "781628d828fe46c4f459ea5afcaeedf541f5ed6aee7bf06bf226c32d6e687ed3",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "argument-00012",
+        "kind": "argument",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/argument-00012",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "A challenge method could be compared with predictions from controlled intervention tests.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "44e7e4391aaeb2938efd033138f3d3fb1ef9b4d159237b1a7f7ef76a33a7c22a",
+      "sequence": 13
+    },
+    {
+      "event_hash": "64d64189eaed4c2411d0f9091793510d49d333dd4f768850103655351f5404c9",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00013",
+        "kind": "supports",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00013",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "argument-00012",
+        "target": "argument-00006",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "781628d828fe46c4f459ea5afcaeedf541f5ed6aee7bf06bf226c32d6e687ed3",
+      "sequence": 14
+    },
+    {
+      "event_hash": "3735bce82aad3041ee0f8c64f3627b5cf7c7f901ee5fceae124034ffc0d8e86c",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "objection-00014",
+        "kind": "objection",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/objection-00014",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "Intervention tests may not cover hidden failure modes.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "64d64189eaed4c2411d0f9091793510d49d333dd4f768850103655351f5404c9",
+      "sequence": 15
+    },
+    {
+      "event_hash": "ac69f9ae06b99aa811a4122f4dcc1cd604bceca20072ad70fa9156a2a49f2432",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00015",
+        "kind": "attacks",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00015",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "objection-00014",
+        "target": "argument-00006",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "3735bce82aad3041ee0f8c64f3627b5cf7c7f901ee5fceae124034ffc0d8e86c",
+      "sequence": 16
+    },
+    {
+      "event_hash": "44d37ad85593f14ce178adfab839caf791561b815f077c9af95b0412c69cf9fc",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "open_question-00016",
+        "kind": "open_question",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/open_question-00016",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "Why are controlled tests adequate standards for this domain?",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "ac69f9ae06b99aa811a4122f4dcc1cd604bceca20072ad70fa9156a2a49f2432",
+      "sequence": 17
+    },
+    {
+      "event_hash": "9e83d88aa3294d31c3791c06cf95ae5ed6514abde4f8aee4812eb0c498d5511b",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00017",
+        "kind": "questions",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00017",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "open_question-00016",
+        "target": "argument-00012",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "44d37ad85593f14ce178adfab839caf791561b815f077c9af95b0412c69cf9fc",
+      "sequence": 18
+    },
+    {
+      "event_hash": "a8068639baf002b843aa33ee209e753b4be265a7fa7f4b21c2c16d64a196d604",
+      "kind": "explore_question",
+      "payload": {
+        "actor": "inquiry_controller",
+        "id": "open_question-00010",
+        "note": "Investigated; arguments remain provisional and may generate new questions",
+        "occurred_at": "2026-11-10T20:22:33Z"
+      },
+      "previous_hash": "9e83d88aa3294d31c3791c06cf95ae5ed6514abde4f8aee4812eb0c498d5511b",
+      "sequence": 19
+    },
+    {
+      "event_hash": "9af0c5e7dd25de15fe21d315decaa7bf79809ed1639c4a4353ae3f3223a8ee98",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "argument-00018",
+        "kind": "argument",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/argument-00018",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "We can provisionally trust a test only within its demonstrated measurement scope.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "a8068639baf002b843aa33ee209e753b4be265a7fa7f4b21c2c16d64a196d604",
+      "sequence": 20
+    },
+    {
+      "event_hash": "a46b5f3912c7beef29843fed92434a576bb485eb241bf3aa647099e43df1b379",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00019",
+        "kind": "supports",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00019",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "argument-00018",
+        "target": "argument-00012",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "9af0c5e7dd25de15fe21d315decaa7bf79809ed1639c4a4353ae3f3223a8ee98",
+      "sequence": 21
+    },
+    {
+      "event_hash": "bbb542bf4376912a044c996ccac5e1122f31ea679f8b0ac1771d0dc732672aa8",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "objection-00020",
+        "kind": "objection",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/objection-00020",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "Its scope may be narrower than the claim's intended domain.",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "a46b5f3912c7beef29843fed92434a576bb485eb241bf3aa647099e43df1b379",
+      "sequence": 22
+    },
+    {
+      "event_hash": "65626d591dbc27835c55ac35ee993008a6187a84bf9f91bb796c03579897306b",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00021",
+        "kind": "attacks",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00021",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "objection-00020",
+        "target": "argument-00012",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "bbb542bf4376912a044c996ccac5e1122f31ea679f8b0ac1771d0dc732672aa8",
+      "sequence": 23
+    },
+    {
+      "event_hash": "d1532b98b39c11fca1031460dfe14c137b2d7cb67a86264afc65878e7d557091",
+      "kind": "add_node",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "open_question-00022",
+        "kind": "open_question",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/open_question-00022",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "text": "What establishes the scope of these tests?",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "65626d591dbc27835c55ac35ee993008a6187a84bf9f91bb796c03579897306b",
+      "sequence": 24
+    },
+    {
+      "event_hash": "bea09e70392bd0c714edd265ead9d701aaf2e8c308889e3e02e065888e0d2a4a",
+      "kind": "add_edge",
+      "payload": {
+        "created_at": "2026-11-10T20:22:33Z",
+        "id": "edge-00023",
+        "kind": "questions",
+        "method_version": "rei-0.2",
+        "provenance": {
+          "observed_at": "2026-11-10T20:22:33Z",
+          "reference": "model-output://scripted-fixture/edge-00023",
+          "source_group": "scripted-fixture",
+          "source_id": "scripted-fixture",
+          "source_kind": "model"
+        },
+        "source": "open_question-00022",
+        "target": "argument-00018",
+        "validation": "pending",
+        "verified_by": null
+      },
+      "previous_hash": "d1532b98b39c11fca1031460dfe14c137b2d7cb67a86264afc65878e7d557091",
+      "sequence": 25
+    },
+    {
+      "event_hash": "446ae24d867825d2405d88f4676e309aca7f9b1a540036c0219876dc98ba2758",
+      "kind": "explore_question",
+      "payload": {
+        "actor": "inquiry_controller",
+        "id": "open_question-00016",
+        "note": "Investigated; arguments remain provisional and may generate new questions",
+        "occurred_at": "2026-11-10T20:22:33Z"
+      },
+      "previous_hash": "bea09e70392bd0c714edd265ead9d701aaf2e8c308889e3e02e065888e0d2a4a",
+      "sequence": 26
+    }
+  ],
+  "max_edges": 180,
+  "max_nodes": 120,
+  "method_version": "rei-0.2",
+  "schema_version": "rei0.graph.v1"
+}
