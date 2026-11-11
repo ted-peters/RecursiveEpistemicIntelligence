@@ -10,11 +10,13 @@ or change the archived REI 1.0 / REI 1.1 implementations.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 from .adaptive import AdaptiveController, AdaptiveDecision
 from .evidence import EvidenceLedger, EvidenceError
 from .inquiry import InquirySession, PendingQuestion
+from .review import VerificationBoundary
 
 
 @dataclass(frozen=True)
@@ -96,3 +98,28 @@ class AuthenticatedAdaptiveController:
         if score < self.min_score:
             return AdaptiveDecision(None, "adaptive_low_value", audit)
         return AdaptiveDecision(selected.id, None, audit)
+
+def load_authenticated_inquiry(
+    session_path: str | Path, ledger_path: str | Path,
+    boundary: VerificationBoundary, *,
+    min_score: int = 10, reserve_tokens: int = 320,
+) -> tuple[InquirySession, AuthenticatedAdaptiveController]:
+    """Restore a checkpoint AND its matching signed-review ledger, fail closed.
+
+    The caller must provide independently configured public verifier keys.
+    Both files must describe exactly the same graph snapshot. This detects
+    accidentally paired or diverging histories; it is not an external audit
+    anchor. Do not supply signer secrets to this function or the model.
+    """
+    if not isinstance(boundary, VerificationBoundary):
+        raise EvidenceError("independent VerificationBoundary required")
+    session = InquirySession.load(session_path)
+    ledger = EvidenceLedger.load(ledger_path, boundary)
+    if session.graph.to_dict() != ledger.graph.to_dict():
+        raise EvidenceError("inquiry checkpoint and signed evidence graph differ")
+    # The controller requires object identity to prevent accidental trust
+    # changes between independently materialized graph copies.
+    session.graph = ledger.graph
+    return session, AuthenticatedAdaptiveController(
+        ledger=ledger, min_score=min_score, reserve_tokens=reserve_tokens,
+    )
