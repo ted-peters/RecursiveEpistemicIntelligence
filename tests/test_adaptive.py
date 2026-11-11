@@ -6,6 +6,7 @@ from pathlib import Path
 import unittest
 
 from rei0.adaptive import AdaptiveController, AdaptiveDecision
+from rei0.adaptive_engine import AdaptiveInquiryEngine
 from rei0.graph import EpistemicGraph
 from rei0.inquiry import InquiryEngine, InquiryError, InquiryLimits, InquirySession
 from rei0.adapters import ScriptedAdapter
@@ -27,11 +28,13 @@ def script(priority=9):
 
 
 def inquiry(doc, *, controller=None, max_steps=1, max_depth=2, max_tokens=1000):
-    return InquiryEngine(
+    engine_class = AdaptiveInquiryEngine if controller is not None else InquiryEngine
+    options = {"controller": controller} if controller is not None else {}
+    return engine_class(
         ScriptedAdapter(doc),
         InquiryLimits(max_steps=max_steps, max_depth=max_depth,
                       max_tokens=max_tokens, max_model_calls=4),
-        controller=controller, clock=lambda: FIXED,
+        clock=lambda: FIXED, **options,
     )
 
 
@@ -117,6 +120,19 @@ class AdaptiveControllerTests(unittest.TestCase):
                                   remaining_calls=3, remaining_tokens=900)
         self.assertEqual(pending.graph.assess(pending.root_id).state, EvidenceState.SUPPORT_ONLY)
         self.assertEqual(after.stop_reason, "adaptive_low_value")
+
+    def test_verified_contradiction_affects_real_resumed_scheduler(self):
+        doc = script(priority=1)
+        session = inquiry(doc, max_depth=0).run(QUESTION)
+        add_evidence(session.graph, session.root_id, "support-doc", EdgeKind.SUPPORTS)
+        add_evidence(session.graph, session.root_id, "attack-doc", EdgeKind.ATTACKS)
+        controlled = inquiry(doc, controller=AdaptiveController(min_score=8, reserve_tokens=0))
+        result = controlled.run(resume=session)
+        self.assertEqual(result.steps, 1)
+        self.assertEqual(result.trace[-2]["event"], "adaptive_select")
+        self.assertEqual(result.trace[-2]["decision"]["target_evidence_state"], "BOTH")
+        self.assertEqual(result.graph.assess(result.root_id).state, EvidenceState.BOTH)
+        self.assertEqual(InquirySession.from_dict(result.to_dict()).to_dict(), result.to_dict())
 
     def test_model_authored_documents_never_acquire_evidence_bonus(self):
         pending = inquiry(script(priority=1), max_depth=0).run(QUESTION)
