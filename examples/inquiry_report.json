@@ -1,0 +1,130 @@
+{
+  "checkpoint_path": "examples/inquiry_checkpoint.json",
+  "evidence_assessment": {
+    "attack_evidence": [],
+    "attack_sources": [],
+    "claim_id": "claim-00001",
+    "confidence": null,
+    "ignored_edges": [
+      {
+        "edge_id": "edge-00007",
+        "reason": "argument_not_independent_evidence"
+      },
+      {
+        "edge_id": "edge-00009",
+        "reason": "argument_not_independent_evidence"
+      }
+    ],
+    "method_version": "rei-0.2",
+    "state": "NEITHER",
+    "support_evidence": [],
+    "support_sources": []
+  },
+  "graph_audit_head": "446ae24d867825d2405d88f4676e309aca7f9b1a540036c0219876dc98ba2758",
+  "graph_path": "examples/inquiry_graph.json",
+  "model_calls": 4,
+  "objection_nodes": [
+    {
+      "id": "objection-00008",
+      "text": "A convincing explanation might not represent the model's actual causal process.",
+      "validation": "pending"
+    },
+    {
+      "id": "objection-00014",
+      "text": "Intervention tests may not cover hidden failure modes.",
+      "validation": "pending"
+    },
+    {
+      "id": "objection-00020",
+      "text": "Its scope may be narrower than the claim's intended domain.",
+      "validation": "pending"
+    }
+  ],
+  "open_frontier": [
+    {
+      "depth": 3,
+      "id": "open_question-00022",
+      "priority": 8,
+      "question": "What establishes the scope of these tests?",
+      "target_id": "argument-00018"
+    },
+    {
+      "depth": 0,
+      "id": "open_question-00004",
+      "priority": 3,
+      "question": "What observation could falsify this claim?",
+      "target_id": "claim-00001"
+    }
+  ],
+  "question": "Should an AI explanation make its conclusions more trustworthy?",
+  "reason_nodes": [
+    {
+      "id": "argument-00006",
+      "text": "An explanation may expose assumptions that a reader can challenge.",
+      "validation": "pending"
+    },
+    {
+      "id": "argument-00012",
+      "text": "A challenge method could be compared with predictions from controlled intervention tests.",
+      "validation": "pending"
+    },
+    {
+      "id": "argument-00018",
+      "text": "We can provisionally trust a test only within its demonstrated measurement scope.",
+      "validation": "pending"
+    }
+  ],
+  "reported_tokens_used": 188,
+  "root_claim": {
+    "id": "claim-00001",
+    "text": "An AI explanation may improve trust only when its reliability can be independently evaluated.",
+    "validation": "pending"
+  },
+  "steps": 3,
+  "stop_reason": "step_budget",
+  "trace": [
+    {
+      "claim_id": "claim-00001",
+      "event": "initial_proposal",
+      "questions_created": 2,
+      "tokens_used": 36
+    },
+    {
+      "depth": 0,
+      "event": "challenge_investigated",
+      "new_questions": 1,
+      "note": "Added a tentative reason, objection, and deeper justification request.",
+      "objection_count": 1,
+      "question_id": "open_question-00002",
+      "reason_count": 1,
+      "step": 1,
+      "target_id": "claim-00001",
+      "tokens_used": 54
+    },
+    {
+      "depth": 1,
+      "event": "challenge_investigated",
+      "new_questions": 1,
+      "note": "Questioned the method by which the explanation is evaluated.",
+      "objection_count": 1,
+      "question_id": "open_question-00010",
+      "reason_count": 1,
+      "step": 2,
+      "target_id": "argument-00006",
+      "tokens_used": 51
+    },
+    {
+      "depth": 2,
+      "event": "challenge_investigated",
+      "new_questions": 1,
+      "note": "Preserved a further epistemic obligation.",
+      "objection_count": 1,
+      "question_id": "open_question-00016",
+      "reason_count": 1,
+      "step": 3,
+      "target_id": "argument-00012",
+      "tokens_used": 47
+    }
+  ],
+  "warning": "All model arguments are provisional. No real-world evidence or truth verification occurs."
+}

@@ -1,0 +1,43 @@
+{
+  "analysis_plan": {
+    "comparator": "baseline",
+    "confirmatory_min_evaluation_cases": 30,
+    "primary_metric": "overall_success",
+    "relative_token_tolerance": 0.1
+  },
+  "dataset_digests": {
+    "adjudications": "237d68fcbae270a641f5eb1d905e58c725bbc98e8fc5f878dc86a5ed54792ede",
+    "calibration_cases": "401cad6e184c93c845da5bf77b99dfe01e30efd96a23e63549a0c88f5c0426d9",
+    "calibration_keys": "4bef575d4935739a57b2f5a59ff1edb2c823b1fc7067c85be05119bf77bfce0e",
+    "evaluation_cases": "72cf4565e47598609765c887d24668a234c098fa210b1664c0d74f77a655ae83",
+    "evaluation_keys": "938630b508f1a2d5d265079f1d37f0b1db41449d530a5bacc42b4d5b6078b846"
+  },
+  "gate": "No confirmatory advantage when actual resource use is imbalanced; no claim from scripted fixtures; independent label manifest is declarative, not authenticated.",
+  "implementation_sha256": "059b0006f99374a3fc06a804039a25d8709fce6c996002aa5d3e7906ad53fa65",
+  "limits": {
+    "max_calls": 4,
+    "max_output_tokens": 384,
+    "max_seconds": 30.0,
+    "max_tokens": 4000,
+    "steps": 2
+  },
+  "precommit_note": "SHA-256 is not proof of when registration occurred. Publish or timestamp the hash with an independent third party BEFORE evaluation.",
+  "preregistration_sha256": "56b4c1b21e1afba42e5c81df1249f53543a4f41caca93571ba428905d0a7c342",
+  "provider": {
+    "endpoint": null,
+    "fingerprint": "87045100f87072d033ec5f91820964a0b9b5797cc04f46250d13e84af97ec707",
+    "mode": "scripted_fixture_not_empirical",
+    "model": null
+  },
+  "registered_at": "2026-11-10T00:00:00Z",
+  "registered_hypothesis": "REI overall success differs from prespecified comparator, measured per case and repeated trial at fixed ceilings.",
+  "schema": "rei0.preregistration.v1",
+  "study_config": {
+    "bootstrap_repetitions": 100,
+    "max_total_calls": 1000,
+    "min_calibration_coverage": 0.5,
+    "repetitions": 2,
+    "seed": 19
+  },
+  "study_id": "REI09-SYNTHETIC-DEMO"
+}

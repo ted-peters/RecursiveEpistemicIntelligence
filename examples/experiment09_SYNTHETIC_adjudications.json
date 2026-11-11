@@ -1,0 +1,69 @@
+{
+  "records": [
+    {
+      "case_id": "arith-01",
+      "curator": "synthetic-fixture-author",
+      "key_sha256": "cefc911062ca6ccc583ca18d1e7b99736b14e67214d908066ada084a84ba724e",
+      "procedure": "synthetic pipeline exercise, NOT independent fact verification",
+      "reference": "SYNTHETIC FIXTURE — no external corroboration",
+      "reviewer": "synthetic-fixture-reviewer"
+    },
+    {
+      "case_id": "arith-02",
+      "curator": "synthetic-fixture-author",
+      "key_sha256": "b026552af96b3a64a3d000e34000606d1f9d2b036cab9c4cf0d255fc3a9dd735",
+      "procedure": "synthetic pipeline exercise, NOT independent fact verification",
+      "reference": "SYNTHETIC FIXTURE — no external corroboration",
+      "reviewer": "synthetic-fixture-reviewer"
+    },
+    {
+      "case_id": "arith-03",
+      "curator": "synthetic-fixture-author",
+      "key_sha256": "31687d8582c22a20185072c235ba7d94cda02d3020c1bf53a54a6a2bf9cdc28e",
+      "procedure": "synthetic pipeline exercise, NOT independent fact verification",
+      "reference": "SYNTHETIC FIXTURE — no external corroboration",
+      "reviewer": "synthetic-fixture-reviewer"
+    },
+    {
+      "case_id": "logic-01",
+      "curator": "synthetic-fixture-author",
+      "key_sha256": "b4053fa6e131fad13dd6b65f1203ce785ffe08bd7974f9ef9351f88b2c1cb813",
+      "procedure": "synthetic pipeline exercise, NOT independent fact verification",
+      "reference": "SYNTHETIC FIXTURE — no external corroboration",
+      "reviewer": "synthetic-fixture-reviewer"
+    },
+    {
+      "case_id": "source-01",
+      "curator": "synthetic-fixture-author",
+      "key_sha256": "0d7e53a75b59b3af544c903e37270d0f695f0d800c43a215019f724bc44dca97",
+      "procedure": "synthetic pipeline exercise, NOT independent fact verification",
+      "reference": "SYNTHETIC FIXTURE — no external corroboration",
+      "reviewer": "synthetic-fixture-reviewer"
+    },
+    {
+      "case_id": "time-01",
+      "curator": "synthetic-fixture-author",
+      "key_sha256": "0784912eb8eceedcbdc6bc32a810cc29e7a0a0234c50e153f65e2e05da998f1d",
+      "procedure": "synthetic pipeline exercise, NOT independent fact verification",
+      "reference": "SYNTHETIC FIXTURE — no external corroboration",
+      "reviewer": "synthetic-fixture-reviewer"
+    },
+    {
+      "case_id": "unknown-01",
+      "curator": "synthetic-fixture-author",
+      "key_sha256": "b8b827f25c2eba80676e9e67ee08260a5d276ec42279fa14e44fda483cdc3c99",
+      "procedure": "synthetic pipeline exercise, NOT independent fact verification",
+      "reference": "SYNTHETIC FIXTURE — no external corroboration",
+      "reviewer": "synthetic-fixture-reviewer"
+    },
+    {
+      "case_id": "unknown-02",
+      "curator": "synthetic-fixture-author",
+      "key_sha256": "e8ac633db374929780f43e9fdfb57c97aa5cc11371e9c18e5fdb9a30304694b6",
+      "procedure": "synthetic pipeline exercise, NOT independent fact verification",
+      "reference": "SYNTHETIC FIXTURE — no external corroboration",
+      "reviewer": "synthetic-fixture-reviewer"
+    }
+  ],
+  "schema": "rei0.adjudications.v1"
+}
