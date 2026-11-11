@@ -15,7 +15,7 @@ from pathlib import Path
 from rei0.benchmark import ARMS, grade, load_study, paired_intervals, read_json, verify_report
 
 HERE = Path(__file__).resolve().parent
-CONDITIONS = ("model", "model_sha256", "llama_cpp_commit", "method", "constraints", "study")
+CONDITIONS = ("experiment_run_id", "model", "model_sha256", "llama_cpp_commit", "method", "constraints", "study")
 
 
 class AggregateError(ValueError):
