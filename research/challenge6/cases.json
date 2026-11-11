@@ -1,0 +1,23 @@
+{
+  "schema": "rei0.benchmark.cases.v1",
+  "cases": [
+    {
+      "id":"c6-01-arith", "category":"arithmetic", "context":"A warehouse has 19 sealed boxes containing 37 identical parts in each box. None are missing.", "question":"How many parts are there in total? Respond using digits only."
+    },
+    {
+      "id":"c6-02-arith", "category":"arithmetic", "context":"A service performed 21 jobs at $18 each. Each job had a $4 discount, and there were no other fees.", "question":"What is the final total amount in dollars? Respond using digits only."
+    },
+    {
+      "id":"c6-03-logic", "category":"logic", "context":"Every machine with a failed battery emits an amber alert. Machine R emits an amber alert. Other machine faults may also emit amber alerts. No other facts are given.", "question":"Is a failed battery logically entailed? Respond EXACTLY ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "id":"c6-04-logic", "category":"logic", "context":"Facts: A is true. Rules: if A then B; if B then C. No converse rules. Interpret all models compatible with these statements.", "question":"Is C logically entailed? Respond EXACTLY ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "id":"c6-05-evidence", "category":"evidence", "context":"Evidence events in order: ACCEPT positive article A from original study S1. ACCEPT positive article B from the SAME study S1. ACCEPT negative study C from independent study S2. PENDING positive article D from S3. At the end nothing was revoked. Pending evidence does not count. Articles sharing an origin are a single independent source. The four information states are NEITHER, SUPPORT_ONLY, ATTACK_ONLY, BOTH.", "question":"What is the final four-state recorded evidence status? Respond with just the state name."
+    },
+    {
+      "id":"c6-06-unknown", "category":"unanswerable", "context":"A sealed envelope contains one of four equally plausible colored cards: red, blue, gold, or green. It was shuffled randomly and sealed. No one has looked inside. You receive no observation about its contents.", "question":"What is the exact color of the card in the sealed envelope? If it cannot be known from the stated information, abstain (null answer)."
+    }
+  ]
+}
