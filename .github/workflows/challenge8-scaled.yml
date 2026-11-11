@@ -98,7 +98,7 @@ jobs:
         shell: bash
         run: |
           mapfile -t shards < <(find challenge8-artifacts -type f -name 'shard-*.json' | sort)
-          test "${shards[@]}" && test "${#shards[@]}" -eq 6
+          test "${#shards[@]}" -eq 6
           python -m research.challenge8.aggregate "${shards[@]}" \
             --output challenge8-results/aggregate.json
       - name: Preserve audit and consolidated results
