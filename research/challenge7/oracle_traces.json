@@ -1,0 +1,65 @@
+{
+  "schema": "rei.challenge7.oracle.v1",
+  "traces": [
+    {
+      "case_id": "c7-01-duplicate-then-revoke",
+      "states_after_each_event": [
+        "SUPPORT_ONLY",
+        "SUPPORT_ONLY",
+        "BOTH",
+        "SUPPORT_ONLY"
+      ],
+      "states_checked_against_original_rei_graph": true
+    },
+    {
+      "case_id": "c7-02-pending-now-approved",
+      "states_after_each_event": [
+        "NEITHER",
+        "ATTACK_ONLY",
+        "BOTH",
+        "ATTACK_ONLY"
+      ],
+      "states_checked_against_original_rei_graph": true
+    },
+    {
+      "case_id": "c7-03-both-sources-retracted",
+      "states_after_each_event": [
+        "SUPPORT_ONLY",
+        "BOTH",
+        "ATTACK_ONLY",
+        "NEITHER"
+      ],
+      "states_checked_against_original_rei_graph": true
+    },
+    {
+      "case_id": "c7-04-new-source-restores-conflict",
+      "states_after_each_event": [
+        "SUPPORT_ONLY",
+        "BOTH",
+        "ATTACK_ONLY",
+        "BOTH"
+      ],
+      "states_checked_against_original_rei_graph": true
+    },
+    {
+      "case_id": "c7-05-revoke-one-duplicate",
+      "states_after_each_event": [
+        "SUPPORT_ONLY",
+        "SUPPORT_ONLY",
+        "SUPPORT_ONLY"
+      ],
+      "states_checked_against_original_rei_graph": true
+    },
+    {
+      "case_id": "c7-06-reversal-with-surviving-source",
+      "states_after_each_event": [
+        "SUPPORT_ONLY",
+        "BOTH",
+        "BOTH",
+        "BOTH",
+        "SUPPORT_ONLY"
+      ],
+      "states_checked_against_original_rei_graph": true
+    }
+  ]
+}

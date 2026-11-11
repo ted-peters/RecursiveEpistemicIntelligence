@@ -1,0 +1,73 @@
+name: REI Challenge 7 — Dynamic evidence real-model comparison
+on:
+  push:
+    branches: [challenge7-dynamic-evidence]
+    paths:
+      - 'research/challenge7/**'
+      - 'tests/test_challenge7.py'
+      - '.github/workflows/challenge7-dynamic-evidence.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  dynamic-evidence-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install REI package
+        run: python -m pip install .
+      - name: Verify dynamic ledger parity and public inputs before model inference
+        run: |
+          python -m unittest discover -s tests -p 'test_challenge7.py' -v
+      - name: Install pinned llama.cpp engine
+        run: |
+          git clone -q --depth 1 --branch b12242 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+          git -C /tmp/llama.cpp rev-parse HEAD > /tmp/llama_commit.txt
+          cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=OFF -DGGML_NATIVE=ON
+          cmake --build /tmp/llama.cpp/build -j 4 --target llama-server
+      - name: Download SHA-256-pinned open-weight model
+        run: |
+          mkdir -p /tmp/c7-model
+          curl -L --fail --retry 2 --connect-timeout 30 \
+            'https://huggingface.co/fzhnk/qwen3-4b-instruct-2507-gguf/resolve/main/qwen3-4b-instruct-2507-q4_K_M.gguf' \
+            -o /tmp/c7-model/model.gguf
+          echo '85e4a5b7b8ef0e48af0e8658f5aaab9c2324c76c1641493f4d1e25fce54b18b9  /tmp/c7-model/model.gguf' | sha256sum -c
+      - name: Start loopback-only model inference
+        run: |
+          /tmp/llama.cpp/build/bin/llama-server -m /tmp/c7-model/model.gguf \
+            --alias qwen3-4b-instruct-2507-q4_k_m \
+            --host 127.0.0.1 --port 8099 -c 8192 -t 4 -np 1 \
+            > /tmp/c7-server.log 2>&1 &
+          echo $! > /tmp/c7-server.pid
+          for n in $(seq 1 90); do
+            if curl --fail -s http://127.0.0.1:8099/health | grep -q 'ok'; then exit 0; fi
+            sleep 2
+          done
+          tail -100 /tmp/c7-server.log
+          exit 1
+      - name: Run real-model four-arm evidence revision test
+        run: |
+          timeout 1700s python research/challenge7/run_dynamic.py \
+            --model-file /tmp/c7-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge7-results/pilot.json
+          python research/challenge7/run_dynamic.py \
+            --model-file /tmp/c7-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge7-results/pilot.json --verify-only
+      - name: Preserve real model outputs and grading inputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge7-dynamic-evidence-real-model
+          path: |
+            challenge7-results/pilot.json
+            research/challenge7/cases.json
+            research/challenge7/keys.json
+            research/challenge7/oracle_traces.json
+          if-no-files-found: warn
+          retention-days: 90

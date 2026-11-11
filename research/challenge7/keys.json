@@ -1,0 +1,47 @@
+{
+  "schema": "rei0.benchmark.keys.v1",
+  "answers": [
+    {
+      "case_id": "c7-01-duplicate-then-revoke",
+      "acceptable": [
+        "SUPPORT_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c7-02-pending-now-approved",
+      "acceptable": [
+        "ATTACK_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c7-03-both-sources-retracted",
+      "acceptable": [
+        "NEITHER"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c7-04-new-source-restores-conflict",
+      "acceptable": [
+        "BOTH"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c7-05-revoke-one-duplicate",
+      "acceptable": [
+        "SUPPORT_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c7-06-reversal-with-surviving-source",
+      "acceptable": [
+        "SUPPORT_ONLY"
+      ],
+      "unanswerable": false
+    }
+  ]
+}
