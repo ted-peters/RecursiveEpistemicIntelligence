@@ -7,11 +7,14 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import tempfile
 import unittest
 
 from rei0.adaptive import AdaptiveController
 from rei0.adaptive_engine import AdaptiveInquiryEngine
-from rei0.authenticated_adaptive import AuthenticatedAdaptiveController
+from rei0.authenticated_adaptive import (
+    AuthenticatedAdaptiveController, load_authenticated_inquiry,
+)
 from rei0.adapters import ScriptedAdapter
 from rei0.evidence import EvidenceLedger, EvidenceError
 from rei0.inquiry import InquiryEngine, InquiryLimits, InquirySession
@@ -184,6 +187,55 @@ class TrustedAdaptiveTests(unittest.TestCase):
         sign(ledger, signer, "a", Validation.VERIFIED)
         result = verdict(session, ledger, reserve=900)
         self.assertEqual(result.stop_reason, "adaptive_token_reserve")
+
+    def test_loaded_checkpoint_rebinds_matching_signed_ledger(self):
+        session, ledger, signer, provider = make_pending()
+        submit(ledger, "s", EdgeKind.SUPPORTS)
+        submit(ledger, "a", EdgeKind.ATTACKS)
+        sign(ledger, signer, "s", Validation.VERIFIED)
+        sign(ledger, signer, "a", Validation.VERIFIED)
+        with tempfile.TemporaryDirectory() as td:
+            checkpoint = Path(td) / "session.json"
+            evidence = Path(td) / "ledger.json"
+            session.save(checkpoint)
+            ledger.save(evidence)
+            loaded, controller = load_authenticated_inquiry(
+                checkpoint, evidence, ledger._boundary,
+                min_score=8, reserve_tokens=0)
+            self.assertIs(loaded.graph, controller.ledger.graph)
+            self.assertEqual(
+                verdict(loaded, controller.ledger).audit["selected_evidence_state"], "BOTH")
+            engine = AdaptiveInquiryEngine(
+                provider, InquiryLimits(max_steps=1, max_depth=2, max_tokens=2000),
+                controller=controller, clock=lambda: STAMP)
+            self.assertEqual(engine.run(resume=loaded).steps, 1)
+
+    def test_mismatched_saved_graphs_fail_before_model_inference(self):
+        session, ledger, _, _ = make_pending()
+        with tempfile.TemporaryDirectory() as td:
+            checkpoint = Path(td) / "session.json"
+            evidence = Path(td) / "ledger.json"
+            session.save(checkpoint)
+            submit(ledger, "new", EdgeKind.ATTACKS)
+            ledger.save(evidence)
+            with self.assertRaisesRegex(EvidenceError, "differ"):
+                load_authenticated_inquiry(checkpoint, evidence, ledger._boundary)
+
+    def test_loaded_evidence_rejects_wrong_public_key(self):
+        session, ledger, signer, _ = make_pending()
+        submit(ledger, "s", EdgeKind.SUPPORTS)
+        sign(ledger, signer, "s", Validation.VERIFIED)
+        wrong = Ed25519ReviewIssuer.generate("test-key", "external-reviewer")
+        bad_boundary = VerificationBoundary({
+            "test-key": Ed25519TrustedReviewer(
+                "external-reviewer", wrong.public_key_bytes())})
+        with tempfile.TemporaryDirectory() as td:
+            checkpoint = Path(td) / "session.json"
+            evidence = Path(td) / "ledger.json"
+            session.save(checkpoint)
+            ledger.save(evidence)
+            with self.assertRaises(ReviewError):
+                load_authenticated_inquiry(checkpoint, evidence, bad_boundary)
 
     def test_reject_missing_ledger_and_invalid_remaining_budgets(self):
         session, ledger, _, _ = make_pending()
