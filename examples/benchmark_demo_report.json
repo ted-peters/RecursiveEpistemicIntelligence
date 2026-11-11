@@ -1,0 +1,1134 @@
+{
+  "answer_key_digest": "454da3eb5cf04e977f7665ab431691e3dec5fbf867333a93492261d79a613fe6",
+  "budgets": {
+    "max_calls": 4,
+    "max_output_tokens": 384,
+    "max_seconds": 30.0,
+    "max_tokens": 4000,
+    "steps": 2
+  },
+  "case_set_digest": "87d6a5b7ae6c515efe6347a0175702fbde20a6869deeb8754a3bac907788e1d1",
+  "mode": "scripted_fixture_not_empirical",
+  "outcomes": [
+    {
+      "answer": "21",
+      "arm": "baseline",
+      "case_id": "arith-01",
+      "confidence": 0.8,
+      "error": null,
+      "model_calls": 1,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "single_pass"
+      },
+      "reported_tokens": 21,
+      "trace": [
+        {
+          "payload_sha256": "f6e15a08ece74a35c9a501a569baae711e744ff70ccc6e4d7601824c123e78da",
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "answer": "21",
+      "arm": "self_critique",
+      "case_id": "arith-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 3,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "draft_critique_revise"
+      },
+      "reported_tokens": 59,
+      "trace": [
+        {
+          "payload_sha256": "442202ec16c93af13a21ba10ef2a00e110d94362149ad216c739e4f7b2e4da62",
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload_sha256": "4430dde2a12fbb288852a02f814f116c7e6aaec8c939eeaacfe4ee8fae0e19af",
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload_sha256": "dab12b7e886688c64a479e228ab759797ca7a4b39551041aa85ca79ff012a44b",
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "answer": "21",
+      "arm": "fixed_depth",
+      "case_id": "arith-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "fifo_fixed_depth",
+        "steps": 2,
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "fd6af15e248158032f211ab1c97697947fe8404eb529826398f39621e86211b8",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "dab12b7e886688c64a479e228ab759797ca7a4b39551041aa85ca79ff012a44b",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "21",
+      "arm": "rei",
+      "case_id": "arith-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "priority_epistemic_graph",
+        "evidence_state": "NEITHER",
+        "graph_audit_head": "f78c0860773617c9f193bfa65dc94b63755565a50484c6d7830e9ac0f5fde519",
+        "steps": 2,
+        "stop_reason": "frontier_exhausted",
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "fd6af15e248158032f211ab1c97697947fe8404eb529826398f39621e86211b8",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "dab12b7e886688c64a479e228ab759797ca7a4b39551041aa85ca79ff012a44b",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "5",
+      "arm": "baseline",
+      "case_id": "arith-02",
+      "confidence": 0.8,
+      "error": null,
+      "model_calls": 1,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "single_pass"
+      },
+      "reported_tokens": 21,
+      "trace": [
+        {
+          "payload_sha256": "c558af996fd2773629c7600ed940d8a3fb97e69b7c8276820528a8551181cbf0",
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "answer": "4",
+      "arm": "self_critique",
+      "case_id": "arith-02",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 3,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "draft_critique_revise"
+      },
+      "reported_tokens": 59,
+      "trace": [
+        {
+          "payload_sha256": "edea6d6c299eb153d5c09b7afd617bc57eee9f069054c1ccf28efb98e83a6f5b",
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload_sha256": "4430dde2a12fbb288852a02f814f116c7e6aaec8c939eeaacfe4ee8fae0e19af",
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload_sha256": "3c456458c2d04dbaac3c9014c96e097c2782326aa21facf6bcd3eebdd21fa735",
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "answer": "4",
+      "arm": "fixed_depth",
+      "case_id": "arith-02",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "fifo_fixed_depth",
+        "steps": 2,
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "42f10e0315ef77d2e70b31ff540d744d858b689b5e112260192c7af90ed48ee0",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "3c456458c2d04dbaac3c9014c96e097c2782326aa21facf6bcd3eebdd21fa735",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "5",
+      "arm": "rei",
+      "case_id": "arith-02",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "priority_epistemic_graph",
+        "evidence_state": "NEITHER",
+        "graph_audit_head": "3c530654ea25d4225aecda8c5036f6d4531fa36f6e52543b5826bb6c5230e36b",
+        "steps": 2,
+        "stop_reason": "frontier_exhausted",
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "42f10e0315ef77d2e70b31ff540d744d858b689b5e112260192c7af90ed48ee0",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "9dd411e1ddd0b4bfb95508a2ad2fd767dfc83e6f0931b529ce5a55f2d0767b11",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "32",
+      "arm": "baseline",
+      "case_id": "arith-03",
+      "confidence": 0.8,
+      "error": null,
+      "model_calls": 1,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "single_pass"
+      },
+      "reported_tokens": 21,
+      "trace": [
+        {
+          "payload_sha256": "3c0a41d753155112271bbc8992343631d89bc4be3366209677a540da4a094d4d",
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "answer": "32",
+      "arm": "self_critique",
+      "case_id": "arith-03",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 3,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "draft_critique_revise"
+      },
+      "reported_tokens": 59,
+      "trace": [
+        {
+          "payload_sha256": "6b5514f8fe4c555e01fd7a5bda1e1014982b23ec56689c73fed17d31314a32ce",
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload_sha256": "4430dde2a12fbb288852a02f814f116c7e6aaec8c939eeaacfe4ee8fae0e19af",
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload_sha256": "12574b17c1cc66c2e36c691b3d5977b03a1eca222a790a42749c304c9e6177ff",
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "answer": "32",
+      "arm": "fixed_depth",
+      "case_id": "arith-03",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "fifo_fixed_depth",
+        "steps": 2,
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "288438d21c39f527cc9947ce6e9eae3b79d85e5c2fce972459c1b1e73b05ac79",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "12574b17c1cc66c2e36c691b3d5977b03a1eca222a790a42749c304c9e6177ff",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "32",
+      "arm": "rei",
+      "case_id": "arith-03",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "priority_epistemic_graph",
+        "evidence_state": "NEITHER",
+        "graph_audit_head": "1ad08d84c156e34def2d7ca649d0a4281fb43c23246f7afc777115a9e981b106",
+        "steps": 2,
+        "stop_reason": "frontier_exhausted",
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "288438d21c39f527cc9947ce6e9eae3b79d85e5c2fce972459c1b1e73b05ac79",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "12574b17c1cc66c2e36c691b3d5977b03a1eca222a790a42749c304c9e6177ff",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "yes",
+      "arm": "baseline",
+      "case_id": "logic-01",
+      "confidence": 0.8,
+      "error": null,
+      "model_calls": 1,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "single_pass"
+      },
+      "reported_tokens": 21,
+      "trace": [
+        {
+          "payload_sha256": "a741a7111af5141d5494ede5dacf9fa4b09424a52a3584fc32f0890f75517e11",
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "answer": "yes",
+      "arm": "self_critique",
+      "case_id": "logic-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 3,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "draft_critique_revise"
+      },
+      "reported_tokens": 59,
+      "trace": [
+        {
+          "payload_sha256": "405b703a5916ca822915d7adde45b1c077b6f50a6a2b3019a4ff4d68c056d655",
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload_sha256": "4430dde2a12fbb288852a02f814f116c7e6aaec8c939eeaacfe4ee8fae0e19af",
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload_sha256": "b452ed3067b5b59e4d0e7676c4480a0a8135ee56090954d10ed2f47f485a0a79",
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "answer": "yes",
+      "arm": "fixed_depth",
+      "case_id": "logic-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "fifo_fixed_depth",
+        "steps": 2,
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "de9744550fae7879f5935e0c7832700a905ec3157b55db8b821aa02f246dc13e",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "b452ed3067b5b59e4d0e7676c4480a0a8135ee56090954d10ed2f47f485a0a79",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "yes",
+      "arm": "rei",
+      "case_id": "logic-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "priority_epistemic_graph",
+        "evidence_state": "NEITHER",
+        "graph_audit_head": "c93fd14ca051fb648a550f2aaa856f9cb6545bb86b14c82dacb2b52fc1787115",
+        "steps": 2,
+        "stop_reason": "frontier_exhausted",
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "de9744550fae7879f5935e0c7832700a905ec3157b55db8b821aa02f246dc13e",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "b452ed3067b5b59e4d0e7676c4480a0a8135ee56090954d10ed2f47f485a0a79",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "2",
+      "arm": "baseline",
+      "case_id": "source-01",
+      "confidence": 0.8,
+      "error": null,
+      "model_calls": 1,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "single_pass"
+      },
+      "reported_tokens": 21,
+      "trace": [
+        {
+          "payload_sha256": "5dc2c68816764ef6fd4106416c081f97c5b60c63aeb7995b92b3f095be39e22a",
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "answer": "1",
+      "arm": "self_critique",
+      "case_id": "source-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 3,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "draft_critique_revise"
+      },
+      "reported_tokens": 59,
+      "trace": [
+        {
+          "payload_sha256": "84c6df3b6d320cb57157c07ba88fd6875ac4b059454b3fec3a7fe5f11dac3525",
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload_sha256": "4430dde2a12fbb288852a02f814f116c7e6aaec8c939eeaacfe4ee8fae0e19af",
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload_sha256": "a521de6ee0a41af551ba4ef33889c134b0b5fa13bd19d31898e411134a20a477",
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "answer": "2",
+      "arm": "fixed_depth",
+      "case_id": "source-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "fifo_fixed_depth",
+        "steps": 2,
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "b72d0144f74ae4651034ca2bc70e6e10c018d1e24e2739ca4c8bdec2a6d71c8e",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "d09568e28b73ee799720d6f3c21a8fe25054fc60f5cb18d6861d77f709b223dd",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "1",
+      "arm": "rei",
+      "case_id": "source-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "priority_epistemic_graph",
+        "evidence_state": "NEITHER",
+        "graph_audit_head": "8d492e8f5a26caaf895391d38446826bd92d49d61733f390bc8acf8cc2c95b4b",
+        "steps": 2,
+        "stop_reason": "frontier_exhausted",
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "b72d0144f74ae4651034ca2bc70e6e10c018d1e24e2739ca4c8bdec2a6d71c8e",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "a521de6ee0a41af551ba4ef33889c134b0b5fa13bd19d31898e411134a20a477",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "15:15",
+      "arm": "baseline",
+      "case_id": "time-01",
+      "confidence": 0.8,
+      "error": null,
+      "model_calls": 1,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "single_pass"
+      },
+      "reported_tokens": 21,
+      "trace": [
+        {
+          "payload_sha256": "083a465798b6c34614c33366442f981da9abc98933f27dc1d8b1aa5af4c237bb",
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "answer": "15:15",
+      "arm": "self_critique",
+      "case_id": "time-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 3,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "draft_critique_revise"
+      },
+      "reported_tokens": 59,
+      "trace": [
+        {
+          "payload_sha256": "73836856c1fbcc113ac01a6d4e7d58bc36ff58f7ba502d9fb0f279f7895f5ea9",
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload_sha256": "4430dde2a12fbb288852a02f814f116c7e6aaec8c939eeaacfe4ee8fae0e19af",
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload_sha256": "8b37666e763b897366c33ebf63055a2fd32f049e1623096adaeb3c115e531ca7",
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "answer": "15:15",
+      "arm": "fixed_depth",
+      "case_id": "time-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "fifo_fixed_depth",
+        "steps": 2,
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "cc18f081a32e5972aecdea6d5ff1b9507a2fdc355a7a2c365c6d8b53a03f7709",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "8b37666e763b897366c33ebf63055a2fd32f049e1623096adaeb3c115e531ca7",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "15:15",
+      "arm": "rei",
+      "case_id": "time-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "priority_epistemic_graph",
+        "evidence_state": "NEITHER",
+        "graph_audit_head": "fa96cf8c061a3c53b10110dde41dba7f1a610a78d80027700963c23c7c962a20",
+        "steps": 2,
+        "stop_reason": "frontier_exhausted",
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "cc18f081a32e5972aecdea6d5ff1b9507a2fdc355a7a2c365c6d8b53a03f7709",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "8b37666e763b897366c33ebf63055a2fd32f049e1623096adaeb3c115e531ca7",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": "20 C",
+      "arm": "baseline",
+      "case_id": "unknown-01",
+      "confidence": 0.8,
+      "error": null,
+      "model_calls": 1,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "single_pass"
+      },
+      "reported_tokens": 21,
+      "trace": [
+        {
+          "payload_sha256": "5cfd9ff85368738b448216dcf4988d36bbb09721f6b8a0e1b4dae29a4543a13c",
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "answer": "12 C",
+      "arm": "self_critique",
+      "case_id": "unknown-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 3,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "draft_critique_revise"
+      },
+      "reported_tokens": 59,
+      "trace": [
+        {
+          "payload_sha256": "97ee7ee20414fe81cbe1cdc86927d1d3293959772d819399507a848d0cd0e9a9",
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload_sha256": "4430dde2a12fbb288852a02f814f116c7e6aaec8c939eeaacfe4ee8fae0e19af",
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload_sha256": "248d5cdfef8a243361727d52f8d375d0a89ac843b08dd7dde586875a9876717f",
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "answer": "12 C",
+      "arm": "fixed_depth",
+      "case_id": "unknown-01",
+      "confidence": 0.7,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "fifo_fixed_depth",
+        "steps": 2,
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "4f2c55d058d2a570e4cb26e554a0bcbc9ee1845f5ca4f297ca405457f9665d2c",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "248d5cdfef8a243361727d52f8d375d0a89ac843b08dd7dde586875a9876717f",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": null,
+      "arm": "rei",
+      "case_id": "unknown-01",
+      "confidence": null,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "priority_epistemic_graph",
+        "evidence_state": "NEITHER",
+        "graph_audit_head": "fd366acc81ebc442696243a926f20784f060ec5055d0543a3c699c56321b88f4",
+        "steps": 2,
+        "stop_reason": "frontier_exhausted",
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "4f2c55d058d2a570e4cb26e554a0bcbc9ee1845f5ca4f297ca405457f9665d2c",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "b69e49e72461674f853cb00c1bfcb05dd6dfaa04aa46caf4171d1f9f76c5b8b7",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": null,
+      "arm": "baseline",
+      "case_id": "unknown-02",
+      "confidence": null,
+      "error": null,
+      "model_calls": 1,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "single_pass"
+      },
+      "reported_tokens": 21,
+      "trace": [
+        {
+          "payload_sha256": "b69e49e72461674f853cb00c1bfcb05dd6dfaa04aa46caf4171d1f9f76c5b8b7",
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "answer": null,
+      "arm": "self_critique",
+      "case_id": "unknown-02",
+      "confidence": null,
+      "error": null,
+      "model_calls": 3,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "draft_critique_revise"
+      },
+      "reported_tokens": 59,
+      "trace": [
+        {
+          "payload_sha256": "97ee7ee20414fe81cbe1cdc86927d1d3293959772d819399507a848d0cd0e9a9",
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload_sha256": "4430dde2a12fbb288852a02f814f116c7e6aaec8c939eeaacfe4ee8fae0e19af",
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload_sha256": "b69e49e72461674f853cb00c1bfcb05dd6dfaa04aa46caf4171d1f9f76c5b8b7",
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "answer": null,
+      "arm": "fixed_depth",
+      "case_id": "unknown-02",
+      "confidence": null,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "fifo_fixed_depth",
+        "steps": 2,
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "984ed39e49afa92552ad16e5b5f6ea14d1504b2607bf1123f1e206a9cc173ac8",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "b69e49e72461674f853cb00c1bfcb05dd6dfaa04aa46caf4171d1f9f76c5b8b7",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "answer": null,
+      "arm": "rei",
+      "case_id": "unknown-02",
+      "confidence": null,
+      "error": null,
+      "model_calls": 4,
+      "rationale": "Synthetic scripted fixture; no model and no verification.",
+      "reasoning": {
+        "algorithm": "priority_epistemic_graph",
+        "evidence_state": "NEITHER",
+        "graph_audit_head": "2a522c6e668aac0e36ae1146fbc56c99e06b09bdf733104be707d98128b246da",
+        "steps": 2,
+        "stop_reason": "frontier_exhausted",
+        "unresolved_questions": 0
+      },
+      "reported_tokens": 92,
+      "trace": [
+        {
+          "payload_sha256": "984ed39e49afa92552ad16e5b5f6ea14d1504b2607bf1123f1e206a9cc173ac8",
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "37984b74d787a1d315dc4494e434690e4c4c70bb6ae828a6ef334532ab1e05b5",
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload_sha256": "b69e49e72461674f853cb00c1bfcb05dd6dfaa04aa46caf4171d1f9f76c5b8b7",
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    }
+  ],
+  "paired_comparisons": {
+    "rei_minus_baseline": {
+      "bootstrap_95_percent_interval": [
+        0.0,
+        0.625
+      ],
+      "difference_on_exact_usage_matched_pairs": null,
+      "exact_reported_usage_matched_pairs": 0,
+      "paired_mean_difference": 0.25,
+      "pairs": 8,
+      "repetitions": 1000
+    },
+    "rei_minus_fixed_depth": {
+      "bootstrap_95_percent_interval": [
+        -0.25,
+        0.5
+      ],
+      "difference_on_exact_usage_matched_pairs": 0.125,
+      "exact_reported_usage_matched_pairs": 8,
+      "paired_mean_difference": 0.125,
+      "pairs": 8,
+      "repetitions": 1000
+    },
+    "rei_minus_self_critique": {
+      "bootstrap_95_percent_interval": [
+        -0.375,
+        0.375
+      ],
+      "difference_on_exact_usage_matched_pairs": null,
+      "exact_reported_usage_matched_pairs": 0,
+      "paired_mean_difference": 0.0,
+      "pairs": 8,
+      "repetitions": 1000
+    }
+  },
+  "provider_fingerprint": "87045100f87072d033ec5f91820964a0b9b5797cc04f46250d13e84af97ec707",
+  "report_sha256": "52e7d387985f6a3e8f6eb5df75bee17a61d55e1e83331ce32528e67e34f30e3b",
+  "schema": "rei0.benchmark.report.v1",
+  "seed": 7,
+  "summary": {
+    "baseline": {
+      "abstention_rate": 0.125,
+      "answerable_accuracy": 0.6666666666666666,
+      "brier_on_answered_with_confidence": 0.29714285714285715,
+      "cases": 8,
+      "confidence_sample_count": 7,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.5,
+      "overall_success": 0.625,
+      "selective_accuracy": 0.6666666666666666,
+      "total_model_calls": 8,
+      "total_reported_tokens": 168
+    },
+    "fixed_depth": {
+      "abstention_rate": 0.125,
+      "answerable_accuracy": 0.8333333333333334,
+      "brier_on_answered_with_confidence": 0.20428571428571426,
+      "cases": 8,
+      "confidence_sample_count": 7,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.5,
+      "overall_success": 0.75,
+      "selective_accuracy": 0.8333333333333334,
+      "total_model_calls": 32,
+      "total_reported_tokens": 736
+    },
+    "rei": {
+      "abstention_rate": 0.25,
+      "answerable_accuracy": 0.8333333333333334,
+      "brier_on_answered_with_confidence": 0.15666666666666668,
+      "cases": 8,
+      "confidence_sample_count": 6,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.0,
+      "overall_success": 0.875,
+      "selective_accuracy": 0.8333333333333334,
+      "total_model_calls": 32,
+      "total_reported_tokens": 736
+    },
+    "self_critique": {
+      "abstention_rate": 0.125,
+      "answerable_accuracy": 1.0,
+      "brier_on_answered_with_confidence": 0.14714285714285716,
+      "cases": 8,
+      "confidence_sample_count": 7,
+      "coverage_answerable": 1.0,
+      "failed_runs": 0,
+      "false_answer_rate_unanswerable": 0.5,
+      "overall_success": 0.875,
+      "selective_accuracy": 1.0,
+      "total_model_calls": 24,
+      "total_reported_tokens": 472
+    }
+  },
+  "warnings": [
+    "Scripted fixture results are synthetic integration tests, not evidence of comparative AI ability.",
+    "Identical maximum budgets do not imply identical consumed tokens or model calls.",
+    "Exact-match reference grading cannot assess all valid semantic paraphrases.",
+    "All model-generated arguments remain provisional; no independent source verification is performed by this benchmark.",
+    "Report checksum is not an authenticated signature; preserve its hash externally."
+  ]
+}
