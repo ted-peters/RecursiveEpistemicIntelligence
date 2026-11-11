@@ -1,0 +1,125 @@
+{
+  "cases": [
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-cal-arithmetic-01",
+      "question": "Compute ((84 × 9 − 25 − 14) × 3) − 22. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-cal-arithmetic-02",
+      "question": "Compute ((26 × 4 − 19 + 8) × 7) − 23. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-cal-arithmetic-03",
+      "question": "Compute ((38 × 9 − 46 + 14) × 8) − 23. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-cal-arithmetic-04",
+      "question": "Compute ((61 × 7 − 23 − 16) × 3) − 31. Return the integer only."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: B is TRUE. Rules: if B is TRUE then D is TRUE; if A is TRUE then D is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-cal-logic-01",
+      "question": "Is B logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: A is TRUE, D is TRUE. Rules: if A is TRUE then B is TRUE; if B is TRUE then D is TRUE; if C is TRUE then D is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-cal-logic-02",
+      "question": "Is B logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: C is TRUE. Rules: if A is TRUE then C is TRUE; if A is TRUE then D is TRUE; if B is TRUE then C is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-cal-logic-03",
+      "question": "Is A logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: D is TRUE. Rules: if D is TRUE then A is TRUE; if D is TRUE then C is TRUE; if C is TRUE then D is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-cal-logic-04",
+      "question": "Is B logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-NEG-9, side ATTACK\nPENDING document D4, origin S-PENDING2, side ATTACK",
+      "id": "C5-cal-evidence-01",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-POS-39, side SUPPORT\nACCEPT document D4, origin S-POS-39, side SUPPORT\nPENDING document D5, origin S-PENDING2, side ATTACK",
+      "id": "C5-cal-evidence-02",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nPENDING document D3, origin S-PENDING2, side ATTACK",
+      "id": "C5-cal-evidence-03",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-POS-96, side SUPPORT\nACCEPT document D4, origin S-NEG-84, side ATTACK\nACCEPT document D5, origin S-NEG-84, side ATTACK\nPENDING document D6, origin S-PENDING2, side ATTACK",
+      "id": "C5-cal-evidence-04",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=SUPPORT_ONLY, P2=SUPPORT_ONLY, P3=ATTACK_ONLY, P4=BOTH. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: no support; no attack. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-cal-dependency-01",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=SUPPORT_ONLY, P2=SUPPORT_ONLY, P3=BOTH, P4=ATTACK_ONLY. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: SUPPORT; ATTACK. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-cal-dependency-02",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=NEITHER, P2=NEITHER, P3=BOTH, P4=BOTH. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: no support; ATTACK. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-cal-dependency-03",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=BOTH, P2=BOTH, P3=ATTACK_ONLY, P4=SUPPORT_ONLY. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: no support; no attack. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-cal-dependency-04",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Two integers x and y are positive, x + y = 50. No other equations or measurements are available.",
+      "id": "C5-cal-insufficient_information-01",
+      "question": "What is the exact value of x? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Sensors X and Y are linked by X = Y + 3. No numeric value of either X or Y is recorded.",
+      "id": "C5-cal-insufficient_information-02",
+      "question": "What is the exact numeric value of Y? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Two integers x and y are positive, x + y = 35. No other equations or measurements are available.",
+      "id": "C5-cal-insufficient_information-03",
+      "question": "What is the exact value of x? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Sensors X and Y are linked by X = Y + 11. No numeric value of either X or Y is recorded.",
+      "id": "C5-cal-insufficient_information-04",
+      "question": "What is the exact numeric value of Y? If not uniquely determined, return a null answer."
+    }
+  ],
+  "schema": "rei0.benchmark.cases.v1"
+}

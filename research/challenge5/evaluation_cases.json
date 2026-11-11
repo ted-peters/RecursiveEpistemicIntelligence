@@ -1,0 +1,365 @@
+{
+  "cases": [
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-01",
+      "question": "Compute ((87 × 13 − 38 − 18) × 5) − 10. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-02",
+      "question": "Compute ((70 × 13 − 26 + 6) × 7) − 35. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-03",
+      "question": "Compute ((33 × 9 − 36 + 20) × 2) − 33. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-04",
+      "question": "Compute ((88 × 6 − 23 − 17) × 3) − 22. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-05",
+      "question": "Compute ((66 × 19 − 8 + 15) × 8) − 21. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-06",
+      "question": "Compute ((71 × 12 − 34 + 13) × 8) − 3. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-07",
+      "question": "Compute ((61 × 16 − 46 − 10) × 5) − 8. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-08",
+      "question": "Compute ((77 × 12 − 30 + 6) × 6) − 10. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-09",
+      "question": "Compute ((73 × 4 − 33 + 18) × 8) − 27. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-10",
+      "question": "Compute ((76 × 10 − 19 − 3) × 4) − 10. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-11",
+      "question": "Compute ((80 × 12 − 14 + 18) × 3) − 21. Return the integer only."
+    },
+    {
+      "category": "arithmetic",
+      "context": "All arithmetic operations are over integers; observe the parentheses.",
+      "id": "C5-eval-arithmetic-12",
+      "question": "Compute ((23 × 19 − 11 + 19) × 3) − 14. Return the integer only."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: B is TRUE. Rules: if C is TRUE then D is TRUE; if A is TRUE then D is TRUE; if C is TRUE then B is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-01",
+      "question": "Is B logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: A is TRUE, D is TRUE. Rules: if D is TRUE then C is TRUE; if A is TRUE then D is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-02",
+      "question": "Is D logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: D is TRUE, A is TRUE. Rules: if D is TRUE then C is TRUE; if B is TRUE then A is TRUE; if A is TRUE then B is TRUE; if D is TRUE then B is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-03",
+      "question": "Is C logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: C is TRUE, B is TRUE. Rules: if C is TRUE then A is TRUE; if B is TRUE then C is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-04",
+      "question": "Is A logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: A is TRUE. Rules: if D is TRUE then C is TRUE; if C is TRUE then D is TRUE; if B is TRUE then C is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-05",
+      "question": "Is B logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: D is TRUE, A is TRUE. Rules: if A is TRUE then B is TRUE; if A is TRUE then C is TRUE; if D is TRUE then C is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-06",
+      "question": "Is C logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: C is TRUE, B is TRUE. Rules: if D is TRUE then A is TRUE; if C is TRUE then D is TRUE; if B is TRUE then C is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-07",
+      "question": "Is C logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: C is TRUE. Rules: if B is TRUE then A is TRUE; if A is TRUE then C is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-08",
+      "question": "Is D logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: C is TRUE. Rules: if D is TRUE then A is TRUE; if A is TRUE then D is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-09",
+      "question": "Is D logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: C is TRUE. Rules: if D is TRUE then B is TRUE; if D is TRUE then A is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-10",
+      "question": "Is A logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: D is TRUE, B is TRUE. Rules: if D is TRUE then B is TRUE; if C is TRUE then D is TRUE; if B is TRUE then D is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-11",
+      "question": "Is C logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "logic",
+      "context": "Facts: C is TRUE. Rules: if C is TRUE then B is TRUE; if B is TRUE then C is TRUE; if A is TRUE then D is TRUE; if D is TRUE then C is TRUE. No converse rules are assumed. Other propositions may be true or false; use all models consistent with the facts and rules.",
+      "id": "C5-eval-logic-12",
+      "question": "Is A logically entailed by the facts and rules? Reply ENTAILED or NOT_ENTAILED."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-POS-63, side SUPPORT\nACCEPT document D4, origin S-NEG-76, side ATTACK\nPENDING document D5, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-01",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-NEG-51, side ATTACK\nACCEPT document D4, origin S-NEG-51, side ATTACK\nPENDING document D5, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-02",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-POS-83, side SUPPORT\nACCEPT document D4, origin S-NEG-10, side ATTACK\nPENDING document D5, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-03",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nPENDING document D3, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-04",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-POS-13, side SUPPORT\nACCEPT document D4, origin S-POS-13, side SUPPORT\nACCEPT document D5, origin S-NEG-90, side ATTACK\nACCEPT document D6, origin S-NEG-90, side ATTACK\nPENDING document D7, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-05",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-NEG-5, side ATTACK\nPENDING document D4, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-06",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nPENDING document D3, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-07",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-POS-27, side SUPPORT\nACCEPT document D4, origin S-POS-27, side SUPPORT\nPENDING document D5, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-08",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-POS-92, side SUPPORT\nPENDING document D4, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-09",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nPENDING document D3, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-10",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-POS-58, side SUPPORT\nACCEPT document D4, origin S-POS-58, side SUPPORT\nPENDING document D5, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-11",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "evidence",
+      "context": "Each ACCEPT document counts only while not REVOKED. PENDING does not count. Documents sharing an origin are not independent studies. Any valid positive and negative evidence yields BOTH, regardless of the number of copies. Interpret records in chronological order:\nPENDING document D1, origin S-PENDING, side SUPPORT\nACCEPT document D2, origin S-REVOKED, side SUPPORT\nREVOKE document D2\nACCEPT document D3, origin S-NEG-10, side ATTACK\nACCEPT document D4, origin S-NEG-10, side ATTACK\nPENDING document D5, origin S-PENDING2, side ATTACK",
+      "id": "C5-eval-evidence-12",
+      "question": "What is the final four-state information status of claim P? Reply only NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=NEITHER, P2=ATTACK_ONLY, P3=NEITHER, P4=ATTACK_ONLY. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: SUPPORT; ATTACK. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-01",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=SUPPORT_ONLY, P2=SUPPORT_ONLY, P3=NEITHER, P4=NEITHER. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: no support; no attack. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-02",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=BOTH, P2=ATTACK_ONLY, P3=ATTACK_ONLY, P4=ATTACK_ONLY. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: SUPPORT; ATTACK. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-03",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=SUPPORT_ONLY, P2=SUPPORT_ONLY, P3=SUPPORT_ONLY, P4=ATTACK_ONLY. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: SUPPORT; no attack. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-04",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=SUPPORT_ONLY, P2=BOTH, P3=NEITHER, P4=NEITHER. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: SUPPORT; no attack. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-05",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=BOTH, P2=ATTACK_ONLY, P3=NEITHER, P4=BOTH. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: no support; ATTACK. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-06",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=BOTH, P2=SUPPORT_ONLY, P3=SUPPORT_ONLY, P4=NEITHER. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: no support; no attack. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-07",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=SUPPORT_ONLY, P2=BOTH, P3=ATTACK_ONLY, P4=ATTACK_ONLY. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: no support; no attack. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-08",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=ATTACK_ONLY, P2=BOTH, P3=BOTH, P4=ATTACK_ONLY. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: no support; ATTACK. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-09",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=BOTH, P2=ATTACK_ONLY, P3=NEITHER, P4=ATTACK_ONLY. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: SUPPORT; ATTACK. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-10",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=SUPPORT_ONLY, P2=NEITHER, P3=SUPPORT_ONLY, P4=NEITHER. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: no support; no attack. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-11",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "dependency",
+      "context": "Premises: P1=NEITHER, P2=ATTACK_ONLY, P3=NEITHER, P4=NEITHER. Authorized positive rule: if P1 and P2 are both SUPPORT_ONLY, derive SUPPORT for Q. Authorized negative rule: if P3 and P4 are both SUPPORT_ONLY, derive ATTACK for Q. Direct recorded evidence for Q: no support; ATTACK. A disputed BOTH premise blocks its rule. Combine direct and derived evidence without explosion.",
+      "id": "C5-eval-dependency-12",
+      "question": "What is Q's resulting information status after evaluating only the listed rules? Reply NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Two integers x and y are positive, x + y = 30. No other equations or measurements are available.",
+      "id": "C5-eval-insufficient_information-01",
+      "question": "What is the exact value of x? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Sensors X and Y are linked by X = Y + 16. No numeric value of either X or Y is recorded.",
+      "id": "C5-eval-insufficient_information-02",
+      "question": "What is the exact numeric value of Y? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Two integers x and y are positive, x + y = 46. No other equations or measurements are available.",
+      "id": "C5-eval-insufficient_information-03",
+      "question": "What is the exact value of x? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Sensors X and Y are linked by X = Y + 12. No numeric value of either X or Y is recorded.",
+      "id": "C5-eval-insufficient_information-04",
+      "question": "What is the exact numeric value of Y? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Two integers x and y are positive, x + y = 72. No other equations or measurements are available.",
+      "id": "C5-eval-insufficient_information-05",
+      "question": "What is the exact value of x? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Sensors X and Y are linked by X = Y + 6. No numeric value of either X or Y is recorded.",
+      "id": "C5-eval-insufficient_information-06",
+      "question": "What is the exact numeric value of Y? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Two integers x and y are positive, x + y = 53. No other equations or measurements are available.",
+      "id": "C5-eval-insufficient_information-07",
+      "question": "What is the exact value of x? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Sensors X and Y are linked by X = Y + 2. No numeric value of either X or Y is recorded.",
+      "id": "C5-eval-insufficient_information-08",
+      "question": "What is the exact numeric value of Y? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Two integers x and y are positive, x + y = 71. No other equations or measurements are available.",
+      "id": "C5-eval-insufficient_information-09",
+      "question": "What is the exact value of x? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Sensors X and Y are linked by X = Y + 7. No numeric value of either X or Y is recorded.",
+      "id": "C5-eval-insufficient_information-10",
+      "question": "What is the exact numeric value of Y? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Two integers x and y are positive, x + y = 56. No other equations or measurements are available.",
+      "id": "C5-eval-insufficient_information-11",
+      "question": "What is the exact value of x? If not uniquely determined, return a null answer."
+    },
+    {
+      "category": "insufficient_information",
+      "context": "Sensors X and Y are linked by X = Y + 13. No numeric value of either X or Y is recorded.",
+      "id": "C5-eval-insufficient_information-12",
+      "question": "What is the exact numeric value of Y? If not uniquely determined, return a null answer."
+    }
+  ],
+  "schema": "rei0.benchmark.cases.v1"
+}
