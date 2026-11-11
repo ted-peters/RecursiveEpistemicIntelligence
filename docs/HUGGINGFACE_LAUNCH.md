@@ -11,22 +11,21 @@ The original optional Gradio application remains available in `space/`, but the 
 ## One-time Hugging Face setup
 
 1. Sign in or create an account at <https://huggingface.co/join>.
-2. Open <https://huggingface.co/new-space> and create a **Public** Space. A suggested name is `rei-interactive` (choose your own available name). Under SDK, select **Static**. The Space is owned by your Hugging Face account; your Hugging Face username does not need to equal your GitHub username.
+2. The owner has supplied the intended Space: **<https://huggingface.co/spaces/tedpeters/RecursiveEpistemicIntelligence>**. Confirm it is **Public**, and that the **SDK is Static**. If it was created as Gradio or Docker, use the Hugging Face Space settings or the repository README SDK metadata to switch to Static before final launch.
 3. In the Space, open **Settings → Trusted Publishers → Add**. Configure:
    - **Provider:** GitHub Actions
    - **Repository:** `ted-peters/RecursiveEpistemicIntelligence`
    - **Branch:** `main`
    - **Workflow:** `publish-huggingface.yml`
    - **Permission:** allow writing (do not mark read-only)
-4. Send the full Space URL (`https://huggingface.co/spaces/YOUR-USERNAME/YOUR-SPACE-NAME`) back to ChatGPT. **Do not send passwords, tokens, or other secret credentials.** The assistant can then set up the matching GitHub deployment target; alternatively you can set the repository variable yourself using step 5.
-5. Optional do-it-yourself configuration: Go to [GitHub repository Actions variables](https://github.com/ted-peters/RecursiveEpistemicIntelligence/settings/variables/actions), choose **New repository variable**, and set name `HF_SPACE_ID`, value `YOUR-USERNAME/YOUR-SPACE-NAME` (no `spaces/` prefix).
-6. Open [GitHub Actions](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/workflows/publish-huggingface.yml). Select **Run workflow** on `main` once `HF_SPACE_ID` is configured. Future updates to `space-static/` automatically publish on a push to `main`.
-7. Check your Hugging Face Space URL. You should see the interactive REI dashboard. On first visit the browser downloads Pyodide; subsequent visits are usually faster.
+4. The GitHub deployment target is now fixed to `tedpeters/RecursiveEpistemicIntelligence`; no GitHub repository variable or API token is needed. **Do not share passwords or access tokens.**
+5. After authorizing Trusted Publishers, open [GitHub Actions](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/workflows/publish-huggingface.yml), select **Run workflow** on `main`, and confirm the job succeeds. Future updates to `space-static/` automatically publish when pushed to `main`.
+6. Visit <https://huggingface.co/spaces/tedpeters/RecursiveEpistemicIntelligence> and check the interactive REI dashboard. The browser downloads Pyodide on first use.
 
 ### Troubleshooting
 
-- **Job skipped:** GitHub repository variable `HF_SPACE_ID` is not configured.
-- **Trusted Publisher authorization error (`invalid_grant`):** Confirm the Hugging Face repo Settings → Trusted Publishers entries exactly match the GitHub repo, `main` branch, and `publish-huggingface.yml`. If the Space was renamed, update `HF_SPACE_ID`.
+- **Workflow fails with an OIDC authorization error:** Add the GitHub Actions Trusted Publisher to the specific Space under its Settings (step 3), then rerun the workflow.
+- **Trusted Publisher authorization error (`invalid_grant`):** Confirm the Hugging Face repo Settings → Trusted Publishers entries exactly match the GitHub repo, `main` branch, and `publish-huggingface.yml`. If the Space was renamed, update the `HF_SPACE_ID` and `HF_OIDC_RESOURCE` workflow values.
 - **HTTP 402 / billing error:** You likely created a Gradio or Docker Space. Create a new *Static* Space instead. The static runtime runs in the visitor's browser and requires no paid hardware.
 - **Page says Python could not load:** The visitor's browser or firewall blocked the pinned Pyodide CDN. Try a modern browser with network access to `cdn.jsdelivr.net`.
 - **Python module unavailable:** Verify the GitHub workflow uploaded the entire `space-static/` directory, including `driver.py` and `rei0/`.
