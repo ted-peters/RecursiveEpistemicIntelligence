@@ -1,0 +1,1365 @@
+{
+  "records": [
+    {
+      "arm": "baseline",
+      "case_id": "arith-01",
+      "turns": [
+        {
+          "payload": {
+            "answer": "21",
+            "confidence": 0.8,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "arm": "self_critique",
+      "case_id": "arith-01",
+      "turns": [
+        {
+          "payload": {
+            "answer": "21",
+            "confidence": 0.6,
+            "rationale": "Scripted initial draft; no model inference."
+          },
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload": {
+            "critique": "Check uncertain assumptions and arithmetic."
+          },
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload": {
+            "answer": "21",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "arm": "fixed_depth",
+      "case_id": "arith-01",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of What is 12 + 9? Answer with just the number.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "21",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "rei",
+      "case_id": "arith-01",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of What is 12 + 9? Answer with just the number.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "21",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "baseline",
+      "case_id": "arith-02",
+      "turns": [
+        {
+          "payload": {
+            "answer": "5",
+            "confidence": 0.8,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "arm": "self_critique",
+      "case_id": "arith-02",
+      "turns": [
+        {
+          "payload": {
+            "answer": "4",
+            "confidence": 0.6,
+            "rationale": "Scripted initial draft; no model inference."
+          },
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload": {
+            "critique": "Check uncertain assumptions and arithmetic."
+          },
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload": {
+            "answer": "4",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "arm": "fixed_depth",
+      "case_id": "arith-02",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of A box has 3 red and 2 blue marbles. One red marble is removed. How many total marbles remain? Answer with the number.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "4",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "rei",
+      "case_id": "arith-02",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of A box has 3 red and 2 blue marbles. One red marble is removed. How many total marbles remain? Answer with the number.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "5",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "baseline",
+      "case_id": "unknown-01",
+      "turns": [
+        {
+          "payload": {
+            "answer": "20 C",
+            "confidence": 0.8,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "arm": "self_critique",
+      "case_id": "unknown-01",
+      "turns": [
+        {
+          "payload": {
+            "answer": null,
+            "confidence": null,
+            "rationale": "Scripted initial draft; no model inference."
+          },
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload": {
+            "critique": "Check uncertain assumptions and arithmetic."
+          },
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload": {
+            "answer": "12 C",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "arm": "fixed_depth",
+      "case_id": "unknown-01",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of Two sensors report different temperatures for the same exact instant. No reliability information is provided. What was the exact temperature?",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "12 C",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "rei",
+      "case_id": "unknown-01",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of Two sensors report different temperatures for the same exact instant. No reliability information is provided. What was the exact temperature?",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": null,
+            "confidence": null,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "baseline",
+      "case_id": "logic-01",
+      "turns": [
+        {
+          "payload": {
+            "answer": "yes",
+            "confidence": 0.8,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "arm": "self_critique",
+      "case_id": "logic-01",
+      "turns": [
+        {
+          "payload": {
+            "answer": "yes",
+            "confidence": 0.6,
+            "rationale": "Scripted initial draft; no model inference."
+          },
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload": {
+            "critique": "Check uncertain assumptions and arithmetic."
+          },
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload": {
+            "answer": "yes",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "arm": "fixed_depth",
+      "case_id": "logic-01",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of If all glips are blips and all blips are slips, are all glips slips? Answer yes or no.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "yes",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "rei",
+      "case_id": "logic-01",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of If all glips are blips and all blips are slips, are all glips slips? Answer yes or no.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "yes",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "baseline",
+      "case_id": "arith-03",
+      "turns": [
+        {
+          "payload": {
+            "answer": "32",
+            "confidence": 0.8,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "arm": "self_critique",
+      "case_id": "arith-03",
+      "turns": [
+        {
+          "payload": {
+            "answer": "32",
+            "confidence": 0.6,
+            "rationale": "Scripted initial draft; no model inference."
+          },
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload": {
+            "critique": "Check uncertain assumptions and arithmetic."
+          },
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload": {
+            "answer": "32",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "arm": "fixed_depth",
+      "case_id": "arith-03",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of What is 2 raised to the fifth power? Answer with the number.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "32",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "rei",
+      "case_id": "arith-03",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of What is 2 raised to the fifth power? Answer with the number.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "32",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "baseline",
+      "case_id": "unknown-02",
+      "turns": [
+        {
+          "payload": {
+            "answer": null,
+            "confidence": null,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "arm": "self_critique",
+      "case_id": "unknown-02",
+      "turns": [
+        {
+          "payload": {
+            "answer": null,
+            "confidence": null,
+            "rationale": "Scripted initial draft; no model inference."
+          },
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload": {
+            "critique": "Check uncertain assumptions and arithmetic."
+          },
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload": {
+            "answer": null,
+            "confidence": null,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "arm": "fixed_depth",
+      "case_id": "unknown-02",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of An integer is known only to be even. What is its exact value?",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": null,
+            "confidence": null,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "rei",
+      "case_id": "unknown-02",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of An integer is known only to be even. What is its exact value?",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": null,
+            "confidence": null,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "baseline",
+      "case_id": "source-01",
+      "turns": [
+        {
+          "payload": {
+            "answer": "2",
+            "confidence": 0.8,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "arm": "self_critique",
+      "case_id": "source-01",
+      "turns": [
+        {
+          "payload": {
+            "answer": "1",
+            "confidence": 0.6,
+            "rationale": "Scripted initial draft; no model inference."
+          },
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload": {
+            "critique": "Check uncertain assumptions and arithmetic."
+          },
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload": {
+            "answer": "1",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "arm": "fixed_depth",
+      "case_id": "source-01",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of Two copies of the same original observation are cited. How many independent original observations do these copies establish? Answer with the number.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "2",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "rei",
+      "case_id": "source-01",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of Two copies of the same original observation are cited. How many independent original observations do these copies establish? Answer with the number.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "1",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "baseline",
+      "case_id": "time-01",
+      "turns": [
+        {
+          "payload": {
+            "answer": "15:15",
+            "confidence": 0.8,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 21
+        }
+      ]
+    },
+    {
+      "arm": "self_critique",
+      "case_id": "time-01",
+      "turns": [
+        {
+          "payload": {
+            "answer": "15:15",
+            "confidence": 0.6,
+            "rationale": "Scripted initial draft; no model inference."
+          },
+          "stage": "draft",
+          "tokens_used": 19
+        },
+        {
+          "payload": {
+            "critique": "Check uncertain assumptions and arithmetic."
+          },
+          "stage": "critique",
+          "tokens_used": 18
+        },
+        {
+          "payload": {
+            "answer": "15:15",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 22
+        }
+      ]
+    },
+    {
+      "arm": "fixed_depth",
+      "case_id": "time-01",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of In a 24-hour clock, what time is 90 minutes after 13:45? Use HH:MM.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "15:15",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    },
+    {
+      "arm": "rei",
+      "case_id": "time-01",
+      "turns": [
+        {
+          "payload": {
+            "claim": "Provisional analysis of In a 24-hour clock, what time is 90 minutes after 13:45? Use HH:MM.",
+            "questions": [
+              {
+                "priority": 7,
+                "target": "claim",
+                "text": "What supports this tentative answer?"
+              },
+              {
+                "priority": 9,
+                "target": "claim",
+                "text": "What counterexample or missing evidence challenges this answer?"
+              }
+            ]
+          },
+          "stage": "initial",
+          "tokens_used": 20
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "followups": [],
+            "note": "Synthetic expansion; no verified evidence.",
+            "objections": [
+              "An unsupported assumption may invalidate the conclusion."
+            ],
+            "reasons": [
+              "The question requires checking relevant assumptions."
+            ]
+          },
+          "stage": "expand",
+          "tokens_used": 24
+        },
+        {
+          "payload": {
+            "answer": "15:15",
+            "confidence": 0.7,
+            "rationale": "Synthetic scripted fixture; no model and no verification."
+          },
+          "stage": "final",
+          "tokens_used": 24
+        }
+      ]
+    }
+  ],
+  "schema": "rei0.benchmark.fixture.v1"
+}

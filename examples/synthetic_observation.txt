@@ -1,0 +1,3 @@
+SYNTHETIC TEST FIXTURE — NOT A VERIFIED REAL-WORLD SOURCE
+Example observation: a hypothetical test produced result X.
+This file exists only to demonstrate SHA-256 ingestion and audit replay.

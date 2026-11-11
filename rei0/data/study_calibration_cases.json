@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "category": "arithmetic",
+      "context": "",
+      "id": "arith-01",
+      "question": "What is 12 + 9? Answer with just the number."
+    },
+    {
+      "category": "uncertainty",
+      "context": "Sensor A: 12 C. Sensor B: 20 C. No additional observations.",
+      "id": "unknown-01",
+      "question": "Two sensors report different temperatures for the same exact instant. No reliability information is provided. What was the exact temperature?"
+    },
+    {
+      "category": "logic",
+      "context": "",
+      "id": "logic-01",
+      "question": "If all glips are blips and all blips are slips, are all glips slips? Answer yes or no."
+    },
+    {
+      "category": "provenance",
+      "context": "",
+      "id": "source-01",
+      "question": "Two copies of the same original observation are cited. How many independent original observations do these copies establish? Answer with the number."
+    }
+  ],
+  "schema": "rei0.benchmark.cases.v1"
+}

@@ -1,0 +1,32 @@
+{
+  "answers": [
+    {
+      "acceptable": [
+        "21"
+      ],
+      "case_id": "arith-01",
+      "unanswerable": false
+    },
+    {
+      "acceptable": [],
+      "case_id": "unknown-01",
+      "unanswerable": true
+    },
+    {
+      "acceptable": [
+        "yes"
+      ],
+      "case_id": "logic-01",
+      "unanswerable": false
+    },
+    {
+      "acceptable": [
+        "1",
+        "one"
+      ],
+      "case_id": "source-01",
+      "unanswerable": false
+    }
+  ],
+  "schema": "rei0.benchmark.keys.v1"
+}
