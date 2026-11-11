@@ -1,0 +1,11 @@
+{
+  "schema":"rei0.benchmark.keys.v1",
+  "answers":[
+    {"case_id":"c6-01-arith", "acceptable":["703"],"unanswerable":false},
+    {"case_id":"c6-02-arith", "acceptable":["294"],"unanswerable":false},
+    {"case_id":"c6-03-logic", "acceptable":["NOT_ENTAILED"],"unanswerable":false},
+    {"case_id":"c6-04-logic", "acceptable":["ENTAILED"],"unanswerable":false},
+    {"case_id":"c6-05-evidence", "acceptable":["BOTH"],"unanswerable":false},
+    {"case_id":"c6-06-unknown", "acceptable":[],"unanswerable":true}
+  ]
+}
