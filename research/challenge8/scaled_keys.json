@@ -1,0 +1,173 @@
+{
+  "schema": "rei0.benchmark.keys.v1",
+  "answers": [
+    {
+      "case_id": "c8-01-timeline",
+      "acceptable": [
+        "NEITHER"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-02-timeline",
+      "acceptable": [
+        "SUPPORT_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-03-timeline",
+      "acceptable": [
+        "ATTACK_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-04-timeline",
+      "acceptable": [
+        "BOTH"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-05-timeline",
+      "acceptable": [
+        "NEITHER"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-06-timeline",
+      "acceptable": [
+        "SUPPORT_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-07-timeline",
+      "acceptable": [
+        "ATTACK_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-08-timeline",
+      "acceptable": [
+        "BOTH"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-09-timeline",
+      "acceptable": [
+        "NEITHER"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-10-timeline",
+      "acceptable": [
+        "SUPPORT_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-11-timeline",
+      "acceptable": [
+        "ATTACK_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-12-timeline",
+      "acceptable": [
+        "BOTH"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-13-timeline",
+      "acceptable": [
+        "NEITHER"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-14-timeline",
+      "acceptable": [
+        "SUPPORT_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-15-timeline",
+      "acceptable": [
+        "ATTACK_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-16-timeline",
+      "acceptable": [
+        "BOTH"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-17-timeline",
+      "acceptable": [
+        "NEITHER"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-18-timeline",
+      "acceptable": [
+        "SUPPORT_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-19-timeline",
+      "acceptable": [
+        "ATTACK_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-20-timeline",
+      "acceptable": [
+        "BOTH"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-21-timeline",
+      "acceptable": [
+        "NEITHER"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-22-timeline",
+      "acceptable": [
+        "SUPPORT_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-23-timeline",
+      "acceptable": [
+        "ATTACK_ONLY"
+      ],
+      "unanswerable": false
+    },
+    {
+      "case_id": "c8-24-timeline",
+      "acceptable": [
+        "BOTH"
+      ],
+      "unanswerable": false
+    }
+  ]
+}
