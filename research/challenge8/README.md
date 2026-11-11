@@ -28,3 +28,32 @@ The 24-case set is generated deterministically from seed 20261111, balanced acro
 `python -m unittest discover -s tests -p test_challenge8.py -v` — test schema contracts, fail accounting, model request shape, oracle parity, and sharding, without downloading a model.
 
 GitHub Actions downloads the pinned model, runs actual inference on loopback, uploads independently regraded raw JSON outputs, and reports successes, errors and partial/unknown token usage. Results should be inspected **before** treating any method as more accurate or efficient.
+
+## Independent six-shard aggregation
+
+After the **manual** 24-case experiment finishes, the downstream
+`independently-grade-shards` job downloads every artifact and runs
+`research/challenge8/aggregate.py` using the original frozen public
+`scaled_cases.json` and `scaled_keys.json`.
+
+To verify six JSON results locally (one from each shard):
+
+`python -m research.challenge8.aggregate challenge8-results/shard-{0..5}.json --output challenge8-results/aggregate.json`
+
+The aggregator refuses incomplete or duplicate shard indices, altered
+benchmark reports, unexpected case/arm pairs, inconsistent model and inference
+configuration, and contradictory model-attempt telemetry. It regrades the
+**full 24-case paired result**, recomputes the paired bootstrap, and retains
+the individual report checksums. Token usage is reported separately as
+server-observed tokens including failed parses and calls with *unknown* usage.
+Missing usage is never treated as zero-cost inference.
+
+`python -m unittest discover -s tests -p test_challenge8_aggregate.py -v`
+tests this process with **synthetic fake model calls** and injected failures;
+test success does not demonstrate improved AI accuracy.
+
+The scale-up is still nonblind public synthetic development. Neither a passed
+aggregator nor a 24-case result is grounds for claiming REI superiority over
+strong conventional AI, or compute matching. Actual usage, failure counts,
+model limitations, and primary REI-versus-self-critique results must all be
+reported.
