@@ -23,6 +23,8 @@ jobs:
       - name: Verify dynamic ledger parity and public inputs before model inference
         run: |
           python -m unittest discover -s tests -p 'test_challenge7.py' -v
+          # Fail before building/downloading the 4B model if imports or CLI packaging break.
+          python -m research.challenge7.run_dynamic --help >/dev/null
       - name: Install pinned llama.cpp engine
         run: |
           git clone -q --depth 1 --branch b12242 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
@@ -51,11 +53,11 @@ jobs:
           exit 1
       - name: Run real-model four-arm evidence revision test
         run: |
-          timeout 1700s python research/challenge7/run_dynamic.py \
+          timeout 1700s python -m research.challenge7.run_dynamic \
             --model-file /tmp/c7-model/model.gguf \
             --engine-commit "$(cat /tmp/llama_commit.txt)" \
             --output challenge7-results/pilot.json
-          python research/challenge7/run_dynamic.py \
+          python -m research.challenge7.run_dynamic \
             --model-file /tmp/c7-model/model.gguf \
             --engine-commit "$(cat /tmp/llama_commit.txt)" \
             --output challenge7-results/pilot.json --verify-only
