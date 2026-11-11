@@ -1,0 +1,42 @@
+name: Publish REI interactive Space
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'space-static/**'
+      - 'tests/test_static_space.py'
+      - '.github/workflows/publish-huggingface.yml'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    # The Space must be created under the owner's Hugging Face account first.
+    # The owner can share their Space URL with ChatGPT to configure this variable.
+    if: ${{ vars.HF_SPACE_ID != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate public browser demonstration
+        run: python -m unittest discover -s tests -p test_static_space.py -v
+      - name: Install Hugging Face CLI (OIDC-capable)
+        run: python -m pip install 'huggingface_hub>=1.19,<2'
+      - name: Upload free static demo to Hugging Face
+        env:
+          HF_SPACE_ID: ${{ vars.HF_SPACE_ID }}
+          HF_OIDC_RESOURCE: spaces/${{ vars.HF_SPACE_ID }}
+        run: |
+          set -euo pipefail
+          hf upload "$HF_SPACE_ID" ./space-static . --repo-type space \
+            --commit-message "Publish REI browser demo from GitHub ${GITHUB_SHA::12}"

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Explore the actual REI-1.0 evidence graph in your browser: revisable beliefs, contradictory studies and source provenance." />
+<title>REI — Recursive Epistemic Intelligence</title>
+<style>
+:root {color-scheme: dark; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --bg:#09111e;--panel:#101f33;--panel2:#172b41;--border:#284258;--accent:#9bc7ff;--txt:#ecf3ff;--muted:#adc1d6;--good:#98edc6;--warn:#fed18b}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 9% 0%,#132c4c 0%,var(--bg) 50%);color:var(--txt)}
+main{max-width:1070px;margin:0 auto;padding:38px 22px 58px}a{color:#b8d5ff}a:hover{text-decoration-thickness:2px}
+.eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--accent)}
+h1{font-size:clamp(30px,4vw,52px);letter-spacing:-.04em;line-height:1.08;margin:13px 0 14px}h2{font-size:21px;margin:0 0 18px}p{line-height:1.6;color:var(--muted)}
+.hero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;margin-bottom:28px}.hero p{max-width:690px;font-size:16px}
+.brand{display:inline-flex;align-items:center;gap:9px;font-weight:700;color:var(--accent)}.logo{font-size:28px}.pill{font-size:12px;color:var(--good);border:1px solid #3c705f;border-radius:30px;padding:7px 12px;white-space:nowrap}
+.panel{border:1px solid var(--border);background:linear-gradient(150deg,var(--panel),#111c2e);border-radius:18px;padding:26px;margin:18px 0;box-shadow:0 14px 32px #040b1717}
+.grid{display:grid;grid-template-columns:1.65fr 1fr;gap:18px}.metric-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.metric{background:var(--panel2);padding:18px;border-radius:12px;border:1px solid #2e4960}.metric b{display:block;font-size:32px;margin-top:6px}.metric small{color:var(--muted)}
+.controls{display:flex;align-items:center;gap:14px;margin:18px 0}.controls input{width:100%;accent-color:#85b8fc;cursor:pointer}.num{font-weight:700;color:var(--accent);white-space:nowrap}
+.state{font-size:clamp(26px,4vw,34px);font-weight:850;letter-spacing:-.025em;color:var(--accent);margin:12px 0 6px}.state[data-state="BOTH"]{color:var(--warn)}.state[data-state="SUPPORT_ONLY"]{color:var(--good)}
+.steplist{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.step{border:1px solid var(--border);background:#16263c;color:var(--muted);padding:10px 3px;border-radius:9px;font-size:12px;cursor:pointer}.step[aria-pressed="true"]{border-color:#acd3ff;background:#244668;color:#fff;font-weight:800}.step:disabled{opacity:.45;cursor:wait}
+select{width:100%;background:#18324b;color:var(--txt);padding:12px;border:1px solid var(--border);border-radius:9px;font-size:15px}.statusline{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;margin:16px 0}.dot{width:8px;height:8px;background:var(--warn);border-radius:100%}.dot.ready{background:var(--good)}.dot.failed{background:#ffa9a9}
+details{border-top:1px solid var(--border);margin-top:20px;padding-top:14px}summary{cursor:pointer;font-weight:650;color:var(--accent)}pre{white-space:pre-wrap;word-break:break-word;background:#08121e;padding:12px;border-radius:9px;max-height:280px;overflow:auto;font-size:12px;color:#cadbec}
+.section-desc{margin-top:-6px}.fine{font-size:13px;line-height:1.65;color:#aebfd1}.legend{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}.legend div{background:#182d45;border-radius:10px;padding:12px;font-size:13px}.legend strong{display:block;color:#b8d6ff;margin-bottom:5px}
+footer{font-size:13px;color:#93a9bf;margin-top:35px}.aside-head{font-size:13px;font-weight:700;letter-spacing:.07em;color:#a9c3dd;text-transform:uppercase;margin-bottom:10px}
+@media(max-width:750px){.hero{grid-template-columns:1fr}.pill{justify-self:start}.grid{grid-template-columns:1fr}.panel{padding:20px}.metric{padding:13px}.legend{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){.panel{transition:border-color .2s}.panel:hover{border-color:#3a5c78}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero"><div><div class="brand"><span class="logo" aria-hidden="true">🧠</span> REI · Research Demonstration</div><h1>Recursive Epistemic<br />Intelligence</h1><p>What happens when evidence changes? Explore how a real, inspectable epistemic graph tracks conflicting sources, revocations, and provisional conclusions.</p></div><span class="pill">REAL REI GRAPH · FICTIONAL EVIDENCE</span></header>
+<div class="statusline" role="status" aria-live="polite"><span class="dot" id="runtime-dot" aria-hidden="true"></span><span id="runtime-status">Loading the Python reasoning engine in your browser…</span></div>
+<div class="grid">
+<section class="panel" aria-labelledby="investigation-title">
+  <span class="eyebrow">Experiment 01 / Changing evidence</span><h2 id="investigation-title">An unfolding investigation</h2>
+  <p class="section-desc">Six stages of a fictional durability investigation. Reports appear, contradict each other, and are revoked. REI re-evaluates the claim at every step.</p>
+  <div class="controls"><label for="stage" class="num" id="stage-label">Stage 3 of 6</label><input type="range" id="stage" min="1" max="6" value="3" step="1" disabled /></div>
+  <div class="steplist" role="group" aria-label="Choose investigation stage">
+    <button type="button" class="step" data-step="1" disabled>1</button><button type="button" class="step" data-step="2" disabled>2</button><button type="button" class="step" data-step="3" disabled>3</button><button type="button" class="step" data-step="4" disabled>4</button><button type="button" class="step" data-step="5" disabled>5</button><button type="button" class="step" data-step="6" disabled>6</button>
+  </div>
+  <p id="event" aria-live="polite">Engine initializing…</p>
+  <div class="aside-head">REI's current evidence state</div><div class="state" id="evidence-state" data-state="">—</div>
+  <p id="meaning">An assessment will appear after the original REI code loads.</p>
+  <div class="metric-row"><div class="metric"><small>Independent supporting groups</small><b id="support">—</b></div><div class="metric"><small>Independent opposing groups</small><b id="oppose">—</b></div></div>
+  <details><summary>Inspect the live graph audit</summary><pre id="audit">Waiting for Python.</pre></details>
+</section>
+<aside>
+ <section class="panel" aria-labelledby="states-title"><span class="eyebrow">Experiment 02 / Four evidence states</span><h2 id="states-title">Inspect example claims</h2><label for="claim" class="fine">Select a fictional claim already represented in the REI sample graph</label><select id="claim" disabled><option value="unassessed">Unassessed</option><option value="supported">Supported</option><option value="opposed">Opposed</option><option value="disputed" selected>Disputed</option><option value="isolated">Isolated</option></select><div class="state" id="case-state">—</div><p id="case-meaning">The graph will assess the selected claim.</p><details><summary>Inspect the claim assessment</summary><pre id="claim-audit">Waiting for Python.</pre></details></section>
+ <section class="panel"><span class="eyebrow">Scientific boundaries</span><h2>What this shows</h2><p class="fine">The original REI-1.0 Python graph logic is running locally in your browser—not a prerecorded chart.</p><p class="fine">The supporting and opposing sources and all approvals are simulated. Their presence records a fictional review decision, <strong>not factual truth</strong>.</p><p class="fine">No trained AI is deployed here. A budget-matched comparison with conventional language models is still outstanding.</p></section>
+</aside>
+</div>
+<section class="panel"><span class="eyebrow">How it works</span><h2>Four ways to handle evidence</h2><div class="legend"><div><strong>NEITHER</strong>No admissible evidence on either side</div><div><strong>SUPPORT_ONLY</strong>Currently admitted support, not proof</div><div><strong>ATTACK_ONLY</strong>Currently admitted opposition, not disproof</div><div><strong>BOTH</strong>Support and opposition coexist; conflict preserved</div></div><p class="fine">Source grouping prevents copied reports from being counted repeatedly, provided their shared origin is recorded. Every stage builds a graph and verifies that its event history can be replayed.</p></section>
+<footer><strong>Recursive Epistemic Intelligence</strong> · Experimental research software · <a href="https://github.com/ted-peters/RecursiveEpistemicIntelligence" target="_blank" rel="noopener noreferrer">Explore the source code</a><br />Python runs with Pyodide v0.29.5 in the visitor's browser; first load requires the public Pyodide CDN. No API keys or uploads.</footer>
+</main>
+<script defer src="https://cdn.jsdelivr.net/pyodide/v0.29.5/full/pyodide.js"></script>
+<script>
+"use strict";
+let pyodide = null;
+const $ = (id) => document.getElementById(id);
+function updateRuntime(text, kind){$('runtime-status').textContent=text;$('runtime-dot').className='dot '+(kind||'');}
+function stageResult(step){
+  if(!pyodide) return;
+  const n=Math.min(6,Math.max(1,Number(step)||1));
+  const result=JSON.parse(pyodide.runPython(`import json; json.dumps(history(${n}), ensure_ascii=False)`));
+  $('stage').value=String(n);$('stage-label').textContent=`Stage ${n} of 6`;
+  document.querySelectorAll('.step').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.step)===n)));
+  $('event').textContent=result.event;$('evidence-state').textContent=result.state;
+  $('evidence-state').dataset.state=result.state;$('meaning').textContent=result.description;
+  $('support').textContent=String(result.positive_groups);$('oppose').textContent=String(result.negative_groups);
+  $('audit').textContent=JSON.stringify(result,null,2);
+}
+function caseResult(name){
+  if(!pyodide) return;
+  const allowed=['unassessed','supported','opposed','disputed','isolated'];
+  if(!allowed.includes(name)) return;
+  pyodide.globals.set('case_name',name);
+  const result=JSON.parse(pyodide.runPython('import json; json.dumps(example(case_name), ensure_ascii=False)'));
+  $('case-state').textContent=result.state;$('case-meaning').textContent=result.description;
+  $('claim-audit').textContent=JSON.stringify(result.assessment,null,2);
+}
+$('stage').addEventListener('input', e=>stageResult(e.target.value));
+document.querySelectorAll('.step').forEach(b=>b.addEventListener('click',()=>stageResult(b.dataset.step)));
+$('claim').addEventListener('change',e=>caseResult(e.target.value));
+window.addEventListener('load',async()=>{
+  try{
+    if(typeof loadPyodide!=='function') throw Error('The Python runtime CDN was not available. Check network access and reload.');
+    pyodide=await loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.29.5/full/'});
+    pyodide.FS.mkdirTree('/home/pyodide/rei0');
+    for(const path of ['rei0/__init__.py','rei0/models.py','rei0/graph.py','rei0/demo.py','driver.py']){
+      const response=await fetch('./'+path,{cache:'no-store'});
+      if(!response.ok) throw Error(`Could not load ${path}: HTTP ${response.status}`);
+      pyodide.FS.writeFile('/home/pyodide/'+path,await response.text());
+    }
+    pyodide.runPython("import sys; sys.path.insert(0, '/home/pyodide'); from driver import history, example");
+    for(const element of document.querySelectorAll('button.step, #stage, #claim'))element.disabled=false;
+    updateRuntime('REI-1.0 Python graph loaded. Everything below is computed in your browser.','ready');
+    stageResult(3);caseResult('disputed');
+  }catch(err){
+    console.error('REI browser initialization failed:',err);
+    updateRuntime('Unable to start REI Python: '+String(err.message||err),'failed');
+    $('event').textContent='The research application could not initialize. Please reload the page or try another modern browser.';
+  }
+});
+</script>
+</body>
+</html>
