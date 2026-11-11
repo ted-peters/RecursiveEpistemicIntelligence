@@ -1,0 +1,75 @@
+name: REI Challenge 8 — 24-case sharded scale-up (manual)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  four-arm-shards:
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Validate synthetic case oracle and provider before compute
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge8.py -v
+          python -m research.challenge8.run_structured --help >/dev/null
+      - name: Build pinned llama.cpp engine
+        run: |
+          git clone -q --depth 1 --branch b12242 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+          git -C /tmp/llama.cpp rev-parse HEAD > /tmp/llama_commit.txt
+          cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=OFF -DGGML_NATIVE=ON
+          cmake --build /tmp/llama.cpp/build -j 4 --target llama-server
+      - name: Download verified open-weight model
+        run: |
+          mkdir -p /tmp/c8-model
+          curl -L --fail --retry 2 --connect-timeout 30 \
+            'https://huggingface.co/fzhnk/qwen3-4b-instruct-2507-gguf/resolve/main/qwen3-4b-instruct-2507-q4_K_M.gguf' \
+            -o /tmp/c8-model/model.gguf
+          echo '85e4a5b7b8ef0e48af0e8658f5aaab9c2324c76c1641493f4d1e25fce54b18b9  /tmp/c8-model/model.gguf' | sha256sum -c
+      - name: Launch local inference service
+        run: |
+          /tmp/llama.cpp/build/bin/llama-server -m /tmp/c8-model/model.gguf \
+            --alias qwen3-4b-instruct-2507-q4_k_m --host 127.0.0.1 --port 8099 -c 8192 -t 4 -np 1 \
+            > /tmp/c8-server.log 2>&1 &
+          for n in $(seq 1 90); do
+            if curl --fail -s http://127.0.0.1:8099/health | grep -q 'ok'; then exit 0; fi
+            sleep 2
+          done
+          tail -100 /tmp/c8-server.log
+          exit 1
+      - name: Score four actual model methods on four unique synthetic cases
+        run: |
+          timeout 3000s python -m research.challenge8.run_structured \
+            --cases research/challenge8/scaled_cases.json \
+            --keys research/challenge8/scaled_keys.json \
+            --shard-index "${{ matrix.shard }}" --shard-count 6 \
+            --model-file /tmp/c8-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge8-results/shard-${{ matrix.shard }}.json
+          python -m research.challenge8.run_structured \
+            --cases research/challenge8/scaled_cases.json \
+            --keys research/challenge8/scaled_keys.json \
+            --shard-index "${{ matrix.shard }}" --shard-count 6 \
+            --model-file /tmp/c8-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge8-results/shard-${{ matrix.shard }}.json --verify-only
+      - name: Upload shard results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge8-24case-shard-${{ matrix.shard }}
+          path: |
+            challenge8-results/shard-${{ matrix.shard }}.json
+            research/challenge8/scaled_cases.json
+            research/challenge8/scaled_keys.json
+          retention-days: 90
+          if-no-files-found: warn

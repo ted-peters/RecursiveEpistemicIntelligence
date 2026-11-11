@@ -1,0 +1,70 @@
+name: REI Challenge 8 — Schema-constrained six-case pilot
+on:
+  push:
+    branches: [challenge8-structured-output]
+    paths:
+      - 'research/challenge8/**'
+      - 'tests/test_challenge8.py'
+      - '.github/workflows/challenge8-structured-smoke.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  schema-sixcase:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install REI package and preflight
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge8.py -v
+          python -m research.challenge8.run_structured --help >/dev/null
+      - name: Build pinned llama.cpp inference engine
+        run: |
+          git clone -q --depth 1 --branch b12242 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+          git -C /tmp/llama.cpp rev-parse HEAD > /tmp/llama_commit.txt
+          cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=OFF -DGGML_NATIVE=ON
+          cmake --build /tmp/llama.cpp/build -j 4 --target llama-server
+      - name: Download SHA-256-pinned Qwen3 4B open-weight model
+        run: |
+          mkdir -p /tmp/c8-model
+          curl -L --fail --retry 2 --connect-timeout 30 \
+            'https://huggingface.co/fzhnk/qwen3-4b-instruct-2507-gguf/resolve/main/qwen3-4b-instruct-2507-q4_K_M.gguf' \
+            -o /tmp/c8-model/model.gguf
+          echo '85e4a5b7b8ef0e48af0e8658f5aaab9c2324c76c1641493f4d1e25fce54b18b9  /tmp/c8-model/model.gguf' | sha256sum -c
+      - name: Start local model server
+        run: |
+          /tmp/llama.cpp/build/bin/llama-server -m /tmp/c8-model/model.gguf \
+            --alias qwen3-4b-instruct-2507-q4_k_m --host 127.0.0.1 --port 8099 -c 8192 -t 4 -np 1 \
+            > /tmp/c8-server.log 2>&1 &
+          for n in $(seq 1 90); do
+            if curl --fail -s http://127.0.0.1:8099/health | grep -q 'ok'; then exit 0; fi
+            sleep 2
+          done
+          tail -100 /tmp/c8-server.log
+          exit 1
+      - name: Execute six-case four-arm model experiment
+        run: |
+          timeout 3000s python -m research.challenge8.run_structured \
+            --model-file /tmp/c8-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge8-results/structured-six.json
+          python -m research.challenge8.run_structured \
+            --model-file /tmp/c8-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge8-results/structured-six.json --verify-only
+      - name: Preserve results for independent grading
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge8-sixcase-structured-real-model
+          path: |
+            challenge8-results/structured-six.json
+            research/challenge7/cases.json
+            research/challenge7/keys.json
+          retention-days: 90
+          if-no-files-found: warn

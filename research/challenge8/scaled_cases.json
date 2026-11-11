@@ -1,0 +1,149 @@
+{
+  "schema": "rei0.benchmark.cases.v1",
+  "cases": [
+    {
+      "id": "c8-01-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. PENDING report D5 from origin study-00-delta on side SUPPORT\n2. ACCEPT report D1 from origin study-00-alpha on side SUPPORT\n3. ACCEPT report D2 from origin study-00-alpha on side SUPPORT\n4. ACCEPT report D3 from origin study-00-beta on side ATTACK\n5. PENDING report D4 from origin study-00-gamma on side ATTACK\n6. APPROVE report D4\n7. REVOKE report D2\n8. REVOKE report D3\n9. REVOKE report D1\n10. REVOKE report D4",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-02-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D3 from origin study-01-beta on side ATTACK\n2. PENDING report D5 from origin study-01-delta on side SUPPORT\n3. PENDING report D4 from origin study-01-gamma on side ATTACK\n4. ACCEPT report D1 from origin study-01-alpha on side SUPPORT\n5. ACCEPT report D2 from origin study-01-alpha on side SUPPORT\n6. APPROVE report D4\n7. APPROVE report D5\n8. REVOKE report D2\n9. REVOKE report D3\n10. REVOKE report D4",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-03-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D2 from origin study-02-alpha on side SUPPORT\n2. PENDING report D5 from origin study-02-delta on side SUPPORT\n3. PENDING report D4 from origin study-02-gamma on side ATTACK\n4. ACCEPT report D3 from origin study-02-beta on side ATTACK\n5. ACCEPT report D1 from origin study-02-alpha on side SUPPORT\n6. APPROVE report D5\n7. APPROVE report D4\n8. REVOKE report D2\n9. REVOKE report D1\n10. REVOKE report D5",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-04-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D2 from origin study-03-alpha on side SUPPORT\n2. PENDING report D5 from origin study-03-delta on side SUPPORT\n3. ACCEPT report D1 from origin study-03-alpha on side SUPPORT\n4. ACCEPT report D3 from origin study-03-beta on side ATTACK\n5. PENDING report D4 from origin study-03-gamma on side ATTACK\n6. APPROVE report D5\n7. REVOKE report D2",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-05-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D1 from origin study-04-alpha on side SUPPORT\n2. PENDING report D4 from origin study-04-gamma on side ATTACK\n3. PENDING report D5 from origin study-04-delta on side SUPPORT\n4. ACCEPT report D3 from origin study-04-beta on side ATTACK\n5. ACCEPT report D2 from origin study-04-alpha on side SUPPORT\n6. APPROVE report D4\n7. REVOKE report D2\n8. REVOKE report D4\n9. REVOKE report D1\n10. REVOKE report D3",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-06-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D3 from origin study-05-beta on side ATTACK\n2. PENDING report D4 from origin study-05-gamma on side ATTACK\n3. ACCEPT report D1 from origin study-05-alpha on side SUPPORT\n4. PENDING report D5 from origin study-05-delta on side SUPPORT\n5. ACCEPT report D2 from origin study-05-alpha on side SUPPORT\n6. APPROVE report D5\n7. APPROVE report D4\n8. REVOKE report D2\n9. REVOKE report D3\n10. REVOKE report D4",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-07-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. PENDING report D5 from origin study-06-delta on side SUPPORT\n2. ACCEPT report D2 from origin study-06-alpha on side SUPPORT\n3. PENDING report D4 from origin study-06-gamma on side ATTACK\n4. ACCEPT report D1 from origin study-06-alpha on side SUPPORT\n5. ACCEPT report D3 from origin study-06-beta on side ATTACK\n6. APPROVE report D5\n7. APPROVE report D4\n8. REVOKE report D2\n9. REVOKE report D5\n10. REVOKE report D1",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-08-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D3 from origin study-07-beta on side ATTACK\n2. PENDING report D5 from origin study-07-delta on side SUPPORT\n3. ACCEPT report D2 from origin study-07-alpha on side SUPPORT\n4. PENDING report D4 from origin study-07-gamma on side ATTACK\n5. ACCEPT report D1 from origin study-07-alpha on side SUPPORT\n6. APPROVE report D4\n7. REVOKE report D2",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-09-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D3 from origin study-08-beta on side ATTACK\n2. PENDING report D5 from origin study-08-delta on side SUPPORT\n3. ACCEPT report D1 from origin study-08-alpha on side SUPPORT\n4. PENDING report D4 from origin study-08-gamma on side ATTACK\n5. ACCEPT report D2 from origin study-08-alpha on side SUPPORT\n6. APPROVE report D4\n7. APPROVE report D5\n8. REVOKE report D2\n9. REVOKE report D4\n10. REVOKE report D1\n11. REVOKE report D3\n12. REVOKE report D5",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-10-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. PENDING report D5 from origin study-09-delta on side SUPPORT\n2. ACCEPT report D1 from origin study-09-alpha on side SUPPORT\n3. ACCEPT report D2 from origin study-09-alpha on side SUPPORT\n4. PENDING report D4 from origin study-09-gamma on side ATTACK\n5. ACCEPT report D3 from origin study-09-beta on side ATTACK\n6. APPROVE report D4\n7. APPROVE report D5\n8. REVOKE report D2\n9. REVOKE report D3\n10. REVOKE report D4",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-11-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. PENDING report D4 from origin study-10-gamma on side ATTACK\n2. ACCEPT report D2 from origin study-10-alpha on side SUPPORT\n3. ACCEPT report D1 from origin study-10-alpha on side SUPPORT\n4. ACCEPT report D3 from origin study-10-beta on side ATTACK\n5. PENDING report D5 from origin study-10-delta on side SUPPORT\n6. APPROVE report D4\n7. APPROVE report D5\n8. REVOKE report D2\n9. REVOKE report D5\n10. REVOKE report D1",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-12-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D3 from origin study-11-beta on side ATTACK\n2. PENDING report D4 from origin study-11-gamma on side ATTACK\n3. ACCEPT report D2 from origin study-11-alpha on side SUPPORT\n4. PENDING report D5 from origin study-11-delta on side SUPPORT\n5. ACCEPT report D1 from origin study-11-alpha on side SUPPORT\n6. APPROVE report D4\n7. REVOKE report D2",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-13-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. PENDING report D5 from origin study-12-delta on side SUPPORT\n2. ACCEPT report D2 from origin study-12-alpha on side SUPPORT\n3. PENDING report D4 from origin study-12-gamma on side ATTACK\n4. ACCEPT report D1 from origin study-12-alpha on side SUPPORT\n5. ACCEPT report D3 from origin study-12-beta on side ATTACK\n6. APPROVE report D5\n7. APPROVE report D4\n8. REVOKE report D2\n9. REVOKE report D4\n10. REVOKE report D5\n11. REVOKE report D1\n12. REVOKE report D3",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-14-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D1 from origin study-13-alpha on side SUPPORT\n2. PENDING report D5 from origin study-13-delta on side SUPPORT\n3. ACCEPT report D2 from origin study-13-alpha on side SUPPORT\n4. ACCEPT report D3 from origin study-13-beta on side ATTACK\n5. PENDING report D4 from origin study-13-gamma on side ATTACK\n6. APPROVE report D4\n7. REVOKE report D2\n8. REVOKE report D3\n9. REVOKE report D4",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-15-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D1 from origin study-14-alpha on side SUPPORT\n2. PENDING report D4 from origin study-14-gamma on side ATTACK\n3. PENDING report D5 from origin study-14-delta on side SUPPORT\n4. ACCEPT report D3 from origin study-14-beta on side ATTACK\n5. ACCEPT report D2 from origin study-14-alpha on side SUPPORT\n6. APPROVE report D5\n7. REVOKE report D2\n8. REVOKE report D5\n9. REVOKE report D1",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-16-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. PENDING report D4 from origin study-15-gamma on side ATTACK\n2. PENDING report D5 from origin study-15-delta on side SUPPORT\n3. ACCEPT report D1 from origin study-15-alpha on side SUPPORT\n4. ACCEPT report D3 from origin study-15-beta on side ATTACK\n5. ACCEPT report D2 from origin study-15-alpha on side SUPPORT\n6. APPROVE report D5\n7. APPROVE report D4\n8. REVOKE report D2",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-17-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. PENDING report D5 from origin study-16-delta on side SUPPORT\n2. ACCEPT report D2 from origin study-16-alpha on side SUPPORT\n3. ACCEPT report D3 from origin study-16-beta on side ATTACK\n4. ACCEPT report D1 from origin study-16-alpha on side SUPPORT\n5. PENDING report D4 from origin study-16-gamma on side ATTACK\n6. APPROVE report D4\n7. APPROVE report D5\n8. REVOKE report D2\n9. REVOKE report D4\n10. REVOKE report D1\n11. REVOKE report D3\n12. REVOKE report D5",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-18-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. PENDING report D4 from origin study-17-gamma on side ATTACK\n2. PENDING report D5 from origin study-17-delta on side SUPPORT\n3. ACCEPT report D1 from origin study-17-alpha on side SUPPORT\n4. ACCEPT report D2 from origin study-17-alpha on side SUPPORT\n5. ACCEPT report D3 from origin study-17-beta on side ATTACK\n6. APPROVE report D5\n7. APPROVE report D4\n8. REVOKE report D2\n9. REVOKE report D3\n10. REVOKE report D4",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-19-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D2 from origin study-18-alpha on side SUPPORT\n2. PENDING report D5 from origin study-18-delta on side SUPPORT\n3. ACCEPT report D1 from origin study-18-alpha on side SUPPORT\n4. PENDING report D4 from origin study-18-gamma on side ATTACK\n5. ACCEPT report D3 from origin study-18-beta on side ATTACK\n6. APPROVE report D5\n7. REVOKE report D2\n8. REVOKE report D5\n9. REVOKE report D1",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-20-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D1 from origin study-19-alpha on side SUPPORT\n2. ACCEPT report D3 from origin study-19-beta on side ATTACK\n3. PENDING report D5 from origin study-19-delta on side SUPPORT\n4. PENDING report D4 from origin study-19-gamma on side ATTACK\n5. ACCEPT report D2 from origin study-19-alpha on side SUPPORT\n6. APPROVE report D5\n7. APPROVE report D4\n8. REVOKE report D2",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-21-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D3 from origin study-20-beta on side ATTACK\n2. ACCEPT report D1 from origin study-20-alpha on side SUPPORT\n3. PENDING report D4 from origin study-20-gamma on side ATTACK\n4. ACCEPT report D2 from origin study-20-alpha on side SUPPORT\n5. PENDING report D5 from origin study-20-delta on side SUPPORT\n6. APPROVE report D4\n7. APPROVE report D5\n8. REVOKE report D2\n9. REVOKE report D4\n10. REVOKE report D5\n11. REVOKE report D1\n12. REVOKE report D3",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-22-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D3 from origin study-21-beta on side ATTACK\n2. PENDING report D4 from origin study-21-gamma on side ATTACK\n3. PENDING report D5 from origin study-21-delta on side SUPPORT\n4. ACCEPT report D2 from origin study-21-alpha on side SUPPORT\n5. ACCEPT report D1 from origin study-21-alpha on side SUPPORT\n6. APPROVE report D5\n7. REVOKE report D2\n8. REVOKE report D3",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-23-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D2 from origin study-22-alpha on side SUPPORT\n2. PENDING report D5 from origin study-22-delta on side SUPPORT\n3. PENDING report D4 from origin study-22-gamma on side ATTACK\n4. ACCEPT report D3 from origin study-22-beta on side ATTACK\n5. ACCEPT report D1 from origin study-22-alpha on side SUPPORT\n6. APPROVE report D5\n7. APPROVE report D4\n8. REVOKE report D2\n9. REVOKE report D5\n10. REVOKE report D1",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    },
+    {
+      "id": "c8-24-timeline",
+      "category": "revision_timeline",
+      "context": "Fictional chronological records for claim P. PENDING evidence does not count. ACCEPT/APPROVE activate a report; REVOKE deactivates only that report. Same-origin reports are duplicated observations of one source. The state is NEITHER (neither side active), SUPPORT_ONLY (only support), ATTACK_ONLY (only opposition), or BOTH (support and opposition). Determine the status after ALL events, not after an earlier line.\n1. ACCEPT report D3 from origin study-23-beta on side ATTACK\n2. PENDING report D4 from origin study-23-gamma on side ATTACK\n3. ACCEPT report D1 from origin study-23-alpha on side SUPPORT\n4. PENDING report D5 from origin study-23-delta on side SUPPORT\n5. ACCEPT report D2 from origin study-23-alpha on side SUPPORT\n6. APPROVE report D5\n7. REVOKE report D2",
+      "question": "What is the FINAL recorded evidence state of P? Answer exactly NEITHER, SUPPORT_ONLY, ATTACK_ONLY, or BOTH."
+    }
+  ]
+}
