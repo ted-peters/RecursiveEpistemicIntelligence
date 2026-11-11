@@ -33,9 +33,12 @@ jobs:
       - name: Download independently hosted open-weight model (sha256-pinned)
         run: |
           mkdir -p /tmp/c6-model
-          curl -L --fail --retry 2 --connect-timeout 30 \
-            'https://huggingface.co/fzhnk/qwen3-4b-instruct-2507-gguf/resolve/main/qwen3-4b-instruct-2507-q4_K_M.gguf' \
-            -o /tmp/c6-model/model.gguf
+          python -m pip install -q 'huggingface_hub>=1.30,<2' 'hf-xet>=1.6'
+          HF_XET_HIGH_PERFORMANCE=1 hf download \
+            fzhnk/qwen3-4b-instruct-2507-gguf \
+            qwen3-4b-instruct-2507-q4_K_M.gguf \
+            --local-dir /tmp/c6-model
+          mv /tmp/c6-model/qwen3-4b-instruct-2507-q4_K_M.gguf /tmp/c6-model/model.gguf
           echo '85e4a5b7b8ef0e48af0e8658f5aaab9c2324c76c1641493f4d1e25fce54b18b9  /tmp/c6-model/model.gguf' | sha256sum -c
       - name: Start loopback-only inference service
         run: |
