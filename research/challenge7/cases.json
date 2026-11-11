@@ -1,0 +1,41 @@
+{
+  "schema": "rei0.benchmark.cases.v1",
+  "cases": [
+    {
+      "id": "c7-01-duplicate-then-revoke",
+      "category": "revision_timeline",
+      "context": "Synthetic evidence records for claim P; use the rules exactly. PENDING does not count; ACCEPT and APPROVE make a report active; REVOKE removes only that report. Reports with the same origin are duplicate views of one source, not additional independent sources. One active SUPPORT and one active ATTACK produce BOTH even if many duplicate reports exist. Report the state at the END, not the state before the last event.\n1. ACCEPT report D1 from origin S1 on side SUPPORT\n2. ACCEPT report D2 from origin S1 on side SUPPORT\n3. ACCEPT report D3 from origin S2 on side ATTACK\n4. REVOKE report D3",
+      "question": "What is the FINAL recorded four-state evidence status of claim P? Reply EXACTLY one of NEITHER, SUPPORT_ONLY, ATTACK_ONLY, BOTH."
+    },
+    {
+      "id": "c7-02-pending-now-approved",
+      "category": "revision_timeline",
+      "context": "Synthetic evidence records for claim P; use the rules exactly. PENDING does not count; ACCEPT and APPROVE make a report active; REVOKE removes only that report. Reports with the same origin are duplicate views of one source, not additional independent sources. One active SUPPORT and one active ATTACK produce BOTH even if many duplicate reports exist. Report the state at the END, not the state before the last event.\n1. PENDING report D1 from origin S1 on side SUPPORT\n2. ACCEPT report D2 from origin S2 on side ATTACK\n3. APPROVE report D1\n4. REVOKE report D1",
+      "question": "What is the FINAL recorded four-state evidence status of claim P? Reply EXACTLY one of NEITHER, SUPPORT_ONLY, ATTACK_ONLY, BOTH."
+    },
+    {
+      "id": "c7-03-both-sources-retracted",
+      "category": "revision_timeline",
+      "context": "Synthetic evidence records for claim P; use the rules exactly. PENDING does not count; ACCEPT and APPROVE make a report active; REVOKE removes only that report. Reports with the same origin are duplicate views of one source, not additional independent sources. One active SUPPORT and one active ATTACK produce BOTH even if many duplicate reports exist. Report the state at the END, not the state before the last event.\n1. ACCEPT report D1 from origin S1 on side SUPPORT\n2. ACCEPT report D2 from origin S2 on side ATTACK\n3. REVOKE report D1\n4. REVOKE report D2",
+      "question": "What is the FINAL recorded four-state evidence status of claim P? Reply EXACTLY one of NEITHER, SUPPORT_ONLY, ATTACK_ONLY, BOTH."
+    },
+    {
+      "id": "c7-04-new-source-restores-conflict",
+      "category": "revision_timeline",
+      "context": "Synthetic evidence records for claim P; use the rules exactly. PENDING does not count; ACCEPT and APPROVE make a report active; REVOKE removes only that report. Reports with the same origin are duplicate views of one source, not additional independent sources. One active SUPPORT and one active ATTACK produce BOTH even if many duplicate reports exist. Report the state at the END, not the state before the last event.\n1. ACCEPT report D1 from origin S1 on side SUPPORT\n2. ACCEPT report D2 from origin S2 on side ATTACK\n3. REVOKE report D1\n4. ACCEPT report D3 from origin S3 on side SUPPORT",
+      "question": "What is the FINAL recorded four-state evidence status of claim P? Reply EXACTLY one of NEITHER, SUPPORT_ONLY, ATTACK_ONLY, BOTH."
+    },
+    {
+      "id": "c7-05-revoke-one-duplicate",
+      "category": "revision_timeline",
+      "context": "Synthetic evidence records for claim P; use the rules exactly. PENDING does not count; ACCEPT and APPROVE make a report active; REVOKE removes only that report. Reports with the same origin are duplicate views of one source, not additional independent sources. One active SUPPORT and one active ATTACK produce BOTH even if many duplicate reports exist. Report the state at the END, not the state before the last event.\n1. ACCEPT report D1 from origin S1 on side SUPPORT\n2. ACCEPT report D2 from origin S1 on side SUPPORT\n3. REVOKE report D1",
+      "question": "What is the FINAL recorded four-state evidence status of claim P? Reply EXACTLY one of NEITHER, SUPPORT_ONLY, ATTACK_ONLY, BOTH."
+    },
+    {
+      "id": "c7-06-reversal-with-surviving-source",
+      "category": "revision_timeline",
+      "context": "Synthetic evidence records for claim P; use the rules exactly. PENDING does not count; ACCEPT and APPROVE make a report active; REVOKE removes only that report. Reports with the same origin are duplicate views of one source, not additional independent sources. One active SUPPORT and one active ATTACK produce BOTH even if many duplicate reports exist. Report the state at the END, not the state before the last event.\n1. ACCEPT report D1 from origin S1 on side SUPPORT\n2. ACCEPT report D2 from origin S2 on side ATTACK\n3. ACCEPT report D3 from origin S3 on side SUPPORT\n4. REVOKE report D1\n5. REVOKE report D2",
+      "question": "What is the FINAL recorded four-state evidence status of claim P? Reply EXACTLY one of NEITHER, SUPPORT_ONLY, ATTACK_ONLY, BOTH."
+    }
+  ]
+}

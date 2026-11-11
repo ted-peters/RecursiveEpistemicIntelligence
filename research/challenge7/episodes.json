@@ -1,0 +1,42 @@
+{
+  "schema": "rei.challenge7.episodes.v1",
+  "notes": "Synthetic event timelines. All origins, approvals and events are assumed supplied, not independently authenticated.",
+  "episodes": [
+    {"id": "c7-01-duplicate-then-revoke", "events": [
+      {"op":"ACCEPT", "doc":"D1", "origin":"S1", "side":"SUPPORT"},
+      {"op":"ACCEPT", "doc":"D2", "origin":"S1", "side":"SUPPORT"},
+      {"op":"ACCEPT", "doc":"D3", "origin":"S2", "side":"ATTACK"},
+      {"op":"REVOKE", "doc":"D3"}
+    ]},
+    {"id": "c7-02-pending-now-approved", "events": [
+      {"op":"PENDING", "doc":"D1", "origin":"S1", "side":"SUPPORT"},
+      {"op":"ACCEPT", "doc":"D2", "origin":"S2", "side":"ATTACK"},
+      {"op":"APPROVE", "doc":"D1"},
+      {"op":"REVOKE", "doc":"D1"}
+    ]},
+    {"id": "c7-03-both-sources-retracted", "events": [
+      {"op":"ACCEPT", "doc":"D1", "origin":"S1", "side":"SUPPORT"},
+      {"op":"ACCEPT", "doc":"D2", "origin":"S2", "side":"ATTACK"},
+      {"op":"REVOKE", "doc":"D1"},
+      {"op":"REVOKE", "doc":"D2"}
+    ]},
+    {"id": "c7-04-new-source-restores-conflict", "events": [
+      {"op":"ACCEPT", "doc":"D1", "origin":"S1", "side":"SUPPORT"},
+      {"op":"ACCEPT", "doc":"D2", "origin":"S2", "side":"ATTACK"},
+      {"op":"REVOKE", "doc":"D1"},
+      {"op":"ACCEPT", "doc":"D3", "origin":"S3", "side":"SUPPORT"}
+    ]},
+    {"id": "c7-05-revoke-one-duplicate", "events": [
+      {"op":"ACCEPT", "doc":"D1", "origin":"S1", "side":"SUPPORT"},
+      {"op":"ACCEPT", "doc":"D2", "origin":"S1", "side":"SUPPORT"},
+      {"op":"REVOKE", "doc":"D1"}
+    ]},
+    {"id": "c7-06-reversal-with-surviving-source", "events": [
+      {"op":"ACCEPT", "doc":"D1", "origin":"S1", "side":"SUPPORT"},
+      {"op":"ACCEPT", "doc":"D2", "origin":"S2", "side":"ATTACK"},
+      {"op":"ACCEPT", "doc":"D3", "origin":"S3", "side":"SUPPORT"},
+      {"op":"REVOKE", "doc":"D1"},
+      {"op":"REVOKE", "doc":"D2"}
+    ]}
+  ]
+}
