@@ -42,7 +42,9 @@ To verify six JSON results locally (one from each shard):
 
 The aggregator refuses incomplete or duplicate shard indices, altered
 benchmark reports, unexpected case/arm pairs, inconsistent model and inference
-configuration, and contradictory model-attempt telemetry. It regrades the
+configuration, mixed GitHub workflow attempts, and contradictory model-attempt telemetry.
+For local multi-shard generation outside GitHub Actions, set the same nonempty
+`REI_EXPERIMENT_RUN_ID` environment variable across every shard. It regrades the
 **full 24-case paired result**, recomputes the paired bootstrap, and retains
 the individual report checksums. Token usage is reported separately as
 server-observed tokens including failed parses and calls with *unknown* usage.
