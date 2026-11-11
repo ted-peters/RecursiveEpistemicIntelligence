@@ -19,6 +19,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
+      - name: Install REI dependencies
+        run: python -m pip install .
       - name: Verify data, benchmark harness and authorization-free setup
         run: |
           python -m unittest discover -s tests -p 'test_challenge6.py' -v
