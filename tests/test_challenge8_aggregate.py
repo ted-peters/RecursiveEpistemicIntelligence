@@ -68,6 +68,7 @@ def build_fixture(directory: Path, fail_pair=None):
                 "calls_with_provider_error": sum(a["status"] == "failed" for a in rows),
             }
         env = {
+            "experiment_run_id": "synthetic-fixture-one-run",
             "model": "synthetic-fixture", "model_sha256": "not-real-model-sha",
             "llama_cpp_commit": "not-real-engine", "method": "test-mode",
             "constraints": {"max_calls":3, "max_tokens":2600,"max_seconds":140,
@@ -120,6 +121,11 @@ class Challenge8AggregateTests(unittest.TestCase):
 
     def test_model_drift_rejected(self):
         self.mutate(2, lambda doc: doc["environment"].update(model_sha256="different"))
+        with self.assertRaisesRegex(AggregateError, "settings differ"):
+            self.check()
+
+    def test_mixed_workflow_runs_rejected(self):
+        self.mutate(3, lambda doc: doc["environment"].update(experiment_run_id="different-run"))
         with self.assertRaisesRegex(AggregateError, "settings differ"):
             self.check()
 
