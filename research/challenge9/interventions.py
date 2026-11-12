@@ -236,6 +236,7 @@ def replay_case(case: Case) -> dict[str, Any]:
         "signed_receipts": len(restored.review_receipts),
         "states": observed,
         "final_state": observed[-1],
+        "unsafe_legacy_graph_state": restored.graph.assess("P").state.value,
         "public_docket": public,
         "signed_audit_head": restored.audit_head,
         "graph_audit_head": restored.graph.audit_head,
@@ -253,6 +254,8 @@ def audit(seed: int = 20261111, count: int = 12) -> dict[str, Any]:
         "forged_review_assertions_ignored": sum(r["forged_assertions"] for r in results),
         "final_state_counts": {s: counts[s] for s in STATES},
         "independent_oracle_agreement": count,
+        "legacy_graph_disagrees_with_signed_ledger": sum(
+            r["unsafe_legacy_graph_state"] != r["final_state"] for r in results),
         "live_model_inference_calls": 0,
     }
     payload = {
