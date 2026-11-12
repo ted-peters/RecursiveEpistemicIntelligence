@@ -41,7 +41,7 @@ class SignedInterventionTests(unittest.TestCase):
         self.assertEqual(len(trusted_only), 3)
         for record in trusted_only:
             self.assertEqual(record["final_state"], "NEITHER")
-            self.assertEqual(record["unsafe_legacy_graph_state"], "BOTH")
+            self.assertEqual(record["unsafe_legacy_graph_state"], "ATTACK_ONLY")
 
     def test_model_authored_and_forged_docs_remain_pending(self):
         case = generate_cases()[0]
