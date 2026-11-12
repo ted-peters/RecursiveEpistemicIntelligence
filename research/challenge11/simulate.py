@@ -233,11 +233,27 @@ def verify_audit(report: dict) -> dict:
     if digest({k:v for k,v in report.items() if k!="report_sha256"})!=original_digest:
         raise InvestigationError("report checksum invalid")
     required=run_audit(report["seed"],report["count"])
-    if report != required:
+    # Each replay signs fresh review receipts with a new ephemeral private key.
+    # The signed ledger audit head consequently differs even with identical
+    # source, observation and scoring histories. Do not pretend it should be
+    # byte-identical or manufacture a deterministic production signing key.
+    def normalized(document):
+        copy=json.loads(json.dumps(document))
+        copy.pop("report_sha256",None)
+        for result in copy["outcomes"]:
+            signature_bound_head=result["evidence_audit_head"]
+            if (not isinstance(signature_bound_head,str) or
+                len(signature_bound_head)!=64 or
+                any(ch not in "0123456789abcdef" for ch in signature_bound_head)):
+                raise InvestigationError("invalid signed ledger head format")
+            result["evidence_audit_head"]="<ephemeral-signer-audit-head>"
+        return copy
+    if normalized(report) != normalized(required):
         raise InvestigationError("report does not reproduce under independent replay")
     return {"valid":True,"cases":report["count"],"outcomes":len(report["outcomes"]),
             "sha256":original_digest,
-            "warning":"Replayed synthetic fixture, not authenticated model-run attestation"}
+            "warning":("Synthetic event and score replay; ephemeral review signatures "
+                       "cannot be reconstructed without original public-key receipt artifacts")}
 
 
 def main(argv=None):
