@@ -1,0 +1,73 @@
+name: REI Challenge 9 — One-time live Qwen3 four-case pilot
+on:
+  push:
+    branches:
+      - challenge9-live-fourcase-20261111
+    paths:
+      - '.github/workflows/challenge9-live-fourcase-once.yml'
+permissions:
+  contents: read
+concurrency:
+  group: rei-challenge9-one-off-20261111
+  cancel-in-progress: false
+
+jobs:
+  paired-fourcase-live:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/challenge9-live-fourcase-20261111'
+    name: Four public cases, two arms, pinned Qwen3-4B local model
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify Challenge 9 software contracts before model inference
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge9_interventions.py -v
+          python -m unittest discover -s tests -p test_challenge9_trial.py -v
+          python -m research.challenge9.run_trial --help >/dev/null
+      - name: Build pinned llama.cpp inference engine
+        run: |
+          git clone -q --depth 1 --branch b12242 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+          git -C /tmp/llama.cpp rev-parse HEAD > /tmp/llama_commit.txt
+          cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=OFF -DGGML_NATIVE=ON
+          cmake --build /tmp/llama.cpp/build -j 4 --target llama-server
+      - name: Download SHA-256-pinned Qwen3 4B open-weight model
+        run: |
+          mkdir -p /tmp/c9-model
+          curl -L --fail --retry 2 --connect-timeout 30 \
+            'https://huggingface.co/fzhnk/qwen3-4b-instruct-2507-gguf/resolve/main/qwen3-4b-instruct-2507-q4_K_M.gguf' \
+            -o /tmp/c9-model/model.gguf
+          echo '85e4a5b7b8ef0e48af0e8658f5aaab9c2324c76c1641493f4d1e25fce54b18b9  /tmp/c9-model/model.gguf' | sha256sum -c
+      - name: Start model server (local only)
+        run: |
+          /tmp/llama.cpp/build/bin/llama-server -m /tmp/c9-model/model.gguf \
+            --alias qwen3-4b-instruct-2507-q4_k_m --host 127.0.0.1 --port 8099 -c 8192 -t 4 -np 1 \
+            > /tmp/c9-server.log 2>&1 &
+          for n in $(seq 1 90); do
+            if curl --fail -s http://127.0.0.1:8099/health | grep -q 'ok'; then exit 0; fi
+            sleep 2
+          done
+          tail -100 /tmp/c9-server.log
+          exit 1
+      - name: Launch EXACTLY four paired live cases and independently regrade
+        run: |
+          timeout 3000s python -m research.challenge9.run_trial \
+            --mode live --count 4 --seed 20261111 \
+            --model-file /tmp/c9-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge9-results/paired-live.json
+          python -m research.challenge9.run_trial \
+            --mode live --count 4 --seed 20261111 --verify-only \
+            --output challenge9-results/paired-live.json
+      - name: Archive machine-readable results (best effort)
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge9-fourcase-paired-live-one-off
+          path: challenge9-results/paired-live.json
+          retention-days: 90
+          if-no-files-found: warn
