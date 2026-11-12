@@ -28,7 +28,8 @@ class SignedStatusDecisionTests(unittest.TestCase):
                 self.assertEqual(decision.recorded_state, case.expected)
                 self.assertEqual(decision.evidence_audit_head, ledger.audit_head)
                 self.assertEqual(decision.graph_audit_head, ledger.graph.audit_head)
-                self.assertEqual(decision.review_receipts, 5)
+                self.assertEqual(decision.review_receipts, sum(
+                    e["op"] in ("VERIFY", "REVOKE") for e in case.events))
                 self.assertEqual(decision.to_dict()["decision_sha256"],
                                  digest({k:v for k,v in decision.to_dict().items()
                                          if k != "decision_sha256"}))
