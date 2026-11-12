@@ -1,0 +1,121 @@
+name: REI Challenge 9 — Signed-evidence audit and paired pilot
+on:
+  push:
+    branches: [challenge9-signed-evidence-interventions]
+    paths:
+      - 'research/challenge9/**'
+      - 'tests/test_challenge9_*.py'
+      - '.github/workflows/challenge9-signed-evidence.yml'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Fixture is free software-only; live runs a pinned local Qwen 4B model'
+        type: choice
+        required: true
+        default: fixture
+        options: [fixture, live]
+      case_count:
+        description: 'Paired public development cases (NOT blinded holdouts)'
+        type: choice
+        required: true
+        default: '4'
+        options: ['4', '8', '12']
+permissions:
+  contents: read
+
+jobs:
+  free-offline-audit:
+    name: Check signed reviews and paired fixture (no model)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install and run integrity regressions
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge9_interventions.py -v
+          python -m unittest discover -s tests -p test_challenge9_trial.py -v
+      - name: Independently audit twelve authenticated synthetic evidence streams
+        run: |
+          python -m research.challenge9.interventions \
+            --seed 20261111 --count 12 \
+            --output challenge9-results/signed-audit.json
+      - name: Run both arms using FAKE scripted responses (not AI performance)
+        run: |
+          python -m research.challenge9.run_trial \
+            --mode fixture --count 4 \
+            --output challenge9-results/paired-fixture.json
+          python -m research.challenge9.run_trial \
+            --mode fixture --count 4 --verify-only \
+            --output challenge9-results/paired-fixture.json
+      - name: Archive synthetic reports when GitHub artifacts are available
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge9-offline-signed-audit
+          path: challenge9-results
+          retention-days: 60
+          if-no-files-found: warn
+
+  manual-local-model-pilot:
+    name: Run pinned Qwen 4B two-arm LIVE pilot (explicit opt-in)
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'live'
+    needs: free-offline-audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install and preflight
+        run: |
+          python -m pip install .
+          python -m research.challenge9.run_trial --help >/dev/null
+      - name: Build pinned llama.cpp model server
+        run: |
+          git clone -q --depth 1 --branch b12242 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+          git -C /tmp/llama.cpp rev-parse HEAD > /tmp/llama_commit.txt
+          cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=OFF -DGGML_NATIVE=ON
+          cmake --build /tmp/llama.cpp/build -j 4 --target llama-server
+      - name: Download SHA-256 pinned open-weight Qwen3 4B model
+        run: |
+          mkdir -p /tmp/c9-model
+          curl -L --fail --retry 2 --connect-timeout 30 \
+            'https://huggingface.co/fzhnk/qwen3-4b-instruct-2507-gguf/resolve/main/qwen3-4b-instruct-2507-q4_K_M.gguf' \
+            -o /tmp/c9-model/model.gguf
+          echo '85e4a5b7b8ef0e48af0e8658f5aaab9c2324c76c1641493f4d1e25fce54b18b9  /tmp/c9-model/model.gguf' | sha256sum -c
+      - name: Start local inference service
+        run: |
+          /tmp/llama.cpp/build/bin/llama-server -m /tmp/c9-model/model.gguf \
+            --alias qwen3-4b-instruct-2507-q4_k_m --host 127.0.0.1 --port 8099 -c 8192 -t 4 -np 1 \
+            > /tmp/c9-server.log 2>&1 &
+          for n in $(seq 1 90); do
+            if curl --fail -s http://127.0.0.1:8099/health | grep -q 'ok'; then exit 0; fi
+            sleep 2
+          done
+          tail -100 /tmp/c9-server.log
+          exit 1
+      - name: Paired real-model REI 1.2 versus self-critique study
+        run: |
+          timeout 3000s python -m research.challenge9.run_trial \
+            --mode live --count "${{ inputs.case_count }}" --seed 20261111 \
+            --model-file /tmp/c9-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge9-results/paired-live.json
+          python -m research.challenge9.run_trial \
+            --mode live --count "${{ inputs.case_count }}" --verify-only \
+            --output challenge9-results/paired-live.json
+      - name: Archive independently regraded paired results when available
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge9-paired-live-model-report
+          path: challenge9-results/paired-live.json
+          retention-days: 90
+          if-no-files-found: warn
