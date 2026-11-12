@@ -150,7 +150,11 @@ class PrivateTestEnvironment:
         predicted = self.posterior >= 0.5
         truth = self.__case.truth  # used only by trusted evaluator
         optimum=optimal_risk(self.__case.prior,self.__case.probes,BUDGET)
+        # A Bellman-optimal plan can differ from its replay by floating-point
+        # accumulation at ~1e-17. This is not measurable decision regret.
         regret=max(0,expected_risk-optimum)
+        if regret < 1e-12:
+            regret=0.0
         return Outcome(
             case_id=self.__case.id,policy=policy,
             chosen=tuple(self.chosen),observations=tuple(self.observations),
