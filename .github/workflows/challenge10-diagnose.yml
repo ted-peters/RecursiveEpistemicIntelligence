@@ -1,0 +1,77 @@
+name: REI Challenge 10 — Independent diagnosis of real Challenge 9 results
+on:
+  push:
+    branches: [challenge10-trusted-evidence-tool-parity]
+    paths:
+      - 'rei0/signed_state_decision.py'
+      - 'research/challenge10/**'
+      - 'tests/test_challenge10_tool_parity.py'
+      - '.github/workflows/challenge10-diagnose.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit-real-results:
+    name: Verify archived real Qwen pilot, compare identical evidence tools
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install and test trusted signed-state decision
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge10_tool_parity.py -v
+      - name: Fetch the original four-case REAL model artifact (read-only)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p challenge10-results/original
+          gh run download 43144658284 \
+            --repo ted-peters/RecursiveEpistemicIntelligence \
+            --name challenge9-fourcase-paired-live-one-off \
+            --dir challenge10-results/original
+          test -s challenge10-results/original/paired-live.json
+      - name: Verify pinned source report hash, run identity and model
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('challenge10-results/original/paired-live.json').read_text())
+          assert d['report']['report_sha256'] == '6d809bde17c7767ea6e038878e0a40d61548be5bdc1c93c7df9ef9c8d383ca50'
+          assert d['environment']['run_origin'] == '43144658284'
+          assert d['environment']['mode'] == 'live'
+          assert d['environment']['model_sha256'] == '85e4a5b7b8ef0e48af0e8658f5aaab9c2324c76c1641493f4d1e25fce54b18b9'
+          print('Pinned real-model source validated before independent analysis.')
+          PY
+      - name: Independently regrade and apply equal trusted status tool to BOTH arms
+        run: |
+          python -m research.challenge10.diagnose \
+            --input challenge10-results/original/paired-live.json \
+            --seed 20261111 --count 4 \
+            --output challenge10-results/diagnostic.json
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          d=json.loads(Path('challenge10-results/diagnostic.json').read_text())
+          s=d['diagnostic']
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+            f.write('## Challenge 10 — Honest retrospective of live Challenge 9\n\n')
+            f.write('Original run [43144658284](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/43144658284) was **real Qwen inference**. This job made **zero new model calls**.\n\n')
+            f.write('| Method | Model correct | Same trusted deterministic tool | Calls | Reported tokens |\n|---|---:|---:|---:|---:|\n')
+            for arm in ('self_critique','rei12'):
+              row=s['per_arm'][arm]
+              f.write(f"| {arm} | {row['model_correct']}/{s['cases']} | {row['tool_correct']}/{s['cases']} | {row['model_calls']} | {row['reported_tokens']} |\n")
+            f.write('\n**A shared deterministic tool solving a deterministic status question is not an AI win.** Original incorrect model answers were preserved.\n')
+          PY
+      - name: Archive diagnostic with source report (best effort)
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge10-independent-real-pilot-diagnosis
+          path: challenge10-results
+          retention-days: 90
+          if-no-files-found: warn
