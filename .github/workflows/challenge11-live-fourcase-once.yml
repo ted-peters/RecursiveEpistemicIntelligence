@@ -1,0 +1,73 @@
+name: REI Challenge 11 — One-time four-case REAL Qwen investigation pilot
+on:
+  push:
+    branches: [challenge11-live-fourcase-20261112]
+    paths: ['.github/workflows/challenge11-live-fourcase-once.yml']
+permissions:
+  contents: read
+concurrency:
+  group: rei-challenge11-one-off-20261112
+  cancel-in-progress: false
+
+jobs:
+  real-fourcase-investigation:
+    name: Real Qwen test selection against exact Bayesian lookahead
+    if: github.event_name == 'push' && github.ref == 'refs/heads/challenge11-live-fourcase-20261112'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install and verify offline software integrity before spending compute
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge11_voi.py -v
+          python -m unittest discover -s tests -p test_challenge11_pilot.py -v
+          python -m research.challenge11.simulate --seed 20261112 --count 24 \
+            --output challenge11-results/policy-audit.json
+          python -m research.challenge11.simulate --verify-only \
+            --output challenge11-results/policy-audit.json
+      - name: Build same pinned llama.cpp Qwen3 inference engine as prior challenges
+        run: |
+          git clone -q --depth 1 --branch b12242 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+          git -C /tmp/llama.cpp rev-parse HEAD > /tmp/llama_commit.txt
+          cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=OFF -DGGML_NATIVE=ON
+          cmake --build /tmp/llama.cpp/build -j 4 --target llama-server
+      - name: Download identical SHA-256-pinned Qwen3 4B open weights
+        run: |
+          mkdir -p /tmp/c11-model
+          curl -L --fail --retry 2 --connect-timeout 30 \
+            'https://huggingface.co/fzhnk/qwen3-4b-instruct-2507-gguf/resolve/main/qwen3-4b-instruct-2507-q4_K_M.gguf' \
+            -o /tmp/c11-model/model.gguf
+          echo '85e4a5b7b8ef0e48af0e8658f5aaab9c2324c76c1641493f4d1e25fce54b18b9  /tmp/c11-model/model.gguf' | sha256sum -c
+      - name: Launch local Qwen model server
+        run: |
+          /tmp/llama.cpp/build/bin/llama-server -m /tmp/c11-model/model.gguf \
+            --alias qwen3-4b-instruct-2507-q4_k_m --host 127.0.0.1 --port 8099 -c 8192 -t 4 -np 1 \
+            > /tmp/c11-server.log 2>&1 &
+          for n in $(seq 1 90); do
+            if curl --fail -s http://127.0.0.1:8099/health | grep -q 'ok'; then exit 0; fi
+            sleep 2
+          done
+          tail -100 /tmp/c11-server.log
+          exit 1
+      - name: Execute exactly FOUR paired real-model investigation-selection trials
+        run: |
+          timeout 3000s python -m research.challenge11.pilot \
+            --mode live --seed 20261112 --count 4 \
+            --model-file /tmp/c11-model/model.gguf \
+            --engine-commit "$(cat /tmp/llama_commit.txt)" \
+            --output challenge11-results/choice-live.json
+          python -m research.challenge11.pilot \
+            --verify-only --output challenge11-results/choice-live.json
+      - name: Preserve full software audit and real model report
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge11-one-off-real-model-4case
+          path: challenge11-results
+          retention-days: 90
+          if-no-files-found: warn
