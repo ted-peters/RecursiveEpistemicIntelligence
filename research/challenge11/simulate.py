@@ -251,6 +251,12 @@ def verify_audit(report: dict) -> dict:
                 any(ch not in "0123456789abcdef" for ch in signature_bound_head)):
                 raise InvestigationError("invalid signed ledger head format")
             result["evidence_audit_head"]="<ephemeral-signer-audit-head>"
+            for observed in result["observations"]:
+                signed_head=observed["signed_review_ledger_head"]
+                if (not isinstance(signed_head,str) or len(signed_head)!=64 or
+                    any(ch not in "0123456789abcdef" for ch in signed_head)):
+                    raise InvestigationError("invalid signed observation audit head")
+                observed["signed_review_ledger_head"]="<ephemeral-signer-audit-head>"
         return copy
     if normalized(report) != normalized(required):
         raise InvestigationError("report does not reproduce under independent replay")
