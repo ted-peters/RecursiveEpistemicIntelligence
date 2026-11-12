@@ -164,8 +164,13 @@ def public_docket(ledger: EvidenceLedger) -> dict[str, Any]:
     }
 
 
-def replay_case(case: Case) -> dict[str, Any]:
-    """Run a synthetic case against the authenticated REI ledger end-to-end."""
+def replay_case(case: Case, *, return_ledger: bool = False,
+                inquiry_graph: bool = False):
+    """Run a synthetic case; optionally return its PUBLIC-VERIFIER-only ledger.
+
+    An ephemeral private signer is used only while constructing the fixture.
+    No private key or signer object is returned to the model trial.
+    """
     if not isinstance(case, Case) or case.expected not in STATES:
         raise Challenge9Error("invalid synthetic case")
     expected = oracle_trace(case.events)
@@ -176,7 +181,7 @@ def replay_case(case: Case) -> dict[str, Any]:
         "challenge9-ephemeral": Ed25519TrustedReviewer(
             "independent-fixture-reviewer", signer.public_key_bytes()),
     })
-    graph = EpistemicGraph("challenge9-signed-development",
+    graph = EpistemicGraph("rei-0.2" if inquiry_graph else "challenge9-signed-development",
                            max_nodes=64, max_edges=64, clock=lambda: STAMP)
     graph.add_node(Node("P", NodeKind.CLAIM, "Fictional proposition P",
                         Provenance("author", SourceKind.HUMAN, "question",
@@ -229,7 +234,7 @@ def replay_case(case: Case) -> dict[str, Any]:
     public = public_docket(restored)
     if "expected" in json.dumps(public).lower() or "oracle" in json.dumps(public).lower():
         raise Challenge9Error("public docket contains prohibited fields")
-    return {
+    result = {
         "case_id": case.id,
         "events": len(case.events),
         "forged_assertions": forged,
@@ -241,6 +246,7 @@ def replay_case(case: Case) -> dict[str, Any]:
         "signed_audit_head": restored.audit_head,
         "graph_audit_head": restored.graph.audit_head,
     }
+    return (result, restored) if return_ledger else result
 
 
 def audit(seed: int = 20261111, count: int = 12) -> dict[str, Any]:
