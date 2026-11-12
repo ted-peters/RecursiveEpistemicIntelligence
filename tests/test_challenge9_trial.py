@@ -87,7 +87,7 @@ class PairedTrialTests(unittest.TestCase):
         self.assertEqual(rei["c9-02"]["method"]["steps"],0)
         self.assertEqual(rei["c9-03"]["method"]["steps"],0)
         self.assertEqual(rei["c9-04"]["method"]["steps"],1)
-        self.assertEqual(rei["c9-04"]["method"]["stop_reason"],"step_budget")
+        self.assertEqual(rei["c9-04"]["method"]["stop_reason"],"frontier_exhausted")
 
     def test_same_authenticated_docket_reaches_both_methods(self):
         fixture=ScriptedResponder()
