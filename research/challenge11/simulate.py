@@ -50,9 +50,9 @@ class Outcome:
     final_signed_evidence_state: str
     evidence_audit_head: str
     graph_audit_head: str
-    exact_expected_bayes_error: float
+    exact_expected_bayes_error: float | None
     optimal_expected_bayes_error: float
-    regret_over_optimal: float
+    regret_over_optimal: float | None
 
     def to_dict(self) -> dict:
         return {
@@ -144,7 +144,7 @@ class PrivateTestEnvironment:
         self.observations.append(public)
         return dict(public)
 
-    def conclude(self, policy: str, expected_risk: float) -> Outcome:
+    def conclude(self, policy: str, expected_risk: float | None) -> Outcome:
         """A posterior threshold is a Bayes-optimal final action for 0-1 loss."""
         self.ledger.assess("H1")
         predicted = self.posterior >= 0.5
@@ -152,8 +152,9 @@ class PrivateTestEnvironment:
         optimum=optimal_risk(self.__case.prior,self.__case.probes,BUDGET)
         # A Bellman-optimal plan can differ from its replay by floating-point
         # accumulation at ~1e-17. This is not measurable decision regret.
-        regret=max(0,expected_risk-optimum)
-        if regret < 1e-12:
+        regret=(max(0,expected_risk-optimum)
+                if expected_risk is not None else None)
+        if regret is not None and regret < 1e-12:
             regret=0.0
         return Outcome(
             case_id=self.__case.id,policy=policy,
