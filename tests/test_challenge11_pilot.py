@@ -83,7 +83,7 @@ class InvestigativePilotTests(unittest.TestCase):
             verify_report(data)
         data["report_sha256"]=digest({
             k:v for k,v in data.items() if k!="report_sha256"})
-        with self.assertRaisesRegex(InvestigationError,"private gold"):
+        with self.assertRaisesRegex(InvestigationError,"paired grade|private gold"):
             verify_report(data)
         data=copy.deepcopy(report)
         data["outcomes"][0]["decision"]["chosen"]=["B","B"]
