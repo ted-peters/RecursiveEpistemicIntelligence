@@ -1,0 +1,58 @@
+name: REI standalone local AI — offline integration
+on:
+  push:
+    branches: [rei-standalone-local-ai-runtime]
+    paths:
+      - 'rei0/local_ai.py'
+      - 'rei0/local_ai_server.py'
+      - 'rei0/local_ai_cli.py'
+      - 'rei0/local_ai_ui.html'
+      - 'tests/test_local_ai_standalone.py'
+      - 'pyproject.toml'
+      - 'Dockerfile.rei'
+      - 'compose.yaml'
+      - '.github/workflows/standalone-local-ai.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  verify-standalone:
+    name: Install, run fake-model integration and full REI regression suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install local AI package with browser UI
+        run: python -m pip install .
+      - name: Test command-line entrypoints
+        run: |
+          rei-local-ai --help
+          python -m rei0.local_ai_cli serve --help
+          python -m rei0.local_ai_cli ask --help
+      - name: Offline fake-Ollama integrated inquiry, HTTP and safety
+        run: python -m unittest discover -s tests -p test_local_ai_standalone.py -v
+      - name: Full REI regression suite
+        run: python -m unittest discover -s tests -v
+      - name: Validate container stack configuration, if Docker Compose is available
+        run: |
+          if docker compose version >/dev/null 2>&1; then
+            docker compose -f compose.yaml config --quiet
+          else
+            echo "Docker Compose unavailable on runner; Python integration remains verified"
+          fi
+      - name: Publish a clear test-status summary
+        if: success()
+        run: |
+          {
+            echo "## REI local AI — integration passed"
+            echo
+            echo "Tested local fake-model inference, genuine bounded InquiryEngine graph construction,"
+            echo "unverified-evidence status, direct-vs-REI modes, token accounting, browser UI"
+            echo "and minimal OpenAI-compatible API. No real Ollama inference executed in this job."
+            echo
+            echo "See STANDALONE_AI.md for native and Docker instructions. Port 7861 is loopback-only."
+          } >> "$GITHUB_STEP_SUMMARY"
