@@ -1,0 +1,150 @@
+name: REI standalone — Pinned Qwen real inference, compact recursive JSON v3 retest
+on:
+  push:
+    branches: [rei-standalone-real-inquiry-v3-20261114]
+    paths: ['.github/workflows/rei-standalone-real-inquiry-v3-once.yml']
+permissions:
+  contents: read
+concurrency:
+  group: rei-standalone-ollama-real-v3-once-20261114
+  cancel-in-progress: false
+
+jobs:
+  real-local-inference:
+    name: Native Ollama + pinned Qwen 4B + real REI web/API end-to-end
+    if: github.event_name == 'push' && github.ref == 'refs/heads/rei-standalone-real-inquiry-v3-20261114'
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install REI and exercise true inquiry offline before real model
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_local_ai_standalone.py -v
+      - name: Install SHA-256-pinned official Ollama v0.40.16 binary (not a shell installer)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq zstd
+          curl -fL --retry 2 --connect-timeout 30 \
+            'https://github.com/ollama/ollama/releases/download/v0.40.16/ollama-linux-amd64.tar.zst' \
+            -o /tmp/ollama-linux-amd64.tar.zst
+          echo '87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d  /tmp/ollama-linux-amd64.tar.zst' | sha256sum -c
+          sudo tar --zstd -xf /tmp/ollama-linux-amd64.tar.zst -C /usr/local
+          ollama --version
+      - name: Launch Ollama on loopback only
+        run: |
+          OLLAMA_HOST=127.0.0.1:11434 OLLAMA_NUM_PARALLEL=1 \
+            ollama serve > /tmp/ollama-live.log 2>&1 &
+          for n in $(seq 1 90); do
+            if curl -sSf http://127.0.0.1:11434/api/tags >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          tail -100 /tmp/ollama-live.log
+          exit 1
+      - name: Pull genuine Qwen3 4B Instruct weights to local inference server
+        run: |
+          timeout 1400s env OLLAMA_HOST=127.0.0.1:11434 \
+            ollama pull qwen3:4b-instruct
+          python -m rei0.local_ai_cli doctor
+      - name: Launch the real REI standalone browser and API
+        run: |
+          python -m rei0.local_ai_cli serve > /tmp/rei-standalone-server.log 2>&1 &
+          for n in $(seq 1 40); do
+            if curl -sSf http://127.0.0.1:7861/health >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/rei-standalone-server.log
+          exit 1
+      - name: 'Genuine Qwen direct mode: model/API response and metering'
+        run: |
+          mkdir -p standalone-real-smoke
+          timeout 600s curl -sSf \
+            -H 'Content-Type: application/json' \
+            --data '{"model":"rei-local","stream":false,"mode":"direct","messages":[{"role":"user","content":"In one sentence, what question should a researcher ask before trusting a claim?"}]}' \
+            http://127.0.0.1:7861/v1/chat/completions \
+            -o standalone-real-smoke/direct.json
+          python - <<'PY'
+          import json
+          d=json.load(open('standalone-real-smoke/direct.json'))
+          assert d['model']=='rei-local'
+          assert d['choices'][0]['message']['content'].strip()
+          assert d['rei_audit']['model_calls']==1
+          assert d['usage']['total_tokens']>0
+          assert d['rei_audit']['graph_audit_head'] is None
+          print('LIVE DIRECT RESPONSE: ',d['choices'][0]['message']['content'][:300])
+          print('DIRECT MODEL CALLS:',d['rei_audit']['model_calls'],
+                'SERVER TOKENS:',d['usage']['total_tokens'])
+          PY
+      - name: 'Genuine Qwen REI mode: real recursive challenge graph + final synthesis'
+        run: |
+          status=$(timeout 1000s curl -sS \
+            -H 'Content-Type: application/json' \
+            --data '{"message":"What evidence would help test the statement that a new study method improves memory? Respond briefly.","history":[],"mode":"rei"}' \
+            http://127.0.0.1:7861/api/chat \
+            -w '%{http_code}' -o standalone-real-smoke/rei.json)
+          if [ "$status" != "200" ]; then
+            echo "REI inquiry returned HTTP $status; bounded error follows:"
+            cat standalone-real-smoke/rei.json
+            exit 1
+          fi
+          python - <<'PY'
+          import json
+          d=json.load(open('standalone-real-smoke/rei.json'))
+          a=d['audit']
+          assert d['mode']=='rei'
+          assert d['answer'].strip()
+          assert len(a['graph_audit_head'])==64
+          assert len(a['checkpoint_sha256'])==64
+          assert a['model_calls']>=2
+          assert a['model_reported_tokens']>0
+          assert a['evidence_status']=='model_proposals_only_unverified'
+          assert a['investigated_steps']>=1
+          print('LIVE REI RESPONSE:',d['answer'][:600])
+          print('LIVE REI AUDIT:',json.dumps(a,indent=2))
+          PY
+      - name: Independently verify HTTP surface remains loopback-only
+        run: |
+          python - <<'PY'
+          import http.client,json
+          conn=http.client.HTTPConnection('127.0.0.1',7861,timeout=5)
+          conn.request('GET','/health',headers={'Host':'evil.example'})
+          response=conn.getresponse()
+          assert response.status==403
+          conn.close()
+          conn=http.client.HTTPConnection('127.0.0.1',7861,timeout=5)
+          conn.request('POST','/api/chat',body=json.dumps({'message':'hi'}),
+                       headers={'Host':'127.0.0.1:7861','Origin':'https://evil.example',
+                                'Content-Type':'application/json'})
+          response=conn.getresponse()
+          assert response.status==403
+          conn.close()
+          print('Real app rejected external Host and Origin.')
+          PY
+      - name: Summarize real model and REI research limitations
+        if: success()
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          d=json.loads(Path('standalone-real-smoke/direct.json').read_text())
+          r=json.loads(Path('standalone-real-smoke/rei.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
+            out.write('## First REAL local open-weight REI chat runtime smoke\n\n')
+            out.write('Ollama v0.40.16, pinned executable SHA-256, Qwen3 4B Instruct, localhost only. No paid model API or ChatGPT session.\n\n')
+            out.write('| Mode | Real model calls | Server-reported tokens | REI graph |\n|---|---:|---:|---|\n')
+            out.write(f"| Direct | {d['rei_audit']['model_calls']} | {d['usage']['total_tokens']} | none |\n")
+            out.write(f"| REI inquiry | {r['audit']['model_calls']} | {r['audit']['model_reported_tokens']} | {r['audit']['graph_audit_head'][:12]}… |\n")
+            out.write('\nThis proves end-to-end inference and graph integration on **one example**, not superior reasoning or external factual verification.\n')
+          PY
+      - name: Archive only short example conversations and metering, NEVER model weights
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: rei-standalone-real-local-qwen-inquiry-v3
+          path: standalone-real-smoke
+          retention-days: 90
+          if-no-files-found: warn
