@@ -7,7 +7,7 @@ import threading
 import unittest
 from unittest.mock import patch
 
-from rei0.inquiry import ModelTurn
+from rei0.inquiry import ModelTurn, InquiryError
 from rei0.local_ai import (
     LocalAIError, LocalOllamaModel, StandaloneREI,
     validate_messages,validate_model_endpoint,
@@ -171,6 +171,24 @@ class LocalOllamaProtocolTests(unittest.TestCase):
                                max_output_tokens=120,timeout=30)
         self.assertEqual(model.attempts[-1]["status"],"failed")
         self.assertIsNone(model.attempts[-1]["tokens"])
+
+    def test_invalid_json_expansion_is_diagnosed_not_counted_as_success(self):
+        adapter=MockOllama()
+        malformed={
+            "message":{"content":json.dumps({
+                "reasons":["maybe valid"],"objections":[],
+                "followups":[{"text":"Test","target":"unknown","priority":5}],
+                "note":"Provisional",
+            })},
+            "prompt_eval_count":31,"eval_count":34,
+        }
+        with patch.object(adapter,"_transport",return_value=malformed):
+            with self.assertRaisesRegex(InquiryError,"structure validation"):
+                adapter.expand({"question":"test"},ordinal=0,
+                               max_output_tokens=128,timeout=30)
+        self.assertIn("expansion:InquiryError:",adapter.last_validation_error)
+        self.assertEqual(adapter.attempts[-1]["tokens"],65)
+        self.assertEqual(adapter.attempts[-1]["status"],"failed_validation")
 
     def test_inference_errors_do_not_fabricate_results(self):
         class Broken(FakeProvider):
