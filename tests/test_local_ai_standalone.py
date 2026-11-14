@@ -187,6 +187,47 @@ class LocalOllamaProtocolTests(unittest.TestCase):
                 [{"role":"user","content":"Can it verify this?"}])
 
 
+class RealModelSchemaGuardTests(unittest.TestCase):
+    def test_local_schema_does_not_offer_unresolvable_reason_target(self):
+        from rei0.local_ai import EXPANSION_SCHEMA
+        followup=EXPANSION_SCHEMA["properties"]["followups"]
+        self.assertLessEqual(followup["maxItems"],2)
+        self.assertEqual(
+            followup["items"]["properties"]["target"]["enum"],["claim"])
+        self.assertGreaterEqual(EXPANSION_SCHEMA["properties"]["reasons"]["minItems"],1)
+
+    def test_rei_provides_enough_budget_for_complete_structured_json(self):
+        from rei0.inquiry import InquiryEngine
+        class InspectModel(FakeProvider):
+            def initial(self,question,*,max_output_tokens,timeout):
+                self.initial_limit=max_output_tokens
+                return super().initial(question,max_output_tokens=max_output_tokens,
+                                       timeout=timeout)
+            def expand(self,context,*,ordinal,max_output_tokens,timeout):
+                self.expand_limit=max_output_tokens
+                return super().expand(context,ordinal=ordinal,
+                                      max_output_tokens=max_output_tokens,
+                                      timeout=timeout)
+        provider=InspectModel()
+        answer=StandaloneREI(provider_factory=lambda:provider,model="fake").answer(
+            [{"role":"user","content":"How can we test a belief?"}],mode="rei")
+        self.assertTrue(answer["answer"])
+        self.assertGreaterEqual(provider.initial_limit,512)
+        self.assertGreaterEqual(provider.expand_limit,512)
+        self.assertLessEqual(answer["audit"]["model_calls"],4)
+
+    def test_failed_expansion_reports_only_exception_type_not_raw_model_content(self):
+        class Broken(FakeProvider):
+            def expand(self,context,*,ordinal,max_output_tokens,timeout):
+                raise LocalAIError("PROMPT SECRET OR USER TEXT SHOULD NOT LEAK")
+        with self.assertRaises(LocalAIError) as caught:
+            StandaloneREI(provider_factory=Broken,model="fake").answer(
+                [{"role":"user","content":"Test the idea."}],mode="rei")
+        error=str(caught.exception)
+        self.assertIn("model_error (LocalAIError)",error)
+        self.assertNotIn("PROMPT SECRET",error)
+
+
 class LocalHTTPIntegrationTests(unittest.TestCase):
     def setUp(self):
         self.engine=StandaloneREI(provider_factory=FakeProvider,model="fake")
