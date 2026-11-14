@@ -1,0 +1,74 @@
+name: REI Challenge 11 — Independent live-choice retrospective
+on:
+  push:
+    branches: [challenge11-12case-probe-choice-audit]
+    paths:
+      - 'research/challenge11/independent_analysis.py'
+      - 'tests/test_challenge11_independent_analysis.py'
+      - '.github/workflows/challenge11-independent-choice-audit.yml'
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verify-original-four:
+    name: Verify original real Qwen four-case model choices independently
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install and test independent choice auditing
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge11_independent_analysis.py -v
+      - name: Read-only download of archived real Qwen pilot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p challenge11-results/original
+          gh run download 43258949174 \
+            --repo ted-peters/RecursiveEpistemicIntelligence \
+            --name challenge11-one-off-real-model-4case \
+            --dir challenge11-results/original
+          test -s challenge11-results/original/choice-live.json
+      - name: Verify pinned raw report hash and run kind
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('challenge11-results/original/choice-live.json').read_text())
+          assert d['report_sha256']=='0dae2cbccbd58eb6f69a603ecc6bb9bad03cd6e820a0065e1b2711f34f155940'
+          assert d['mode']=='qwen3-4b-live-arm-blind-probe-selection'
+          assert d['seed']==20261112 and d['cases']==4
+          assert d['model_limit_per_case']['max_calls']==4
+          print('Pinned real Qwen run identity and input checksum verified.')
+          PY
+      - name: Independently recheck every model choice and provider token
+        run: |
+          python -m research.challenge11.independent_analysis \
+            --input challenge11-results/original/choice-live.json \
+            --output challenge11-results/original-four-diagnostic.json
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          d=json.loads(Path('challenge11-results/original-four-diagnostic.json').read_text())
+          s=d['summary']
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+            f.write('## Challenge 11 real Qwen pilot: independent case-level choice audit\n\n')
+            f.write('Source: 4-case real model run [43258949174](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/43258949174). No new LLM calls in this audit.\n\n')
+            f.write(f"Exact Bayesian correct: **{s['exact_conventional_bayesian_correct']}/4**. Qwen self-critique correct: **{s['qwen_tool_self_critique_correct']}/4**.\n\n")
+            f.write(f"Different probe sequences: **{s['cases_with_different_probe_sequences']}/4**. Qwen first choices with measurable optimal-continuation regret: **{s['qwen_first_choices_with_strict_positive_optimal_continuation_regret']}/4**.\n\n")
+            f.write('This does NOT constitute a compute-matched REI-vs-conventional-model win. Both methods had the same numeric VOI tool, and the exact planner is conventional Bayesian computation.\n')
+          PY
+      - name: Preserve source and audited diagnostics
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge11-original-live-choice-independent-audit
+          path: challenge11-results
+          retention-days: 90
+          if-no-files-found: warn
