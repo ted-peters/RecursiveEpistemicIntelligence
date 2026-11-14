@@ -127,7 +127,7 @@ class MockOllama(LocalOllamaModel):
         self.bodies.append((path,body))
         if path=="/api/tags":
             return {"models":[{"name":self.model}]}
-        if body.get("format")=="json":
+        if isinstance(body.get("format"),dict):
             return {
                 "message":{"content":json.dumps({
                     "claim":"Provisional hypothesis",
@@ -154,6 +154,9 @@ class LocalOllamaProtocolTests(unittest.TestCase):
         self.assertEqual((text,tokens),("Synthetic local response",74))
         self.assertFalse(adapter.bodies[1][1]["stream"])
         self.assertFalse(adapter.bodies[1][1]["think"])
+        self.assertEqual(adapter.bodies[1][1]["format"]["type"],"object")
+        self.assertEqual(
+            adapter.bodies[1][1]["format"]["required"],["claim","questions"])
         self.assertEqual(adapter.attempts[0]["tokens"],66)
         self.assertEqual(adapter.attempts[1]["tokens"],74)
 
