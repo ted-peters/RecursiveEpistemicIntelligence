@@ -1,0 +1,106 @@
+name: REI standalone — ONE-TIME six-case REAL Qwen3 quality comparison
+on:
+  push:
+    branches: [rei-quality-sixcase-real-20261114]
+    paths: ['.github/workflows/rei-quality-sixcase-real-once.yml']
+permissions:
+  contents: read
+concurrency:
+  group: rei-quality-sixcase-real-20261114-once
+  cancel-in-progress: false
+
+jobs:
+  paired-real-inference:
+    name: Direct vs REI — six frozen public questions, identical Qwen model
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify paired grader and package before paying CPU inference time
+        run: |
+          python -m pip install .
+          bash -n scripts/start_rei_mac.sh
+          python -m unittest discover -s tests -p test_standalone_quality_gate.py -v
+          python -m unittest discover -s tests -p test_local_ai_standalone.py -v
+          mkdir -p quality-live-results
+      - name: Install SHA-256-verified Ollama v0.40.16 binary
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq zstd
+          curl -fL --retry 2 --connect-timeout 30 \
+            'https://github.com/ollama/ollama/releases/download/v0.40.16/ollama-linux-amd64.tar.zst' \
+            -o /tmp/ollama-linux-amd64.tar.zst
+          echo '87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d  /tmp/ollama-linux-amd64.tar.zst' | sha256sum -c
+          sudo tar --zstd -xf /tmp/ollama-linux-amd64.tar.zst -C /usr/local
+          ollama --version
+      - name: Launch local Ollama only on loopback
+        run: |
+          OLLAMA_HOST=127.0.0.1:11434 OLLAMA_NUM_PARALLEL=1 \
+            ollama serve >/tmp/rei-quality-ollama.log 2>&1 &
+          for n in $(seq 1 90); do
+            if curl -fsS http://127.0.0.1:11434/api/tags >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          tail -100 /tmp/rei-quality-ollama.log
+          exit 1
+      - name: Download Qwen3 4B Instruct, record actual tag digest (tag may change)
+        run: |
+          timeout 1400s env OLLAMA_HOST=127.0.0.1:11434 ollama pull qwen3:4b-instruct
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from urllib.request import urlopen
+          with urlopen('http://127.0.0.1:11434/api/tags',timeout=10) as r:
+            tags=json.load(r)
+          matching=[x for x in tags['models'] if x.get('name')=='qwen3:4b-instruct']
+          assert len(matching)==1 and len(matching[0]['digest'])==64
+          identity={'model_name':matching[0]['name'],
+                    'ollama_model_digest':matching[0]['digest'],
+                    'runtime_binary':'ollama v0.40.16 (archive SHA-256 verified)',
+                    'weights_sha_pinned_in_repository':False}
+          Path('quality-live-results/model-identity.json').write_text(json.dumps(identity,indent=2)+'\n')
+          print('Downloaded Ollama Qwen tag and recorded actual local digest:',identity['ollama_model_digest'])
+          PY
+      - name: Perform exactly six paired real-model objective tests with independent scoring
+        run: |
+          timeout 3400s python -m research.standalone_eval.paired_quality \
+            --kind live --count 6 --model qwen3:4b-instruct \
+            --label first-public-six-real-qwen-20261114 \
+            --output quality-live-results/paired-real-six.json
+          python -m research.standalone_eval.paired_quality \
+            --verify-only --count 6 \
+            --output quality-live-results/paired-real-six.json
+      - name: Report all paired outcomes and model costs without selecting favorable cases
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          from research.standalone_eval.paired_quality import load_cases,verify_report
+          cases,case_hash=load_cases()
+          d=json.loads(Path('quality-live-results/paired-real-six.json').read_text())
+          g=verify_report(d,cases=cases,cases_digest=case_hash)
+          assert g['provider_kind']=='ollama_live'
+          print('LIVE PAIRED ACCURACY AND COST:',json.dumps(g,indent=2))
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+            f.write('## Direct vs REI — first REAL local Qwen paired answers\n\n')
+            f.write('**SIX public development questions; NOT a blind benchmark or a compute-matched AI comparison.**\n\n')
+            f.write('| Mode | Correct | Failed output formats | Error cases | Model calls | Known model tokens | Unknown-usage calls |\n|---|---:|---:|---:|---:|---:|---:|\n')
+            for mode in ('direct','rei'):
+              x=g['summary'][mode]
+              f.write(f"| {mode} | {x['correct']}/6 | {x['format_failures']} | {x['failed_calls']} | {x['model_calls']} | {x['tokens_known']} | {x['unknown_usage_calls']} |\n")
+            f.write('\nREI is an inquiry-controller wrapping the same Qwen language model, not independent trained weights. The deterministic grade checks final multiple-choice markers only.\n')
+          if g['summary']['rei']['failed_calls'] or g['summary']['direct']['failed_calls']:
+            raise SystemExit('At least one live model call failed; retain full artifact for diagnosis.')
+          PY
+      - name: Preserve case-level outputs, independent cost report and exact model identity
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: rei-standalone-real-sixcase-quality-gate
+          path: quality-live-results
+          retention-days: 90
+          if-no-files-found: warn
