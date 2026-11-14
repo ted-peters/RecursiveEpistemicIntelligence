@@ -205,6 +205,47 @@ class LocalOllamaProtocolTests(unittest.TestCase):
                 [{"role":"user","content":"Can it verify this?"}])
 
 
+class BoundedLocalQwenInquiryTests(unittest.TestCase):
+    def test_compact_schema_disallows_reason_target_without_reference_reason(self):
+        from rei0.local_ai import EXPANSION_SCHEMA
+        props=EXPANSION_SCHEMA["properties"]
+        self.assertEqual(props["reasons"]["minItems"],1)
+        self.assertLessEqual(props["followups"]["maxItems"],2)
+        self.assertEqual(props["followups"]["items"]["properties"]["target"]["enum"],
+                         ["claim"])
+
+    def test_live_compatible_json_token_budget_is_still_bounded(self):
+        class TokenInspection(FakeProvider):
+            def __init__(self):
+                super().__init__()
+                self.limits=[]
+            def initial(self,question,*,max_output_tokens,timeout):
+                self.limits.append(max_output_tokens)
+                return super().initial(question,max_output_tokens=max_output_tokens,
+                                       timeout=timeout)
+            def expand(self,context,*,ordinal,max_output_tokens,timeout):
+                self.limits.append(max_output_tokens)
+                return super().expand(context,ordinal=ordinal,
+                                      max_output_tokens=max_output_tokens,
+                                      timeout=timeout)
+        provider=TokenInspection()
+        result=StandaloneREI(provider_factory=lambda:provider,model="fake").answer(
+            [{"role":"user","content":"What can we test?"}],mode="rei")
+        self.assertGreaterEqual(len(provider.limits),2)
+        self.assertTrue(all(x>=512 for x in provider.limits))
+        self.assertLessEqual(result["audit"]["model_calls"],4)
+
+    def test_server_failure_cannot_echo_model_error_text(self):
+        class WrongExpansion(FakeProvider):
+            def expand(self,context,*,ordinal,max_output_tokens,timeout):
+                raise LocalAIError("PRIVATE PROMPT OR MODEL TEXT")
+        with self.assertRaises(LocalAIError) as ctx:
+            StandaloneREI(provider_factory=WrongExpansion,model="fake").answer(
+                [{"role":"user","content":"What evidence would matter?"}],mode="rei")
+        self.assertIn("model_error (LocalAIError)",str(ctx.exception))
+        self.assertNotIn("PRIVATE PROMPT",str(ctx.exception))
+
+
 class LocalHTTPIntegrationTests(unittest.TestCase):
     def setUp(self):
         self.engine=StandaloneREI(provider_factory=FakeProvider,model="fake")
