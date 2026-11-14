@@ -149,22 +149,18 @@ def run_study(*, seeds: tuple[int,...]=STUDY_SEEDS,
         worse_count=0
         for seed,c in cases:
             truth=true_likelihoods(c.probes,f"{seed}:{c.id}",distortion)
+            case_values={}
             for arm in ARMS:
                 err,n=exact_true_policy_risk(
                     prior=c.prior,assumed=c.probes,true=truth,
                     policy=arm,cost=cost)
                 sums[arm][0]+=err
                 sums[arm][1]+=n
-            # Detect when ignoring calibration uncertainty costs real utility.
-            oracle_cost=(sum(sums["privileged_true_cost_optimal"])
-                         if False else None)  # never compare accumulated sums
-            del oracle_cost
-            nominal_cost = exact_true_policy_risk(
-                prior=c.prior, assumed=c.probes, true=truth,
-                policy="nominal_cost_optimal",cost=cost)
-            privileged_cost = exact_true_policy_risk(
-                prior=c.prior, assumed=c.probes, true=truth,
-                policy="privileged_true_cost_optimal",cost=cost)
+                case_values[arm]=(err,n)
+            # Compare true expected loss for the SAME scenario, not
+            # accumulated means, and never give nominal policies oracle data.
+            nominal_cost=case_values["nominal_cost_optimal"]
+            privileged_cost=case_values["privileged_true_cost_optimal"]
             if (nominal_cost[0]+cost*nominal_cost[1]
                 > privileged_cost[0]+cost*privileged_cost[1]+1e-10):
                 worse_count+=1
