@@ -285,17 +285,29 @@ class StandaloneREI:
                     "evidence_status":"not_verified","stop_reason":"direct"}
             return {"answer":text.strip(),"mode":mode,
                     "model":self.model,"audit":report}
+        # The Qwen3 4B structured expansion frequently needs more than
+        # 256 output tokens to close a nested JSON object. An undersized cap
+        # produces a model_error without an honest, usable answer. Allocate
+        # enough for one concise schema-constrained expansion, while keeping
+        # the inquiry's *total* calls, tokens, and wall time strictly bounded.
         engine=InquiryEngine(provider, InquiryLimits(
-            max_steps=2,max_depth=2,max_model_calls=3,max_tokens=2800,
-            max_seconds=150,max_questions=10,max_nodes=60,max_edges=80,
-            max_output_tokens=256))
+            max_steps=2,max_depth=2,max_model_calls=3,max_tokens=4500,
+            max_seconds=220,max_questions=10,max_nodes=60,max_edges=80,
+            max_output_tokens=512))
         try:
             session=engine.run(self._question(messages))
         except (InquiryError,LocalAIError) as exc:
             raise LocalAIError("REI inquiry could not start: "+str(exc)) from exc
         summary=session.report()
         if session.stop_reason in ("model_error","reported_token_overrun","time_budget"):
-            raise LocalAIError("REI inquiry stopped at "+session.stop_reason+
+            # Expose the *type* of failed inference to the local developer,
+            # never model-origin content, prompts, reviewer keys or traces.
+            last_error=next((e.get("error_type") for e in reversed(session.trace)
+                             if e.get("event")=="model_error"),None)
+            suffix=(" ("+last_error+")" if last_error in
+                    ("InquiryError","LocalAIError","JSONDecodeError","ValueError",
+                     "TypeError","TimeoutError") else "")
+            raise LocalAIError("REI inquiry stopped at "+session.stop_reason+suffix+
                                "; no unaudited answer was generated")
         notes={
             "provisional_claim":summary["root_claim"]["text"],
