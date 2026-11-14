@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>REI Local AI — Standalone Research Runtime</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0b111c; --panel: #151f31; --line: #2b3950; --text: #e9eef7; --muted: #9bacc5; --accent: #8db5ff; }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font: 16px/1.55 system-ui, -apple-system, sans-serif; margin: 0; }
+    main { width: min(880px, calc(100vw - 32px)); margin: 2.5rem auto 4rem; }
+    header h1 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin: 0; }
+    p, small { color: var(--muted); }
+    .eyebrow { letter-spacing: .12em; color: var(--accent); font-size: .75rem; font-weight: 700; margin-bottom: .2rem; }
+    #log { min-height: 220px; display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
+    .entry { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.25rem; }
+    .entry.user { background: #1b2c47; }
+    .role { display: block; color: var(--accent); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 750; margin-bottom: .55rem; }
+    .body { white-space: pre-wrap; overflow-wrap: anywhere; }
+    details { margin-top: 1rem; padding-top: .6rem; border-top: 1px solid var(--line); }
+    summary { cursor: pointer; color: var(--muted); }
+    pre { font-size: .8rem; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--muted); }
+    form { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem; }
+    label { display: block; font-size: .85rem; color: var(--muted); margin-bottom: .4rem; }
+    textarea { width: 100%; min-height: 95px; resize: vertical; padding: .8rem; background: #080f1c; color: var(--text); border: 1px solid #3a4b66; border-radius: 8px; font: inherit; }
+    textarea:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+    button,select { font: inherit; border-radius: 9px; padding: .55rem .85rem; }
+    button { cursor: pointer; background: var(--accent); color: #091529; border: none; font-weight: 700; }
+    button:disabled { cursor: progress; opacity: .6; }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; margin-top: .7rem; }
+    select { color: var(--text); background: #101929; border: 1px solid #465772; }
+    .hint { font-size: .8rem; margin-left: auto; }
+    footer { margin-top: 1.2rem; color: var(--muted); font-size: .8rem; }
+    code { color: #bed2f9; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">RECURSIVE EPISTEMIC INTELLIGENCE</div>
+    <h1>REI Local AI</h1>
+    <p>A local open-weight language model, guided by the bounded REI inquiry engine. No ChatGPT account or paid model API required.</p>
+    <small>Research software. REI's self-generated arguments are <strong>not verified facts</strong>. No web browsing or autonomous external actions.</small>
+  </header>
+  <section id="log" aria-live="polite">
+    <article class="entry"><span class="role">System</span><div class="body">Ready for a question. Choose REI inquiry for an auditable challenge-and-synthesis pass, or Direct model as a one-call comparison.</div></article>
+  </section>
+  <form id="form">
+    <label for="prompt">Your question</label>
+    <textarea id="prompt" placeholder="What are the assumptions behind this idea, and how could I test them?" maxlength="3000" required></textarea>
+    <div class="controls">
+      <label for="mode" style="margin: 0">Reasoning mode</label>
+      <select id="mode"><option value="rei">REI bounded inquiry</option><option value="direct">Direct model (baseline)</option></select>
+      <button type="submit" id="send">Ask REI</button>
+      <button type="button" id="clear" style="background:#2d3b52;color:#e9eef7">Clear conversation</button>
+      <span class="hint">Ctrl/⌘ + Enter to send</span>
+    </div>
+  </form>
+  <footer>Endpoint: <code>POST /v1/chat/completions</code> · Model: <code>rei-local</code> · Locally hosted inference · No external authentication</footer>
+</main>
+<script>
+(function () {
+  "use strict";
+  const form = document.getElementById("form");
+  const prompt = document.getElementById("prompt");
+  const mode = document.getElementById("mode");
+  const send = document.getElementById("send");
+  const clear = document.getElementById("clear");
+  const log = document.getElementById("log");
+  let history = [];
+
+  function add(role, text, audit) {
+    const item = document.createElement("article");
+    item.className = "entry " + (role === "You" ? "user" : "");
+    const r = document.createElement("span");
+    r.className = "role";
+    r.textContent = role;
+    const body = document.createElement("div");
+    body.className = "body";
+    body.textContent = text;
+    item.append(r, body);
+    if (audit) {
+      const details = document.createElement("details");
+      const title = document.createElement("summary");
+      title.textContent = "View REI audit: model calls, tokens, open questions";
+      const json = document.createElement("pre");
+      json.textContent = JSON.stringify(audit, null, 2);
+      details.append(title, json);
+      item.append(details);
+    }
+    log.appendChild(item);
+    item.scrollIntoView({behavior:"smooth", block:"nearest"});
+    return item;
+  }
+
+  async function ask() {
+    const text = prompt.value.trim();
+    if (!text) return;
+    if (history.length >= 12) {
+      add("System", "Conversation is at its configured limit. Use Clear conversation to start a new one.");
+      return;
+    }
+    const oldHistory = history.slice();
+    send.disabled = true;
+    send.textContent = "Investigating…";
+    add("You", text);
+    const pending = add("REI", "Running the local model and bounded inquiry…");
+    prompt.value = "";
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message: text, history: oldHistory, mode: mode.value})
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Local request failed");
+      const body = pending.querySelector(".body");
+      body.textContent = data.answer;
+      const details = document.createElement("details");
+      const summary = document.createElement("summary");
+      summary.textContent = "View REI audit: model calls, tokens, open questions";
+      const pre = document.createElement("pre");
+      pre.textContent = JSON.stringify(data.audit, null, 2);
+      details.append(summary, pre);
+      pending.append(details);
+      history.push({role:"user",content:text},{role:"assistant",content:data.answer});
+    } catch (err) {
+      pending.querySelector(".body").textContent = "Local generation error: " + err.message;
+    } finally {
+      send.disabled = false;
+      send.textContent = "Ask REI";
+      prompt.focus();
+    }
+  }
+  form.addEventListener("submit", function(e){ e.preventDefault(); ask(); });
+  prompt.addEventListener("keydown", function(e){
+    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)){e.preventDefault();ask();}
+  });
+  clear.addEventListener("click", function(){
+    history = []; log.replaceChildren();
+    add("System", "Conversation cleared locally.");
+  });
+})();
+</script>
+</body>
+</html>

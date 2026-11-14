@@ -1,0 +1,57 @@
+name: REI Challenge 11 — 1000-case investigation-cost stress test
+on:
+  push:
+    branches: [challenge11-12case-probe-choice-audit]
+    paths:
+      - 'research/challenge11/cost_sensitivity.py'
+      - 'tests/test_challenge11_cost_sensitivity.py'
+      - '.github/workflows/challenge11-cost-sensitivity.yml'
+permissions:
+  contents: read
+
+jobs:
+  exact-cost-sensitivity:
+    name: Five public seeds, 200 cases each, four probe-cost levels (no LLM)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install, test independent expected-cost formulas
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge11_cost_sensitivity.py -v
+      - name: Run exact 1000-case, four-cost, four-policy comparison
+        run: |
+          python -m research.challenge11.cost_sensitivity \
+            --output challenge11-results/cost-frontier-1000.json
+          python -m research.challenge11.cost_sensitivity \
+            --verify-only --output challenge11-results/cost-frontier-1000.json
+      - name: Create auditable cost frontier summary
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          d=json.loads(Path('challenge11-results/cost-frontier-1000.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+            f.write('## Challenge 11C: cost of investigation\n\n')
+            f.write('**1,000 PUBLIC SYNTHETIC expected-risk cases; zero AI model inference.**\n\n')
+            f.write('| Cost per probe | Risk-only planner: expected error | Risk-only: expected probes | Cost-aware: expected error | Cost-aware: expected probes |\n')
+            f.write('|---|---:|---:|---:|---:|\n')
+            for row in d['cost_results']:
+              r=row['strategies']['recursive_voi']
+              a=row['strategies']['cost_optimal']
+              f.write(f"| {row['cost_per_observation_in_wrong_decision_units']:.3f} | {r['mean_exact_expected_error']:.5f} | {r['mean_expected_probes']:.3f} | {a['mean_exact_expected_error']:.5f} | {a['mean_expected_probes']:.3f} |\n")
+            f.write('\nCost-aware exact planning is **conventional Bayesian decision theory**; this is not evidence of REI model superiority.\n')
+          PY
+      - name: Archive exact mathematical stress-test results
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge11-cost-aware-1000-case-frontier
+          path: challenge11-results/cost-frontier-1000.json
+          retention-days: 90
+          if-no-files-found: warn

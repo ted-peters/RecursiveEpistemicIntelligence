@@ -17,4 +17,7 @@ classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :
 include = ["rei0*"]
 
 [tool.setuptools.package-data]
-rei0 = ["data/*.json"]
+rei0 = ["data/*.json", "local_ai_ui.html"]
+
+[project.scripts]
+rei-local-ai = "rei0.local_ai_cli:main"
