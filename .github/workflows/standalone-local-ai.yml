@@ -37,6 +37,25 @@ jobs:
         run: python -m unittest discover -s tests -p test_local_ai_standalone.py -v
       - name: Full REI regression suite
         run: python -m unittest discover -s tests -v
+      - name: Independently parse and inspect Docker Compose's local-only service topology
+        run: |
+          python -m pip install 'PyYAML>=6,<7'
+          python - <<'PY'
+          import yaml
+          from pathlib import Path
+          data=yaml.safe_load(Path('compose.yaml').read_text())
+          services=data['services']
+          assert set(services)=={'ollama','ollama-init','rei'}
+          assert services['rei']['ports']==['127.0.0.1:7861:7861']
+          assert 'ports' not in services['ollama']
+          assert 'ports' not in services['ollama-init']
+          assert services['rei']['environment']['REI_OLLAMA_URL']=='http://ollama:11434'
+          assert services['ollama-init']['depends_on']['ollama']['condition']=='service_healthy'
+          assert services['rei']['depends_on']['ollama-init']['condition']=='service_completed_successfully'
+          assert services['rei']['read_only'] is True
+          assert 'ALL' in services['rei']['cap_drop']
+          print('Docker Compose parsed: model backend isolated and REI host port bound to loopback.')
+          PY
       - name: Validate container stack configuration, if Docker Compose is available
         run: |
           if docker compose version >/dev/null 2>&1; then
