@@ -86,15 +86,23 @@ INITIAL_SCHEMA={
     },
     "required":["claim","questions"],
 }
+# Small local models should produce bounded, structurally valid expansions.
+# Conditional reason-target questions cannot be enforced by this JSON schema;
+# constrain to 'claim' targets rather than accepting inconsistent graphs.
 EXPANSION_SCHEMA={
     "type":"object","additionalProperties":False,
     "properties":{
-        "reasons":{"type":"array","maxItems":3,
-                   "items":{"type":"string","minLength":1,"maxLength":600}},
-        "objections":{"type":"array","maxItems":3,
-                      "items":{"type":"string","minLength":1,"maxLength":600}},
-        "followups":{"type":"array","maxItems":4,"items":QUESTION_SCHEMA},
-        "note":{"type":"string","minLength":1,"maxLength":600},
+        "reasons":{"type":"array","minItems":1,"maxItems":2,
+                   "items":{"type":"string","minLength":1,"maxLength":240}},
+        "objections":{"type":"array","maxItems":2,
+                      "items":{"type":"string","minLength":1,"maxLength":240}},
+        "followups":{"type":"array","maxItems":2,
+                     "items":{**QUESTION_SCHEMA,
+                              "properties":{
+                                  **QUESTION_SCHEMA["properties"],
+                                  "text":{"type":"string","minLength":1,"maxLength":220},
+                                  "target":{"type":"string","enum":["claim"]}}}},
+        "note":{"type":"string","minLength":1,"maxLength":240},
     },
     "required":["reasons","objections","followups","note"],
 }
@@ -294,22 +302,28 @@ class StandaloneREI:
                     "evidence_status":"not_verified","stop_reason":"direct"}
             return {"answer":text.strip(),"mode":mode,
                     "model":self.model,"audit":report}
+        # Allow a complete nested JSON response without unbounded inference.
+        # A 256-token expansion was too short for pinned local Qwen3 4B.
         engine=InquiryEngine(provider, InquiryLimits(
-            max_steps=2,max_depth=2,max_model_calls=3,max_tokens=2800,
-            max_seconds=150,max_questions=10,max_nodes=60,max_edges=80,
-            max_output_tokens=256))
+            max_steps=2,max_depth=2,max_model_calls=3,max_tokens=4500,
+            max_seconds=220,max_questions=10,max_nodes=60,max_edges=80,
+            max_output_tokens=512))
         try:
             session=engine.run(self._question(messages))
         except (InquiryError,LocalAIError) as exc:
             raise LocalAIError("REI inquiry could not start: "+str(exc)) from exc
         summary=session.report()
         if session.stop_reason in ("model_error","reported_token_overrun","time_budget"):
-            issue=(getattr(provider,"last_validation_error",None) or
-                   next((item.get("error_type","unknown")
-                         for item in reversed(session.trace)
-                         if item.get("event")=="model_error"),"unknown"))
-            raise LocalAIError("REI inquiry stopped at "+session.stop_reason+
-                               " ("+str(issue)[:180]+"); no unaudited answer was generated")
+            # Don't echo untrusted model output or user data from exception
+            # messages into an unauthenticated HTTP error body.
+            error_type=next((item.get("error_type")
+                             for item in reversed(session.trace)
+                             if item.get("event")=="model_error"),None)
+            suffix=(" ("+error_type+")" if error_type in
+                    ("InquiryError","LocalAIError","JSONDecodeError",
+                     "ValueError","TypeError","TimeoutError") else "")
+            raise LocalAIError("REI inquiry stopped at "+session.stop_reason+suffix+
+                               "; no unaudited answer was generated")
         notes={
             "provisional_claim":summary["root_claim"]["text"],
             "provisional_reasons":[v["text"] for v in summary["reason_nodes"]][-5:],
