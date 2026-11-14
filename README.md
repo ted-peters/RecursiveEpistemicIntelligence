@@ -6,6 +6,25 @@
 
 REI examines how provisional beliefs can remain open to challenge, how sources can support or oppose claims, and how changes in evidence propagate through a structured epistemic graph. The project explores philosophical infinite regress as an **open-ended obligation to justify**, while keeping computation and operational safeguards finite.
 
+## Build a standalone REI-powered AI (local-first)
+
+You can now run REI as a **usable local chat application**, with a browser
+interface and an OpenAI-compatible HTTP endpoint. It connects the real
+bounded inquiry/graph engine to an independently hosted open-weight
+Ollama language model; no ChatGPT account or paid API is required.
+
+**Quick start:** install Docker Desktop, then run
+`docker compose up --build` and visit **http://127.0.0.1:7861/**.
+The first start downloads the open-weight model; model inference runs on
+your machine. Keep the app on localhost: it does not include remote user
+authentication. For a faster native Mac setup, API examples, and an honest
+explanation of what the engine can and cannot verify, see
+**[STANDALONE_AI.md](STANDALONE_AI.md)**.
+
+The REI runtime produces model-origin *provisional* reasoning, not
+authenticated factual evidence, and it has not been shown to outperform
+conventional AI on independent held-out tasks.
+
 ## Start here
 
 - **For visitors:** Explore the Hugging Face demo (after the Space is published). See `space/README.md`.
