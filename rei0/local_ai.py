@@ -63,6 +63,42 @@ def validate_messages(messages: list[dict]) -> list[dict[str,str]]:
     return out
 
 
+QUESTION_SCHEMA={
+    "type":"object","additionalProperties":False,
+    "properties":{
+        "text":{"type":"string","minLength":1,"maxLength":400},
+        "target":{"type":"string","enum":["claim","reason"]},
+        "priority":{"type":"integer","minimum":0,"maximum":10},
+    },
+    "required":["text","target","priority"],
+}
+INITIAL_SCHEMA={
+    "type":"object","additionalProperties":False,
+    "properties":{
+        "claim":{"type":"string","minLength":1,"maxLength":800},
+        "questions":{
+            "type":"array","minItems":1,"maxItems":4,
+            "items":{**QUESTION_SCHEMA,
+                     "properties":{**QUESTION_SCHEMA["properties"],
+                                   "target":{"type":"string","enum":["claim"]}}},
+        },
+    },
+    "required":["claim","questions"],
+}
+EXPANSION_SCHEMA={
+    "type":"object","additionalProperties":False,
+    "properties":{
+        "reasons":{"type":"array","maxItems":3,
+                   "items":{"type":"string","minLength":1,"maxLength":600}},
+        "objections":{"type":"array","maxItems":3,
+                      "items":{"type":"string","minLength":1,"maxLength":600}},
+        "followups":{"type":"array","maxItems":4,"items":QUESTION_SCHEMA},
+        "note":{"type":"string","minLength":1,"maxLength":600},
+    },
+    "required":["reasons","objections","followups","note"],
+}
+
+
 class LocalOllamaModel:
     """Small, no-SDK, no-redirect Ollama HTTP client with explicit token metering."""
     def __init__(self, *, model: str="qwen3:4b-instruct",
@@ -114,7 +150,8 @@ class LocalOllamaModel:
             connection.close()
 
     def _generate(self, *, system: str, user: str, json_mode: bool,
-                  max_output_tokens: int, timeout: float) -> tuple[str,int]:
+                  max_output_tokens: int, timeout: float,
+                  output_schema: dict | None = None) -> tuple[str,int]:
         if (type(max_output_tokens) is not int
             or not 32<=max_output_tokens<=2048):
             raise LocalAIError("invalid output token limit")
@@ -128,7 +165,7 @@ class LocalOllamaModel:
                        "num_ctx":8192},
         }
         if json_mode:
-            request["format"]="json"
+            request["format"]=output_schema if output_schema is not None else "json"
         attempt={"request_sha256":digest(request),"kind":"json" if json_mode else "text",
                  "status":"failed","tokens":None}
         began=time.monotonic()
@@ -156,7 +193,8 @@ class LocalOllamaModel:
 
     def initial(self, question: str, *, max_output_tokens: int, timeout: float) -> ModelTurn:
         text,tokens=self._generate(system=SYSTEM_INITIAL,user=question,json_mode=True,
-                                   max_output_tokens=max_output_tokens,timeout=timeout)
+                                   max_output_tokens=max_output_tokens,timeout=timeout,
+                                   output_schema=INITIAL_SCHEMA)
         try:
             return ModelTurn(json.loads(text),tokens)
         except json.JSONDecodeError as exc:
@@ -168,7 +206,8 @@ class LocalOllamaModel:
             system=SYSTEM_EXPAND,
             user=json.dumps({"step":ordinal,"context":context},
                             ensure_ascii=False,sort_keys=True),
-            json_mode=True,max_output_tokens=max_output_tokens,timeout=timeout)
+            json_mode=True,max_output_tokens=max_output_tokens,timeout=timeout,
+            output_schema=EXPANSION_SCHEMA)
         try:
             return ModelTurn(json.loads(text),tokens)
         except json.JSONDecodeError as exc:
