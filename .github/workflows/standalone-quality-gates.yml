@@ -1,0 +1,60 @@
+name: REI standalone — public answer-quality and Apple Silicon launch gates
+on:
+  push:
+    branches: [rei-standalone-quality-gates-20261114]
+    paths:
+      - 'research/standalone_eval/**'
+      - 'tests/test_standalone_quality_gate.py'
+      - 'scripts/start_rei_mac.sh'
+      - 'STANDALONE_AI.md'
+      - '.github/workflows/standalone-quality-gates.yml'
+permissions:
+  contents: read
+
+jobs:
+  verify-quality-gates:
+    name: Verify independent grading, fake-only fixture and Mac launcher syntax
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install REI and verify Mac Bash syntax
+        run: |
+          python -m pip install .
+          bash -n scripts/start_rei_mac.sh
+          test -s STANDALONE_AI.md
+      - name: Validate benchmark with independent tamper checks (NO model inference)
+        run: |
+          python -m unittest discover -s tests -p test_standalone_quality_gate.py -v
+      - name: Generate intentionally synthetic fixture outcomes
+        run: |
+          mkdir -p quality-results
+          python -m research.standalone_eval.paired_quality \
+            --kind fixture --count 6 --label public-six-fixture-only \
+            --output quality-results/fixture-report.json
+          python -m research.standalone_eval.paired_quality \
+            --count 6 --verify-only \
+            --output quality-results/fixture-report.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("quality-results/fixture-report.json").read_text())
+          assert d["provider_kind"]=="fixture"
+          assert d["case_count"]==6 and len(d["outcomes"])==12
+          assert all(x["known_reported_tokens"]==11 for x in d["outcomes"])
+          print("Fixture model calls are FAKE; they must NEVER be described as real Qwen performance.")
+          PY
+      - name: Validate entire REI package after adding quality tools
+        run: python -m unittest discover -s tests -v
+      - name: Preserve audit fixtures as test examples, NOT model results
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: rei-standalone-public-quality-fixture-only
+          path: quality-results/fixture-report.json
+          retention-days: 60
+          if-no-files-found: warn
