@@ -14,7 +14,8 @@ import time
 from urllib.parse import urlsplit
 
 from .adapters import SYSTEM_INITIAL, SYSTEM_EXPAND
-from .inquiry import (InquiryEngine, InquiryError, InquiryLimits, ModelTurn,\n                      InitialDraft, ExpansionDraft)
+from .inquiry import (InquiryEngine, InquiryError, InquiryLimits, ModelTurn,
+                      InitialDraft, ExpansionDraft)
 from .models import digest
 
 
