@@ -31,13 +31,19 @@ def _validate_cost(cost: float):
         raise InvestigationError("test cost must be a finite nonnegative number")
 
 
-@lru_cache(maxsize=100000)
 def optimal_with_cost(p: float, probes: tuple[Probe,...], budget: int,
                       cost: float) -> float:
-    """Standard conventional Bellman optimum including expected probe cost."""
+    """Validate each call *before* caching; bool True must not equal 1.0."""
     _validate_cost(cost)
     if type(budget) is not int or budget < 0:
         raise InvestigationError("invalid investigation budget")
+    return _optimal_with_cost_cached(p,probes,budget,float(cost))
+
+
+@lru_cache(maxsize=100000)
+def _optimal_with_cost_cached(p: float, probes: tuple[Probe,...], budget: int,
+                              cost: float) -> float:
+    """Standard conventional Bellman optimum including expected probe cost."""
     best = bayes_risk(p)
     if not budget or not probes:
         return best
