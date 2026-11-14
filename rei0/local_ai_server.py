@@ -24,7 +24,7 @@ def make_server(engine: StandaloneREI, *, host: str = "127.0.0.1",
         raise LocalAIError("Only local loopback or explicit container listening is permitted")
     if host=="0.0.0.0" and not allow_remote_bind:
         raise LocalAIError("Remote binding requires --allow-remote-bind and an external access boundary")
-    if type(port) is not int or not 1<=port<=65535:
+    if type(port) is not int or not 0<=port<=65535:
         raise LocalAIError("invalid listening port")
     lock=threading.BoundedSemaphore(value=1)
 
@@ -57,7 +57,8 @@ def make_server(engine: StandaloneREI, *, host: str = "127.0.0.1",
             self.wfile.write(raw)
 
         def _accept_host(self) -> bool:
-            expected={"localhost:"+str(port),"127.0.0.1:"+str(port)}
+            actual_port=self.server.server_address[1]
+            expected={"localhost:"+str(actual_port),"127.0.0.1:"+str(actual_port)}
             supplied=self.headers.get("Host","")
             # DNS rebinding defense; do not treat arbitrary internal names as
             # browser-trusted just because the process is in a container.
@@ -68,8 +69,9 @@ def make_server(engine: StandaloneREI, *, host: str = "127.0.0.1",
 
         def _accept_origin(self) -> bool:
             origin=self.headers.get("Origin")
-            if origin and origin not in ("http://localhost:"+str(port),
-                                         "http://127.0.0.1:"+str(port)):
+            actual_port=self.server.server_address[1]
+            if origin and origin not in ("http://localhost:"+str(actual_port),
+                                         "http://127.0.0.1:"+str(actual_port)):
                 self._send(403,{"error":"Cross-origin requests are not permitted"})
                 return False
             return True
