@@ -85,15 +85,24 @@ INITIAL_SCHEMA={
     },
     "required":["claim","questions"],
 }
+# A compact expansion fits smaller open-weight local model output budgets.
+# Restrict targets to the existing claim: the underlying inquiry engine still
+# supports reason targets, but a single-call schema cannot enforce the
+# conditional "reason" target requires a nonempty reasons array.
 EXPANSION_SCHEMA={
     "type":"object","additionalProperties":False,
     "properties":{
-        "reasons":{"type":"array","maxItems":3,
-                   "items":{"type":"string","minLength":1,"maxLength":600}},
-        "objections":{"type":"array","maxItems":3,
-                      "items":{"type":"string","minLength":1,"maxLength":600}},
-        "followups":{"type":"array","maxItems":4,"items":QUESTION_SCHEMA},
-        "note":{"type":"string","minLength":1,"maxLength":600},
+        "reasons":{"type":"array","minItems":1,"maxItems":2,
+                   "items":{"type":"string","minLength":1,"maxLength":240}},
+        "objections":{"type":"array","maxItems":2,
+                      "items":{"type":"string","minLength":1,"maxLength":240}},
+        "followups":{"type":"array","maxItems":2,
+                     "items":{**QUESTION_SCHEMA,
+                              "properties":{
+                                  **QUESTION_SCHEMA["properties"],
+                                  "text":{"type":"string","minLength":1,"maxLength":220},
+                                  "target":{"type":"string","enum":["claim"]}}}},
+        "note":{"type":"string","minLength":1,"maxLength":240},
     },
     "required":["reasons","objections","followups","note"],
 }
