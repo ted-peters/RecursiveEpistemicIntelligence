@@ -14,7 +14,7 @@ import time
 from urllib.parse import urlsplit
 
 from .adapters import SYSTEM_INITIAL, SYSTEM_EXPAND
-from .inquiry import InquiryEngine, InquiryError, InquiryLimits, ModelTurn
+from .inquiry import (InquiryEngine, InquiryError, InquiryLimits, ModelTurn,\n                      InitialDraft, ExpansionDraft)
 from .models import digest
 
 
@@ -196,9 +196,13 @@ class LocalOllamaModel:
                                    max_output_tokens=max_output_tokens,timeout=timeout,
                                    output_schema=INITIAL_SCHEMA)
         try:
-            return ModelTurn(json.loads(text),tokens)
-        except json.JSONDecodeError as exc:
-            raise InquiryError("local model's initial draft was not JSON") from exc
+            document=json.loads(text)
+            InitialDraft.parse(document)
+            return ModelTurn(document,tokens)
+        except (json.JSONDecodeError,InquiryError) as exc:
+            self.last_validation_error="initial:"+type(exc).__name__+": "+str(exc)[:160]
+            self.attempts[-1]["status"]="failed_validation"
+            raise InquiryError("local model's initial draft failed structure validation") from exc
 
     def expand(self, context: dict, *, ordinal: int, max_output_tokens: int,
                timeout: float) -> ModelTurn:
@@ -209,9 +213,13 @@ class LocalOllamaModel:
             json_mode=True,max_output_tokens=max_output_tokens,timeout=timeout,
             output_schema=EXPANSION_SCHEMA)
         try:
-            return ModelTurn(json.loads(text),tokens)
-        except json.JSONDecodeError as exc:
-            raise InquiryError("local model's expansion was not JSON") from exc
+            document=json.loads(text)
+            ExpansionDraft.parse(document)
+            return ModelTurn(document,tokens)
+        except (json.JSONDecodeError,InquiryError) as exc:
+            self.last_validation_error="expansion:"+type(exc).__name__+": "+str(exc)[:160]
+            self.attempts[-1]["status"]="failed_validation"
+            raise InquiryError("local model's recursive expansion failed structure validation") from exc
 
     def complete(self, *, system: str, user: str, max_output_tokens: int,
                  timeout: float) -> tuple[str,int]:
@@ -295,8 +303,12 @@ class StandaloneREI:
             raise LocalAIError("REI inquiry could not start: "+str(exc)) from exc
         summary=session.report()
         if session.stop_reason in ("model_error","reported_token_overrun","time_budget"):
+            issue=(getattr(provider,"last_validation_error",None) or
+                   next((item.get("error_type","unknown")
+                         for item in reversed(session.trace)
+                         if item.get("event")=="model_error"),"unknown"))
             raise LocalAIError("REI inquiry stopped at "+session.stop_reason+
-                               "; no unaudited answer was generated")
+                               " ("+str(issue)[:180]+"); no unaudited answer was generated")
         notes={
             "provisional_claim":summary["root_claim"]["text"],
             "provisional_reasons":[v["text"] for v in summary["reason_nodes"]][-5:],
