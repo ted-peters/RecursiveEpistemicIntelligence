@@ -58,7 +58,7 @@ jobs:
           done
           cat /tmp/rei-standalone-server.log
           exit 1
-      - name: Genuine Qwen direct mode: model/API response and metering
+      - name: 'Genuine Qwen direct mode: model/API response and metering'
         run: |
           mkdir -p standalone-real-smoke
           timeout 600s curl -sSf \
@@ -78,7 +78,7 @@ jobs:
           print('DIRECT MODEL CALLS:',d['rei_audit']['model_calls'],
                 'SERVER TOKENS:',d['usage']['total_tokens'])
           PY
-      - name: Genuine Qwen REI mode: real recursive challenge graph + final synthesis
+      - name: 'Genuine Qwen REI mode: real recursive challenge graph + final synthesis'
         run: |
           timeout 1000s curl -sSf \
             -H 'Content-Type: application/json' \
