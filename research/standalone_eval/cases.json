@@ -1,0 +1,42 @@
+{
+  "schema": "rei.local_ai.paired_development_cases.v1",
+  "warning": "Public, authored development set. Not a blind holdout. Case keys must never be supplied to either model.",
+  "cases": [
+    {
+      "id": "bayes-base-rate",
+      "domain": "probability",
+      "question": "A screening test has sensitivity 90% and a false-positive rate of 10%. In a population where 1% have the condition, approximately what percentage of positive tests are true positives?\nA. 0.9%\nB. 8.3%\nC. 50%\nD. 90%",
+      "correct": "B"
+    },
+    {
+      "id": "logic-quantifiers",
+      "domain": "logic",
+      "question": "All daffodils are flowers. Some flowers are yellow. Which conclusion is logically guaranteed?\nA. All daffodils are yellow.\nB. No daffodils are yellow.\nC. Some daffodils are yellow.\nD. None of A, B or C is guaranteed.",
+      "correct": "D"
+    },
+    {
+      "id": "outlier-median",
+      "domain": "arithmetic",
+      "question": "What is the median of the five observations 2, 3, 3, 5, 100?\nA. 5\nB. 22.6\nC. 3\nD. 100",
+      "correct": "C"
+    },
+    {
+      "id": "causation-design",
+      "domain": "evidence",
+      "question": "A survey finds that people who drink more tea have higher examination scores. Which follow-up would best test whether drinking tea CAUSES the difference?\nA. Randomly assign comparable participants to tea or control and measure scores under a prespecified protocol.\nB. Count how many survey participants own teapots.\nC. Repeat the same observational survey with the same confounders.\nD. Assume that correlation proves causation.",
+      "correct": "A"
+    },
+    {
+      "id": "price-reversal",
+      "domain": "arithmetic",
+      "question": "A product costs $80 after a discount of 20% from its original price. What was the original price?\nA. $84\nB. $96\nC. $120\nD. $100",
+      "correct": "D"
+    },
+    {
+      "id": "signature-truth",
+      "domain": "source-integrity",
+      "question": "A digital signature on a review is valid and matches the declared reviewer's public key. What is established by that fact ALONE?\nA. The reviewed claim is objectively true.\nB. The review's signed bytes were authenticated to that key, but the review's factual correctness is not guaranteed.\nC. The reviewer cannot have made a mistake.\nD. Every cited website is reliable.",
+      "correct": "B"
+    }
+  ]
+}

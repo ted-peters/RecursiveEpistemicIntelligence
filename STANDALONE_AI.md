@@ -38,6 +38,38 @@ The test computer and model server shut down when GitHub Actions completes.
 This is not a hosted persistent AI service. Start the local application
 using the Docker or Ollama setup below to use it yourself.
 
+## Apple Silicon quick start (recommended)
+
+On an Apple Silicon Mac (M-series), native Ollama can use Apple's Metal
+acceleration. The repo includes a small, inspectable Bash launcher, which
+checks Python and Ollama, creates a project-only Python virtual environment,
+downloads the chosen model if absent, and runs the localhost web UI.
+
+First install [Ollama for macOS](https://ollama.com/download/mac) and
+**Python 3.10 or newer**. Then, in Terminal:
+
+```bash
+git clone --branch challenge8-structured-output \
+  https://github.com/ted-peters/RecursiveEpistemicIntelligence.git
+cd RecursiveEpistemicIntelligence
+bash scripts/start_rei_mac.sh
+```
+
+Open **http://127.0.0.1:7861/** in Safari once Terminal says the server is
+running. You can use `Ctrl+C` in Terminal to stop it. Later sessions from
+the same folder only need `bash scripts/start_rei_mac.sh`.
+The script does not need Docker, run a downloaded shell installer,
+publish any public port, or require paid model API keys. It is not a
+signed/notarized macOS application bundle. If your Python is old, the
+launcher will tell you to install a supported version instead of silently
+changing the system Python installation.
+
+**Quality gate:** There is an optional direct-vs-REI comparison suite under
+`research/standalone_eval/`, with six public objective questions and an
+independent, rule-based grader. Its fixture run is software-only; the live
+run requires a local Qwen model. This is a development check, not evidence
+of general intelligence or model quality superiority.
+
 ## Option A — one command with Docker Desktop
 
 Prerequisites: Docker Engine or Docker Desktop with Compose support,
