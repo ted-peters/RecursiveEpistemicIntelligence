@@ -12,6 +12,33 @@ generation. Nothing requires ChatGPT, a paid inference API, or access to
 OpenAI's model servers. The model weights download once and run on your own
 machine or server.
 
+## Verified first end-to-end real open-weight run
+
+The local engine has now completed a genuine CPU-only end-to-end smoke test
+with Ollama v0.40.16 and Qwen3 4B Instruct:
+[GitHub Actions run #43650863646](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/43650863646).
+
+- **Direct chat:** one real Qwen inference request, 108 server-reported
+  tokens; localhost HTTP endpoint returned a nonempty answer.
+- **REI chat:** the same real model generated a provisional claim, worked
+  through two bounded inquiry steps, and synthesized a user-facing answer.
+  The real REI graph had an audit digest and checkpoint, with **4 model
+  requests and 2,090 server-reported tokens** in total.
+- The real server rejected an untrusted Host and cross-origin request.
+- The test archived the example answers and audit but **not model weights**.
+- The separate latest standalone branch CI verifies its offline integration,
+  safety controls, and complete regression suite. These are smoke checks,
+  not a statistical evaluation of reasoning quality.
+
+Earlier runs failed because a 256-token recursive expansion was truncated.
+The shipping adapter now asks for compact, JSON-schema-constrained
+expansions with a larger **bounded** 512-token output allowance. It still
+rejects incomplete model responses rather than accepting unaudited claims.
+
+**Important:** The CI service shuts down after its test job. This does NOT
+host a persistent public AI. To use the engine yourself, start the local
+Docker or Ollama stack below, or deploy behind your own authenticated proxy.
+
 ## Option A — one command with Docker Desktop
 
 Prerequisites: Docker Engine or Docker Desktop with Compose support,
