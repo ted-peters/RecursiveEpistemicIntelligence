@@ -1,0 +1,56 @@
+name: REI Challenge 11D — Reliability-estimate miscalibration
+on:
+  push:
+    branches: [challenge11-12case-probe-choice-audit]
+    paths:
+      - 'research/challenge11/likelihood_miscalibration.py'
+      - 'tests/test_challenge11_likelihood_miscalibration.py'
+      - '.github/workflows/challenge11-likelihood-miscalibration.yml'
+permissions:
+  contents: read
+
+jobs:
+  exact-miscalibration:
+    name: 500 nominal scenarios, four reliability-error levels (no model)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Validate calibrated and miscalibrated exact policy behavior
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge11_likelihood_miscalibration.py -v
+      - name: Measure exact TRUE error for three nominal policies and a privileged oracle
+        run: |
+          python -m research.challenge11.likelihood_miscalibration \
+            --output challenge11-results/likelihood-miscalibration.json
+          python -m research.challenge11.likelihood_miscalibration \
+            --verify-only --output challenge11-results/likelihood-miscalibration.json
+      - name: Summarize calibration limits and DO NOT imply an unfair oracle win
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          d=json.loads(Path('challenge11-results/likelihood-miscalibration.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+            f.write('## Challenge 11D — Incorrect source reliability estimates\n\n')
+            f.write('500 public synthetic scenarios, exact expected loss; NO language model used.\n\n')
+            f.write('| Max reliability perturbation | Nominal recursive total cost | Nominal cost-aware total cost | Privileged true-likelihood lower bound | Cases nominal cost-aware has regret |\n')
+            f.write('|---:|---:|---:|---:|---:|\n')
+            for line in d['results']:
+              q=line['policies']
+              f.write(f"| {line['maximum_absolute_likelihood_perturbation']:.2f} | {q['nominal_recursive']['mean_true_total_expected_cost']:.5f} | {q['nominal_cost_optimal']['mean_true_total_expected_cost']:.5f} | {q['privileged_true_cost_optimal']['mean_true_total_expected_cost']:.5f} | {line['cases_where_nominal_cost_policy_has_strict_regret_vs_privileged_oracle']} |\n")
+            f.write('\nThe privileged oracle is an intentionally **UNFAIR INFORMATIONAL BOUND**, not a conventional system receiving the same information.\n')
+          PY
+      - name: Preserve independent synthetic likelihood-stress report
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge11-miscalibrated-likelihood-500case-report
+          path: challenge11-results/likelihood-miscalibration.json
+          retention-days: 90
+          if-no-files-found: warn
