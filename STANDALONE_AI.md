@@ -12,6 +12,32 @@ generation. Nothing requires ChatGPT, a paid inference API, or access to
 OpenAI's model servers. The model weights download once and run on your own
 machine or server.
 
+## Genuine Qwen3 4B end-to-end smoke test — verified
+
+The REI local chat runtime completed a real model inference smoke test on
+GitHub Actions:
+[successful run #43650863646](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/43650863646).
+
+- Direct Qwen mode: **one model call, 108 server-reported tokens**.
+- REI mode: a genuine Qwen-generated claim, **two validated bounded inquiry
+  expansions**, an auditable typed REI graph, and final Qwen synthesis,
+  totaling **four model calls and 2,090 server-reported tokens**.
+- The signed-review system was not invoked: this was provisional
+  model-origin reasoning and **not verified external evidence**.
+- Localhost Host/Origin checks passed. No model weights or credentials
+  were published in the results.
+- The independent standalone integration suite and full REI regressions
+  passed on the research implementation branch as well.
+
+Earlier real-model runs failed because the original 256-token JSON
+expansion was truncated. The current compact, JSON-schema-constrained
+expansion uses a larger **bounded** 512-token output allowance while
+retaining strict graph and structured-response validation.
+
+The test computer and model server shut down when GitHub Actions completes.
+This is not a hosted persistent AI service. Start the local application
+using the Docker or Ollama setup below to use it yourself.
+
 ## Option A — one command with Docker Desktop
 
 Prerequisites: Docker Engine or Docker Desktop with Compose support,
