@@ -1,0 +1,157 @@
+name: REI Challenge 12 — ONE-TIME real Qwen adaptive vs REI vs self-critique
+on:
+  push:
+    branches: [rei-challenge12-real-qwen-once-20261114]
+    paths: ['.github/workflows/challenge12-real-qwen-once.yml']
+permissions:
+  contents: read
+
+jobs:
+  real-shards:
+    name: "Qwen3 4B real evaluation: shard ${{ matrix.shard }} of 3"
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install local REI package and validate full offline grader
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_challenge12_quality.py -v
+          mkdir -p real-audit
+      - name: Install verified Ollama Linux binary 0.40.16
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq zstd
+          curl -fL --retry 2 --connect-timeout 30 \
+            'https://github.com/ollama/ollama/releases/download/v0.40.16/ollama-linux-amd64.tar.zst' \
+            -o /tmp/ollama-linux-amd64.tar.zst
+          echo '87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d  /tmp/ollama-linux-amd64.tar.zst' | sha256sum -c
+          sudo tar --zstd -xf /tmp/ollama-linux-amd64.tar.zst -C /usr/local
+          ollama --version
+      - name: Start CPU Ollama on localhost without outside API calls
+        run: |
+          OLLAMA_HOST=127.0.0.1:11434 OLLAMA_NUM_PARALLEL=1 \
+            ollama serve >/tmp/rei-ch12-ollama.log 2>&1 &
+          for n in $(seq 1 90); do
+            if curl -fsS http://127.0.0.1:11434/api/tags >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          tail -80 /tmp/rei-ch12-ollama.log
+          exit 1
+      - name: Pull Qwen3 4B and record exact local tag digest
+        run: |
+          timeout 1400s env OLLAMA_HOST=127.0.0.1:11434 ollama pull qwen3:4b-instruct
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          from urllib.request import urlopen
+          with urlopen("http://127.0.0.1:11434/api/tags",timeout=12) as response:
+              tags=json.load(response)
+          models=[x for x in tags["models"] if x.get("name")=="qwen3:4b-instruct"]
+          assert len(models)==1 and len(models[0].get("digest",""))==64
+          ident={
+              "model":"qwen3:4b-instruct",
+              "model_digest":models[0]["digest"],
+              "ollama_runtime":"0.40.16",
+              "runtime_archive_sha256":"87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d",
+              "shard":int(os.environ["EVAL_SHARD"]),
+              "note":"Model tag is not pinned, but the actual downloaded digest is recorded.",
+          }
+          Path("real-audit/model-"+os.environ["EVAL_SHARD"]+".json").write_text(
+              json.dumps(ident,indent=2)+"\n")
+          print("Verified binary; real Ollama model digest recorded:",ident["model_digest"])
+          PY
+        env:
+          EVAL_SHARD: ${{ matrix.shard }}
+      - name: Run all four arms on every assigned predeclared case
+        env:
+          EVAL_SHARD: ${{ matrix.shard }}
+        run: |
+          timeout 4500s python -m research.standalone_eval.challenge12_quality \
+            --kind live --model qwen3:4b-instruct \
+            --shards 3 --shard-index "$EVAL_SHARD" \
+            --label "challenge12-public-qwen3-4b-20261114" \
+            --output "real-audit/shard-${EVAL_SHARD}.json"
+          python -m research.standalone_eval.challenge12_quality \
+            --verify-only --output "real-audit/shard-${EVAL_SHARD}.json"
+      - name: Persist raw answers, errors and model identity for independent audit
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: rei-ch12-live-shard-${{ matrix.shard }}
+          path: real-audit/
+          retention-days: 90
+          if-no-files-found: warn
+
+  independently-aggregate:
+    name: Validate all 12 tasks and publish paired accuracy + true inference costs
+    needs: real-shards
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install REI grader
+        run: python -m pip install .
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: rei-ch12-live-shard-*
+          path: real-audit
+          merge-multiple: true
+      - name: Verify no shard was dropped and model digests are consistent
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          identities=[json.loads(Path("real-audit/model-"+str(i)+".json").read_text())
+                      for i in range(3)]
+          digests={x["model_digest"] for x in identities}
+          assert len(digests)==1 and all(x["model"]=="qwen3:4b-instruct"
+                                        and x["ollama_runtime"]=="0.40.16"
+                                        for x in identities)
+          print("All shards share exact Qwen3 model digest:",next(iter(digests)))
+          PY
+      - name: Independently regrade and aggregate every completed arm
+        run: |
+          python -m research.standalone_eval.challenge12_quality \
+            --aggregate real-audit/shard-0.json real-audit/shard-1.json real-audit/shard-2.json \
+            | tee real-audit/aggregate.json
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          summary=json.loads(Path("real-audit/aggregate.json").read_text())
+          assert summary["provider_kind"]=="ollama_live"
+          assert summary["case_count"]==12
+          assert all(x["total"]==12 for x in summary["summary"].values())
+          print("Genuine 12-case four-arm study independently regraded.")
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:
+              f.write("## Challenge 12 — actual local Qwen3 4B: twelve public questions\n\n")
+              f.write("**Nonblind development set, NOT a general accuracy or compute-matched superiority claim.**\n\n")
+              f.write("| Mode | Correct | Failed format | Model errors | Calls | Tokens | Missing usage calls | Seconds |\n")
+              f.write("|---|---:|---:|---:|---:|---:|---:|---:|\n")
+              for m in ("direct","adaptive","rei","self_critique"):
+                  a=summary["summary"][m]
+                  f.write(f"| {m} | {a['correct']}/12 | {a['format_failures']} | {a['errors']} | {a['calls']} | {a['tokens_known']} | {a['unknown_usage_calls']} | {a['seconds']} |\n")
+              f.write("\n**Adaptive vs Direct paired correctness:** ")
+              f.write(str(summary["paired_adaptive_vs_direct"]))
+              f.write("\n\nAll cases and arms are included. An invalid Answer: X marker is scored incorrect. The exact model digest is in the preserved artifacts.\n")
+          PY
+      - name: Archive complete independent grade and original answers
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: rei-ch12-live-complete-independent-report
+          path: real-audit/
+          retention-days: 90
+          if-no-files-found: warn
