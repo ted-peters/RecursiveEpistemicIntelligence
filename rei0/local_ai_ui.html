@@ -117,6 +117,17 @@
       if (!res.ok) throw new Error(data.error || "Local request failed");
       const body = pending.querySelector(".body");
       body.textContent = data.answer;
+      if (data.audit && data.audit.routing) {
+        const routing = document.createElement("small");
+        routing.className = "routing-note";
+        routing.textContent = "Adaptive ran " + data.audit.execution_mode +
+          " (" + data.audit.routing.reason_code.replaceAll("_", " ") + ")" +
+          " · " + data.audit.model_calls + " model calls · " +
+          data.audit.model_reported_tokens + " reported tokens";
+        routing.style.display = "block";
+        routing.style.marginTop = ".7rem";
+        pending.append(routing);
+      }
       const details = document.createElement("details");
       const summary = document.createElement("summary");
       summary.textContent = "View audit: executed mode, routing policy, calls and tokens";
