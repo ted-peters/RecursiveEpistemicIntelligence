@@ -1,0 +1,171 @@
+name: REI 2.0 candidate — ONE-TIME REAL Qwen routing/evidence smoke
+on:
+  push:
+    branches: [rei2-readiness-qwen-live-once-20261115]
+    paths:
+      - '.github/workflows/rei2-readiness-qwen-once.yml'
+permissions:
+  contents: read
+
+jobs:
+  live-readiness:
+    name: Two genuine Qwen3 4B cases — polite investigation and Direct fast path
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install and verify offline REI2 readiness tests
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_rei2_readiness.py -v
+          mkdir -p readiness-live-results
+      - name: Install SHA-256-verified Ollama v0.40.16
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq zstd
+          curl -fL --retry 2 --connect-timeout 30 \
+            'https://github.com/ollama/ollama/releases/download/v0.40.16/ollama-linux-amd64.tar.zst' \
+            -o /tmp/ollama-linux-amd64.tar.zst
+          echo '87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d  /tmp/ollama-linux-amd64.tar.zst' | sha256sum -c
+          sudo tar --zstd -xf /tmp/ollama-linux-amd64.tar.zst -C /usr/local
+          ollama --version
+      - name: Start Ollama on loopback only
+        run: |
+          OLLAMA_HOST=127.0.0.1:11434 OLLAMA_NUM_PARALLEL=1 \
+            ollama serve >/tmp/rei2-readiness-ollama.log 2>&1 &
+          for n in $(seq 1 80); do
+            if curl -fsS http://127.0.0.1:11434/api/tags >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          tail -80 /tmp/rei2-readiness-ollama.log
+          exit 1
+      - name: Download actual Qwen3 4B model and preserve immutable digest
+        run: |
+          timeout 1200s env OLLAMA_HOST=127.0.0.1:11434 ollama pull qwen3:4b-instruct
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from urllib.request import urlopen
+          with urlopen('http://127.0.0.1:11434/api/tags', timeout=12) as response:
+              tags=json.load(response)
+          found=[x for x in tags['models'] if x.get('name')=='qwen3:4b-instruct']
+          assert len(found)==1 and len(found[0].get('digest',''))==64
+          Path('readiness-live-results/model-identity.json').write_text(json.dumps({
+              'ollama_binary_version':'0.40.16',
+              'ollama_archive_sha256':'87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d',
+              'model':found[0]['name'],'model_digest':found[0]['digest'],
+          },indent=2)+'\n')
+          print('Actual local Qwen digest:',found[0]['digest'])
+          PY
+      - name: Test real model via adaptive router with independently scored answers
+        run: |
+          timeout 1300s python - <<'PY'
+          import json
+          from pathlib import Path
+          from rei0.local_ai import LocalOllamaModel, StandaloneREI
+          from research.standalone_eval.paired_quality import answer_letter
+          tasks=[
+              {
+                  'id':'plain-median-fast-path',
+                  'question':('Choose the correct answer. Finish with a final '
+                              'line exactly Answer: X. What is the median of 2, 3, 4?\n'
+                              'A. 2\nB. 3\nC. 4\nD. 9'),
+                  'expected_route':'direct','correct':'B'
+              },
+              {
+                  'id':'polite-signature-inquiry',
+                  'question':('Please investigate the assumptions and evidence carefully '
+                              'before you select one option. Finish with an exact final '
+                              'line Answer: X. A valid signature identifies a signing key, '
+                              'but can the signature ALONE establish the truth of a statement?\n'
+                              'A. Yes, all signed text is necessarily true\n'
+                              'B. No, signing authenticates bytes but does not establish factual truth\n'
+                              'C. Yes, if multiple copies exist\n'
+                              'D. Only when the claim is widely shared'),
+                  'expected_route':'rei','correct':'B'
+              },
+          ]
+          report={'kind':'genuine_ollama_live_not_fixture',
+                  'note':'Two authored PUBLIC route/answer smoke cases. NOT a hidden 2.0 quality benchmark.',
+                  'cases':[]}
+          output=Path('readiness-live-results/case-level-results.json')
+          for item in tasks:
+              providers=[]
+              def provider_factory():
+                  x=LocalOllamaModel(model='qwen3:4b-instruct',
+                                     endpoint='http://127.0.0.1:11434')
+                  providers.append(x)
+                  return x
+              agent=StandaloneREI(provider_factory=provider_factory,
+                                  model='qwen3:4b-instruct')
+              row={'id':item['id'],'expected_route':item['expected_route'],
+                   'correct_letter':item['correct']}
+              report['cases'].append(row)
+              try:
+                  result=agent.answer([{'role':'user','content':item['question']}],
+                                      mode='adaptive')
+                  a=result['audit']
+                  attempts=providers[0].attempts if providers else []
+                  row.update({
+                      'answer':result['answer'],
+                      'answer_letter':answer_letter(result['answer']),
+                      'answer_correct':answer_letter(result['answer'])==item['correct'],
+                      'format_valid':answer_letter(result['answer']) is not None,
+                      'audit':a,
+                      'attempts':attempts,
+                  })
+                  assert result['mode']=='adaptive'
+                  assert a['execution_mode']==item['expected_route']
+                  assert a['model_calls']==len(attempts)
+                  assert a['model_reported_tokens']==sum(x['tokens'] or 0 for x in attempts)
+                  assert a['routing']['additional_router_model_calls']==0
+                  if a['execution_mode']=='direct':
+                      assert a['graph_audit_head'] is None
+                      assert a['evidence_status']=='not_verified'
+                      assert a['model_calls']==1
+                  else:
+                      assert len(a['graph_audit_head'])==64
+                      assert a['evidence_status']=='model_proposals_only_unverified'
+                      assert 2<=a['model_calls']<=4
+              except Exception as exc:
+                  row['error_type']=type(exc).__name__
+                  output.write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
+                  raise
+              output.write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
+          for row in report['cases']:
+              print('REAL QWEN:',row['id'],
+                    'route=',row['audit']['execution_mode'],
+                    'calls=',row['audit']['model_calls'],
+                    'tokens=',row['audit']['model_reported_tokens'],
+                    'final_format_valid=',row['format_valid'],
+                    'correct=',row['answer_correct'])
+          print('Actual model routing, accounting and evidence-state checks passed.')
+          PY
+      - name: Summarize actual route results without hiding wrong or badly formatted answers
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          report=json.loads(Path('readiness-live-results/case-level-results.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+              f.write('## REI 2.0 development candidate — REAL Qwen3 4B smoke\n\n')
+              f.write('Two PUBLIC cases, NOT a blind or statistically powered benchmark.\n\n')
+              f.write('| Request | Adaptive route | Model calls | Tokens | Format valid | Strict correct |\n')
+              f.write('|---|---|---:|---:|---|---|\n')
+              for row in report['cases']:
+                  a=row['audit']
+                  f.write(f"| {row['id']} | {a['execution_mode']} | {a['model_calls']} | {a['model_reported_tokens']} | {row['format_valid']} | {row['answer_correct']} |\n")
+              f.write('\nThe inquiry graph is unverified model-generated text; no authenticated external sources were accessed.\n')
+          PY
+      - name: Archive exact downloaded model identity and case-level outputs
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: rei2-candidate-real-qwen-smoke-20261115
+          path: readiness-live-results/
+          retention-days: 90
+          if-no-files-found: warn
