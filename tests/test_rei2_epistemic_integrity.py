@@ -266,6 +266,66 @@ class EpistemicNoticeHTTPTests(unittest.TestCase):
         self.assertIn(b'data.verification_notice',html)
         self.assertIn(b'pending.append(evidence)',html)
 
+    def test_single_generation_lock_still_rejects_true_overlap(self):
+        """Lock is free at response time, but never during inference."""
+        entered=threading.Event()
+        release=threading.Event()
+
+        class BlockingProvider(MisleadingModel):
+            def complete(self,*,system,user,max_output_tokens,timeout):
+                entered.set()
+                if not release.wait(5):
+                    raise TimeoutError("deliberate fixture timeout")
+                return super().complete(
+                    system=system,user=user,
+                    max_output_tokens=max_output_tokens,timeout=timeout)
+
+        server=make_server(StandaloneREI(
+            model="fake",provider_factory=BlockingProvider),
+            host="127.0.0.1",port=0)
+        port=server.server_address[1]
+        worker=threading.Thread(target=server.serve_forever,daemon=True)
+        worker.start()
+        first={}
+
+        def send():
+            conn=http.client.HTTPConnection("127.0.0.1",port,timeout=10)
+            try:
+                conn.request("POST","/api/chat",
+                    body=json.dumps({"message":"hi","mode":"direct"}),
+                    headers={"Content-Type":"application/json"})
+                response=conn.getresponse()
+                first["status"]=response.status
+                first["body"]=json.loads(response.read())
+            finally:
+                conn.close()
+
+        first_thread=threading.Thread(target=send,daemon=True)
+        first_thread.start()
+        try:
+            self.assertTrue(entered.wait(3),"first generation never started")
+            conn=http.client.HTTPConnection("127.0.0.1",port,timeout=5)
+            try:
+                conn.request("POST","/api/chat",
+                    body=json.dumps({"message":"hi","mode":"direct"}),
+                    headers={"Content-Type":"application/json"})
+                response=conn.getresponse()
+                body=json.loads(response.read())
+                self.assertEqual(response.status,429)
+                self.assertIn("busy",body["error"].lower())
+            finally:
+                conn.close()
+        finally:
+            release.set()
+            first_thread.join(timeout=5)
+            server.shutdown()
+            worker.join(timeout=5)
+            server.server_close()
+        self.assertFalse(first_thread.is_alive())
+        self.assertEqual(first.get("status"),200)
+        self.assertEqual(first["body"]["verification_notice"],NOT_VERIFIED_NOTICE)
+
+
 
 if __name__=="__main__":
     unittest.main()
