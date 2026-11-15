@@ -15,6 +15,13 @@ Ollama language model; no ChatGPT account or paid API is required.
 
 **Quick start:** install Docker Desktop, then run
 `docker compose up --build` and visit **http://127.0.0.1:7861/**.
+On Apple Silicon Macs, run **`bash scripts/start_rei_mac.sh`** from the
+cloned repository with native Ollama installed. The browser now offers
+**Adaptive (experimental)** mode: zero-cost deterministic routing to Direct
+for certain bounded prompts, or the existing selective REI graph inquiry
+for investigative questions. The audit always discloses which mode actually
+ran, and the explicit Direct/REI choices remain available. It is a
+cost-control heuristic, **not** verified evidence or calibrated accuracy.
 The first start downloads the open-weight model; model inference runs on
 your machine. Keep the app on localhost: it does not include remote user
 authentication. For a faster native Mac setup, API examples, and an honest
