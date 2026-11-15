@@ -52,13 +52,25 @@ A two-case one-time local Qwen3 4B test is separately stored on
 `rei2-readiness-qwen-live-once-20261115` and will be evaluated under
 [GitHub Actions run 43732246237](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/43732246237).
 
-It checks that a routine bounded question uses Direct (1 call), and a
-polite explicit source-authentication question actually builds the REI
-graph. It independently scores the exact final `Answer: X` format
-and retains wrong/unparseable answers as failures. The model identity
-is recorded using the downloaded Ollama tag digest. **No outcome is
-claimed here until that run is complete.** Two authored public tasks
-cannot establish robust reasoning quality or general superiority.
+It checked that a routine bounded question uses Direct (1 call),
+and a polite explicit source-authentication question builds the REI graph.
+It independently scored the exact final `Answer: X` format and retained
+wrong/unparseable answers as failures. The downloaded Qwen model's digest,
+every answer and model-call audit are preserved in the artifact.
+
+**Result: SUCCESS — genuine Qwen3 4B, both authored PUBLIC smoke cases correct.**
+
+| Task | Adaptive route | Model calls | Server-reported tokens | Final-answer format | Correct |
+|---|---|---:|---:|---|---|
+| Basic median of 2, 3, 4 | Direct | 1 | 188 | Valid | Yes |
+| Polite “Please investigate…” digital-signature question | REI inquiry | 4 | 2,500 | Valid | Yes |
+
+The inquiry answer remained labelled
+`evidence_status=model_proposals_only_unverified`. The verified
+**engineering behavior** is route selection and audit consistency; the
+model did not independently authenticate an outside source.
+Two public tasks cannot establish reasoning superiority, reliability
+rates or a passing R4/R5/R6 release gate.
 
 Previous real-model evidence:
 [Challenge 12](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/43672078062)
