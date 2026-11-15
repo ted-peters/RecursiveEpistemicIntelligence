@@ -44,14 +44,14 @@
     <small>Research software. REI's self-generated arguments are <strong>not verified facts</strong>. No web browsing or autonomous external actions.</small>
   </header>
   <section id="log" aria-live="polite">
-    <article class="entry"><span class="role">System</span><div class="body">Ready for a question. Choose REI inquiry for an auditable challenge-and-synthesis pass, or Direct model as a one-call comparison.</div></article>
+    <article class="entry"><span class="role">System</span><div class="body">Ready for a question. Choose Adaptive for a transparent fast-versus-inquiry decision, or select either mode explicitly.</div></article>
   </section>
   <form id="form">
     <label for="prompt">Your question</label>
     <textarea id="prompt" placeholder="What are the assumptions behind this idea, and how could I test them?" maxlength="3000" required></textarea>
     <div class="controls">
       <label for="mode" style="margin: 0">Reasoning mode</label>
-      <select id="mode"><option value="rei">REI bounded inquiry</option><option value="direct">Direct model (baseline)</option></select>
+      <select id="mode"><option value="adaptive">Adaptive (experimental, automatic)</option><option value="rei">REI bounded inquiry (always)</option><option value="direct">Direct model (one call)</option></select>
       <button type="submit" id="send">Ask REI</button>
       <button type="button" id="clear" style="background:#2d3b52;color:#e9eef7">Clear conversation</button>
       <span class="hint">Ctrl/⌘ + Enter to send</span>
@@ -105,7 +105,7 @@
     send.disabled = true;
     send.textContent = "Investigating…";
     add("You", text);
-    const pending = add("REI", "Running the local model and bounded inquiry…");
+    const pending = add("REI", "Running the selected local model mode…");
     prompt.value = "";
     try {
       const res = await fetch("/api/chat", {
@@ -119,7 +119,7 @@
       body.textContent = data.answer;
       const details = document.createElement("details");
       const summary = document.createElement("summary");
-      summary.textContent = "View REI audit: model calls, tokens, open questions";
+      summary.textContent = "View audit: executed mode, routing policy, calls and tokens";
       const pre = document.createElement("pre");
       pre.textContent = JSON.stringify(data.audit, null, 2);
       details.append(summary, pre);
