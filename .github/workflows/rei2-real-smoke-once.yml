@@ -1,0 +1,103 @@
+name: REI 2.0 candidate — ONE-TIME real Qwen readiness smoke
+on:
+  push:
+    branches: [rei2-real-smoke-once-20261115]
+    paths: ['.github/workflows/rei2-real-smoke-once.yml']
+permissions:
+  contents: read
+
+jobs:
+  real-local-model:
+    name: Four paired, real Qwen3 4B readiness requests
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install REI and run fake-only readiness unit tests first
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_rei2_preflight.py -v
+          python -m unittest discover -s tests -p test_rei2_report.py -v
+          mkdir -p rei2-real-audit
+      - name: Install checksum-verified Ollama v0.40.16 Linux archive
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq zstd
+          curl -fL --retry 2 --connect-timeout 30 \
+            'https://github.com/ollama/ollama/releases/download/v0.40.16/ollama-linux-amd64.tar.zst' \
+            -o /tmp/ollama-linux-amd64.tar.zst
+          echo '87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d  /tmp/ollama-linux-amd64.tar.zst' | sha256sum -c
+          sudo tar --zstd -xf /tmp/ollama-linux-amd64.tar.zst -C /usr/local
+          ollama --version
+      - name: Start local Ollama, loopback only
+        run: |
+          OLLAMA_HOST=127.0.0.1:11434 OLLAMA_NUM_PARALLEL=1 \
+            ollama serve >/tmp/rei2-ollama.log 2>&1 &
+          for n in $(seq 1 90); do
+            if curl -fsS http://127.0.0.1:11434/api/tags >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          tail -70 /tmp/rei2-ollama.log
+          exit 1
+      - name: Pull real Qwen3 4B and record model digest
+        run: |
+          timeout 1400s env OLLAMA_HOST=127.0.0.1:11434 ollama pull qwen3:4b-instruct
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from urllib.request import urlopen
+          with urlopen('http://127.0.0.1:11434/api/tags',timeout=12) as response:
+              models=json.load(response)["models"]
+          matches=[x for x in models if x.get("name")=="qwen3:4b-instruct"]
+          assert len(matches)==1 and len(matches[0]["digest"])==64
+          ident={"model":"qwen3:4b-instruct","model_digest":matches[0]["digest"],
+                 "ollama_runtime":"0.40.16",
+                 "binary_verified_sha256":"87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d"}
+          Path('rei2-real-audit/model-identity.json').write_text(json.dumps(ident,indent=2)+'\n')
+          print("Exact Qwen3 4B Ollama digest:",ident["model_digest"])
+          PY
+      - name: Run four real responses and independently regrade exact answers
+        run: |
+          timeout 2000s python -m research.standalone_eval.rei2_preflight_live \
+            --model qwen3:4b-instruct --output rei2-real-audit/four-responses.json
+          python -m research.standalone_eval.rei2_preflight_live \
+            --verify-only --output rei2-real-audit/four-responses.json \
+            | tee rei2-real-audit/independent-check.txt
+      - name: Publish unambiguous engineering and accuracy results
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          from research.standalone_eval.rei2_preflight_live import verify
+          d=json.loads(Path('rei2-real-audit/four-responses.json').read_text())
+          report=verify(d)
+          assert report["task_count"]==4 and report["real_model"]=="qwen3:4b-instruct"
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:
+              f.write("## REI 2.0 research candidate — genuine local Qwen3 4B\n\n")
+              f.write("FOUR public model responses, not a held-out study or a stable release.\n\n")
+              f.write("| Case | Requested | Executed | Correct | Calls | Tokens |\n")
+              f.write("|---|---|---|---:|---:|---:|\n")
+              for r in report["details"]:
+                  f.write(f"| {r['case']} | {r['requested_mode']} | {r['executed_mode']} | {r['correct']} | {r['model_calls']} | {r['tokens']} |\n")
+              f.write(f"\n**Strict correct:** {report['scored_correct']}/4. ")
+              f.write(f"**Invalid formats:** {report['invalid_answer_formats']}. ")
+              f.write(f"**Request errors:** {report['failed_requests']}. ")
+              f.write(f"**Total calls:** {report['total_model_calls']}. ")
+              f.write(f"**Model tokens:** {report['known_reported_tokens']}.\n\n")
+              f.write("**REI 2.0 release readiness: NOT CERTIFIED.** R4 requires >=200 unseen tasks; R6 requires >=100 real requests.\n")
+          print("INDEPENDENT REAL REI2 READINESS:",report)
+          if report["failed_requests"]:
+              raise SystemExit("Real Ollama calls failed; see preserved report.")
+          PY
+      - name: Preserve raw model replies, independent grading and model identity
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: rei2-candidate-real-qwen-preflight
+          path: rei2-real-audit/
+          retention-days: 90
+          if-no-files-found: warn
