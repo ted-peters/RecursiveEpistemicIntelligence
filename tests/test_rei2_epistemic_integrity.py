@@ -7,6 +7,9 @@ knowledge and must not be reported as real-Qwen accuracy gains.
 from __future__ import annotations
 
 import unittest
+import http.client
+import json
+import threading
 
 from rei0 import (
     EdgeKind, EpistemicGraph, EvidenceLedger, EvidenceState, Node, NodeKind,
@@ -14,7 +17,8 @@ from rei0 import (
     VerificationBoundary, ReviewError,
 )
 from rei0.inquiry import ModelTurn
-from rei0.local_ai import StandaloneREI
+from rei0.local_ai import StandaloneREI, NOT_VERIFIED_NOTICE
+from rei0.local_ai_server import make_server
 
 STAMP="2026-11-15T00:00:00Z"
 KEY=b"\x19"*32
@@ -190,6 +194,8 @@ class EpistemicRatherThanIdeologicalTests(unittest.TestCase):
         self.assertEqual(result["audit"]["model_calls"],3)
         # This explicitly demonstrates the remaining vulnerability.
         self.assertIn("independently verified",result["answer"].lower())
+        self.assertEqual(result["verification_notice"],NOT_VERIFIED_NOTICE)
+        self.assertIn("no independent external evidence",result["verification_notice"].lower())
 
     def test_direct_model_cannot_gain_evidence_provenance_from_its_words(self):
         ai=StandaloneREI(model="fake",provider_factory=MisleadingModel)
@@ -198,6 +204,67 @@ class EpistemicRatherThanIdeologicalTests(unittest.TestCase):
         self.assertEqual(result["audit"]["evidence_status"],"not_verified")
         self.assertIsNone(result["audit"]["graph_audit_head"])
         self.assertEqual(result["audit"]["model_calls"],1)
+        self.assertEqual(result["verification_notice"],NOT_VERIFIED_NOTICE)
+
+
+class EpistemicNoticeHTTPTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.server=make_server(
+            StandaloneREI(model="fake",provider_factory=MisleadingModel),
+            host="127.0.0.1",port=0,
+        )
+        cls.port=cls.server.server_address[1]
+        cls.thread=threading.Thread(target=cls.server.serve_forever,daemon=True)
+        cls.thread.start()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.server.shutdown()
+        cls.thread.join(timeout=5)
+        cls.server.server_close()
+
+    @classmethod
+    def request(cls,path,body=None):
+        conn=http.client.HTTPConnection("127.0.0.1",cls.port,timeout=10)
+        headers={"Content-Type":"application/json"} if body is not None else {}
+        conn.request("POST" if body is not None else "GET",path,
+                     body=json.dumps(body) if body is not None else None,
+                     headers=headers)
+        res=conn.getresponse()
+        data=res.read()
+        status=res.status
+        conn.close()
+        return status, json.loads(data) if body is not None else data
+
+    def test_plain_chat_exposes_notice_outside_false_model_claim(self):
+        status,data=self.request("/api/chat",{
+            "message":"Investigate whether a value judgement is fact.",
+            "history":[],"mode":"adaptive",
+        })
+        self.assertEqual(status,200)
+        self.assertIn("independently verified",data["answer"].lower())
+        self.assertEqual(data["audit"]["evidence_status"],
+                         "model_proposals_only_unverified")
+        self.assertEqual(data["verification_notice"],NOT_VERIFIED_NOTICE)
+
+    def test_openai_compatible_api_exposes_same_notice(self):
+        status,data=self.request("/v1/chat/completions",{
+            "model":"rei-local","stream":False,"mode":"direct",
+            "messages":[{"role":"user","content":"Define epistemology."}],
+        })
+        self.assertEqual(status,200)
+        self.assertIn("independently verified",
+                      data["choices"][0]["message"]["content"].lower())
+        self.assertEqual(data["rei_audit"]["evidence_status"],"not_verified")
+        self.assertEqual(data["rei_verification_notice"],NOT_VERIFIED_NOTICE)
+
+    def test_browser_ui_displays_notice_without_expanding_audit(self):
+        status,html=self.request("/")
+        self.assertEqual(status,200)
+        self.assertIn(b'verification-notice',html)
+        self.assertIn(b'data.verification_notice',html)
+        self.assertIn(b'pending.append(evidence)',html)
 
 
 if __name__=="__main__":
