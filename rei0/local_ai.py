@@ -18,6 +18,8 @@ from .inquiry import (InquiryEngine, InquiryError, InquiryLimits, ModelTurn,
                       InitialDraft, ExpansionDraft)
 from .models import digest
 from .local_ai_router import choose_route
+from .adaptive import AdaptiveController
+from .adaptive_engine import AdaptiveInquiryEngine
 
 
 class LocalAIError(ValueError):
@@ -319,10 +321,16 @@ class StandaloneREI:
                            "model":self.model,"audit":report})
         # Allow a complete nested JSON response without unbounded inference.
         # A 256-token expansion was too short for pinned local Qwen3 4B.
-        engine=InquiryEngine(provider, InquiryLimits(
+        limits=InquiryLimits(
             max_steps=2,max_depth=2,max_model_calls=3,max_tokens=4500,
             max_seconds=220,max_questions=10,max_nodes=60,max_edges=80,
-            max_output_tokens=512))
+            max_output_tokens=512)
+        # Explicit 'rei' is the unchanged original engine. Adaptive inquiry
+        # alone opts into the pre-existing REI 1.1 controller, which can halt
+        # low-value expansions before spending more model calls.
+        engine=(AdaptiveInquiryEngine(provider,limits,
+                  controller=AdaptiveController(min_score=10,reserve_tokens=320))
+                if routing is not None else InquiryEngine(provider,limits))
         try:
             session=engine.run(self._question(messages))
         except (InquiryError,LocalAIError) as exc:
@@ -366,5 +374,20 @@ class StandaloneREI:
             "evidence_status":"model_proposals_only_unverified",
             "note":"REI structured an inquiry; it did not authenticate factual evidence.",
         }
+        if routing is not None:
+            decisions=[{
+                "event":x["event"], "score":x["decision"]["highest_score"],
+                "threshold":x["decision"]["score_threshold"],
+                "remaining_calls_at_decision":x["decision"]["remaining_calls"],
+                "remaining_tokens_at_decision":x["decision"]["remaining_tokens"],
+                "target_evidence_state":x["decision"]["target_evidence_state"],
+            } for x in session.trace if x.get("event") in
+                ("adaptive_stop","adaptive_select")]
+            audit["adaptive_inquiry"]={
+                "controller_policy":"rei1.1-selective-evidence-budget-v1",
+                "decision_count":len(decisions),
+                "decisions":decisions,
+                "note":"Graph scheduling heuristics; no calibrated correctness score.",
+            }
         return finish({"answer":answer.strip(),"mode":mode,
                        "model":self.model,"audit":audit})
