@@ -15,6 +15,7 @@ from rei0.local_ai_server import make_server
 
 class StubProvider:
     """Model stub: never call a downloaded model or network in this test."""
+    name="stub-local-model"
     def __init__(self):
         self.attempts=[]
 
@@ -153,6 +154,31 @@ class AdaptiveExecutionTests(unittest.TestCase):
                 self.assertEqual(d["audit"]["model_calls"],expected)
                 self.assertNotIn("routing",d["audit"])
                 self.assertNotIn("execution_mode",d["audit"])
+
+    def test_existing_adaptive_inquiry_controller_exits_early_on_low_score(self):
+        class LowPriority(StubProvider):
+            def initial(self, question, *, max_output_tokens, timeout):
+                result=super().initial(question,max_output_tokens=max_output_tokens,
+                                       timeout=timeout)
+                result.payload["questions"][0]["priority"]=1
+                return result
+
+        adaptive=StandaloneREI(provider_factory=LowPriority,model="stub-Qwen").answer(
+            question("Investigate the assumptions behind this idea."),mode="adaptive")
+        self.assertEqual(adaptive["audit"]["execution_mode"],"rei")
+        self.assertEqual(adaptive["audit"]["model_calls"],2)
+        self.assertEqual(adaptive["audit"]["stop_reason"],"adaptive_low_value")
+        self.assertEqual(adaptive["audit"]["adaptive_inquiry"]["decision_count"],1)
+        event=adaptive["audit"]["adaptive_inquiry"]["decisions"][0]
+        self.assertEqual(event["event"],"adaptive_stop")
+        self.assertLess(event["score"],event["threshold"])
+        self.assertEqual(event["target_evidence_state"],"NEITHER")
+        self.assertEqual(adaptive["audit"]["evidence_status"],
+                         "model_proposals_only_unverified")
+        original=StandaloneREI(provider_factory=LowPriority,model="stub-Qwen").answer(
+            question("Investigate the assumptions behind this idea."),mode="rei")
+        self.assertEqual(original["audit"]["model_calls"],3)
+        self.assertNotIn("adaptive_inquiry",original["audit"])
 
     def test_six_public_objective_cases_route_direct_without_model_calls(self):
         from research.standalone_eval.paired_quality import load_cases,model_visible_question
