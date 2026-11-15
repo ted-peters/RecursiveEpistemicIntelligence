@@ -25,7 +25,7 @@ evidence. The core REI graph, untrusted evidence labels, original manual
 Direct/REI modes, and model-call limits are unchanged.
 
 [Passing regression CI run 43732121479](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/43732121479):
-**559 tests passed, one expected skip**. The new tests check:
+**559 tests run: 558 passed and one expected skip**. The new tests check:
 
 - A polite explicit investigation chooses REI, with a provisional,
   unverified inquiry graph and correct mode/call/token audit.
