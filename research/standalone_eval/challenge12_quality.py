@@ -70,7 +70,7 @@ def load_cases(path: Path=CASES_PATH) -> tuple[list[dict],str]:
         if (c["style"]!=("bounded" if i%2==0 else "investigate")
             or type(c["domain"]) is not str or not 1<=len(c["domain"])<=40
             or type(c["question"]) is not str
-            or not 100<=len(c["question"])<=1800
+            or not 80<=len(c["question"])<=1800
             or type(c["correct"]) is not str or c["correct"] not in "ABCD"):
             raise Challenge12Error("invalid case style, domain, problem or answer")
         lines=re.findall(r"(?m)^([ABCD])\.\s+\S",c["question"])
