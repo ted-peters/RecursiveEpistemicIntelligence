@@ -29,7 +29,13 @@ _DELIBERATE_INQUIRY = re.compile(
 
 _OPTION_LINE = re.compile(r"(?m)^\s*([ABCD])[.)]\s+\S")
 _PREPEND_INQUIRY = re.compile(
-    r"^(?:critique|investigate|verify|challenge|audit|analyze the assumptions|"
+    # A polite *explicit instruction* must not be silently downgraded to
+    # Direct just because four answer-option lines follow it. Do not scan
+    # arbitrary option text for epistemic words: that would turn routine
+    # questions ABOUT evidence into expensive inquiry.
+    r"^(?:(?:please|can you|could you|would you|"
+    r"i want you to|i would like you to)\s+)?"
+    r"(?:critique|investigate|verify|challenge|audit|analyze the assumptions|"
     r"explore competing explanations)\b", re.IGNORECASE)
 
 _FAST_INTENTS = re.compile(
