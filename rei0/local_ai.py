@@ -261,6 +261,14 @@ DIRECT_SYSTEM = """You are a helpful locally hosted AI assistant. Respond direct
 You have no web access or external tools. Do not invent verification, citations
 or source authentication. Be clear about limitations and uncertainty."""
 
+# Application-authored notice, not model-generated prose. Every standalone
+# answer is produced without external source checking or trusted review. Its
+# final text may still be misleading: this disclosure is not a truth filter.
+NOT_VERIFIED_NOTICE = (
+    "Model-generated response; no independent external evidence was "
+    "authenticated or verified for this answer."
+)
+
 
 class StandaloneREI:
     """Attach an existing REI InquiryEngine to a local chat model.
@@ -299,6 +307,10 @@ class StandaloneREI:
         execution_mode=routing.selected_mode if routing else mode
 
         def finish(response: dict) -> dict:
+            # Keep provenance disclosure outside model-authored answer text.
+            # This avoids disrupting exact-final-line benchmark formats and
+            # exposes the notice directly to browser and API consumers.
+            response["verification_notice"]=NOT_VERIFIED_NOTICE
             if routing is not None:
                 # Keep the requested public mode, but expose what actually ran.
                 response["mode"]="adaptive"
