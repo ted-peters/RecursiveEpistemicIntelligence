@@ -158,6 +158,7 @@ def make_server(engine: StandaloneREI, *, host: str = "127.0.0.1",
                             "total_tokens":response["audit"]["model_reported_tokens"],
                         },
                         "rei_audit":response["audit"],
+                        "rei_verification_notice":response["verification_notice"],
                     })
             except (LocalAIError,ValueError) as exc:
                 # Avoid returning prompt/model body in errors.
