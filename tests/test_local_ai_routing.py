@@ -229,6 +229,8 @@ class AdaptiveHTTPTests(unittest.TestCase):
         self.assertIn(b'<option value="adaptive">Adaptive',data)
         self.assertIn(b'<option value="rei">',data)
         self.assertIn(b'<option value="direct">',data)
+        self.assertIn(b'Adaptive ran ',data)
+        self.assertIn(b'model calls',data)
 
     def test_chat_api_adaptive_route_is_user_visible(self):
         code,data=self.request("/api/chat",{
