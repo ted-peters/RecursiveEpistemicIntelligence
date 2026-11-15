@@ -32,6 +32,26 @@ The REI runtime produces model-origin *provisional* reasoning, not
 authenticated factual evidence, and it has not been shown to outperform
 conventional AI on independent held-out tasks.
 
+## REI 2.0 development milestone (not yet released)
+
+The next version is now tracked against measurable release gates in
+**[REI 2.0 — Milestone and Release Plan](docs/REI_2_0_MILESTONE.md)**
+and [GitHub tracking issue #22](https://github.com/ted-peters/RecursiveEpistemicIntelligence/issues/22).
+Its workstreams cover blinded/held-out evaluation, calibrated adaptive cost,
+authenticated evidence boundaries, local Mac security/reliability, and a
+documented release candidate.
+
+**Latest genuine Qwen3 4B development result (12 public questions):**
+Adaptive scored 11/12 using 20,833 tokens, Direct scored 10/12 using
+5,551 tokens, Full REI scored 9/12 using 35,889 tokens, and a four-call
+self-critique baseline scored 9/12 using 47,419 tokens
+([audited run](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/43672078062)).
+All missed end-to-end grades were output-format failures. This small,
+nonblind, non-token-matched study **does not show general superiority**.
+
+**REI 2.0 is a milestone, not a new pretrained foundation model or a
+currently available stable release.**
+
 ## Start here
 
 - **For visitors:** Explore the Hugging Face demo (after the Space is published). See `space/README.md`.
