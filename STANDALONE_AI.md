@@ -70,6 +70,60 @@ independent, rule-based grader. Its fixture run is software-only; the live
 run requires a local Qwen model. This is a development check, not evidence
 of general intelligence or model quality superiority.
 
+## Adaptive REI — experimental cost-aware chat mode
+
+The local UI starts in **Adaptive (experimental)** mode. You can also
+force **REI bounded inquiry** or **Direct model** at any time. Adaptive v1
+is a transparent, deterministic routing policy: one-model-call Direct for
+single-turn, clearly bounded multiple-choice questions, greetings,
+translation, proofreading, and short calculations; the existing bounded
+REI inquiry for explicit requests to challenge evidence, uncertainty,
+assumptions and other unclassified or multi-turn requests. REI mode is
+bounded to its existing model-call and token limits.
+
+**This is NOT a trained confidence scorer or an evidence verification
+mechanism.** No neural network or extra model call makes the initial
+routing decision. The reason for the choice, policy version, executed
+mode and actual model tokens/calls appear in each response's audit.
+
+When Adaptive chooses inquiry, it also uses REI's existing **REI 1.1
+selective inquiry controller**. That deterministic graph-based policy
+may stop expanding low-priority questions early, reserving tokens and
+keeping uninvestigated questions visible. The graph-audit metadata
+includes the selective controller's per-question score, threshold and
+remaining budget. Those heuristics **are not model-estimated confidence,
+actual expected information gain, or a learned utility function**.
+They do not establish the factual reliability of any answer. Explicit
+REI mode still runs the original fixed-bounded InquiryEngine unchanged.
+Requests that run Direct do not create REI graph nodes; inquiry results
+are provisional, unverified model-generated claims as before.
+
+**Try on your Mac:** stop the running script with Ctrl+C, then from
+your cloned repository folder:
+
+```bash
+git pull origin challenge8-structured-output
+bash scripts/start_rei_mac.sh
+```
+
+In the UI, select **Adaptive (experimental)**. For a CLI audit:
+
+```bash
+.venv/bin/python -m rei0.local_ai_cli ask \
+  "Translate this into Spanish: good morning" --mode adaptive --json
+.venv/bin/python -m rei0.local_ai_cli ask \
+  "Investigate what evidence could disprove this claim." --mode adaptive --json
+```
+
+The six-question real-Qwen baseline previously measured **6/6 correct**
+for both Direct and REI, but Direct used **2,241 tokens / 6 calls** while
+REI used **15,638 tokens / 24 calls**. On this specific development set,
+Adaptive v1's narrow four-choice rule selects Direct for all six: a
+**deterministic routing replay**, not a new six-question real-model trial.
+Use the independent benchmark gate to compare model quality after routing;
+do not claim this policy improves accuracy. Results depend on model and
+workload. The routed answer can still be wrong.
+
 ## Option A — one command with Docker Desktop
 
 Prerequisites: Docker Engine or Docker Desktop with Compose support,

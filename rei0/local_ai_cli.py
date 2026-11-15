@@ -26,7 +26,7 @@ def main(argv=None) -> int:
                         help="Unsafe without an external proxy/access boundary; Docker publishes only loopback")
     ask=sub.add_parser("ask",help="Ask one question and print a response")
     ask.add_argument("question",help="The question to investigate")
-    ask.add_argument("--mode",choices=("rei","direct"),default="rei")
+    ask.add_argument("--mode",choices=("rei","direct","adaptive"),default="adaptive")
     ask.add_argument("--json",action="store_true",help="Also print audit in machine-readable JSON")
     sub.add_parser("doctor",help="Check model-server connectivity and downloaded tags")
     args=p.parse_args(argv)
