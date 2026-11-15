@@ -1,0 +1,147 @@
+name: REI adaptive — one-time REAL Qwen3 local smoke
+on:
+  push:
+    branches: [rei-adaptive-real-ollama-smoke-20261114]
+    paths: ['.github/workflows/rei-adaptive-real-ollama-smoke-once.yml']
+permissions:
+  contents: read
+
+jobs:
+  test-adaptive-real-model:
+    name: Real Qwen3 4B — adaptive direct + selective graph inquiry
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Test adaptive and existing local runtime before real model download
+        run: |
+          python -m pip install .
+          python -m unittest discover -s tests -p test_local_ai_routing.py -v
+          python -m unittest discover -s tests -p test_local_ai_standalone.py -v
+          mkdir -p adaptive-real-results
+      - name: Install checksum-verified Ollama 0.40.16 Linux binary
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq zstd
+          curl -fL --retry 2 --connect-timeout 30 \
+            'https://github.com/ollama/ollama/releases/download/v0.40.16/ollama-linux-amd64.tar.zst' \
+            -o /tmp/ollama-linux-amd64.tar.zst
+          echo '87bfafb2acbc89b2e6a1be0a9043de6aa75fb450696f86bc426e65fc448f788d  /tmp/ollama-linux-amd64.tar.zst' | sha256sum -c
+          sudo tar --zstd -xf /tmp/ollama-linux-amd64.tar.zst -C /usr/local
+          ollama --version
+      - name: Start Ollama, model port accessible to localhost only
+        run: |
+          OLLAMA_HOST=127.0.0.1:11434 OLLAMA_NUM_PARALLEL=1 \
+            ollama serve >/tmp/rei-adaptive-ollama.log 2>&1 &
+          for n in $(seq 1 80); do
+            if curl -fsS http://127.0.0.1:11434/api/tags >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          tail -60 /tmp/rei-adaptive-ollama.log
+          exit 1
+      - name: Pull model and record exact Qwen3 4B model digest
+        run: |
+          timeout 1200s env OLLAMA_HOST=127.0.0.1:11434 ollama pull qwen3:4b-instruct
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from urllib.request import urlopen
+          with urlopen("http://127.0.0.1:11434/api/tags",timeout=10) as r:
+              data=json.load(r)
+          found=[x for x in data["models"] if x["name"]=="qwen3:4b-instruct"]
+          assert len(found)==1 and len(found[0]["digest"])==64
+          Path("adaptive-real-results/model-identity.json").write_text(json.dumps({
+              "ollama_version":"0.40.16",
+              "model":"qwen3:4b-instruct",
+              "model_digest":found[0]["digest"],
+          },indent=2)+"\n")
+          PY
+      - name: Real inference: one bounded objective request and one explicit investigation
+        run: |
+          timeout 1500s python - <<'PY'
+          import json
+          from pathlib import Path
+          from rei0.local_ai import StandaloneREI
+          from research.standalone_eval.paired_quality import (
+              load_cases,model_visible_question,answer_letter)
+          model=StandaloneREI(model="qwen3:4b-instruct",
+                              endpoint="http://127.0.0.1:11434")
+          cases,case_hash=load_cases()
+          simple=cases[0]
+          tasks=[
+              ("bounded_objective",model_visible_question(simple)),
+              ("explicit_investigation",
+               "Investigate the assumptions and evidence needed to test whether "
+               "a new memory study method improves learning outcomes."),
+          ]
+          report={"provider":"ollama_live","model":"qwen3:4b-instruct",
+                  "benchmark_digest":case_hash,"tasks":[]}
+          out=Path("adaptive-real-results/result.json")
+          for name,prompt in tasks:
+              record={"case":name,"expected_mode":
+                      "direct" if name=="bounded_objective" else "rei"}
+              report["tasks"].append(record)
+              try:
+                  result=model.answer([{"role":"user","content":prompt}],
+                                      mode="adaptive")
+                  record["response"]=result
+                  audit=result["audit"]
+                  record["valid_execution"]=(
+                      result["mode"]=="adaptive"
+                      and audit["execution_mode"]==record["expected_mode"]
+                      and audit["routing"]["additional_router_model_calls"]==0
+                      and (audit["model_calls"]==1 if name=="bounded_objective"
+                           else 2<=audit["model_calls"]<=4)
+                  )
+                  if name=="bounded_objective":
+                      record["answer_correct"]=answer_letter(result["answer"])==simple["correct"]
+                      assert audit["graph_audit_head"] is None
+                      assert record["answer_correct"]
+                  else:
+                      record["answer_correct"]=None
+                      assert len(audit["graph_audit_head"])==64
+                      assert audit["evidence_status"]=="model_proposals_only_unverified"
+                      assert audit["adaptive_inquiry"]["decision_count"]>=1
+                  assert record["valid_execution"]
+              except Exception as exc:
+                  record["error_type"]=type(exc).__name__
+                  out.write_text(json.dumps(report,indent=2)+"\n")
+                  raise
+              out.write_text(json.dumps(report,indent=2)+"\n")
+          for x in report["tasks"]:
+              a=x["response"]["audit"]
+              print(x["case"],"route=",a["execution_mode"],
+                    "model_calls=",a["model_calls"],
+                    "tokens=",a["model_reported_tokens"],
+                    "inquiry_stop=",a["stop_reason"],
+                    "grade=",x["answer_correct"])
+          print("Real model routes verified, graph audit present for REI, "
+                "no router model call, all outputs unverified")
+          PY
+      - name: Publish real smoke summary
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          data=json.loads(Path("adaptive-real-results/result.json").read_text())
+          assert data["provider"]=="ollama_live" and len(data["tasks"])==2
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:
+              f.write("## Two REAL Qwen3 4B adaptive examples\n\n")
+              f.write("Small nonblind smoke only. **Not an accuracy benchmark or evidence verification.**\n\n")
+              f.write("| Request | Route | Model calls | Reported tokens |\n|---|---|---:|---:|\n")
+              for x in data["tasks"]:
+                  a=x["response"]["audit"]
+                  f.write(f"| {x['case']} | {a['execution_mode']} | {a['model_calls']} | {a['model_reported_tokens']} |\n")
+          PY
+      - name: Archive full real local-model audit
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: rei-adaptive-qwen3-real-smoke-20261114
+          path: adaptive-real-results
+          retention-days: 90
+          if-no-files-found: warn
