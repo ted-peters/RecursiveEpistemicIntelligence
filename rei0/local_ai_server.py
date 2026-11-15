@@ -126,6 +126,12 @@ def make_server(engine: StandaloneREI, *, host: str = "127.0.0.1",
             if not lock.acquire(blocking=False):
                 self._send(429,{"error":"Local AI is busy; only one generation runs at a time"})
                 return
+            # Release the generation lock BEFORE writing the HTTP response.
+            # Otherwise a client can receive response N and immediately make
+            # request N+1 before the previous handler's finally executes,
+            # producing a spurious 429 even for strictly sequential clients.
+            code=500
+            payload={"error":"Unexpected local generation error"}
             try:
                 if self.path=="/api/chat":
                     if set(document)-{"message","history","mode"}:
@@ -135,8 +141,8 @@ def make_server(engine: StandaloneREI, *, host: str = "127.0.0.1",
                     if not isinstance(history,list) or not isinstance(prompt,str):
                         raise LocalAIError("message must be text, history must be an array")
                     messages=validate_messages(history+[{"role":"user","content":prompt}])
-                    result=engine.answer(messages,mode=document.get("mode","rei"))
-                    self._send(200,result)
+                    payload=engine.answer(messages,mode=document.get("mode","rei"))
+                    code=200
                 else:
                     if set(document)-{"messages","model","mode","stream"}:
                         raise LocalAIError("Unsupported OpenAI-compatible request fields")
@@ -144,7 +150,7 @@ def make_server(engine: StandaloneREI, *, host: str = "127.0.0.1",
                         raise LocalAIError("Only model=rei-local and stream=false are supported")
                     messages=validate_messages(document.get("messages"))
                     response=engine.answer(messages,mode=document.get("mode","rei"))
-                    self._send(200,{
+                    payload={
                         "id":"rei-local-"+str(int(time.time()*1000)),
                         "object":"chat.completion",
                         "model":"rei-local",
@@ -159,14 +165,16 @@ def make_server(engine: StandaloneREI, *, host: str = "127.0.0.1",
                         },
                         "rei_audit":response["audit"],
                         "rei_verification_notice":response["verification_notice"],
-                    })
+                    }
+                    code=200
             except (LocalAIError,ValueError) as exc:
                 # Avoid returning prompt/model body in errors.
-                self._send(422,{"error":str(exc)[:320]})
+                code,payload=422,{"error":str(exc)[:320]}
             except (OSError,TimeoutError) as exc:
-                self._send(502,{"error":"Local generation failed ("+type(exc).__name__+")"})
+                code,payload=502,{"error":"Local generation failed ("+type(exc).__name__+")"}
             finally:
                 lock.release()
+            self._send(code,payload)
 
     class Server(ThreadingHTTPServer):
         daemon_threads = True
