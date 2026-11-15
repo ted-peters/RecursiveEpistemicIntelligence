@@ -59,7 +59,7 @@ jobs:
               "model_digest":found[0]["digest"],
           },indent=2)+"\n")
           PY
-      - name: Real inference: one bounded objective request and one explicit investigation
+      - name: "Real inference: one bounded objective request and one explicit investigation"
         run: |
           timeout 1500s python - <<'PY'
           import json
