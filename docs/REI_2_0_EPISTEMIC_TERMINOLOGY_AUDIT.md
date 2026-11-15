@@ -81,6 +81,17 @@ application-authored provenance notice is present for a deliberately
 misleading synthetic model output, including in the normal browser chat
 and the OpenAI-compatible local endpoint.
 
+The extended regression suite also exposed an intermittent **false
+HTTP 429 Busy** on strictly sequential requests. The localhost server
+previously held its one-generation semaphore until after it sent the
+response, allowing an immediate next request to arrive before the lock
+was released. The handler now releases the generation lock after the
+model call/response object has been prepared and **before** writing the
+response to the socket. A separate concurrent-request fixture asserts
+that a genuinely overlapping generation still receives HTTP 429.
+This is a software reliability correction, not a real-model
+accuracy test.
+
 These checks are **software invariants, not measured model accuracy,
 ideological impartiality, or factual reliability**. For the audit to
 support more than a code claim, pair them with real-model, independently
