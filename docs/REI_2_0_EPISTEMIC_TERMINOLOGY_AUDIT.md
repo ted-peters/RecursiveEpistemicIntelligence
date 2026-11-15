@@ -76,6 +76,11 @@ deterministic, entirely synthetic checks:
 | 9 | A model *falsely boasts it checked outside sources* | Audit remains unverified; **text itself remains misleading** |
 | 10 | Direct model text asserts external certainty | Audit remains `not_verified` |
 
+Additional HTTP and interface tests verify that the **user-visible**
+application-authored provenance notice is present for a deliberately
+misleading synthetic model output, including in the normal browser chat
+and the OpenAI-compatible local endpoint.
+
 These checks are **software invariants, not measured model accuracy,
 ideological impartiality, or factual reliability**. For the audit to
 support more than a code claim, pair them with real-model, independently
@@ -92,11 +97,18 @@ contradict that metadata.
 
 **This is not a hallucination-prevention success.** The model's
 unsupported sentence might still mislead users if they read only the
-answer. A deterministic provenance banner in the UI/API and a stronger
-unsupported-verification-claim guard are candidates for R2, with
-tests that avoid corrupting legitimate quoted discussion or strict
-benchmark response formats. Do not rely solely on a prompt asking a
-model to be honest.
+answer. The standalone app now attaches a deterministic,
+**application-authored** `verification_notice` field to every local
+response, displays it beside the model's answer in the browser, and
+exposes it as `rei_verification_notice` in the OpenAI-compatible API.
+This notice is separate from model-generated text, and does not alter
+the exact-final-line answer format used by independent benchmarks.
+
+The notice is a **disclosure**, not a truth filter: misleading text
+still exists in the answer and API `choices[].message.content`. A more
+careful unsupported-verification-claim guard is still required for R2,
+with tests that avoid corrupting legitimate quotations and evidence
+analysis. Do not rely solely on a prompt asking a model to be honest.
 
 ## Practical naming and reporting rules
 
