@@ -117,6 +117,19 @@
       if (!res.ok) throw new Error(data.error || "Local request failed");
       const body = pending.querySelector(".body");
       body.textContent = data.answer;
+      // The model can claim it verified sources even when it did not.
+      // Keep an application-authored evidence notice plainly visible,
+      // not hidden inside the expandable machine audit.
+      if (typeof data.verification_notice === "string" &&
+          data.verification_notice.length > 0) {
+        const evidence = document.createElement("small");
+        evidence.className = "verification-notice";
+        evidence.textContent = data.verification_notice;
+        evidence.style.display = "block";
+        evidence.style.marginTop = ".75rem";
+        evidence.style.color = "var(--muted)";
+        pending.append(evidence);
+      }
       if (data.audit && data.audit.routing) {
         const routing = document.createElement("small");
         routing.className = "routing-note";
