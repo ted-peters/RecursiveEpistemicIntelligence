@@ -17,6 +17,7 @@ from .adapters import SYSTEM_INITIAL, SYSTEM_EXPAND
 from .inquiry import (InquiryEngine, InquiryError, InquiryLimits, ModelTurn,
                       InitialDraft, ExpansionDraft)
 from .models import digest
+from .local_ai_router import choose_route
 
 
 class LocalAIError(ValueError):
@@ -288,10 +289,24 @@ class StandaloneREI:
 
     def answer(self, messages: list[dict], *, mode: str="rei") -> dict:
         messages=validate_messages(messages)
-        if mode not in ("rei","direct"):
-            raise LocalAIError("mode must be 'rei' or 'direct'")
+        if mode not in ("rei","direct","adaptive"):
+            raise LocalAIError("mode must be 'rei', 'direct' or 'adaptive'")
+        # No inference or heuristic confidence is used in the routing decision.
+        # Existing explicit direct/rei choices preserve their exact behavior.
+        routing=choose_route(messages) if mode=="adaptive" else None
+        execution_mode=routing.selected_mode if routing else mode
+
+        def finish(response: dict) -> dict:
+            if routing is not None:
+                # Keep the requested public mode, but expose what actually ran.
+                response["mode"]="adaptive"
+                response["audit"]["mode"]="adaptive"
+                response["audit"]["execution_mode"]=execution_mode
+                response["audit"]["routing"]=routing.audit()
+            return response
+
         provider=self.provider_factory()
-        if mode=="direct":
+        if execution_mode=="direct":
             text,_=provider.complete(
                 system=DIRECT_SYSTEM,
                 user=json.dumps({"conversation":messages},ensure_ascii=False),
@@ -300,8 +315,8 @@ class StandaloneREI:
                     "model_reported_tokens":sum(x["tokens"] or 0 for x in provider.attempts),
                     "graph_audit_head":None,"open_questions":[],
                     "evidence_status":"not_verified","stop_reason":"direct"}
-            return {"answer":text.strip(),"mode":mode,
-                    "model":self.model,"audit":report}
+            return finish({"answer":text.strip(),"mode":mode,
+                           "model":self.model,"audit":report})
         # Allow a complete nested JSON response without unbounded inference.
         # A 256-token expansion was too short for pinned local Qwen3 4B.
         engine=InquiryEngine(provider, InquiryLimits(
@@ -351,5 +366,5 @@ class StandaloneREI:
             "evidence_status":"model_proposals_only_unverified",
             "note":"REI structured an inquiry; it did not authenticate factual evidence.",
         }
-        return {"answer":answer.strip(),"mode":mode,
-                "model":self.model,"audit":audit}
+        return finish({"answer":answer.strip(),"mode":mode,
+                       "model":self.model,"audit":audit})
