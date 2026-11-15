@@ -82,11 +82,21 @@ assumptions and other unclassified or multi-turn requests. REI mode is
 bounded to its existing model-call and token limits.
 
 **This is NOT a trained confidence scorer or an evidence verification
-mechanism.** No neural network or extra model call makes the routing
-decision. The reason for the choice, policy version, executed mode and
-actual model tokens/calls appear in each response's audit. Requests that
-run Direct do not create REI graph nodes. A question routed to REI gets
-the same provisional, unverified model-generated claims as before.
+mechanism.** No neural network or extra model call makes the initial
+routing decision. The reason for the choice, policy version, executed
+mode and actual model tokens/calls appear in each response's audit.
+
+When Adaptive chooses inquiry, it also uses REI's existing **REI 1.1
+selective inquiry controller**. That deterministic graph-based policy
+may stop expanding low-priority questions early, reserving tokens and
+keeping uninvestigated questions visible. The graph-audit metadata
+includes the selective controller's per-question score, threshold and
+remaining budget. Those heuristics **are not model-estimated confidence,
+actual expected information gain, or a learned utility function**.
+They do not establish the factual reliability of any answer. Explicit
+REI mode still runs the original fixed-bounded InquiryEngine unchanged.
+Requests that run Direct do not create REI graph nodes; inquiry results
+are provisional, unverified model-generated claims as before.
 
 **Try on your Mac:** stop the running script with Ctrl+C, then from
 your cloned repository folder:
