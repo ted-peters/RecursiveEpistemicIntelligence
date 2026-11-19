@@ -1,0 +1,560 @@
+{
+  "case_status": "fresh_public_development_cases",
+  "summary": {
+    "arms": {
+      "compact": {
+        "correct": 10,
+        "decisions": 12,
+        "invalid": 0,
+        "calls": 12,
+        "known_tokens": 3176,
+        "unknown_usage_calls": 0
+      },
+      "targeted": {
+        "correct": 11,
+        "decisions": 12,
+        "invalid": 0,
+        "calls": 12,
+        "known_tokens": 3408,
+        "unknown_usage_calls": 0
+      }
+    },
+    "corrections": 2,
+    "regressions": 1,
+    "decision": "review_results_on_fresh_cases_before_changing_default"
+  },
+  "records": [
+    {
+      "case": "inspection-repeats",
+      "side": 0,
+      "arm": "compact",
+      "expected": "B",
+      "correct": false,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"89%, 66%\",\n  \"B\": \"77%, 84%\",\n  \"choice\": \"A\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 266,
+      "choice": "A"
+    },
+    {
+      "case": "inspection-repeats",
+      "side": 0,
+      "arm": "targeted",
+      "expected": "B",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"increase\",\n      \"id\": 1\n    },\n    {\n      \"direction\": \"decrease\",\n      \"id\": 3\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"increase\",\n      \"id\": 4\n    },\n    {\n      \"direction\": \"decrease\",\n      \"id\": 2\n    }\n  ]\n}",
+      "selected_ids": {
+        "A": [
+          {
+            "direction": "increase",
+            "id": 1
+          },
+          {
+            "direction": "decrease",
+            "id": 3
+          }
+        ],
+        "B": [
+          {
+            "direction": "increase",
+            "id": 4
+          },
+          {
+            "direction": "decrease",
+            "id": 2
+          }
+        ]
+      },
+      "extracted": {
+        "A": [
+          {
+            "text": "89%",
+            "ref": 1,
+            "direction": "increase"
+          },
+          {
+            "text": "66%",
+            "ref": 2,
+            "direction": "decrease"
+          }
+        ],
+        "B": [
+          {
+            "text": "84%",
+            "ref": 2,
+            "direction": "increase"
+          },
+          {
+            "text": "77%",
+            "ref": 1,
+            "direction": "decrease"
+          }
+        ]
+      },
+      "measurements": {
+        "rule": "all_at_least",
+        "threshold": 73.0,
+        "A": [
+          89.0,
+          66.0
+        ],
+        "B": [
+          84.0,
+          77.0
+        ]
+      },
+      "choice": "B",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 324
+    },
+    {
+      "case": "inspection-repeats",
+      "side": 1,
+      "arm": "targeted",
+      "expected": "A",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"5 labor hours\",\n  \"B\": \"12 labor hours\",\n  \"choice\": \"A\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 255,
+      "choice": "A"
+    },
+    {
+      "case": "inspection-repeats",
+      "side": 1,
+      "arm": "compact",
+      "expected": "A",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"5 labor hours\",\n  \"B\": \"12 labor hours\",\n  \"choice\": \"A\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 255,
+      "choice": "A"
+    },
+    {
+      "case": "harvest-repeats",
+      "side": 0,
+      "arm": "targeted",
+      "expected": "B",
+      "correct": false,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"increase\",\n      \"id\": 2\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"increase\",\n      \"id\": 3\n    }\n  ]\n}",
+      "selected_ids": {
+        "A": [
+          {
+            "direction": "increase",
+            "id": 2
+          }
+        ],
+        "B": [
+          {
+            "direction": "increase",
+            "id": 3
+          }
+        ]
+      },
+      "extracted": {
+        "A": [
+          {
+            "text": "11%",
+            "ref": 1,
+            "direction": "increase"
+          }
+        ],
+        "B": [
+          {
+            "text": "4%",
+            "ref": 1,
+            "direction": "increase"
+          }
+        ]
+      },
+      "measurements": {
+        "rule": "all_positive",
+        "threshold": null,
+        "A": [
+          11.0
+        ],
+        "B": [
+          4.0
+        ]
+      },
+      "choice": "defer",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 326
+    },
+    {
+      "case": "harvest-repeats",
+      "side": 0,
+      "arm": "compact",
+      "expected": "B",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"increased yield by 11% in Field 1 and decreased yield by 2% in Field 2\",\n  \"B\": \"increased yield by 4% in Field 1 and increased yield by 3% in Field 2\",\n  \"choice\": \"B\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 297,
+      "choice": "B"
+    },
+    {
+      "case": "harvest-repeats",
+      "side": 1,
+      "arm": "compact",
+      "expected": "A",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"7 labor hours\",\n  \"B\": \"18 labor hours\",\n  \"choice\": \"A\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 258,
+      "choice": "A"
+    },
+    {
+      "case": "harvest-repeats",
+      "side": 1,
+      "arm": "targeted",
+      "expected": "A",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"7 labor hours\",\n  \"B\": \"18 labor hours\",\n  \"choice\": \"A\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 258,
+      "choice": "A"
+    },
+    {
+      "case": "ventilation-repeats",
+      "side": 0,
+      "arm": "compact",
+      "expected": "B",
+      "correct": false,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"reduced energy use by 6% in trial 1 and increased it by 2% in trial 2\",\n  \"B\": \"reduced energy use by 3% in trial 1 and by -7% in trial 2\",\n  \"choice\": \"defer\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 305,
+      "choice": "defer"
+    },
+    {
+      "case": "ventilation-repeats",
+      "side": 0,
+      "arm": "targeted",
+      "expected": "B",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"decrease\",\n      \"id\": 1\n    },\n    {\n      \"direction\": \"increase\",\n      \"id\": 3\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"decrease\",\n      \"id\": 5\n    },\n    {\n      \"direction\": \"decrease\",\n      \"id\": 7\n    }\n  ]\n}",
+      "selected_ids": {
+        "A": [
+          {
+            "direction": "decrease",
+            "id": 1
+          },
+          {
+            "direction": "increase",
+            "id": 3
+          }
+        ],
+        "B": [
+          {
+            "direction": "decrease",
+            "id": 5
+          },
+          {
+            "direction": "decrease",
+            "id": 7
+          }
+        ]
+      },
+      "extracted": {
+        "A": [
+          {
+            "text": "6%",
+            "ref": 1,
+            "direction": "decrease"
+          },
+          {
+            "text": "2%",
+            "ref": 1,
+            "direction": "increase"
+          }
+        ],
+        "B": [
+          {
+            "text": "3%",
+            "ref": 2,
+            "direction": "decrease"
+          },
+          {
+            "text": "7%",
+            "ref": 2,
+            "direction": "decrease"
+          }
+        ]
+      },
+      "measurements": {
+        "rule": "all_positive",
+        "threshold": null,
+        "A": [
+          6.0,
+          -2.0
+        ],
+        "B": [
+          3.0,
+          7.0
+        ]
+      },
+      "choice": "B",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 396
+    },
+    {
+      "case": "ventilation-repeats",
+      "side": 1,
+      "arm": "targeted",
+      "expected": "A",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"29 credits\",\n  \"B\": \"44 credits\",\n  \"choice\": \"A\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 263,
+      "choice": "A"
+    },
+    {
+      "case": "ventilation-repeats",
+      "side": 1,
+      "arm": "compact",
+      "expected": "A",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"29 credits\",\n  \"B\": \"44 credits\",\n  \"choice\": \"A\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 263,
+      "choice": "A"
+    },
+    {
+      "case": "classification-repeats",
+      "side": 0,
+      "arm": "targeted",
+      "expected": "A",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"increase\",\n      \"id\": 1\n    },\n    {\n      \"direction\": \"increase\",\n      \"id\": 3\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"increase\",\n      \"id\": 2\n    },\n    {\n      \"direction\": \"increase\",\n      \"id\": 4\n    }\n  ]\n}",
+      "selected_ids": {
+        "A": [
+          {
+            "direction": "increase",
+            "id": 1
+          },
+          {
+            "direction": "increase",
+            "id": 3
+          }
+        ],
+        "B": [
+          {
+            "direction": "increase",
+            "id": 2
+          },
+          {
+            "direction": "increase",
+            "id": 4
+          }
+        ]
+      },
+      "extracted": {
+        "A": [
+          {
+            "text": "85%",
+            "ref": 1,
+            "direction": "increase"
+          },
+          {
+            "text": "91%",
+            "ref": 2,
+            "direction": "increase"
+          }
+        ],
+        "B": [
+          {
+            "text": "78%",
+            "ref": 1,
+            "direction": "increase"
+          },
+          {
+            "text": "95%",
+            "ref": 2,
+            "direction": "increase"
+          }
+        ]
+      },
+      "measurements": {
+        "rule": "all_at_least",
+        "threshold": 82.0,
+        "A": [
+          85.0,
+          91.0
+        ],
+        "B": [
+          78.0,
+          95.0
+        ]
+      },
+      "choice": "A",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 329
+    },
+    {
+      "case": "classification-repeats",
+      "side": 0,
+      "arm": "compact",
+      "expected": "A",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"85% and 91%\",\n  \"B\": \"78% and 95%\",\n  \"choice\": \"A\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 275,
+      "choice": "A"
+    },
+    {
+      "case": "classification-repeats",
+      "side": 1,
+      "arm": "compact",
+      "expected": "B",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"64 energy units\",\n  \"B\": \"37 energy units\",\n  \"choice\": \"B\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 261,
+      "choice": "B"
+    },
+    {
+      "case": "classification-repeats",
+      "side": 1,
+      "arm": "targeted",
+      "expected": "B",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"64 energy units\",\n  \"B\": \"37 energy units\",\n  \"choice\": \"B\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 261,
+      "choice": "B"
+    },
+    {
+      "case": "weekly-parcels",
+      "side": 0,
+      "arm": "compact",
+      "expected": "A",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"32 + 44 = 76 parcels\",\n  \"B\": \"51 + 16 = 67 parcels\",\n  \"choice\": \"A\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 258,
+      "choice": "A"
+    },
+    {
+      "case": "weekly-parcels",
+      "side": 0,
+      "arm": "targeted",
+      "expected": "A",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"32 + 44 = 76 parcels\",\n  \"B\": \"51 + 16 = 67 parcels\",\n  \"choice\": \"A\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 258,
+      "choice": "A"
+    },
+    {
+      "case": "weekly-parcels",
+      "side": 1,
+      "arm": "targeted",
+      "expected": "defer",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 244,
+      "choice": "defer"
+    },
+    {
+      "case": "weekly-parcels",
+      "side": 1,
+      "arm": "compact",
+      "expected": "defer",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 244,
+      "choice": "defer"
+    },
+    {
+      "case": "room-comparison",
+      "side": 0,
+      "arm": "targeted",
+      "expected": "B",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"2 degrees\",\n  \"B\": \"8 degrees\",\n  \"choice\": \"B\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 241,
+      "choice": "B"
+    },
+    {
+      "case": "room-comparison",
+      "side": 0,
+      "arm": "compact",
+      "expected": "B",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"2 degrees\",\n  \"B\": \"8 degrees\",\n  \"choice\": \"B\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 241,
+      "choice": "B"
+    },
+    {
+      "case": "room-comparison",
+      "side": 1,
+      "arm": "compact",
+      "expected": "defer",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"maintenance costs were not measured\",\n  \"B\": \"maintenance costs were not measured\",\n  \"choice\": \"defer\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 253,
+      "choice": "defer"
+    },
+    {
+      "case": "room-comparison",
+      "side": 1,
+      "arm": "targeted",
+      "expected": "defer",
+      "correct": true,
+      "unknown_usage_calls": 0,
+      "answer": "{\n  \"A\": \"maintenance costs were not measured\",\n  \"B\": \"maintenance costs were not measured\",\n  \"choice\": \"defer\"\n}",
+      "error": null,
+      "model_calls": 1,
+      "model_reported_tokens": 253,
+      "choice": "defer"
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+[
+  {
+    "shape": "chain",
+    "claims": 2,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.003
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.003
+    }
+  },
+  {
+    "shape": "chain",
+    "claims": 8,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.007
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.008
+    }
+  },
+  {
+    "shape": "chain",
+    "claims": 32,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.024
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.027
+    }
+  },
+  {
+    "shape": "chain",
+    "claims": 64,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.045
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.05
+    }
+  },
+  {
+    "shape": "chain",
+    "claims": 128,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.09
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.108
+    }
+  },
+  {
+    "shape": "chain",
+    "claims": 256,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.18
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.213
+    }
+  },
+  {
+    "shape": "chain",
+    "claims": 512,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.357
+    },
+    "recursive": {
+      "error": "RecursionError"
+    }
+  },
+  {
+    "shape": "chain",
+    "claims": 1024,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.747
+    },
+    "recursive": {
+      "error": "RecursionError"
+    }
+  },
+  {
+    "shape": "shared premise",
+    "claims": 2,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.003
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.003
+    }
+  },
+  {
+    "shape": "shared premise",
+    "claims": 8,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.007
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.007
+    }
+  },
+  {
+    "shape": "shared premise",
+    "claims": 32,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.023
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.07
+    }
+  },
+  {
+    "shape": "shared premise",
+    "claims": 64,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.119
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.051
+    }
+  },
+  {
+    "shape": "shared premise",
+    "claims": 128,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.088
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.111
+    }
+  },
+  {
+    "shape": "shared premise",
+    "claims": 256,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.176
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.191
+    }
+  },
+  {
+    "shape": "shared premise",
+    "claims": 512,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.386
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.4
+    }
+  },
+  {
+    "shape": "shared premise",
+    "claims": 1024,
+    "flat": {
+      "answer": "yes",
+      "median_ms": 0.858
+    },
+    "recursive": {
+      "answer": "uncertain",
+      "median_ms": 0.856
+    }
+  }
+]

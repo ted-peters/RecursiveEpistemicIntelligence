@@ -1,0 +1,319 @@
+{
+  "summary": {
+    "rei": {
+      "adaptive_compact": {
+        "pairs": 6,
+        "pairs_passed": 4,
+        "pairs_with_consistent_evidence": 6,
+        "correct_evidence_answers": 10,
+        "correct_recommendations": 10,
+        "invalid_answers": 0,
+        "runtime_errors": 0,
+        "known_model_calls": 22,
+        "known_model_reported_tokens": 7027,
+        "expected_deferrals": 2,
+        "correct_deferrals": 2,
+        "expanded_pairs": 1,
+        "correct_shared_verdicts": 5,
+        "invalid_evidence_verdicts": 0
+      }
+    }
+  },
+  "pairs": [
+    {
+      "case": "downtown-access",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": true,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"12 injuries prevented\",\n  \"B\": \"5 injuries prevented\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 264,
+          "choice": "A",
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "{\n  \"A\": \"retains 60% of accessible drop-off points\",\n  \"B\": \"retains all accessible drop-off points\",\n  \"choice\": \"B\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 278,
+          "choice": "B",
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"unknown\",\"refs\":[4]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 236,
+        "verdict": "unknown",
+        "references": [
+          4
+        ],
+        "references_correct": true,
+        "correct": true
+      }
+    },
+    {
+      "case": "library-hours",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"100 school-age visitors\",\n  \"B\": \"100 school-age visitors\",\n  \"choice\": \"defer\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 277,
+          "choice": "defer",
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "defer"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "{\n  \"A\": \"80 older adults\",\n  \"B\": \"40 older adults\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 272,
+          "choice": "A",
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"supported\",\"refs\":[3]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 245,
+        "verdict": "supported",
+        "references": [
+          3
+        ],
+        "references_correct": false,
+        "correct": true
+      }
+    },
+    {
+      "case": "bus-service",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": true,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"shortened the median commute by 8 minutes\",\n  \"B\": \"shortened the median commute by 3 minutes\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 263,
+          "choice": "A",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 262,
+          "choice": "defer",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"contradicted\",\"refs\":[2,3]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 229,
+        "verdict": "contradicted",
+        "references": [
+          2,
+          3
+        ],
+        "references_correct": true,
+        "correct": true
+      }
+    },
+    {
+      "case": "conflicting-drainage-studies",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": true,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"40 credits\",\n  \"B\": \"60 credits\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 265,
+          "choice": "A",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "{\n  \"A\": \"reduced runoff by 9% in Pilot 1 and increased runoff by 5% in Pilot 2\",\n  \"B\": \"reduced runoff by 2% in Pilot 1 and reduced runoff by 2% in Pilot 2\",\n  \"choice\": \"B\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 308,
+          "choice": "B",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": true,
+      "screen": {
+        "answer": "{\"verdict\":\"review\",\"refs\":[2,3]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 254,
+        "verdict": null,
+        "references": [],
+        "references_correct": false
+      },
+      "evidence_stage": {
+        "answer": "contradicted",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2312,
+        "verdict": "contradicted",
+        "correct": true
+      }
+    },
+    {
+      "case": "warehouse-total",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": true,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"26 + 13 = 39 completed orders\",\n  \"B\": \"18 + 24 = 42 completed orders\",\n  \"choice\": \"B\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 277,
+          "choice": "B",
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "{\n  \"A\": \"2 labeling errors\",\n  \"B\": \"5 labeling errors\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 256,
+          "choice": "A",
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"supported\",\"refs\":[1,2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 232,
+        "verdict": "supported",
+        "references": [
+          1,
+          2
+        ],
+        "references_correct": true,
+        "correct": true
+      }
+    },
+    {
+      "case": "conflicting-insulation-studies",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"12% and 3% (A saved 12% in Trial 1, increased use by 3% in Trial 2)\",\n  \"B\": \"4% and 4% (B saved 4% in both trials)\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 296,
+          "choice": "A",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "A"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 265,
+          "choice": "defer",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"contradicted\",\"refs\":[2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 236,
+        "verdict": "contradicted",
+        "references": [
+          2
+        ],
+        "references_correct": false,
+        "correct": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,801 @@
+[
+  {
+    "group": "confirmation",
+    "case": "packaging-repeat",
+    "side": 0,
+    "method": "targeted",
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"level\",\n      \"ref\": 1,\n      \"text\": \"91%\"\n    },\n    {\n      \"direction\": \"level\",\n      \"ref\": 2,\n      \"text\": \"63%\"\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"level\",\n      \"ref\": 1,\n      \"text\": \"77%\"\n    },\n    {\n      \"direction\": \"level\",\n      \"ref\": 2,\n      \"text\": \"81%\"\n    }\n  ]\n}",
+    "extracted": {
+      "A": [
+        {
+          "direction": "level",
+          "ref": 1,
+          "text": "91%"
+        },
+        {
+          "direction": "level",
+          "ref": 2,
+          "text": "63%"
+        }
+      ],
+      "B": [
+        {
+          "direction": "level",
+          "ref": 1,
+          "text": "77%"
+        },
+        {
+          "direction": "level",
+          "ref": 2,
+          "text": "81%"
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 70.0,
+      "A": [
+        91.0,
+        63.0
+      ],
+      "B": [
+        77.0,
+        81.0
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 316
+  },
+  {
+    "group": "confirmation",
+    "case": "packaging-repeat",
+    "side": 1,
+    "method": "targeted",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"14 credits\",\n  \"B\": \"22 credits\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 261,
+    "choice": "A"
+  },
+  {
+    "group": "confirmation",
+    "case": "training-repeat",
+    "side": 0,
+    "method": "targeted",
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"increase\",\n      \"ref\": 1,\n      \"text\": \"6%\"\n    },\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 2,\n      \"text\": \"1%\"\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"increase\",\n      \"ref\": 1,\n      \"text\": \"4%\"\n    },\n    {\n      \"direction\": \"increase\",\n      \"ref\": 2,\n      \"text\": \"2%\"\n    }\n  ]\n}",
+    "extracted": {
+      "A": [
+        {
+          "direction": "increase",
+          "ref": 1,
+          "text": "6%"
+        },
+        {
+          "direction": "decrease",
+          "ref": 2,
+          "text": "1%"
+        }
+      ],
+      "B": [
+        {
+          "direction": "increase",
+          "ref": 1,
+          "text": "4%"
+        },
+        {
+          "direction": "increase",
+          "ref": 2,
+          "text": "2%"
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "all_positive",
+      "threshold": null,
+      "A": [
+        6.0,
+        -1.0
+      ],
+      "B": [
+        4.0,
+        2.0
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 306
+  },
+  {
+    "group": "confirmation",
+    "case": "training-repeat",
+    "side": 1,
+    "method": "targeted",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"9 training hours\",\n  \"B\": \"15 training hours\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 261,
+    "choice": "A"
+  },
+  {
+    "group": "confirmation",
+    "case": "shipping-weeks",
+    "side": 0,
+    "method": "targeted",
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"A\": \"34 + 17 = 51 crates\",\n  \"B\": \"22 + 41 = 63 crates\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 273,
+    "choice": "B"
+  },
+  {
+    "group": "confirmation",
+    "case": "shipping-weeks",
+    "side": 1,
+    "method": "targeted",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"2\",\n  \"B\": \"6\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 249,
+    "choice": "A"
+  },
+  {
+    "group": "confirmation",
+    "case": "heating-options",
+    "side": 0,
+    "method": "targeted",
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 1,\n      \"text\": \"5%\"\n    },\n    {\n      \"direction\": \"increase\",\n      \"ref\": 1,\n      \"text\": \"2%\"\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 2,\n      \"text\": \"3%\"\n    },\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 2,\n      \"text\": \"4%\"\n    }\n  ]\n}",
+    "extracted": {
+      "A": [
+        {
+          "direction": "decrease",
+          "ref": 1,
+          "text": "5%"
+        },
+        {
+          "direction": "increase",
+          "ref": 1,
+          "text": "2%"
+        }
+      ],
+      "B": [
+        {
+          "direction": "decrease",
+          "ref": 2,
+          "text": "3%"
+        },
+        {
+          "direction": "decrease",
+          "ref": 2,
+          "text": "4%"
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "all_positive",
+      "threshold": null,
+      "A": [
+        5.0,
+        -2.0
+      ],
+      "B": [
+        3.0,
+        4.0
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 308
+  },
+  {
+    "group": "confirmation",
+    "case": "heating-options",
+    "side": 1,
+    "method": "targeted",
+    "expected": "defer",
+    "correct": true,
+    "answer": "{\n  \"A\": \"Neither option measured indoor air quality\",\n  \"B\": \"Neither option measured indoor air quality\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 274,
+    "choice": "defer"
+  },
+  {
+    "group": "confirmation",
+    "case": "service-targets",
+    "side": 0,
+    "method": "targeted",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"level\",\n      \"ref\": 1,\n      \"text\": \"84\"\n    },\n    {\n      \"direction\": \"level\",\n      \"ref\": 2,\n      \"text\": \"86\"\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"level\",\n      \"ref\": 1,\n      \"text\": \"79\"\n    },\n    {\n      \"direction\": \"level\",\n      \"ref\": 2,\n      \"text\": \"92\"\n    }\n  ]\n}",
+    "extracted": {
+      "A": [
+        {
+          "direction": "level",
+          "ref": 1,
+          "text": "84"
+        },
+        {
+          "direction": "level",
+          "ref": 2,
+          "text": "86"
+        }
+      ],
+      "B": [
+        {
+          "direction": "level",
+          "ref": 1,
+          "text": "79"
+        },
+        {
+          "direction": "level",
+          "ref": 2,
+          "text": "92"
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 80.0,
+      "A": [
+        84.0,
+        86.0
+      ],
+      "B": [
+        79.0,
+        92.0
+      ]
+    },
+    "choice": "A",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 310
+  },
+  {
+    "group": "confirmation",
+    "case": "service-targets",
+    "side": 1,
+    "method": "targeted",
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"A\": \"31 credits\",\n  \"B\": \"45 credits\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 256,
+    "choice": "B"
+  },
+  {
+    "group": "confirmation",
+    "case": "delivery-noise",
+    "side": 0,
+    "method": "targeted",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"29 + 36 = 65 deliveries\",\n  \"B\": \"41 + 13 = 54 deliveries\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 259,
+    "choice": "A"
+  },
+  {
+    "group": "confirmation",
+    "case": "delivery-noise",
+    "side": 1,
+    "method": "targeted",
+    "expected": "defer",
+    "correct": true,
+    "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 247,
+    "choice": "defer"
+  },
+  {
+    "group": "fresh",
+    "case": "seal-threshold",
+    "side": 0,
+    "method": "compact",
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"A\": \"88%, 67%\",\n  \"B\": \"76%, 85%\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 267,
+    "choice": "B"
+  },
+  {
+    "group": "fresh",
+    "case": "seal-threshold",
+    "side": 0,
+    "method": "targeted",
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"level\",\n      \"ref\": 1,\n      \"text\": \"88\"\n    },\n    {\n      \"direction\": \"level\",\n      \"ref\": 2,\n      \"text\": \"67\"\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"level\",\n      \"ref\": 1,\n      \"text\": \"76\"\n    },\n    {\n      \"direction\": \"level\",\n      \"ref\": 2,\n      \"text\": \"85\"\n    }\n  ]\n}",
+    "extracted": {
+      "A": [
+        {
+          "direction": "level",
+          "ref": 1,
+          "text": "88"
+        },
+        {
+          "direction": "level",
+          "ref": 2,
+          "text": "67"
+        }
+      ],
+      "B": [
+        {
+          "direction": "level",
+          "ref": 1,
+          "text": "76"
+        },
+        {
+          "direction": "level",
+          "ref": 2,
+          "text": "85"
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 75.0,
+      "A": [
+        88.0,
+        67.0
+      ],
+      "B": [
+        76.0,
+        85.0
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 308
+  },
+  {
+    "group": "fresh",
+    "case": "seal-threshold",
+    "side": 1,
+    "method": "targeted",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"11 credits\",\n  \"B\": \"19 credits\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 254,
+    "choice": "A"
+  },
+  {
+    "group": "fresh",
+    "case": "seal-threshold",
+    "side": 1,
+    "method": "compact",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"11 credits\",\n  \"B\": \"19 credits\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 254,
+    "choice": "A"
+  },
+  {
+    "group": "fresh",
+    "case": "orchard-growth",
+    "side": 0,
+    "method": "targeted",
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"increase\",\n      \"ref\": 1,\n      \"text\": \"7%\"\n    },\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 2,\n      \"text\": \"3%\"\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"increase\",\n      \"ref\": 1,\n      \"text\": \"2%\"\n    },\n    {\n      \"direction\": \"increase\",\n      \"ref\": 2,\n      \"text\": \"1%\"\n    }\n  ]\n}",
+    "extracted": {
+      "A": [
+        {
+          "direction": "increase",
+          "ref": 1,
+          "text": "7%"
+        },
+        {
+          "direction": "decrease",
+          "ref": 2,
+          "text": "3%"
+        }
+      ],
+      "B": [
+        {
+          "direction": "increase",
+          "ref": 1,
+          "text": "2%"
+        },
+        {
+          "direction": "increase",
+          "ref": 2,
+          "text": "1%"
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "all_positive",
+      "threshold": null,
+      "A": [
+        7.0,
+        -3.0
+      ],
+      "B": [
+        2.0,
+        1.0
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 303
+  },
+  {
+    "group": "fresh",
+    "case": "orchard-growth",
+    "side": 0,
+    "method": "compact",
+    "expected": "B",
+    "correct": false,
+    "answer": "{\n  \"A\": \"increasing fruit yield by 7% in Field 1 and decreasing fruit yield by 3% in Field 2\",\n  \"B\": \"increasing fruit yield by 2% in Field 1 and increasing fruit yield by 1% in Field 2\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 301,
+    "choice": "defer"
+  },
+  {
+    "group": "fresh",
+    "case": "orchard-growth",
+    "side": 1,
+    "method": "compact",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"8 labor hours\",\n  \"B\": \"13 labor hours\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 259,
+    "choice": "A"
+  },
+  {
+    "group": "fresh",
+    "case": "orchard-growth",
+    "side": 1,
+    "method": "targeted",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"8 labor hours\",\n  \"B\": \"13 labor hours\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 259,
+    "choice": "A"
+  },
+  {
+    "group": "fresh",
+    "case": "water-savings",
+    "side": 0,
+    "method": "compact",
+    "expected": "B",
+    "correct": false,
+    "answer": "{\n  \"A\": \"reduced water use by 9% in trial 1 and increased it by 4% in trial 2\",\n  \"B\": \"reduced water use by 3% in trial 1 and by -5% in trial 2\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 305,
+    "choice": "defer"
+  },
+  {
+    "group": "fresh",
+    "case": "water-savings",
+    "side": 0,
+    "method": "targeted",
+    "expected": "B",
+    "correct": false,
+    "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 1,\n      \"text\": \"9%\"\n    },\n    {\n      \"direction\": \"increase\",\n      \"ref\": 2,\n      \"text\": \"4%\"\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 1,\n      \"text\": \"3%\"\n    },\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 2,\n      \"text\": \"5%\"\n    }\n  ]\n}",
+    "extracted": {
+      "A": [
+        {
+          "direction": "decrease",
+          "ref": 1,
+          "text": "9%"
+        },
+        {
+          "direction": "increase",
+          "ref": 2,
+          "text": "4%"
+        }
+      ],
+      "B": [
+        {
+          "direction": "decrease",
+          "ref": 1,
+          "text": "3%"
+        },
+        {
+          "direction": "decrease",
+          "ref": 2,
+          "text": "5%"
+        }
+      ]
+    },
+    "measurements": null,
+    "choice": null,
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 312
+  },
+  {
+    "group": "fresh",
+    "case": "water-savings",
+    "side": 1,
+    "method": "targeted",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"27 credits\",\n  \"B\": \"38 credits\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 263,
+    "choice": "A"
+  },
+  {
+    "group": "fresh",
+    "case": "water-savings",
+    "side": 1,
+    "method": "compact",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"27 credits\",\n  \"B\": \"38 credits\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 263,
+    "choice": "A"
+  },
+  {
+    "group": "fresh",
+    "case": "thermal-reduction",
+    "side": 0,
+    "method": "targeted",
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 1,\n      \"text\": \"8%\"\n    },\n    {\n      \"direction\": \"increase\",\n      \"ref\": 1,\n      \"text\": \"1%\"\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 2,\n      \"text\": \"2%\"\n    },\n    {\n      \"direction\": \"decrease\",\n      \"ref\": 2,\n      \"text\": \"6%\"\n    }\n  ]\n}",
+    "extracted": {
+      "A": [
+        {
+          "direction": "decrease",
+          "ref": 1,
+          "text": "8%"
+        },
+        {
+          "direction": "increase",
+          "ref": 1,
+          "text": "1%"
+        }
+      ],
+      "B": [
+        {
+          "direction": "decrease",
+          "ref": 2,
+          "text": "2%"
+        },
+        {
+          "direction": "decrease",
+          "ref": 2,
+          "text": "6%"
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "all_positive",
+      "threshold": null,
+      "A": [
+        8.0,
+        -1.0
+      ],
+      "B": [
+        2.0,
+        6.0
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 307
+  },
+  {
+    "group": "fresh",
+    "case": "thermal-reduction",
+    "side": 0,
+    "method": "compact",
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"A\": \"8% reduction at site 1, 1% increase at site 2\",\n  \"B\": \"2% reduction at site 1, 6% reduction at site 2\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 287,
+    "choice": "B"
+  },
+  {
+    "group": "fresh",
+    "case": "thermal-reduction",
+    "side": 1,
+    "method": "compact",
+    "expected": "defer",
+    "correct": true,
+    "answer": "{\n  \"A\": \"Neither option measured indoor humidity\",\n  \"B\": \"Neither option measured indoor humidity\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 270,
+    "choice": "defer"
+  },
+  {
+    "group": "fresh",
+    "case": "thermal-reduction",
+    "side": 1,
+    "method": "targeted",
+    "expected": "defer",
+    "correct": true,
+    "answer": "{\n  \"A\": \"Neither option measured indoor humidity\",\n  \"B\": \"Neither option measured indoor humidity\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 270,
+    "choice": "defer"
+  },
+  {
+    "group": "fresh",
+    "case": "sorting-minimum",
+    "side": 0,
+    "method": "compact",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"83% and 89%\",\n  \"B\": \"79% and 94%\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 274,
+    "choice": "A"
+  },
+  {
+    "group": "fresh",
+    "case": "sorting-minimum",
+    "side": 0,
+    "method": "targeted",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"direction\": \"level\",\n      \"ref\": 1,\n      \"text\": \"83\"\n    },\n    {\n      \"direction\": \"level\",\n      \"ref\": 2,\n      \"text\": \"89\"\n    }\n  ],\n  \"B\": [\n    {\n      \"direction\": \"level\",\n      \"ref\": 1,\n      \"text\": \"79\"\n    },\n    {\n      \"direction\": \"level\",\n      \"ref\": 2,\n      \"text\": \"94\"\n    }\n  ]\n}",
+    "extracted": {
+      "A": [
+        {
+          "direction": "level",
+          "ref": 1,
+          "text": "83"
+        },
+        {
+          "direction": "level",
+          "ref": 2,
+          "text": "89"
+        }
+      ],
+      "B": [
+        {
+          "direction": "level",
+          "ref": 1,
+          "text": "79"
+        },
+        {
+          "direction": "level",
+          "ref": 2,
+          "text": "94"
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 81.0,
+      "A": [
+        83.0,
+        89.0
+      ],
+      "B": [
+        79.0,
+        94.0
+      ]
+    },
+    "choice": "A",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 313
+  },
+  {
+    "group": "fresh",
+    "case": "sorting-minimum",
+    "side": 1,
+    "method": "targeted",
+    "expected": "B",
+    "correct": false,
+    "answer": "{\n  \"A\": \"35\",\n  \"B\": \"35\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 257,
+    "choice": "defer"
+  },
+  {
+    "group": "fresh",
+    "case": "sorting-minimum",
+    "side": 1,
+    "method": "compact",
+    "expected": "B",
+    "correct": false,
+    "answer": "{\n  \"A\": \"35\",\n  \"B\": \"35\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 257,
+    "choice": "defer"
+  },
+  {
+    "group": "fresh",
+    "case": "weekly-output",
+    "side": 0,
+    "method": "targeted",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"38 + 25 = 63 orders\",\n  \"B\": \"47 + 9 = 56 orders\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 265,
+    "choice": "A"
+  },
+  {
+    "group": "fresh",
+    "case": "weekly-output",
+    "side": 0,
+    "method": "compact",
+    "expected": "A",
+    "correct": true,
+    "answer": "{\n  \"A\": \"38 + 25 = 63 orders\",\n  \"B\": \"47 + 9 = 56 orders\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 265,
+    "choice": "A"
+  },
+  {
+    "group": "fresh",
+    "case": "weekly-output",
+    "side": 1,
+    "method": "compact",
+    "expected": "defer",
+    "correct": true,
+    "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 255,
+    "choice": "defer"
+  },
+  {
+    "group": "fresh",
+    "case": "weekly-output",
+    "side": 1,
+    "method": "targeted",
+    "expected": "defer",
+    "correct": true,
+    "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 255,
+    "choice": "defer"
+  }
+]

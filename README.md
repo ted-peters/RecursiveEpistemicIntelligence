@@ -32,6 +32,14 @@ The REI runtime produces model-origin *provisional* reasoning, not
 authenticated factual evidence, and it has not been shown to outperform
 conventional AI on independent held-out tasks.
 
+## Adaptive REI experiments
+
+The [evidence-graph experiments](research/adaptive_rei/rei_findings.md) include the engine, benchmark, measurement scripts and recorded Qwen3 4B outputs. On 18 new synthetic questions, single-pass evidence instructions answered 16 correctly, direct prompting answered 15 and full REI answered 12. The [compact trial](research/adaptive_rei/rei_compact_results.json) answered 4 of those 18 correctly and 3 of 6 additional questions.
+
+Run the deterministic engine comparison from the repository root with `python3 research/adaptive_rei/adaptive_rei_engine.py`. For the Ollama comparison, run `rei_measure.py` from a separate output directory to preserve the recorded results. Pass its `rei_measurements.json` to `rei_compact_trial.py` to repeat the compact trial.
+
+The standalone chat supports opt-in viewpoint comparison through the browser checkbox or the CLI flag `--ideological-understanding`. The [standalone evaluation runs](research/standalone_eval/results/2026-11-18/) record earlier decision-quality and token comparisons.
+
 ## REI 2.0 development milestone (not yet released)
 
 The next version is now tracked against measurable release gates in

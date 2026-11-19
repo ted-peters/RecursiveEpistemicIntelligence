@@ -238,6 +238,12 @@ class LocalOllamaModel:
         return self._generate(system=system,user=user,json_mode=False,
                               max_output_tokens=max_output_tokens,timeout=timeout)
 
+    def complete_structured(self, *, system: str, user: str, schema: dict,
+                            max_output_tokens: int, timeout: float) -> tuple[str, int]:
+        return self._generate(system=system, user=user, json_mode=True,
+                              output_schema=schema,
+                              max_output_tokens=max_output_tokens, timeout=timeout)
+
     def doctor(self) -> dict:
         tags=self._transport("/api/tags",None,timeout=8)
         names=[x["name"] for x in tags.get("models",[])
@@ -270,6 +276,27 @@ NOT_VERIFIED_NOTICE = (
 )
 
 
+IDEOLOGICAL_GUIDANCE = """
+For questions involving competing viewpoints or priorities, describe each relevant
+viewpoint in terms its proponents would recognize. Use only viewpoints stated in
+the conversation or clearly label a perspective as hypothetical. Do not infer the
+user's ideology or assign people political labels from their preferences.
+Assess factual claims with the same evidentiary standard across viewpoints.
+Separate measured outcomes, value judgments, and assumptions about unmeasured
+outcomes. Explain how the stated priorities affect the recommendation and identify
+missing information that could change it. If the choice cannot be justified from
+the available evidence and stated priorities, give a conditional answer or defer.
+For a disputed priority, examine its underlying goal, the assumption connecting
+that goal to the proposed action, and the consequences for another stated goal.
+Revisit the recommendation if that assumption fails. Bound this examination to two
+levels and stop when it reveals no decision-relevant difference.
+Respect the user's requested response format and avoid adding this analysis when
+it is irrelevant.
+"""
+
+EVIDENCE_NOTICE = "Evidence unverified. REI did not authenticate any sources."
+
+
 class StandaloneREI:
     """Attach an existing REI InquiryEngine to a local chat model.
 
@@ -297,8 +324,12 @@ class StandaloneREI:
             return prefix+"\n".join(turns)+"\nNew user request:\n"+latest
         return latest
 
-    def answer(self, messages: list[dict], *, mode: str="rei") -> dict:
+    def answer(self, messages: list[dict], *, mode: str = "rei",
+               ideological_understanding: bool = False) -> dict:
         messages=validate_messages(messages)
+        if type(ideological_understanding) is not bool:
+            raise LocalAIError("ideological_understanding must be a boolean")
+        guidance = IDEOLOGICAL_GUIDANCE if ideological_understanding else ""
         if mode not in ("rei","direct","adaptive"):
             raise LocalAIError("mode must be 'rei', 'direct' or 'adaptive'")
         # No inference or heuristic confidence is used in the routing decision.
@@ -311,6 +342,8 @@ class StandaloneREI:
             # This avoids disrupting exact-final-line benchmark formats and
             # exposes the notice directly to browser and API consumers.
             response["verification_notice"]=NOT_VERIFIED_NOTICE
+            if ideological_understanding:
+                response["audit"]["ideological_understanding"] = True
             if routing is not None:
                 # Keep the requested public mode, but expose what actually ran.
                 response["mode"]="adaptive"
@@ -322,13 +355,13 @@ class StandaloneREI:
         provider=self.provider_factory()
         if execution_mode=="direct":
             text,_=provider.complete(
-                system=DIRECT_SYSTEM,
+                system=DIRECT_SYSTEM + guidance,
                 user=json.dumps({"conversation":messages},ensure_ascii=False),
                 max_output_tokens=512,timeout=150)
             report={"mode":"direct","model_calls":len(provider.attempts),
                     "model_reported_tokens":sum(x["tokens"] or 0 for x in provider.attempts),
                     "graph_audit_head":None,"open_questions":[],
-                    "evidence_status":"not_verified","stop_reason":"direct"}
+                    "evidence_status":"not_verified","stop_reason":"direct","note":EVIDENCE_NOTICE}
             return finish({"answer":text.strip(),"mode":mode,
                            "model":self.model,"audit":report})
         # Allow a complete nested JSON response without unbounded inference.
@@ -370,7 +403,7 @@ class StandaloneREI:
         # Reserve a separate bounded final reply. The printed report counts
         # all model attempts, including the synthesis call.
         answer,_=provider.complete(
-            system=SYNTHESIS_SYSTEM,
+            system=SYNTHESIS_SYSTEM + guidance,
             user=json.dumps({"conversation":messages,"rei_scaffold":notes},
                             ensure_ascii=False),
             max_output_tokens=512,timeout=150)
@@ -384,7 +417,7 @@ class StandaloneREI:
             "investigated_steps":summary["steps"],
             "stop_reason":summary["stop_reason"],
             "evidence_status":"model_proposals_only_unverified",
-            "note":"REI structured an inquiry; it did not authenticate factual evidence.",
+            "note":EVIDENCE_NOTICE,
         }
         if routing is not None:
             decisions=[{

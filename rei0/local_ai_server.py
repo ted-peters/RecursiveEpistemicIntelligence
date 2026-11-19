@@ -134,22 +134,28 @@ def make_server(engine: StandaloneREI, *, host: str = "127.0.0.1",
             payload={"error":"Unexpected local generation error"}
             try:
                 if self.path=="/api/chat":
-                    if set(document)-{"message","history","mode"}:
+                    if set(document)-{"message","history","mode","ideological_understanding"}:
                         raise LocalAIError("Unsupported chat input fields")
                     prompt=document.get("message")
                     history=document.get("history",[])
                     if not isinstance(history,list) or not isinstance(prompt,str):
                         raise LocalAIError("message must be text, history must be an array")
                     messages=validate_messages(history+[{"role":"user","content":prompt}])
-                    payload=engine.answer(messages,mode=document.get("mode","rei"))
+                    payload = engine.answer(
+                        messages, mode=document.get("mode", "rei"),
+                        ideological_understanding=document.get("ideological_understanding", False),
+                    )
                     code=200
                 else:
-                    if set(document)-{"messages","model","mode","stream"}:
+                    if set(document)-{"messages","model","mode","stream","ideological_understanding"}:
                         raise LocalAIError("Unsupported OpenAI-compatible request fields")
                     if document.get("model","rei-local")!="rei-local" or document.get("stream",False) is not False:
                         raise LocalAIError("Only model=rei-local and stream=false are supported")
                     messages=validate_messages(document.get("messages"))
-                    response=engine.answer(messages,mode=document.get("mode","rei"))
+                    response = engine.answer(
+                        messages, mode=document.get("mode", "rei"),
+                        ideological_understanding=document.get("ideological_understanding", False),
+                    )
                     payload={
                         "id":"rei-local-"+str(int(time.time()*1000)),
                         "object":"chat.completion",

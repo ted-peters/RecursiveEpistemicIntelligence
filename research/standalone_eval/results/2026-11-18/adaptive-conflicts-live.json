@@ -1,0 +1,459 @@
+{
+  "provider": "ollama_live",
+  "model": "qwen3:4b-instruct",
+  "case_set": "challenge",
+  "summary": {
+    "direct": {
+      "staged": {
+        "pairs": 3,
+        "pairs_passed": 0,
+        "pairs_with_consistent_evidence": 3,
+        "correct_evidence_answers": 4,
+        "correct_recommendations": 3,
+        "invalid_answers": 0,
+        "runtime_errors": 0,
+        "known_model_calls": 9,
+        "known_model_reported_tokens": 1839,
+        "expected_deferrals": 1,
+        "correct_deferrals": 1,
+        "correct_shared_verdicts": 2,
+        "invalid_evidence_verdicts": 0
+      }
+    },
+    "rei": {
+      "staged": {
+        "pairs": 3,
+        "pairs_passed": 0,
+        "pairs_with_consistent_evidence": 3,
+        "correct_evidence_answers": 4,
+        "correct_recommendations": 3,
+        "invalid_answers": 0,
+        "runtime_errors": 0,
+        "known_model_calls": 18,
+        "known_model_reported_tokens": 8259,
+        "expected_deferrals": 1,
+        "correct_deferrals": 1,
+        "correct_shared_verdicts": 2,
+        "invalid_evidence_verdicts": 0
+      },
+      "adaptive": {
+        "pairs": 3,
+        "pairs_passed": 0,
+        "pairs_with_consistent_evidence": 3,
+        "correct_evidence_answers": 4,
+        "correct_recommendations": 3,
+        "invalid_answers": 0,
+        "runtime_errors": 0,
+        "known_model_calls": 13,
+        "known_model_reported_tokens": 4562,
+        "expected_deferrals": 1,
+        "correct_deferrals": 1,
+        "expanded_pairs": 1,
+        "correct_shared_verdicts": 2,
+        "invalid_evidence_verdicts": 0
+      }
+    }
+  },
+  "notes": [
+    "Public development cases. Calls and tokens are recorded but not matched.",
+    "Staged arms share one verdict per pair, so consistency follows from the design.",
+    "Adaptive screening validates reference IDs; reference correctness is graded separately.",
+    "Usage is the sum of known prompt and completion tokens; failed calls may lack usage."
+  ],
+  "pairs": [
+    {
+      "case": "conflicting-drainage-studies",
+      "mode": "direct",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 212,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 217,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "evidence_stage": {
+        "answer": "contradicted",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 216,
+        "verdict": "contradicted",
+        "correct": true
+      }
+    },
+    {
+      "case": "conflicting-drainage-studies",
+      "mode": "rei",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 212,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 217,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "evidence_stage": {
+        "answer": "contradicted",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2312,
+        "verdict": "contradicted",
+        "correct": true
+      }
+    },
+    {
+      "case": "conflicting-drainage-studies",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 212,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 217,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "expanded": true,
+      "screen": {
+        "answer": "{\n  \"verdict\": \"unknown\",\n  \"refs\": [1, 2],\n  \"pro\": [\n    \"Pilot 1 found design A reduced runoff by 9%.\",\n    \"Pilot 2 found design A increased runoff by 5%.\"\n  ],\n  \"con\": [\n    \"Pilot 1 found design A reduced runoff by 9%.\",\n    \"Pilot 2 found design A increased runoff by 5%.\"\n  ]\n}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 402,
+        "verdict": null,
+        "references": [],
+        "conflict": false,
+        "references_correct": false
+      },
+      "evidence_stage": {
+        "answer": "contradicted",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2312,
+        "verdict": "contradicted",
+        "correct": true
+      }
+    },
+    {
+      "case": "warehouse-total",
+      "mode": "rei",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 199,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 196,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "evidence_stage": {
+        "answer": "supported",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2151,
+        "verdict": "supported",
+        "correct": true
+      }
+    },
+    {
+      "case": "warehouse-total",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 199,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 196,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\n  \"verdict\": \"supported\",\n  \"refs\": [1, 2],\n  \"pro\": [],\n  \"con\": []\n}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 312,
+        "verdict": "supported",
+        "references": [
+          1,
+          2
+        ],
+        "conflict": false,
+        "references_correct": true,
+        "correct": true
+      }
+    },
+    {
+      "case": "warehouse-total",
+      "mode": "direct",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 199,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 196,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "evidence_stage": {
+        "answer": "supported",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 196,
+        "verdict": "supported",
+        "correct": true
+      }
+    },
+    {
+      "case": "conflicting-insulation-studies",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 199,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 206,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"contradicted\",\"refs\":[1,2],\"pro\":[],\"con\":[2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 307,
+        "verdict": "contradicted",
+        "references": [
+          1,
+          2
+        ],
+        "conflict": false,
+        "references_correct": false,
+        "correct": false
+      }
+    },
+    {
+      "case": "conflicting-insulation-studies",
+      "mode": "direct",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 199,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 206,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        }
+      ],
+      "evidence_stage": {
+        "answer": "contradicted",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 198,
+        "verdict": "contradicted",
+        "correct": false
+      }
+    },
+    {
+      "case": "conflicting-insulation-studies",
+      "mode": "rei",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 199,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 206,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        }
+      ],
+      "evidence_stage": {
+        "answer": "contradicted",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2567,
+        "verdict": "contradicted",
+        "correct": false
+      }
+    }
+  ]
+}

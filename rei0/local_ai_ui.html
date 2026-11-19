@@ -52,6 +52,7 @@
     <div class="controls">
       <label for="mode" style="margin: 0">Reasoning mode</label>
       <select id="mode"><option value="adaptive">Adaptive (experimental, automatic)</option><option value="rei">REI bounded inquiry (always)</option><option value="direct">Direct model (one call)</option></select>
+      <label style="margin: 0"><input type="checkbox" id="ideological-understanding"> Compare viewpoints and values</label>
       <button type="submit" id="send">Ask REI</button>
       <button type="button" id="clear" style="background:#2d3b52;color:#e9eef7">Clear conversation</button>
       <span class="hint">Ctrl/⌘ + Enter to send</span>
@@ -65,6 +66,7 @@
   const form = document.getElementById("form");
   const prompt = document.getElementById("prompt");
   const mode = document.getElementById("mode");
+  const ideologicalUnderstanding = document.getElementById("ideological-understanding");
   const send = document.getElementById("send");
   const clear = document.getElementById("clear");
   const log = document.getElementById("log");
@@ -111,11 +113,15 @@
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({message: text, history: oldHistory, mode: mode.value})
+        body: JSON.stringify({
+          message: text, history: oldHistory, mode: mode.value,
+          ideological_understanding: ideologicalUnderstanding.checked
+        })
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Local request failed");
       const body = pending.querySelector(".body");
+      pending.querySelector(".role").textContent = "Model response";
       body.textContent = data.answer;
       // The model can claim it verified sources even when it did not.
       // Keep an application-authored evidence notice plainly visible,

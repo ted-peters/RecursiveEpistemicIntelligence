@@ -1,0 +1,583 @@
+{
+  "model": "qwen3:4b-instruct",
+  "cases": 18,
+  "scores": {
+    "direct": {
+      "correct": 15,
+      "tokens": 1220,
+      "calls": 18,
+      "corrected": 0,
+      "regressed": 0
+    },
+    "single_pass": {
+      "correct": 16,
+      "tokens": 1810,
+      "calls": 18,
+      "corrected": 1,
+      "regressed": 0
+    },
+    "adaptive": {
+      "correct": 10,
+      "tokens": 3239,
+      "calls": 33,
+      "corrected": 1,
+      "regressed": 6
+    },
+    "always_review": {
+      "correct": 8,
+      "tokens": 3507,
+      "calls": 36,
+      "corrected": 0,
+      "regressed": 7
+    },
+    "focused": {
+      "correct": 15,
+      "tokens": 1220,
+      "calls": 18,
+      "corrected": 0,
+      "regressed": 0
+    }
+  },
+  "results": [
+    {
+      "case": 1,
+      "expected": "yes",
+      "triggered_review": false,
+      "direct": {
+        "answer": "yes",
+        "tokens": 65,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "yes",
+        "tokens": 98,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "yes",
+        "tokens": 99,
+        "calls": 1
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 190,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "yes",
+        "tokens": 65,
+        "calls": 1
+      }
+    },
+    {
+      "case": 2,
+      "expected": "uncertain",
+      "triggered_review": true,
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 73,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "uncertain",
+        "tokens": 106,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 204,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 204,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "uncertain",
+        "tokens": 73,
+        "calls": 1
+      }
+    },
+    {
+      "case": 3,
+      "expected": "no",
+      "triggered_review": true,
+      "direct": {
+        "answer": "no",
+        "tokens": 57,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "no",
+        "tokens": 90,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "yes",
+        "tokens": 173,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "yes",
+        "tokens": 173,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "no",
+        "tokens": 57,
+        "calls": 1
+      }
+    },
+    {
+      "case": 4,
+      "expected": "yes",
+      "triggered_review": true,
+      "direct": {
+        "answer": "yes",
+        "tokens": 56,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "yes",
+        "tokens": 89,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "yes",
+        "tokens": 171,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "yes",
+        "tokens": 171,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "yes",
+        "tokens": 56,
+        "calls": 1
+      }
+    },
+    {
+      "case": 5,
+      "expected": "uncertain",
+      "triggered_review": true,
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 72,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "uncertain",
+        "tokens": 105,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 203,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 203,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "uncertain",
+        "tokens": 72,
+        "calls": 1
+      }
+    },
+    {
+      "case": 6,
+      "expected": "no",
+      "triggered_review": true,
+      "direct": {
+        "answer": "no",
+        "tokens": 74,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "no",
+        "tokens": 107,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 208,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 208,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "no",
+        "tokens": 74,
+        "calls": 1
+      }
+    },
+    {
+      "case": 7,
+      "expected": "yes",
+      "triggered_review": true,
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 68,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "uncertain",
+        "tokens": 101,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 195,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 195,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "uncertain",
+        "tokens": 68,
+        "calls": 1
+      }
+    },
+    {
+      "case": 8,
+      "expected": "uncertain",
+      "triggered_review": true,
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 70,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "uncertain",
+        "tokens": 103,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 199,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 199,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "uncertain",
+        "tokens": 70,
+        "calls": 1
+      }
+    },
+    {
+      "case": 9,
+      "expected": "no",
+      "triggered_review": true,
+      "direct": {
+        "answer": "no",
+        "tokens": 70,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "no",
+        "tokens": 103,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 201,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 201,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "no",
+        "tokens": 70,
+        "calls": 1
+      }
+    },
+    {
+      "case": 10,
+      "expected": "uncertain",
+      "triggered_review": true,
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 73,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "uncertain",
+        "tokens": 106,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 205,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 205,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "uncertain",
+        "tokens": 73,
+        "calls": 1
+      }
+    },
+    {
+      "case": 11,
+      "expected": "uncertain",
+      "triggered_review": true,
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 74,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "uncertain",
+        "tokens": 104,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 207,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 207,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "uncertain",
+        "tokens": 74,
+        "calls": 1
+      }
+    },
+    {
+      "case": 12,
+      "expected": "uncertain",
+      "triggered_review": true,
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 80,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "uncertain",
+        "tokens": 113,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 219,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 219,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "uncertain",
+        "tokens": 80,
+        "calls": 1
+      }
+    },
+    {
+      "case": 13,
+      "expected": "yes",
+      "triggered_review": false,
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 70,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "uncertain",
+        "tokens": 103,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "yes",
+        "tokens": 103,
+        "calls": 1
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 198,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "uncertain",
+        "tokens": 70,
+        "calls": 1
+      }
+    },
+    {
+      "case": 14,
+      "expected": "no",
+      "triggered_review": false,
+      "direct": {
+        "answer": "no",
+        "tokens": 57,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "no",
+        "tokens": 90,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "no",
+        "tokens": 91,
+        "calls": 1
+      },
+      "always_review": {
+        "answer": "no",
+        "tokens": 173,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "no",
+        "tokens": 57,
+        "calls": 1
+      }
+    },
+    {
+      "case": 15,
+      "expected": "yes",
+      "triggered_review": true,
+      "direct": {
+        "answer": "yes",
+        "tokens": 64,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "yes",
+        "tokens": 97,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 188,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 188,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "yes",
+        "tokens": 64,
+        "calls": 1
+      }
+    },
+    {
+      "case": 16,
+      "expected": "no",
+      "triggered_review": true,
+      "direct": {
+        "answer": "no",
+        "tokens": 67,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "no",
+        "tokens": 100,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 194,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 194,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "no",
+        "tokens": 67,
+        "calls": 1
+      }
+    },
+    {
+      "case": 17,
+      "expected": "yes",
+      "triggered_review": true,
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 62,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "yes",
+        "tokens": 94,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 183,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 183,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "uncertain",
+        "tokens": 62,
+        "calls": 1
+      }
+    },
+    {
+      "case": 18,
+      "expected": "no",
+      "triggered_review": true,
+      "direct": {
+        "answer": "no",
+        "tokens": 68,
+        "calls": 1
+      },
+      "single_pass": {
+        "answer": "no",
+        "tokens": 101,
+        "calls": 1
+      },
+      "adaptive": {
+        "answer": "uncertain",
+        "tokens": 196,
+        "calls": 2
+      },
+      "always_review": {
+        "answer": "uncertain",
+        "tokens": 196,
+        "calls": 2
+      },
+      "focused": {
+        "answer": "no",
+        "tokens": 68,
+        "calls": 1
+      }
+    }
+  ]
+}

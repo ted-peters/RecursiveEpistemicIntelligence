@@ -27,6 +27,8 @@ def main(argv=None) -> int:
     ask=sub.add_parser("ask",help="Ask one question and print a response")
     ask.add_argument("question",help="The question to investigate")
     ask.add_argument("--mode",choices=("rei","direct","adaptive"),default="adaptive")
+    ask.add_argument("--ideological-understanding", action="store_true",
+                     help="Compare viewpoints, priorities, and factual assumptions")
     ask.add_argument("--json",action="store_true",help="Also print audit in machine-readable JSON")
     sub.add_parser("doctor",help="Check model-server connectivity and downloaded tags")
     args=p.parse_args(argv)
@@ -39,14 +41,15 @@ def main(argv=None) -> int:
         engine=StandaloneREI(model=args.model,endpoint=args.ollama_url)
         if args.action=="ask":
             answer=engine.answer([{"role":"user","content":args.question}],
-                                 mode=args.mode)
+                                 mode=args.mode,
+                                 ideological_understanding=args.ideological_understanding)
             if args.json:
                 print(json.dumps(answer,indent=2,ensure_ascii=False))
             else:
-                print(answer["answer"])
+                print(answer["audit"]["note"]+"\n\nModel response\n"+answer["answer"])
                 print("\n[REI audit: "+str(answer["audit"]["model_calls"])+
                       " model calls, "+str(answer["audit"]["model_reported_tokens"])+
-                      " tokens reported; evidence unverified]",file=sys.stderr)
+                      " tokens reported]",file=sys.stderr)
             return 0
         from .local_ai_server import make_server
         srv=make_server(engine,host=args.host,port=args.port,

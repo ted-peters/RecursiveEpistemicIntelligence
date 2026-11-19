@@ -1,0 +1,457 @@
+{
+  "provider": "ollama_live",
+  "model": "qwen3:4b-instruct",
+  "summary": {
+    "direct": {
+      "staged": {
+        "pairs": 3,
+        "pairs_passed": 0,
+        "pairs_with_consistent_evidence": 3,
+        "correct_evidence_answers": 4,
+        "correct_recommendations": 3,
+        "invalid_answers": 0,
+        "runtime_errors": 0,
+        "known_model_calls": 9,
+        "known_model_reported_tokens": 1821,
+        "expected_deferrals": 1,
+        "correct_deferrals": 1,
+        "correct_shared_verdicts": 2,
+        "invalid_evidence_verdicts": 0
+      }
+    },
+    "rei": {
+      "staged": {
+        "pairs": 3,
+        "pairs_passed": 0,
+        "pairs_with_consistent_evidence": 3,
+        "correct_evidence_answers": 6,
+        "correct_recommendations": 3,
+        "invalid_answers": 0,
+        "runtime_errors": 0,
+        "known_model_calls": 18,
+        "known_model_reported_tokens": 8264,
+        "expected_deferrals": 1,
+        "correct_deferrals": 1,
+        "correct_shared_verdicts": 3,
+        "invalid_evidence_verdicts": 0
+      },
+      "adaptive": {
+        "pairs": 3,
+        "pairs_passed": 0,
+        "pairs_with_consistent_evidence": 3,
+        "correct_evidence_answers": 6,
+        "correct_recommendations": 3,
+        "invalid_answers": 0,
+        "runtime_errors": 0,
+        "known_model_calls": 21,
+        "known_model_reported_tokens": 9032,
+        "expected_deferrals": 1,
+        "correct_deferrals": 1,
+        "expanded_pairs": 3,
+        "correct_shared_verdicts": 3,
+        "invalid_evidence_verdicts": 0
+      }
+    }
+  },
+  "notes": [
+    "Public development cases. Calls and tokens are recorded but not matched.",
+    "Staged arms share one verdict per pair, so consistency follows from the design.",
+    "Adaptive screening checks that the quote occurs in the input; relevance is model-judged.",
+    "Usage is the sum of known prompt and completion tokens; failed calls may lack usage."
+  ],
+  "pairs": [
+    {
+      "case": "downtown-access",
+      "mode": "direct",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 201,
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 204,
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "evidence_stage": {
+        "answer": "unknown",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 200,
+        "verdict": "unknown",
+        "correct": true
+      }
+    },
+    {
+      "case": "downtown-access",
+      "mode": "rei",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 201,
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 204,
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "evidence_stage": {
+        "answer": "unknown",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2304,
+        "verdict": "unknown",
+        "correct": true
+      }
+    },
+    {
+      "case": "downtown-access",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 201,
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 204,
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": true,
+      "screen": {
+        "answer": "{\"verdict\": \"review\", \"quote\": \"\"}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 245,
+        "verdict": null
+      },
+      "evidence_stage": {
+        "answer": "unknown",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2304,
+        "verdict": "unknown",
+        "correct": true
+      }
+    },
+    {
+      "case": "library-hours",
+      "mode": "rei",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 212,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 211,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "evidence_stage": {
+        "answer": "supported",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2209,
+        "verdict": "supported",
+        "correct": true
+      }
+    },
+    {
+      "case": "library-hours",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 212,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 211,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "expanded": true,
+      "screen": {
+        "answer": "{\"verdict\": \"supported\", \"quote\": \"B was used by 40 older adults and 100 school-age visitors. A was used by 80 older adults and 30 school-age visitors.\"}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 289,
+        "verdict": null
+      },
+      "evidence_stage": {
+        "answer": "supported",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2209,
+        "verdict": "supported",
+        "correct": true
+      }
+    },
+    {
+      "case": "library-hours",
+      "mode": "direct",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 212,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 211,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "evidence_stage": {
+        "answer": "supported",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 209,
+        "verdict": "supported",
+        "correct": true
+      }
+    },
+    {
+      "case": "bus-service",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 193,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 204,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": true,
+      "screen": {
+        "answer": "{\"verdict\": \"review\", \"quote\": \"\"}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 234,
+        "verdict": null
+      },
+      "evidence_stage": {
+        "answer": "contradicted",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2526,
+        "verdict": "contradicted",
+        "correct": true
+      }
+    },
+    {
+      "case": "bus-service",
+      "mode": "direct",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 192,
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "B"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 203,
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "defer"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        }
+      ],
+      "evidence_stage": {
+        "answer": "unknown",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 189,
+        "verdict": "unknown",
+        "correct": false
+      }
+    },
+    {
+      "case": "bus-service",
+      "mode": "rei",
+      "guidance": "staged",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 193,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 204,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "evidence_stage": {
+        "answer": "contradicted",
+        "error": null,
+        "model_calls": 4,
+        "model_reported_tokens": 2526,
+        "verdict": "contradicted",
+        "correct": true
+      }
+    }
+  ]
+}

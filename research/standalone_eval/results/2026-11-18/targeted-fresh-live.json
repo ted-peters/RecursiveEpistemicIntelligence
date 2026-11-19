@@ -1,0 +1,388 @@
+[
+  {
+    "case": "packaging-repeat",
+    "side": 0,
+    "method": "compact",
+    "correct": true,
+    "answer": "{\n  \"A\": \"91% and 63% intact items\",\n  \"B\": \"77% and 81% intact items\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 283,
+    "choice": "B"
+  },
+  {
+    "case": "packaging-repeat",
+    "side": 0,
+    "method": "targeted",
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"ref\": 1,\n      \"value\": 91.0\n    },\n    {\n      \"ref\": 2,\n      \"value\": 63.0\n    }\n  ],\n  \"B\": [\n    {\n      \"ref\": 1,\n      \"value\": 77.0\n    },\n    {\n      \"ref\": 2,\n      \"value\": 81.0\n    }\n  ],\n  \"rule\": \"all_at_least\",\n  \"threshold\": 70.0\n}",
+    "extracted": {
+      "A": [
+        {
+          "ref": 1,
+          "value": 91.0
+        },
+        {
+          "ref": 2,
+          "value": 63.0
+        }
+      ],
+      "B": [
+        {
+          "ref": 1,
+          "value": 77.0
+        },
+        {
+          "ref": 2,
+          "value": 81.0
+        }
+      ],
+      "rule": "all_at_least",
+      "threshold": 70.0
+    },
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 70.0,
+      "A": [
+        91.0,
+        63.0
+      ],
+      "B": [
+        77.0,
+        81.0
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 308
+  },
+  {
+    "case": "packaging-repeat",
+    "side": 1,
+    "method": "targeted",
+    "correct": true,
+    "answer": "{\n  \"A\": \"14 credits\",\n  \"B\": \"22 credits\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 261,
+    "choice": "A"
+  },
+  {
+    "case": "packaging-repeat",
+    "side": 1,
+    "method": "compact",
+    "correct": true,
+    "answer": "{\n  \"A\": \"14 credits\",\n  \"B\": \"22 credits\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 261,
+    "choice": "A"
+  },
+  {
+    "case": "training-repeat",
+    "side": 0,
+    "method": "targeted",
+    "correct": false,
+    "answer": "{\n  \"A\": [\n    {\n      \"ref\": 1,\n      \"value\": 6.0000000000000015\n    },\n    {\n      \"ref\": 2,\n      \"value\": -1\n    }\n  ],\n  \"B\": [\n    {\n      \"ref\": 1,\n      \"value\": 4\n    },\n    {\n      \"ref\": 2,\n      \"value\": 2\n    }\n  ],\n  \"rule\": \"all_positive\",\n  \"threshold\": null\n}",
+    "extracted": {
+      "A": [
+        {
+          "ref": 1,
+          "value": 6.000000000000002
+        },
+        {
+          "ref": 2,
+          "value": -1
+        }
+      ],
+      "B": [
+        {
+          "ref": 1,
+          "value": 4
+        },
+        {
+          "ref": 2,
+          "value": 2
+        }
+      ],
+      "rule": "all_positive",
+      "threshold": null
+    },
+    "measurements": null,
+    "choice": null,
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 304
+  },
+  {
+    "case": "training-repeat",
+    "side": 0,
+    "method": "compact",
+    "correct": false,
+    "answer": "{\n  \"A\": \"6% in site 1, -1% in site 2\",\n  \"B\": \"4% in site 1, 2% in site 2\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 284,
+    "choice": "A"
+  },
+  {
+    "case": "training-repeat",
+    "side": 1,
+    "method": "compact",
+    "correct": true,
+    "answer": "{\n  \"A\": \"9 training hours\",\n  \"B\": \"15 training hours\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 261,
+    "choice": "A"
+  },
+  {
+    "case": "training-repeat",
+    "side": 1,
+    "method": "targeted",
+    "correct": true,
+    "answer": "{\n  \"A\": \"9 training hours\",\n  \"B\": \"15 training hours\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 261,
+    "choice": "A"
+  },
+  {
+    "case": "shipping-weeks",
+    "side": 0,
+    "method": "compact",
+    "correct": true,
+    "answer": "{\n  \"A\": \"34 + 17 = 51 crates\",\n  \"B\": \"22 + 41 = 63 crates\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 273,
+    "choice": "B"
+  },
+  {
+    "case": "shipping-weeks",
+    "side": 0,
+    "method": "targeted",
+    "correct": true,
+    "answer": "{\n  \"A\": \"34 + 17 = 51 crates\",\n  \"B\": \"22 + 41 = 63 crates\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 273,
+    "choice": "B"
+  },
+  {
+    "case": "shipping-weeks",
+    "side": 1,
+    "method": "targeted",
+    "correct": true,
+    "answer": "{\n  \"A\": \"2\",\n  \"B\": \"6\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 249,
+    "choice": "A"
+  },
+  {
+    "case": "shipping-weeks",
+    "side": 1,
+    "method": "compact",
+    "correct": true,
+    "answer": "{\n  \"A\": \"2\",\n  \"B\": \"6\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 249,
+    "choice": "A"
+  },
+  {
+    "case": "heating-options",
+    "side": 0,
+    "method": "targeted",
+    "correct": false,
+    "answer": "{\n  \"A\": [\n    {\n      \"ref\": 1,\n      \"value\": -5.000000000000001\n    },\n    {\n      \"ref\": 2,\n      \"value\": 2\n    }\n  ],\n  \"B\": [\n    {\n      \"ref\": 1,\n      \"value\": -3\n    },\n    {\n      \"ref\": 2,\n      \"value\": -4\n    }\n  ],\n  \"rule\": \"all_positive\",\n  \"threshold\": null\n}",
+    "extracted": {
+      "A": [
+        {
+          "ref": 1,
+          "value": -5.000000000000001
+        },
+        {
+          "ref": 2,
+          "value": 2
+        }
+      ],
+      "B": [
+        {
+          "ref": 1,
+          "value": -3
+        },
+        {
+          "ref": 2,
+          "value": -4
+        }
+      ],
+      "rule": "all_positive",
+      "threshold": null
+    },
+    "measurements": null,
+    "choice": null,
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 303
+  },
+  {
+    "case": "heating-options",
+    "side": 0,
+    "method": "compact",
+    "correct": false,
+    "answer": "{\n  \"A\": \"reduced heating energy use by 5% at site 1 and increased it by 2% at site 2\",\n  \"B\": \"reduced heating energy use by 3% at site 1 and by -4% at site 2\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 303,
+    "choice": "A"
+  },
+  {
+    "case": "heating-options",
+    "side": 1,
+    "method": "compact",
+    "correct": true,
+    "answer": "{\n  \"A\": \"Neither option measured indoor air quality\",\n  \"B\": \"Neither option measured indoor air quality\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 274,
+    "choice": "defer"
+  },
+  {
+    "case": "heating-options",
+    "side": 1,
+    "method": "targeted",
+    "correct": true,
+    "answer": "{\n  \"A\": \"Neither option measured indoor air quality\",\n  \"B\": \"Neither option measured indoor air quality\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 274,
+    "choice": "defer"
+  },
+  {
+    "case": "service-targets",
+    "side": 0,
+    "method": "compact",
+    "correct": true,
+    "answer": "{\n  \"A\": \"resolved 84% in Trial 1 and 86% in Trial 2\",\n  \"B\": \"resolved 79% in Trial 1 and 92% in Trial 2\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 293,
+    "choice": "A"
+  },
+  {
+    "case": "service-targets",
+    "side": 0,
+    "method": "targeted",
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"ref\": 1,\n      \"value\": 84\n    },\n    {\n      \"ref\": 2,\n      \"value\": 86\n    }\n  ],\n  \"B\": [\n    {\n      \"ref\": 1,\n      \"value\": 79\n    },\n    {\n      \"ref\": 2,\n      \"value\": 92\n    }\n  ],\n  \"rule\": \"all_at_least\",\n  \"threshold\": 80\n}",
+    "extracted": {
+      "A": [
+        {
+          "ref": 1,
+          "value": 84
+        },
+        {
+          "ref": 2,
+          "value": 86
+        }
+      ],
+      "B": [
+        {
+          "ref": 1,
+          "value": 79
+        },
+        {
+          "ref": 2,
+          "value": 92
+        }
+      ],
+      "rule": "all_at_least",
+      "threshold": 80
+    },
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 80.0,
+      "A": [
+        84,
+        86
+      ],
+      "B": [
+        79,
+        92
+      ]
+    },
+    "choice": "A",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 292
+  },
+  {
+    "case": "service-targets",
+    "side": 1,
+    "method": "targeted",
+    "correct": true,
+    "answer": "{\n  \"A\": \"31 credits\",\n  \"B\": \"45 credits\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 256,
+    "choice": "B"
+  },
+  {
+    "case": "service-targets",
+    "side": 1,
+    "method": "compact",
+    "correct": true,
+    "answer": "{\n  \"A\": \"31 credits\",\n  \"B\": \"45 credits\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 256,
+    "choice": "B"
+  },
+  {
+    "case": "delivery-noise",
+    "side": 0,
+    "method": "targeted",
+    "correct": true,
+    "answer": "{\n  \"A\": \"29 + 36 = 65 deliveries\",\n  \"B\": \"41 + 13 = 54 deliveries\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 259,
+    "choice": "A"
+  },
+  {
+    "case": "delivery-noise",
+    "side": 0,
+    "method": "compact",
+    "correct": true,
+    "answer": "{\n  \"A\": \"29 + 36 = 65 deliveries\",\n  \"B\": \"41 + 13 = 54 deliveries\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 259,
+    "choice": "A"
+  },
+  {
+    "case": "delivery-noise",
+    "side": 1,
+    "method": "compact",
+    "correct": true,
+    "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 247,
+    "choice": "defer"
+  },
+  {
+    "case": "delivery-noise",
+    "side": 1,
+    "method": "targeted",
+    "correct": true,
+    "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 247,
+    "choice": "defer"
+  }
+]

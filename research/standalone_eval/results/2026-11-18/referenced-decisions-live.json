@@ -1,0 +1,408 @@
+[
+  {
+    "case": "parcel-choice",
+    "side": 0,
+    "correct": false,
+    "answer": "{\n  \"rule\": \"max_sum\",\n  \"threshold\": null,\n  \"A\": [\n    {\n      \"value\": 90,\n      \"ref\": 1\n    }\n  ],\n  \"B\": [\n    {\n      \"value\": 104,\n      \"ref\": 2\n    }\n  ]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 331,
+    "extracted": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        {
+          "value": 90,
+          "ref": 1
+        }
+      ],
+      "B": [
+        {
+          "value": 104,
+          "ref": 2
+        }
+      ]
+    },
+    "measurements": null,
+    "choice": null
+  },
+  {
+    "case": "parcel-choice",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"rule\": \"min_sum\",\n  \"threshold\": null,\n  \"A\": [{\"value\": 1, \"ref\": 3}],\n  \"B\": [{\"value\": 4, \"ref\": 3}]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 308,
+    "extracted": {
+      "rule": "min_sum",
+      "threshold": null,
+      "A": [
+        {
+          "value": 1,
+          "ref": 3
+        }
+      ],
+      "B": [
+        {
+          "value": 4,
+          "ref": 3
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "min_sum",
+      "threshold": null,
+      "A": [
+        1
+      ],
+      "B": [
+        4
+      ]
+    },
+    "choice": "A"
+  },
+  {
+    "case": "pool-hours",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"rule\": \"max_sum\",\n  \"threshold\": null,\n  \"A\": [\n    {\n      \"value\": 24,\n      \"ref\": 1\n    }\n  ],\n  \"B\": [\n    {\n      \"value\": 62,\n      \"ref\": 2\n    }\n  ]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 324,
+    "extracted": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        {
+          "value": 24,
+          "ref": 1
+        }
+      ],
+      "B": [
+        {
+          "value": 62,
+          "ref": 2
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        24
+      ],
+      "B": [
+        62
+      ]
+    },
+    "choice": "B"
+  },
+  {
+    "case": "pool-hours",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"rule\": \"unmeasured\",\n  \"threshold\": null,\n  \"A\": [],\n  \"B\": []\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 289,
+    "extracted": {
+      "rule": "unmeasured",
+      "threshold": null,
+      "A": [],
+      "B": []
+    },
+    "measurements": {
+      "rule": "unmeasured",
+      "threshold": null,
+      "A": [],
+      "B": []
+    },
+    "choice": "defer"
+  },
+  {
+    "case": "filter-choice",
+    "side": 0,
+    "correct": false,
+    "answer": "{\n  \"rule\": \"min_sum\",\n  \"threshold\": 18,\n  \"A\": [{\"value\": 30, \"ref\": 3}],\n  \"B\": [{\"value\": 18, \"ref\": 3}]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 326,
+    "extracted": {
+      "rule": "min_sum",
+      "threshold": 18,
+      "A": [
+        {
+          "value": 30,
+          "ref": 3
+        }
+      ],
+      "B": [
+        {
+          "value": 18,
+          "ref": 3
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "min_sum",
+      "threshold": 18,
+      "A": [
+        30
+      ],
+      "B": [
+        18
+      ]
+    },
+    "choice": null
+  },
+  {
+    "case": "filter-choice",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"rule\": \"all_at_least\",\n  \"threshold\": 60,\n  \"A\": [\n    {\n      \"value\": 82,\n      \"ref\": 1\n    },\n    {\n      \"value\": 51,\n      \"ref\": 2\n    }\n  ],\n  \"B\": [\n    {\n      \"value\": 68,\n      \"ref\": 1\n    },\n    {\n      \"value\": 74,\n      \"ref\": 2\n    }\n  ]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 390,
+    "extracted": {
+      "rule": "all_at_least",
+      "threshold": 60,
+      "A": [
+        {
+          "value": 82,
+          "ref": 1
+        },
+        {
+          "value": 51,
+          "ref": 2
+        }
+      ],
+      "B": [
+        {
+          "value": 68,
+          "ref": 1
+        },
+        {
+          "value": 74,
+          "ref": 2
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 60,
+      "A": [
+        82,
+        51
+      ],
+      "B": [
+        68,
+        74
+      ]
+    },
+    "choice": "B"
+  },
+  {
+    "case": "room-cooling",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"rule\": \"max_sum\",\n  \"threshold\": null,\n  \"A\": [{\"value\": 4, \"ref\": 1}],\n  \"B\": [{\"value\": 7, \"ref\": 2}]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 306,
+    "extracted": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        {
+          "value": 4,
+          "ref": 1
+        }
+      ],
+      "B": [
+        {
+          "value": 7,
+          "ref": 2
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        4
+      ],
+      "B": [
+        7
+      ]
+    },
+    "choice": "B"
+  },
+  {
+    "case": "room-cooling",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"rule\": \"min_sum\",\n  \"threshold\": null,\n  \"A\": [{\"value\": 90, \"ref\": 1}],\n  \"B\": [{\"value\": 140, \"ref\": 2}]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 308,
+    "extracted": {
+      "rule": "min_sum",
+      "threshold": null,
+      "A": [
+        {
+          "value": 90,
+          "ref": 1
+        }
+      ],
+      "B": [
+        {
+          "value": 140,
+          "ref": 2
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "min_sum",
+      "threshold": null,
+      "A": [
+        90
+      ],
+      "B": [
+        140
+      ]
+    },
+    "choice": "A"
+  },
+  {
+    "case": "crop-trials",
+    "side": 0,
+    "correct": false,
+    "answer": "{\n  \"rule\": \"max_sum for most/greatest\",\n  \"threshold\": null,\n  \"A\": [\n    {\n      \"value\": 8,\n      \"ref\": 1\n    },\n    {\n      \"value\": -2,\n      \"ref\": 2\n    }\n  ],\n  \"B\": [\n    {\n      \"value\": 3,\n      \"ref\": 1\n    },\n    {\n      \"value\": 3,\n      \"ref\": 2\n    }\n  ]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 381,
+    "extracted": {
+      "rule": "max_sum for most/greatest",
+      "threshold": null,
+      "A": [
+        {
+          "value": 8,
+          "ref": 1
+        },
+        {
+          "value": -2,
+          "ref": 2
+        }
+      ],
+      "B": [
+        {
+          "value": 3,
+          "ref": 1
+        },
+        {
+          "value": 3,
+          "ref": 2
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "max_sum for most/greatest",
+      "threshold": null,
+      "A": [
+        8,
+        -2
+      ],
+      "B": [
+        3,
+        3
+      ]
+    },
+    "choice": null
+  },
+  {
+    "case": "crop-trials",
+    "side": 1,
+    "correct": false,
+    "answer": "{\n  \"rule\": \"min_sum\",\n  \"threshold\": 12,\n  \"A\": [{\"value\": 12, \"ref\": 3}],\n  \"B\": [{\"value\": 20, \"ref\": 3}]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 325,
+    "extracted": {
+      "rule": "min_sum",
+      "threshold": 12,
+      "A": [
+        {
+          "value": 12,
+          "ref": 3
+        }
+      ],
+      "B": [
+        {
+          "value": 20,
+          "ref": 3
+        }
+      ]
+    },
+    "measurements": {
+      "rule": "min_sum",
+      "threshold": 12,
+      "A": [
+        12
+      ],
+      "B": [
+        20
+      ]
+    },
+    "choice": null
+  },
+  {
+    "case": "repair-options",
+    "side": 0,
+    "correct": false,
+    "answer": "{\n  \"rule\": \"max_sum\",\n  \"threshold\": null,\n  \"A\": [\n    {\n      \"value\": 47,\n      \"ref\": 1\n    }\n  ],\n  \"B\": [\n    {\n      \"value\": 42,\n      \"ref\": 2\n    }\n  ]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 334,
+    "extracted": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        {
+          "value": 47,
+          "ref": 1
+        }
+      ],
+      "B": [
+        {
+          "value": 42,
+          "ref": 2
+        }
+      ]
+    },
+    "measurements": null,
+    "choice": null
+  },
+  {
+    "case": "repair-options",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"rule\": \"unmeasured\",\n  \"threshold\": null,\n  \"A\": [],\n  \"B\": []\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 299,
+    "extracted": {
+      "rule": "unmeasured",
+      "threshold": null,
+      "A": [],
+      "B": []
+    },
+    "measurements": {
+      "rule": "unmeasured",
+      "threshold": null,
+      "A": [],
+      "B": []
+    },
+    "choice": "defer"
+  }
+]
