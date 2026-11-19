@@ -11,7 +11,9 @@ from adaptive_rei_benchmark import SINGLE_PASS, predict
 from evidence_register import decide, evidence_passage, register_answer
 from report_chain import report_chain_answer
 
-URL = "https://storage.googleapis.com/boolq/dev.jsonl"
+# Byte-identical mirror of the original Google release, verified below.
+URL = ("https://raw.githubusercontent.com/svinkapeppa/boolq/"
+       "65cad7c96c62f80b37394434fc4bf5a6148ccafc/dev.jsonl")
 DIGEST = "ebc29ea3808c5c611672384b3de56e83349fe38fc1fe876fd29b674d81d0a80a"
 MODEL = "qwen3:4b-instruct"
 SEED = 20261119
