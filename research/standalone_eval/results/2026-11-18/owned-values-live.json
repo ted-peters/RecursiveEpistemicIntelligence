@@ -1,0 +1,242 @@
+[
+  {
+    "case": "seal-threshold",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"rows\": [\n    {\n      \"A\": 88,\n      \"B\": 76\n    },\n    {\n      \"A\": 67,\n      \"B\": 85\n    }\n  ]\n}",
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 75.0,
+      "A": [
+        88,
+        67
+      ],
+      "B": [
+        76,
+        85
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 253
+  },
+  {
+    "case": "seal-threshold",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"rows\": [\n    {\n      \"A\": 11,\n      \"B\": 19\n    }\n  ]\n}",
+    "measurements": {
+      "rule": "min_sum",
+      "threshold": null,
+      "A": [
+        11
+      ],
+      "B": [
+        19
+      ]
+    },
+    "choice": "A",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 226
+  },
+  {
+    "case": "orchard-growth",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"rows\": [\n    {\n      \"A\": 7,\n      \"B\": 2\n    },\n    {\n      \"A\": -3,\n      \"B\": 1\n    }\n  ]\n}",
+    "measurements": {
+      "rule": "all_positive",
+      "threshold": null,
+      "A": [
+        7,
+        -3
+      ],
+      "B": [
+        2,
+        1
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 247
+  },
+  {
+    "case": "orchard-growth",
+    "side": 1,
+    "correct": false,
+    "answer": "{\n  \"rows\": [\n    {\n      \"A\": null,\n      \"B\": null\n    }\n  ]\n}",
+    "measurements": {
+      "rule": "unmeasured",
+      "threshold": null,
+      "A": [],
+      "B": []
+    },
+    "choice": "defer",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 226
+  },
+  {
+    "case": "water-savings",
+    "side": 0,
+    "correct": false,
+    "answer": "{\n  \"rows\": [\n    {\n      \"A\": -9,\n      \"B\": -3\n    },\n    {\n      \"A\": 4,\n      \"B\": 5\n    }\n  ]\n}",
+    "measurements": {
+      "rule": "all_positive",
+      "threshold": null,
+      "A": [
+        -9,
+        4
+      ],
+      "B": [
+        -3,
+        5
+      ]
+    },
+    "choice": "defer",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 254
+  },
+  {
+    "case": "water-savings",
+    "side": 1,
+    "correct": false,
+    "answer": "{\n  \"rows\": [\n    {\n      \"A\": null,\n      \"B\": null\n    },\n    {\n      \"A\": null,\n      \"B\": null\n    }\n  ]\n}",
+    "measurements": {
+      "rule": "unmeasured",
+      "threshold": null,
+      "A": [],
+      "B": []
+    },
+    "choice": "defer",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 247
+  },
+  {
+    "case": "thermal-reduction",
+    "side": 0,
+    "correct": false,
+    "answer": "{\n  \"rows\": [\n    {\n      \"A\": -8,\n      \"B\": -2\n    },\n    {\n      \"A\": 1,\n      \"B\": 6\n    }\n  ]\n}",
+    "measurements": {
+      "rule": "all_positive",
+      "threshold": null,
+      "A": [
+        -8,
+        1
+      ],
+      "B": [
+        -2,
+        6
+      ]
+    },
+    "choice": "defer",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 249
+  },
+  {
+    "case": "thermal-reduction",
+    "side": 1,
+    "correct": true,
+    "answer": "{ \"rows\": [ { \"A\": null, \"B\": null }, { \"A\": null, \"B\": null } ] }",
+    "measurements": {
+      "rule": "unmeasured",
+      "threshold": null,
+      "A": [],
+      "B": []
+    },
+    "choice": "defer",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 237
+  },
+  {
+    "case": "sorting-minimum",
+    "side": 0,
+    "correct": false,
+    "answer": "{\n  \"rows\": [\n    {\n      \"A\": 83,\n      \"B\": 79\n    },\n    {\n      \"A\": 89,\n      \"B\": 94\n    },\n    {\n      \"A\": 52,\n      \"B\": 35\n    }\n  ]\n}",
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 81.0,
+      "A": [
+        83,
+        89,
+        52
+      ],
+      "B": [
+        79,
+        94,
+        35
+      ]
+    },
+    "choice": "defer",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 278
+  },
+  {
+    "case": "sorting-minimum",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"rows\": [\n    {\n      \"A\": 83,\n      \"B\": 79\n    },\n    {\n      \"A\": 89,\n      \"B\": 94\n    },\n    {\n      \"A\": 52,\n      \"B\": 35\n    }\n  ]\n}",
+    "measurements": {
+      "rule": "min_sum",
+      "threshold": null,
+      "A": [
+        83,
+        89,
+        52
+      ],
+      "B": [
+        79,
+        94,
+        35
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 271
+  },
+  {
+    "case": "weekly-output",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"rows\": [\n    {\n      \"A\": 63,\n      \"B\": 56\n    }\n  ]\n}",
+    "measurements": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        63
+      ],
+      "B": [
+        56
+      ]
+    },
+    "choice": "A",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 222
+  },
+  {
+    "case": "weekly-output",
+    "side": 1,
+    "correct": true,
+    "answer": "{ \"rows\": [ { \"A\": null, \"B\": null }, { \"A\": null, \"B\": null } ] }",
+    "measurements": {
+      "rule": "unmeasured",
+      "threshold": null,
+      "A": [],
+      "B": []
+    },
+    "choice": "defer",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 226
+  }
+]

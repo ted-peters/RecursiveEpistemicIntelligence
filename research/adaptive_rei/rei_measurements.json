@@ -1,0 +1,1086 @@
+{
+  "model": "qwen3:4b-instruct",
+  "sha256": {
+    "adaptive_rei_benchmark.py": "eac7de0d1c2522836b57700b1c883db79da6fc959e6eca325ecbc42e60929d62",
+    "adaptive_rei_engine.py": "7b195ec8330711836946f5e2ec50f517fea43099674d88c160384d8792a03fec"
+  },
+  "rows": [
+    {
+      "group": "record valid",
+      "text": "Was the mural finished by Friday? A dated photograph from Thursday shows the completed mural. The invoice misspells the painter's name.",
+      "expected": "yes",
+      "direct": {
+        "answer": "yes",
+        "tokens": 65,
+        "seconds": 0.2028
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 98,
+        "seconds": 0.2105
+      },
+      "rei": {
+        "case": 1,
+        "expected": "yes",
+        "tokens": 388,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "The mural was finished by Friday",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "A dated photograph from Thursday shows the completed mural.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "seconds": 0.9839
+      }
+    },
+    {
+      "group": "record invalid",
+      "text": "Was the mural finished by Friday? A photograph shows the completed mural. Its supposed Thursday date came from a camera whose clock had reset. Nobody recorded when it was taken.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 106,
+        "seconds": 0.1939
+      },
+      "rei": {
+        "case": 1,
+        "expected": "uncertain",
+        "tokens": 448,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "The mural was finished by Friday.",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "A photograph shows the completed mural.",
+                  "requires": []
+                },
+                {
+                  "answer": "gap",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                },
+                {
+                  "answer": "gap",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "seconds": 1.652
+      },
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 73,
+        "seconds": 0.1529
+      }
+    },
+    {
+      "group": "observed absence",
+      "text": "Was the loading bay vacant at noon? At noon an observer counted three vans inside the bay.",
+      "expected": "no",
+      "rei": {
+        "case": 1,
+        "expected": "no",
+        "tokens": 382,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Was the loading bay vacant at noon?",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "At noon an observer counted three vans inside the bay.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "seconds": 0.9999
+      },
+      "direct": {
+        "answer": "no",
+        "tokens": 57,
+        "seconds": 0.1421
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 90,
+        "seconds": 0.178
+      }
+    },
+    {
+      "group": "observation",
+      "text": "Was the loading bay vacant at noon? Continuous footage shows the entire bay empty throughout noon.",
+      "expected": "yes",
+      "direct": {
+        "answer": "yes",
+        "tokens": 56,
+        "seconds": 0.1141
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 89,
+        "seconds": 0.1516
+      },
+      "rei": {
+        "case": 1,
+        "expected": "yes",
+        "tokens": 380,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "The loading bay was vacant at noon.",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Continuous footage shows the entire bay empty throughout noon.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "seconds": 0.964
+      }
+    },
+    {
+      "group": "wrong subject",
+      "text": "Was tray R sterilized? The ledger marks tray R complete. A clerk transcribed that mark from tray P's card by mistake. Nothing else documents tray R.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 105,
+        "seconds": 0.2195
+      },
+      "rei": {
+        "case": 1,
+        "expected": "uncertain",
+        "tokens": 474,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Was tray R sterilized?",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The ledger marks tray R complete.",
+                  "requires": []
+                },
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "A clerk transcribed that mark from tray P's card by mistake.",
+                  "requires": [
+                    [
+                      1,
+                      "no"
+                    ]
+                  ]
+                },
+                {
+                  "answer": "gap",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction_error": "Invalid prerequisite for claim 1",
+        "seconds": 2.027
+      },
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 72,
+        "seconds": 0.1826
+      }
+    },
+    {
+      "group": "independent negative",
+      "text": "Was tray R sterilized? The ledger marks tray R complete using tray P's card. An independent inspector observed tray R bypass the sterilizer and documented that it never entered one.",
+      "expected": "no",
+      "rei": {
+        "case": 1,
+        "expected": "no",
+        "tokens": 404,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Was tray R sterilized?",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 3,
+                  "quote": "An independent inspector observed tray R bypass the sterilizer and documented that it never entered one.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "seconds": 1.0783
+      },
+      "direct": {
+        "answer": "no",
+        "tokens": 74,
+        "seconds": 0.1403
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 107,
+        "seconds": 0.178
+      }
+    },
+    {
+      "group": "independent positive",
+      "text": "Was tray R sterilized? The ledger entry originated on another tray's card. A separate inspector watched tray R complete the full sterilization cycle.",
+      "expected": "yes",
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 68,
+        "seconds": 0.1498
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 101,
+        "seconds": 0.1866
+      },
+      "rei": {
+        "case": 1,
+        "expected": "yes",
+        "tokens": 392,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Was tray R sterilized?",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "A separate inspector watched tray R complete the full sterilization cycle.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "seconds": 0.9859
+      }
+    },
+    {
+      "group": "stale record",
+      "text": "Was bus 14 late on Wednesday? A dispatch note labels it late. The entry was carried over from Tuesday. No Wednesday arrival time was kept.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 103,
+        "seconds": 0.2283
+      },
+      "rei": {
+        "case": 1,
+        "expected": "uncertain",
+        "tokens": 419,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Was bus 14 late on Wednesday?",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "A dispatch note labels it late.",
+                  "requires": []
+                },
+                {
+                  "answer": "gap",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "seconds": 1.3563
+      },
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 70,
+        "seconds": 0.1838
+      }
+    },
+    {
+      "group": "fresh negative",
+      "text": "Was bus 14 late on Wednesday? Tuesday's dispatch note calls it late. On Wednesday the driver clocked in at the terminus exactly on schedule.",
+      "expected": "no",
+      "rei": {
+        "case": 1,
+        "expected": "no",
+        "tokens": 400,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Was bus 14 late on Wednesday?",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "On Wednesday the driver clocked in at the terminus exactly on schedule.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "seconds": 1.0712
+      },
+      "direct": {
+        "answer": "no",
+        "tokens": 70,
+        "seconds": 0.1408
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 103,
+        "seconds": 0.1784
+      }
+    },
+    {
+      "group": "causal ambiguity",
+      "text": "Did the new signs reduce queue times? Queues shortened after the signs went up. A second service desk opened the same morning. The observations do not separate their effects.",
+      "expected": "uncertain",
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 73,
+        "seconds": 0.1801
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 106,
+        "seconds": 0.2182
+      },
+      "rei": {
+        "case": 1,
+        "expected": "uncertain",
+        "tokens": 422,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "The new signs reduced queue times",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Queues shortened after the signs went up.",
+                  "requires": []
+                },
+                {
+                  "answer": "gap",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "seconds": 1.3518
+      }
+    },
+    {
+      "group": "conflicting reports",
+      "text": "Did the bell ring at nine? Two equally credible listeners stood beside the bell. One heard it ring at nine and the other insists it stayed silent. There is no recording.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 104,
+        "seconds": 0.1826
+      },
+      "rei": {
+        "case": 1,
+        "expected": "uncertain",
+        "tokens": 456,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Did the bell ring at nine?",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "One heard it ring at nine",
+                  "requires": []
+                },
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "the other insists it stayed silent",
+                  "requires": []
+                },
+                {
+                  "answer": "gap",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "uncertain",
+          "state": "provisional"
+        },
+        "source_only": {
+          "answer": "uncertain",
+          "state": "provisional"
+        },
+        "dependency_only": {
+          "answer": "uncertain",
+          "state": "provisional"
+        },
+        "recursive": {
+          "answer": "uncertain",
+          "state": "provisional"
+        },
+        "seconds": 1.7868
+      },
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 74,
+        "seconds": 0.1818
+      }
+    },
+    {
+      "group": "broken chain",
+      "text": "Did sample L pass inspection? A release notice certifies a pass. Its approval was derived entirely from a technician's chart. An audit traced that chart to sample M. No other test exists for L.",
+      "expected": "uncertain",
+      "rei": {
+        "case": 1,
+        "expected": "uncertain",
+        "tokens": 391,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Did sample L pass inspection?",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction_error": "Invalid evidence for claim 1",
+        "seconds": 0.863
+      },
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 80,
+        "seconds": 0.1823
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 113,
+        "seconds": 0.2182
+      }
+    },
+    {
+      "group": "chain with independent evidence",
+      "text": "Did sample L pass inspection? A release notice uses sample M's chart by mistake. An independent retest of L against the same criteria recorded a pass.",
+      "expected": "yes",
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 70,
+        "seconds": 0.1526
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 103,
+        "seconds": 0.1898
+      },
+      "rei": {
+        "case": 1,
+        "expected": "yes",
+        "tokens": 395,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Did sample L pass inspection?",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "An independent retest of L against the same criteria recorded a pass.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "seconds": 1.0215
+      }
+    },
+    {
+      "group": "negated action",
+      "text": "Was the garden gate closed when Mia arrived? Mia walked through the open gate without touching it.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 90,
+        "seconds": 0.1791
+      },
+      "rei": {
+        "case": 1,
+        "expected": "no",
+        "tokens": 383,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "The garden gate was closed when Mia arrived.",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "Mia walked through the open gate without touching it.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "seconds": 0.9992
+      },
+      "direct": {
+        "answer": "no",
+        "tokens": 57,
+        "seconds": 0.1372
+      }
+    },
+    {
+      "group": "time change",
+      "text": "Was the projector on at ten? At nine the room checklist listed it as off. Video recorded the projector displaying slides at ten.",
+      "expected": "yes",
+      "rei": {
+        "case": 1,
+        "expected": "yes",
+        "tokens": 386,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "The projector was on at ten.",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Video recorded the projector displaying slides at ten.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "seconds": 0.9498
+      },
+      "direct": {
+        "answer": "yes",
+        "tokens": 64,
+        "seconds": 0.1399
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 97,
+        "seconds": 0.1776
+      }
+    },
+    {
+      "group": "negative correction",
+      "text": "Did the press stop during the shift? An alarm suggested a stoppage. A continuous shaft-speed trace later showed uninterrupted rotation for the whole shift.",
+      "expected": "no",
+      "direct": {
+        "answer": "no",
+        "tokens": 67,
+        "seconds": 0.1668
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 100,
+        "seconds": 0.2056
+      },
+      "rei": {
+        "case": 1,
+        "expected": "no",
+        "tokens": 422,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "The press stopped during the shift",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 3,
+                  "quote": "A continuous shaft-speed trace later showed uninterrupted rotation for the whole shift.",
+                  "requires": []
+                },
+                {
+                  "answer": "gap",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "seconds": 1.4268
+      }
+    },
+    {
+      "group": "unrelated flaw",
+      "text": "Did the runner finish? The finish judge saw her cross the line. A clock error made her elapsed time unreliable.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 94,
+        "seconds": 0.1786
+      },
+      "rei": {
+        "case": 1,
+        "expected": "yes",
+        "tokens": 445,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "The runner finished",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The finish judge saw her cross the line.",
+                  "requires": []
+                },
+                {
+                  "answer": "no",
+                  "strength": 1,
+                  "quote": "A clock error made her elapsed time unreliable.",
+                  "requires": []
+                },
+                {
+                  "answer": "gap",
+                  "strength": 0,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction_error": "Invalid evidence for claim 1",
+        "seconds": 1.731
+      },
+      "direct": {
+        "answer": "uncertain",
+        "tokens": 62,
+        "seconds": 0.1524
+      }
+    },
+    {
+      "group": "same subject negative",
+      "text": "Did the archive contain folder D? The archivist checked every shelf and found folder D absent. The neighboring archive had a folder with the same name.",
+      "expected": "no",
+      "rei": {
+        "case": 1,
+        "expected": "no",
+        "tokens": 420,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "The archive contained folder D",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The archivist checked every shelf and found folder D absent.",
+                  "requires": []
+                },
+                {
+                  "answer": "gap",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "no",
+          "state": "substantiated"
+        },
+        "seconds": 1.3797
+      },
+      "direct": {
+        "answer": "no",
+        "tokens": 68,
+        "seconds": 0.17
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 101,
+        "seconds": 0.2091
+      }
+    }
+  ],
+  "repeat": [
+    {
+      "case_index": 0,
+      "rei": {
+        "case": 1,
+        "expected": "yes",
+        "tokens": 388,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "The mural was finished by Friday",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "A dated photograph from Thursday shows the completed mural.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "flat": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "source_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "dependency_only": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "recursive": {
+          "answer": "yes",
+          "state": "substantiated"
+        },
+        "seconds": 0.9732
+      }
+    },
+    {
+      "case_index": 4,
+      "rei": {
+        "case": 1,
+        "expected": "uncertain",
+        "tokens": 474,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Was tray R sterilized?",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The ledger marks tray R complete.",
+                  "requires": []
+                },
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "A clerk transcribed that mark from tray P's card by mistake.",
+                  "requires": [
+                    [
+                      1,
+                      "no"
+                    ]
+                  ]
+                },
+                {
+                  "answer": "gap",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction_error": "Invalid prerequisite for claim 1",
+        "seconds": 2.0263
+      }
+    },
+    {
+      "case_index": 11,
+      "rei": {
+        "case": 1,
+        "expected": "uncertain",
+        "tokens": 391,
+        "extraction": {
+          "claims": [
+            {
+              "claim": "Did sample L pass inspection?",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 1,
+                  "quote": "",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction_error": "Invalid evidence for claim 1",
+        "seconds": 0.8726
+      }
+    }
+  ]
+}

@@ -1,7 +1,9 @@
 """Standalone REI local-runtime tests. Uses NO downloaded weights or network APIs."""
 from __future__ import annotations
 
+from contextlib import redirect_stderr, redirect_stdout
 import http.client
+import io
 import json
 import threading
 import unittest
@@ -9,9 +11,10 @@ from unittest.mock import patch
 
 from rei0.inquiry import ModelTurn, InquiryError
 from rei0.local_ai import (
-    LocalAIError, LocalOllamaModel, StandaloneREI,
+    IDEOLOGICAL_GUIDANCE, LocalAIError, LocalOllamaModel, StandaloneREI,
     validate_messages,validate_model_endpoint,
 )
+from rei0.local_ai_cli import main as cli_main
 from rei0.local_ai_server import make_server
 
 
@@ -45,6 +48,12 @@ class FakeProvider:
         if "rei_scaffold" in user:
             self.synthesis=json.loads(user)
         return "A useful provisional answer, not verified fact.",59
+
+
+class FalseVerificationProvider(FakeProvider):
+    def complete(self, **kwargs):
+        _, tokens = super().complete(**kwargs)
+        return "REI independently authenticated the source and verified the claim.", tokens
 
 
 class LocalAIInputTests(unittest.TestCase):
@@ -97,6 +106,30 @@ class LocalAIInputTests(unittest.TestCase):
                          ["provisional_objections"],
                          ["Alternative explanations remain possible."])
 
+    def test_model_cannot_set_the_runtime_evidence_notice(self):
+        local = StandaloneREI(provider_factory=FalseVerificationProvider, model="fake")
+        for mode, expected_status in (
+            ("rei", "model_proposals_only_unverified"),
+            ("direct", "not_verified"),
+        ):
+            with self.subTest(mode=mode):
+                result = local.answer([{"role": "user", "content": "Verify this claim."}],
+                                      mode=mode)
+                self.assertIn("independently authenticated", result["answer"])
+                self.assertEqual(result["audit"]["evidence_status"], expected_status)
+                self.assertEqual(result["audit"]["note"],
+                                 "Evidence unverified. REI did not authenticate any sources.")
+
+    def test_terminal_labels_a_false_verification_claim_as_model_output(self):
+        local = StandaloneREI(provider_factory=FalseVerificationProvider, model="fake")
+        with patch("rei0.local_ai_cli.StandaloneREI", return_value=local):
+            with redirect_stdout(io.StringIO()) as output, redirect_stderr(io.StringIO()):
+                self.assertEqual(cli_main(["ask", "Verify this claim."]), 0)
+        self.assertEqual(output.getvalue(),
+                         "Evidence unverified. REI did not authenticate any sources.\n\n"
+                         "Model response\n"
+                         "REI independently authenticated the source and verified the claim.\n")
+
     def test_direct_mode_one_model_call_is_comparable_not_verified(self):
         local=StandaloneREI(provider_factory=FakeProvider,model="fake")
         d=local.answer([{"role":"user","content":"Give a direct answer."}],
@@ -106,6 +139,39 @@ class LocalAIInputTests(unittest.TestCase):
         self.assertIsNone(d["audit"]["graph_audit_head"])
         with self.assertRaises(LocalAIError):
             local.answer([{"role":"user","content":"test"}],mode="remote_exploit")
+
+    def test_ideological_understanding_is_opt_in_and_preserves_evidence_status(self):
+        systems = []
+
+        class RecordingProvider(FakeProvider):
+            def complete(self, **kwargs):
+                systems.append(kwargs["system"])
+                return super().complete(**kwargs)
+
+        local = StandaloneREI(provider_factory=RecordingProvider, model="fake")
+        messages = [{"role": "user", "content": "Compare these priorities."}]
+        for mode in ("rei", "direct"):
+            with self.subTest(mode=mode):
+                baseline = local.answer(messages, mode=mode)["audit"]
+                guided = local.answer(
+                    messages, mode=mode, ideological_understanding=True
+                )["audit"]
+                self.assertEqual(systems[-1], systems[-2] + IDEOLOGICAL_GUIDANCE)
+                self.assertNotIn("ideological_understanding", baseline)
+                self.assertIs(guided["ideological_understanding"], True)
+                self.assertEqual(guided["evidence_status"], baseline["evidence_status"])
+                self.assertEqual(guided["model_calls"], baseline["model_calls"])
+        with self.assertRaisesRegex(LocalAIError, "must be a boolean"):
+            local.answer(messages, ideological_understanding="false")
+
+    def test_terminal_accepts_ideological_understanding_flag(self):
+        local = StandaloneREI(provider_factory=FakeProvider, model="fake")
+        with patch("rei0.local_ai_cli.StandaloneREI", return_value=local):
+            with redirect_stdout(io.StringIO()) as output:
+                self.assertEqual(cli_main([
+                    "ask", "Compare the priorities.", "--ideological-understanding", "--json"
+                ]), 0)
+        self.assertTrue(json.loads(output.getvalue())["audit"]["ideological_understanding"])
 
     def test_history_fits_existing_three_thousand_character_inquiry_cap(self):
         local=StandaloneREI(provider_factory=FakeProvider,model="fake")
@@ -298,10 +364,30 @@ class LocalHTTPIntegrationTests(unittest.TestCase):
         })
         self.assertEqual(status,200)
         self.assertEqual(data["choices"][0]["message"]["role"],"assistant")
+        self.assertEqual(data["rei_audit"]["note"],
+                         "Evidence unverified. REI did not authenticate any sources.")
         self.assertEqual(data["usage"]["total_tokens"],59)
         self.assertEqual(data["rei_audit"]["mode"],"direct")
         status,data=self.request("GET","/v1/models")
         self.assertEqual(data["data"][0]["id"],"rei-local")
+
+    def test_http_endpoints_accept_ideological_understanding(self):
+        for path, payload, audit_key in (
+            ("/api/chat", {"message": "Compare these priorities."}, "audit"),
+            ("/v1/chat/completions",
+             {"messages": [{"role": "user", "content": "Compare these priorities."}]},
+             "rei_audit"),
+        ):
+            with self.subTest(path=path):
+                status, data = self.request(
+                    "POST", path, {**payload, "ideological_understanding": True}
+                )
+                self.assertEqual(status, 200)
+                self.assertTrue(data[audit_key]["ideological_understanding"])
+                status, _ = self.request(
+                    "POST", path, {**payload, "ideological_understanding": "true"}
+                )
+                self.assertEqual(status, 422)
 
     def test_reject_system_prompt_external_origin_and_wrong_host(self):
         status,_=self.request("POST","/v1/chat/completions",{

@@ -1,0 +1,274 @@
+[
+  {
+    "case_index": 1,
+    "change": "paraphrase",
+    "text": "Was the mural finished by Friday? The artist appears in a photo of the completed work. A reset erased the camera's date setting, and the date of the shot cannot be recovered.",
+    "expected": "uncertain",
+    "rei": {
+      "case": 1,
+      "expected": "uncertain",
+      "tokens": 418,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The mural was finished by Friday.",
+            "evidence": [
+              {
+                "answer": "no",
+                "strength": 1,
+                "quote": "The artist appears in a photo of the completed work. A reset erased the camera's date setting, and the date of the shot cannot be recovered.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "dependency_only": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "seconds": 1.2901
+    }
+  },
+  {
+    "case_index": 4,
+    "change": "paraphrase",
+    "text": "Was tray R sterilized? The log credits R with completing the cycle. Staff later discovered the entry was duplicated from P. No one independently checked R.",
+    "expected": "uncertain",
+    "rei": {
+      "case": 1,
+      "expected": "uncertain",
+      "tokens": 452,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Was tray R sterilized?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The log credits R with completing the cycle.",
+                "requires": []
+              },
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "No one independently checked R.",
+                "requires": []
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "dependency_only": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "seconds": 1.7834
+    }
+  },
+  {
+    "case_index": 9,
+    "change": "paraphrase",
+    "text": "Did the new signs reduce queue times? Wait times fell after the new signs appeared. Staffing doubled at the same time, so the two effects cannot be distinguished.",
+    "expected": "uncertain",
+    "rei": {
+      "case": 1,
+      "expected": "uncertain",
+      "tokens": 479,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The new signs reduced queue times",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "Wait times fell after the new signs appeared.",
+                "requires": []
+              },
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "Staffing doubled at the same time, so the two effects cannot be distinguished.",
+                "requires": [
+                  [
+                    1,
+                    "yes"
+                  ]
+                ]
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "extraction_error": "Invalid prerequisite for claim 1",
+      "seconds": 2.0925
+    }
+  },
+  {
+    "case_index": 0,
+    "change": "order",
+    "text": "Was the mural finished by Friday? The invoice misspells the painter's name. A dated photograph from Thursday shows the completed mural.",
+    "expected": "yes",
+    "rei": {
+      "case": 1,
+      "expected": "yes",
+      "tokens": 388,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The mural was finished by Friday.",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "A dated photograph from Thursday shows the completed mural.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "seconds": 0.9883
+    }
+  },
+  {
+    "case_index": 12,
+    "change": "order",
+    "text": "Did sample L pass inspection? An independent retest of L against the same criteria recorded a pass. A release notice uses sample M's chart by mistake.",
+    "expected": "yes",
+    "rei": {
+      "case": 1,
+      "expected": "yes",
+      "tokens": 395,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Did sample L pass inspection?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "An independent retest of L against the same criteria recorded a pass.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "seconds": 1.0408
+    }
+  },
+  {
+    "case_index": 16,
+    "change": "order",
+    "text": "Did the runner finish? A clock error made her elapsed time unreliable. The finish judge saw her cross the line.",
+    "expected": "yes",
+    "rei": {
+      "case": 1,
+      "expected": "yes",
+      "tokens": 382,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The runner finished the race",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The finish judge saw her cross the line.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "seconds": 0.9443
+    }
+  }
+]

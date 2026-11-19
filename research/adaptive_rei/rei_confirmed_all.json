@@ -1,0 +1,1210 @@
+{
+  "suite": "all",
+  "model": "qwen3:4b-instruct",
+  "cases": 25,
+  "scores": {
+    "flat_correct": 18,
+    "source_only_correct": 21,
+    "dependency_only_correct": 18,
+    "recursive_correct": 25,
+    "corrected": 7,
+    "regressed": 0,
+    "invalid_extractions": 0,
+    "extraction_tokens": 10170
+  },
+  "results": [
+    {
+      "case": 1,
+      "expected": "yes",
+      "tokens": 375,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The package arrived",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "A signed delivery receipt identifies the package and its recipient.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 2,
+      "expected": "no",
+      "tokens": 382,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The room was empty at the specified time.",
+            "evidence": [
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "A live camera showed two people inside at the specified time.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "no",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 3,
+      "expected": "no",
+      "tokens": 421,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The pump failed",
+            "evidence": [
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "A later teardown confirmed the pump worked and found the outlet valve closed.",
+                "requires": []
+              },
+              {
+                "answer": "yes",
+                "strength": 1,
+                "quote": "A preliminary report said yes.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "no",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 4,
+      "expected": "uncertain",
+      "tokens": 383,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Was the crate sealed at noon?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "Two independent, equally reliable inspectors report opposite observations.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "evidence_audit": [
+        {
+          "claim": 1,
+          "quote": "Two independent, equally reliable inspectors report opposite observations.",
+          "from": "yes",
+          "to": "gap"
+        }
+      ],
+      "flat": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "dependency_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    {
+      "case": 5,
+      "expected": "uncertain",
+      "tokens": 403,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The schedule change caused the sales increase",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "Sales rose 12% the same week the schedule changed and a large promotion began.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "evidence_audit": [
+        {
+          "claim": 1,
+          "quote": "Sales rose 12% the same week the schedule changed and a large promotion began.",
+          "from": "yes",
+          "to": "gap"
+        }
+      ],
+      "flat": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "dependency_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    {
+      "case": 6,
+      "expected": "yes",
+      "tokens": 372,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The parcel arrived",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The recipient confirmed receipt.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 7,
+      "expected": "uncertain",
+      "tokens": 522,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The freezer dropped below zero",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The dashboard says yes based on a validated export.",
+                "requires": []
+              },
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "The export used a probe assigned to a different freezer.",
+                "requires": [
+                  [
+                    1,
+                    "no"
+                  ]
+                ]
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              },
+              {
+                "answer": "undercut",
+                "strength": 3,
+                "quote": "Validation checked file integrity only.",
+                "target": 1,
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "recovery": "Attached wrong-source evidence to the quoted report",
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    {
+      "case": 8,
+      "expected": "yes",
+      "tokens": 470,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Was the exit blocked?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 3,
+                "quote": "A timestamped photo from the time in question shows a pallet blocking the exit.",
+                "requires": []
+              },
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "A supervisor said no based on the status board.",
+                "requires": []
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 9,
+      "expected": "uncertain",
+      "tokens": 372,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The coin landed heads",
+            "evidence": [
+              {
+                "answer": "no",
+                "strength": 1,
+                "quote": "No result was recorded.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "dependency_only": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "provisional"
+      }
+    },
+    {
+      "case": 10,
+      "expected": "no",
+      "tokens": 463,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The container was full at the time in question.",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "Two dashboards said yes",
+                "requires": []
+              },
+              {
+                "answer": "no",
+                "strength": 3,
+                "quote": "A direct inspection afterward found it empty at the time in question",
+                "requires": []
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "no",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 11,
+      "expected": "no",
+      "tokens": 428,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The hall was occupied at 7 p.m.",
+            "evidence": [
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "A live recording at 7 p.m. shows an empty hall.",
+                "requires": []
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "no",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 12,
+      "expected": "yes",
+      "tokens": 376,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The meter was running at noon",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "A technician filmed its dial advancing at noon.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 13,
+      "expected": "uncertain",
+      "tokens": 457,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Was the label printed before shipment?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "One witness says it was printed before shipment.",
+                "requires": []
+              },
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "An equally reliable witness says it was printed afterward.",
+                "requires": []
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "dependency_only": {
+        "answer": "uncertain",
+        "state": "provisional"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "provisional"
+      }
+    },
+    {
+      "case": 14,
+      "expected": "uncertain",
+      "tokens": 0,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Was the blue bin weighed",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The blue bin's log says yes",
+                "requires": []
+              },
+              {
+                "answer": "undercut",
+                "strength": 2,
+                "quote": "its entry was copied from the green bin's record",
+                "requires": [],
+                "target": 1
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "There is no separate measurement",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    {
+      "case": 15,
+      "expected": "uncertain",
+      "tokens": 428,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The lighting upgrade caused the drop in electricity use",
+            "evidence": [
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "There is no comparison that isolates either change.",
+                "requires": []
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "evidence_audit": [
+        {
+          "claim": 1,
+          "quote": "There is no comparison that isolates either change.",
+          "from": "no",
+          "to": "gap"
+        }
+      ],
+      "flat": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "dependency_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    {
+      "case": 16,
+      "expected": "yes",
+      "tokens": 379,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The cabinet was unlocked",
+            "evidence": [
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "A technician opened it without unlocking it.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "evidence_audit": [
+        {
+          "claim": 1,
+          "quote": "A technician opened it without unlocking it.",
+          "from": "no",
+          "to": "yes"
+        }
+      ],
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 17,
+      "expected": "uncertain",
+      "tokens": 407,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The scanner recorded crate K at the depot",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The scanner recorded crate K at the depot",
+                "requires": []
+              },
+              {
+                "answer": "undercut",
+                "target": 1,
+                "strength": 2,
+                "quote": "An audit found the scanner read crate J instead",
+                "requires": []
+              }
+            ]
+          },
+          {
+            "claim": "Was crate K delivered?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The delivery certificate relies entirely on the scanner record",
+                "requires": [
+                  [
+                    1,
+                    "yes"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected_source_chain_captured": true,
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    {
+      "case": 18,
+      "expected": "no",
+      "tokens": 462,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Was tank B full?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "A worksheet lists tank B as full.",
+                "requires": []
+              },
+              {
+                "answer": "no",
+                "strength": 3,
+                "quote": "A separate inspection found tank B empty.",
+                "requires": []
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "no",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 19,
+      "expected": "yes",
+      "tokens": 480,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Was tank B full?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "A separate inspection found tank B full.",
+                "requires": []
+              },
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "The technician found that the gauge was connected to tank A.",
+                "requires": [
+                  [
+                    1,
+                    "no"
+                  ]
+                ]
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "recovery": "Evaluated independent inspection after rejecting a self-reference",
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 20,
+      "expected": "uncertain",
+      "tokens": 478,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Was tank B full?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "A worksheet lists tank B as full.",
+                "requires": []
+              },
+              {
+                "answer": "no",
+                "strength": 3,
+                "quote": "The technician found that the gauge was connected to tank A.",
+                "requires": [
+                  [
+                    1,
+                    "no"
+                  ]
+                ]
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "recovery": "Attached wrong-source evidence to the quoted report",
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    {
+      "case": 21,
+      "expected": "uncertain",
+      "tokens": 423,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The manifest lists parcel 46 as delivered",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The manifest lists parcel 46 as delivered",
+                "requires": []
+              },
+              {
+                "answer": "undercut",
+                "target": 1,
+                "strength": 2,
+                "quote": "The driver confirmed that the slip was for parcel 64",
+                "requires": []
+              }
+            ]
+          },
+          {
+            "claim": "Was parcel 46 delivered?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The manifest lists parcel 46 as delivered",
+                "requires": [
+                  [
+                    1,
+                    "yes"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    {
+      "case": 22,
+      "expected": "yes",
+      "tokens": 432,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The choir rehearsed on Tuesday",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 3,
+                "quote": "A calendar shows a rehearsal on Tuesday.",
+                "requires": []
+              },
+              {
+                "answer": "yes",
+                "strength": 3,
+                "quote": "A dated recording independently confirms Tuesday's rehearsal.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    },
+    {
+      "case": 23,
+      "expected": "uncertain",
+      "tokens": 422,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The packing summary states that carton 8 was weighed",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The packing summary says carton 8 was weighed",
+                "requires": []
+              },
+              {
+                "answer": "undercut",
+                "target": 1,
+                "strength": 2,
+                "quote": "A check showed the cited log entry belonged to carton 3",
+                "requires": []
+              }
+            ]
+          },
+          {
+            "claim": "Carton 8 was weighed",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "Every entry came from the scale log",
+                "requires": [
+                  [
+                    1,
+                    "yes"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    {
+      "case": 24,
+      "expected": "uncertain",
+      "tokens": 427,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The logger attached to lot 17 recorded a temperature reading indicating it stayed cold",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "A logger showed lot 17 stayed cold",
+                "requires": []
+              },
+              {
+                "answer": "undercut",
+                "target": 1,
+                "strength": 2,
+                "quote": "An inspection found that the logger was attached to lot 22 instead",
+                "requires": []
+              }
+            ]
+          },
+          {
+            "claim": "Lot 17 was refrigerated",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The storage certificate depends solely on the logger reading",
+                "requires": [
+                  [
+                    1,
+                    "yes"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    {
+      "case": 25,
+      "expected": "yes",
+      "tokens": 408,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The storage certificate depends solely on the logger reading.",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "A logger showed lot 17 stayed cold.",
+                "requires": []
+              },
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "A separate inspector directly confirmed lot 17 stayed cold.",
+                "requires": []
+              }
+            ]
+          },
+          {
+            "claim": "Was lot 17 refrigerated?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "A logger showed lot 17 stayed cold.",
+                "requires": [
+                  [
+                    1,
+                    "yes"
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    }
+  ]
+}

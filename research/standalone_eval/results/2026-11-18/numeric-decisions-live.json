@@ -1,0 +1,256 @@
+[
+  {
+    "case": "parcel-choice",
+    "side": 0,
+    "expected": "B",
+    "correct": true,
+    "answer": "{\"rule\": \"max_sum\", \"threshold\": null, \"A\": [72, 18], \"B\": [55, 49]}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 291,
+    "measurements": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        72,
+        18
+      ],
+      "B": [
+        55,
+        49
+      ]
+    },
+    "choice": "B"
+  },
+  {
+    "case": "parcel-choice",
+    "side": 1,
+    "expected": "A",
+    "correct": false,
+    "answer": "{\"rule\": \"all_positive\", \"threshold\": null, \"A\": [1], \"B\": [4]}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 279,
+    "measurements": {
+      "rule": "all_positive",
+      "threshold": null,
+      "A": [
+        1
+      ],
+      "B": [
+        4
+      ]
+    },
+    "choice": "defer"
+  },
+  {
+    "case": "pool-hours",
+    "side": 0,
+    "expected": "B",
+    "correct": true,
+    "answer": "{\"rule\": \"max_sum\", \"threshold\": null, \"A\": [24, 62], \"B\": [70, 35]}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 285,
+    "measurements": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        24,
+        62
+      ],
+      "B": [
+        70,
+        35
+      ]
+    },
+    "choice": "B"
+  },
+  {
+    "case": "pool-hours",
+    "side": 1,
+    "expected": "defer",
+    "correct": true,
+    "answer": "{\"rule\": \"unmeasured\", \"threshold\": null, \"A\": [], \"B\": []}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 279,
+    "measurements": {
+      "rule": "unmeasured",
+      "threshold": null,
+      "A": [],
+      "B": []
+    },
+    "choice": "defer"
+  },
+  {
+    "case": "filter-choice",
+    "side": 0,
+    "expected": "B",
+    "correct": false,
+    "answer": "{\"rule\": \"all_at_least\", \"threshold\": null, \"A\": [30], \"B\": [18]}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 294,
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": null,
+      "A": [
+        30
+      ],
+      "B": [
+        18
+      ]
+    },
+    "choice": null
+  },
+  {
+    "case": "filter-choice",
+    "side": 1,
+    "expected": "B",
+    "correct": true,
+    "answer": "{\n  \"rule\": \"all_at_least\",\n  \"threshold\": 60,\n  \"A\": [82, 51],\n  \"B\": [68, 74]\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 317,
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 60,
+      "A": [
+        82,
+        51
+      ],
+      "B": [
+        68,
+        74
+      ]
+    },
+    "choice": "B"
+  },
+  {
+    "case": "room-cooling",
+    "side": 0,
+    "expected": "B",
+    "correct": true,
+    "answer": "{\"rule\": \"max_sum\", \"threshold\": null, \"A\": [4], \"B\": [7]}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 277,
+    "measurements": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        4
+      ],
+      "B": [
+        7
+      ]
+    },
+    "choice": "B"
+  },
+  {
+    "case": "room-cooling",
+    "side": 1,
+    "expected": "A",
+    "correct": true,
+    "answer": "{\"rule\": \"min_sum\", \"threshold\": null, \"A\": [90], \"B\": [140]}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 279,
+    "measurements": {
+      "rule": "min_sum",
+      "threshold": null,
+      "A": [
+        90
+      ],
+      "B": [
+        140
+      ]
+    },
+    "choice": "A"
+  },
+  {
+    "case": "crop-trials",
+    "side": 0,
+    "expected": "B",
+    "correct": true,
+    "answer": "{\"rule\": \"all_positive\", \"threshold\": null, \"A\": [8, -2], \"B\": [3, 3]}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 298,
+    "measurements": {
+      "rule": "all_positive",
+      "threshold": null,
+      "A": [
+        8,
+        -2
+      ],
+      "B": [
+        3,
+        3
+      ]
+    },
+    "choice": "B"
+  },
+  {
+    "case": "crop-trials",
+    "side": 1,
+    "expected": "A",
+    "correct": false,
+    "answer": "{\"rule\": \"all_at_least\", \"threshold\": null, \"A\": [12], \"B\": [20]}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 293,
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": null,
+      "A": [
+        12
+      ],
+      "B": [
+        20
+      ]
+    },
+    "choice": null
+  },
+  {
+    "case": "repair-options",
+    "side": 0,
+    "expected": "A",
+    "correct": true,
+    "answer": "{\"rule\": \"max_sum\", \"threshold\": null, \"A\": [19, 28], \"B\": [31, 11]}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 295,
+    "measurements": {
+      "rule": "max_sum",
+      "threshold": null,
+      "A": [
+        19,
+        28
+      ],
+      "B": [
+        31,
+        11
+      ]
+    },
+    "choice": "A"
+  },
+  {
+    "case": "repair-options",
+    "side": 1,
+    "expected": "defer",
+    "correct": true,
+    "answer": "{\"rule\": \"unmeasured\", \"threshold\": null, \"A\": [], \"B\": []}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 289,
+    "measurements": {
+      "rule": "unmeasured",
+      "threshold": null,
+      "A": [],
+      "B": []
+    },
+    "choice": "defer"
+  }
+]

@@ -1,0 +1,183 @@
+[
+  {
+    "case": "parcel-choice",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"A\": \"72 + 18 = 90 deliveries\",\n  \"B\": \"55 + 49 = 104 deliveries\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 268,
+    "choice": "B"
+  },
+  {
+    "case": "parcel-choice",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"1 damaged parcel\",\n  \"B\": \"4 damaged parcels\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 249,
+    "choice": "A"
+  },
+  {
+    "case": "pool-hours",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"A\": \"24 morning swimmers\",\n  \"B\": \"62 morning swimmers\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 249,
+    "choice": "B"
+  },
+  {
+    "case": "pool-hours",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 251,
+    "choice": "defer"
+  },
+  {
+    "case": "filter-choice",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"A\": \"30 credits\",\n  \"B\": \"18 credits\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 261,
+    "choice": "B"
+  },
+  {
+    "case": "filter-choice",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": [\n    {\n      \"ref\": 1,\n      \"value\": 82.0\n    },\n    {\n      \"ref\": 2,\n      \"value\": 51.0\n    }\n  ],\n  \"B\": [\n    {\n      \"ref\": 1,\n      \"value\": 68.0\n    },\n    {\n      \"ref\": 2,\n      \"value\": 74.0\n    }\n  ],\n  \"rule\": \"all_at_least\",\n  \"threshold\": 60.0\n}",
+    "extracted": {
+      "A": [
+        {
+          "ref": 1,
+          "value": 82.0
+        },
+        {
+          "ref": 2,
+          "value": 51.0
+        }
+      ],
+      "B": [
+        {
+          "ref": 1,
+          "value": 68.0
+        },
+        {
+          "ref": 2,
+          "value": 74.0
+        }
+      ],
+      "rule": "all_at_least",
+      "threshold": 60.0
+    },
+    "measurements": {
+      "rule": "all_at_least",
+      "threshold": 60.0,
+      "A": [
+        82.0,
+        51.0
+      ],
+      "B": [
+        68.0,
+        74.0
+      ]
+    },
+    "choice": "B",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 307
+  },
+  {
+    "case": "room-cooling",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"A\": \"4 degrees\",\n  \"B\": \"7 degrees\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 245,
+    "choice": "B"
+  },
+  {
+    "case": "room-cooling",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"90 energy units\",\n  \"B\": \"140 energy units\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 249,
+    "choice": "A"
+  },
+  {
+    "case": "crop-trials",
+    "side": 0,
+    "correct": false,
+    "answer": "{\n  \"A\": [\n    {\n      \"ref\": 1,\n      \"value\": 8.0000000000000015\n    },\n    {\n      \"ref\": 2,\n      \"value\": -2\n    }\n  ],\n  \"B\": [\n    {\n      \"ref\": 1,\n      \"value\": 3\n    },\n    {\n      \"ref\": 2,\n      \"value\": 3\n    }\n  ],\n  \"rule\": \"all_positive\",\n  \"threshold\": null\n}",
+    "extracted": {
+      "A": [
+        {
+          "ref": 1,
+          "value": 8.000000000000002
+        },
+        {
+          "ref": 2,
+          "value": -2
+        }
+      ],
+      "B": [
+        {
+          "ref": 1,
+          "value": 3
+        },
+        {
+          "ref": 2,
+          "value": 3
+        }
+      ],
+      "rule": "all_positive",
+      "threshold": null
+    },
+    "measurements": null,
+    "choice": null,
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 305
+  },
+  {
+    "case": "crop-trials",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"12 credits\",\n  \"B\": \"20 credits\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 260,
+    "choice": "A"
+  },
+  {
+    "case": "repair-options",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"A\": \"19 + 28 = 47 repairs\",\n  \"B\": \"31 + 11 = 42 repairs\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 271,
+    "choice": "A"
+  },
+  {
+    "case": "repair-options",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 261,
+    "choice": "defer"
+  }
+]

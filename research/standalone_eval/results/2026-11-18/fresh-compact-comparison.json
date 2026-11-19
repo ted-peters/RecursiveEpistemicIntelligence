@@ -1,0 +1,613 @@
+{
+  "case_set": "fresh_decision_cases",
+  "summary": {
+    "rei": {
+      "adaptive": {
+        "pairs": 6,
+        "pairs_passed": 3,
+        "pairs_with_consistent_evidence": 6,
+        "correct_evidence_answers": 8,
+        "correct_recommendations": 9,
+        "invalid_answers": 0,
+        "runtime_errors": 0,
+        "known_model_calls": 18,
+        "known_model_reported_tokens": 3667,
+        "expected_deferrals": 2,
+        "correct_deferrals": 2,
+        "expanded_pairs": 0,
+        "correct_shared_verdicts": 4,
+        "invalid_evidence_verdicts": 0
+      },
+      "adaptive_compact": {
+        "pairs": 6,
+        "pairs_passed": 2,
+        "pairs_with_consistent_evidence": 6,
+        "correct_evidence_answers": 8,
+        "correct_recommendations": 10,
+        "invalid_answers": 0,
+        "runtime_errors": 0,
+        "known_model_calls": 18,
+        "known_model_reported_tokens": 4505,
+        "expected_deferrals": 2,
+        "correct_deferrals": 2,
+        "expanded_pairs": 0,
+        "correct_shared_verdicts": 4,
+        "invalid_evidence_verdicts": 0
+      }
+    }
+  },
+  "pairs": [
+    {
+      "case": "parcel-choice",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "A",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 188,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "A"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 186,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": false
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"supported\",\"refs\":[1,2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 222,
+        "verdict": "supported",
+        "references": [
+          1,
+          2
+        ],
+        "references_correct": true,
+        "correct": false
+      }
+    },
+    {
+      "case": "parcel-choice",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"72 + 18 = 90 deliveries\",\n  \"B\": \"55 + 49 = 104 deliveries\",\n  \"choice\": \"B\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 268,
+          "choice": "B",
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "B"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "{\n  \"A\": \"1 damaged parcel\",\n  \"B\": \"4 damaged parcels\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 249,
+          "choice": "A",
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "A"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"supported\",\"refs\":[1,2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 222,
+        "verdict": "supported",
+        "references": [
+          1,
+          2
+        ],
+        "references_correct": true,
+        "correct": false
+      }
+    },
+    {
+      "case": "pool-hours",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"24 morning swimmers\",\n  \"B\": \"62 morning swimmers\",\n  \"choice\": \"B\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 249,
+          "choice": "B",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 251,
+          "choice": "defer",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"contradicted\",\"refs\":[2,1]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 220,
+        "verdict": "contradicted",
+        "references": [
+          2,
+          1
+        ],
+        "references_correct": true,
+        "correct": false
+      }
+    },
+    {
+      "case": "pool-hours",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 184,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 190,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "defer"
+          },
+          "evidence_correct": false,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"contradicted\",\"refs\":[2,1]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 220,
+        "verdict": "contradicted",
+        "references": [
+          2,
+          1
+        ],
+        "references_correct": true,
+        "correct": false
+      }
+    },
+    {
+      "case": "filter-choice",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": true,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 201,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 208,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"contradicted\",\"refs\":[1,2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 240,
+        "verdict": "contradicted",
+        "references": [
+          1,
+          2
+        ],
+        "references_correct": true,
+        "correct": true
+      }
+    },
+    {
+      "case": "filter-choice",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"30 credits\",\n  \"B\": \"18 credits\",\n  \"choice\": \"B\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 261,
+          "choice": "B",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "{\n  \"A\": \"removed 82% in Trial 1 and 51% in Trial 2\",\n  \"B\": \"removed 68% in Trial 1 and 74% in Trial 2\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 298,
+          "choice": "A",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"contradicted\",\"refs\":[1,2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 240,
+        "verdict": "contradicted",
+        "references": [
+          1,
+          2
+        ],
+        "references_correct": true,
+        "correct": true
+      }
+    },
+    {
+      "case": "room-cooling",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": true,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"4 degrees\",\n  \"B\": \"7 degrees\",\n  \"choice\": \"B\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 245,
+          "choice": "B",
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "{\n  \"A\": \"90 energy units\",\n  \"B\": \"140 energy units\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 249,
+          "choice": "A",
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"unknown\",\"refs\":[3]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 216,
+        "verdict": "unknown",
+        "references": [
+          3
+        ],
+        "references_correct": true,
+        "correct": true
+      }
+    },
+    {
+      "case": "room-cooling",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": true,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 183,
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "A",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 182,
+          "parsed": {
+            "evidence": "unknown",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"unknown\",\"refs\":[3]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 216,
+        "verdict": "unknown",
+        "references": [
+          3
+        ],
+        "references_correct": true,
+        "correct": true
+      }
+    },
+    {
+      "case": "crop-trials",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 199,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "B",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 197,
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "B"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"contradicted\",\"refs\":[2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 235,
+        "verdict": "contradicted",
+        "references": [
+          2
+        ],
+        "references_correct": false,
+        "correct": true
+      }
+    },
+    {
+      "case": "crop-trials",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": false,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"8% in field 1, -2% in field 2\",\n  \"B\": \"3% in field 1, 3% in field 2\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 284,
+          "choice": "A",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": false
+        },
+        {
+          "answer": "{\n  \"A\": \"12 credits\",\n  \"B\": \"20 credits\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 260,
+          "choice": "A",
+          "parsed": {
+            "evidence": "contradicted",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"contradicted\",\"refs\":[2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 235,
+        "verdict": "contradicted",
+        "references": [
+          2
+        ],
+        "references_correct": false,
+        "correct": true
+      }
+    },
+    {
+      "case": "repair-options",
+      "mode": "rei",
+      "guidance": "adaptive_compact",
+      "same_evidence": true,
+      "passed": true,
+      "sides": [
+        {
+          "answer": "{\n  \"A\": \"19 + 28 = 47 repairs\",\n  \"B\": \"31 + 11 = 42 repairs\",\n  \"choice\": \"A\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 271,
+          "choice": "A",
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 261,
+          "choice": "defer",
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "defer"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"supported\",\"refs\":[1,2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 226,
+        "verdict": "supported",
+        "references": [
+          1,
+          2
+        ],
+        "references_correct": true,
+        "correct": true
+      }
+    },
+    {
+      "case": "repair-options",
+      "mode": "rei",
+      "guidance": "adaptive",
+      "same_evidence": true,
+      "passed": true,
+      "sides": [
+        {
+          "answer": "A",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 192,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "A"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        },
+        {
+          "answer": "defer",
+          "error": null,
+          "model_calls": 1,
+          "model_reported_tokens": 198,
+          "parsed": {
+            "evidence": "supported",
+            "recommendation": "defer"
+          },
+          "evidence_correct": true,
+          "recommendation_correct": true
+        }
+      ],
+      "expanded": false,
+      "evidence_stage": {
+        "answer": "{\"verdict\":\"supported\",\"refs\":[1,2]}",
+        "error": null,
+        "model_calls": 1,
+        "model_reported_tokens": 226,
+        "verdict": "supported",
+        "references": [
+          1,
+          2
+        ],
+        "references_correct": true,
+        "correct": true
+      }
+    }
+  ]
+}

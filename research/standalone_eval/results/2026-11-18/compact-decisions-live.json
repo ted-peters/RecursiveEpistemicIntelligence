@@ -1,0 +1,122 @@
+[
+  {
+    "case": "downtown-access",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"A\": \"12 injuries prevented\",\n  \"B\": \"5 injuries prevented\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 264,
+    "choice": "A"
+  },
+  {
+    "case": "downtown-access",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"retains 60% of accessible drop-off points\",\n  \"B\": \"retains all accessible drop-off points\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 278,
+    "choice": "B"
+  },
+  {
+    "case": "library-hours",
+    "side": 0,
+    "correct": false,
+    "answer": "{\n  \"A\": \"100 school-age visitors\",\n  \"B\": \"100 school-age visitors\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 277,
+    "choice": "defer"
+  },
+  {
+    "case": "library-hours",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"80 older adults\",\n  \"B\": \"40 older adults\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 272,
+    "choice": "A"
+  },
+  {
+    "case": "bus-service",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"A\": \"shortened the median commute by 8 minutes\",\n  \"B\": \"shortened the median commute by 3 minutes\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 263,
+    "choice": "A"
+  },
+  {
+    "case": "bus-service",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 262,
+    "choice": "defer"
+  },
+  {
+    "case": "conflicting-drainage-studies",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"A\": \"40 credits\",\n  \"B\": \"60 credits\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 265,
+    "choice": "A"
+  },
+  {
+    "case": "conflicting-drainage-studies",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"reduced runoff by 9% in Pilot 1 and increased runoff by 5% in Pilot 2\",\n  \"B\": \"reduced runoff by 2% in Pilot 1 and reduced runoff by 2% in Pilot 2\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 308,
+    "choice": "B"
+  },
+  {
+    "case": "warehouse-total",
+    "side": 0,
+    "correct": true,
+    "answer": "{\n  \"A\": \"26 + 13 = 39 completed orders\",\n  \"B\": \"18 + 24 = 42 completed orders\",\n  \"choice\": \"B\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 277,
+    "choice": "B"
+  },
+  {
+    "case": "warehouse-total",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"2 labeling errors\",\n  \"B\": \"5 labeling errors\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 256,
+    "choice": "A"
+  },
+  {
+    "case": "conflicting-insulation-studies",
+    "side": 0,
+    "correct": false,
+    "answer": "{\n  \"A\": \"12% and 3% (A saved 12% in Trial 1, increased use by 3% in Trial 2)\",\n  \"B\": \"4% and 4% (B saved 4% in both trials)\",\n  \"choice\": \"A\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 296,
+    "choice": "A"
+  },
+  {
+    "case": "conflicting-insulation-studies",
+    "side": 1,
+    "correct": true,
+    "answer": "{\n  \"A\": \"unmeasured\",\n  \"B\": \"unmeasured\",\n  \"choice\": \"defer\"\n}",
+    "error": null,
+    "model_calls": 1,
+    "model_reported_tokens": 265,
+    "choice": "defer"
+  }
+]

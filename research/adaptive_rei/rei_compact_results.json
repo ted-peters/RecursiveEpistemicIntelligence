@@ -1,0 +1,702 @@
+[
+  {
+    "suite": "previous",
+    "question": "Was the mural finished by Friday? A dated photograph from Thursday shows the completed mural. The invoice misspells the painter's name.",
+    "expected": "yes",
+    "compact": {
+      "error": "missing source",
+      "tokens": 149,
+      "raw": {
+        "yes": [
+          "A dated photograph from Thursday shows the completed mural."
+        ],
+        "no": [],
+        "invalid": [
+          "The invoice misspells the painter's name."
+        ]
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Was the mural finished by Friday? A photograph shows the completed mural. Its supposed Thursday date came from a camera whose clock had reset. Nobody recorded when it was taken.",
+    "expected": "uncertain",
+    "compact": {
+      "error": "missing source",
+      "tokens": 156,
+      "raw": {
+        "yes": [
+          "A photograph shows the completed mural."
+        ],
+        "no": [],
+        "invalid": [
+          "Its supposed Thursday date came from a camera whose clock had reset."
+        ]
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Was the loading bay vacant at noon? At noon an observer counted three vans inside the bay.",
+    "expected": "no",
+    "compact": {
+      "answer": "yes",
+      "flat": "yes",
+      "tokens": 128,
+      "raw": {
+        "yes": [
+          "At noon an observer counted three vans inside the bay."
+        ],
+        "no": [],
+        "invalid": []
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Was the loading bay vacant at noon? Continuous footage shows the entire bay empty throughout noon.",
+    "expected": "yes",
+    "compact": {
+      "answer": "yes",
+      "flat": "yes",
+      "tokens": 126,
+      "raw": {
+        "yes": [
+          "Continuous footage shows the entire bay empty throughout noon."
+        ],
+        "no": [],
+        "invalid": []
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Was tray R sterilized? The ledger marks tray R complete. A clerk transcribed that mark from tray P's card by mistake. Nothing else documents tray R.",
+    "expected": "uncertain",
+    "compact": {
+      "answer": "uncertain",
+      "flat": "uncertain",
+      "tokens": 127,
+      "raw": {
+        "yes": [],
+        "no": [],
+        "invalid": []
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Was tray R sterilized? The ledger marks tray R complete using tray P's card. An independent inspector observed tray R bypass the sterilizer and documented that it never entered one.",
+    "expected": "no",
+    "compact": {
+      "error": "missing source",
+      "tokens": 168,
+      "raw": {
+        "yes": [],
+        "no": [
+          "An independent inspector observed tray R bypass the sterilizer and documented that it never entered one."
+        ],
+        "invalid": [
+          "The ledger marks tray R complete using tray P's card."
+        ]
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Was tray R sterilized? The ledger entry originated on another tray's card. A separate inspector watched tray R complete the full sterilization cycle.",
+    "expected": "yes",
+    "compact": {
+      "error": "missing source",
+      "tokens": 154,
+      "raw": {
+        "yes": [
+          "A separate inspector watched tray R complete the full sterilization cycle."
+        ],
+        "no": [],
+        "invalid": [
+          "The ledger entry originated on another tray's card."
+        ]
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Was bus 14 late on Wednesday? A dispatch note labels it late. The entry was carried over from Tuesday. No Wednesday arrival time was kept.",
+    "expected": "uncertain",
+    "compact": {
+      "error": "missing source",
+      "tokens": 147,
+      "raw": {
+        "yes": [
+          "A dispatch note labels it late."
+        ],
+        "no": [],
+        "invalid": [
+          "No Wednesday arrival time was kept."
+        ]
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Was bus 14 late on Wednesday? Tuesday's dispatch note calls it late. On Wednesday the driver clocked in at the terminus exactly on schedule.",
+    "expected": "no",
+    "compact": {
+      "answer": "uncertain",
+      "flat": "uncertain",
+      "tokens": 157,
+      "raw": {
+        "yes": [
+          "Tuesday's dispatch note calls it late"
+        ],
+        "no": [
+          "On Wednesday the driver clocked in at the terminus exactly on schedule"
+        ],
+        "invalid": []
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Did the new signs reduce queue times? Queues shortened after the signs went up. A second service desk opened the same morning. The observations do not separate their effects.",
+    "expected": "uncertain",
+    "compact": {
+      "error": "missing source",
+      "tokens": 154,
+      "raw": {
+        "yes": [
+          "Queues shortened after the signs went up."
+        ],
+        "no": [],
+        "invalid": [
+          "A second service desk opened the same morning."
+        ]
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Did the bell ring at nine? Two equally credible listeners stood beside the bell. One heard it ring at nine and the other insists it stayed silent. There is no recording.",
+    "expected": "uncertain",
+    "compact": {
+      "answer": "uncertain",
+      "flat": "uncertain",
+      "tokens": 151,
+      "raw": {
+        "yes": [
+          "One heard it ring at nine"
+        ],
+        "no": [
+          "the other insists it stayed silent"
+        ],
+        "invalid": []
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Did sample L pass inspection? A release notice certifies a pass. Its approval was derived entirely from a technician's chart. An audit traced that chart to sample M. No other test exists for L.",
+    "expected": "uncertain",
+    "compact": {
+      "error": "missing source",
+      "tokens": 182,
+      "raw": {
+        "yes": [
+          "A release notice certifies a pass."
+        ],
+        "no": [],
+        "invalid": [
+          "Its approval was derived entirely from a technician's chart.",
+          "An audit traced that chart to sample M.",
+          "No other test exists for L."
+        ]
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Did sample L pass inspection? A release notice uses sample M's chart by mistake. An independent retest of L against the same criteria recorded a pass.",
+    "expected": "yes",
+    "compact": {
+      "answer": "yes",
+      "flat": "yes",
+      "tokens": 143,
+      "raw": {
+        "yes": [
+          "An independent retest of L against the same criteria recorded a pass."
+        ],
+        "no": [],
+        "invalid": []
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Was the garden gate closed when Mia arrived? Mia walked through the open gate without touching it.",
+    "expected": "no",
+    "compact": {
+      "answer": "uncertain",
+      "flat": "uncertain",
+      "tokens": 113,
+      "raw": {
+        "yes": [],
+        "no": [],
+        "invalid": []
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Was the projector on at ten? At nine the room checklist listed it as off. Video recorded the projector displaying slides at ten.",
+    "expected": "yes",
+    "compact": {
+      "answer": "uncertain",
+      "flat": "uncertain",
+      "tokens": 147,
+      "raw": {
+        "yes": [
+          "Video recorded the projector displaying slides at ten."
+        ],
+        "no": [
+          "At nine the room checklist listed it as off."
+        ],
+        "invalid": []
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Did the press stop during the shift? An alarm suggested a stoppage. A continuous shaft-speed trace later showed uninterrupted rotation for the whole shift.",
+    "expected": "no",
+    "compact": {
+      "answer": "uncertain",
+      "flat": "uncertain",
+      "tokens": 152,
+      "raw": {
+        "yes": [
+          "An alarm suggested a stoppage."
+        ],
+        "no": [
+          "A continuous shaft-speed trace later showed uninterrupted rotation for the whole shift."
+        ],
+        "invalid": []
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Did the runner finish? The finish judge saw her cross the line. A clock error made her elapsed time unreliable.",
+    "expected": "yes",
+    "compact": {
+      "error": "missing source",
+      "tokens": 143,
+      "raw": {
+        "yes": [
+          "The finish judge saw her cross the line."
+        ],
+        "no": [],
+        "invalid": [
+          "A clock error made her elapsed time unreliable."
+        ]
+      }
+    }
+  },
+  {
+    "suite": "previous",
+    "question": "Did the archive contain folder D? The archivist checked every shelf and found folder D absent. The neighboring archive had a folder with the same name.",
+    "expected": "no",
+    "compact": {
+      "error": "missing source",
+      "tokens": 155,
+      "raw": {
+        "yes": [],
+        "no": [
+          "The archivist checked every shelf and found folder D absent."
+        ],
+        "invalid": [
+          "The neighboring archive had a folder with the same name."
+        ]
+      }
+    }
+  },
+  {
+    "suite": "new",
+    "question": "Was box N counted? The tally lists N. Its entry was duplicated from box H. No other count exists.",
+    "expected": "uncertain",
+    "compact": {
+      "answer": "yes",
+      "flat": "yes",
+      "tokens": 126,
+      "raw": {
+        "yes": [
+          "The tally lists N."
+        ],
+        "no": [],
+        "invalid": []
+      }
+    },
+    "current": {
+      "case": 1,
+      "expected": "uncertain",
+      "tokens": 385,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Was box N counted?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The tally lists N. Its entry was duplicated from box H.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    },
+    "single": {
+      "answer": "yes"
+    },
+    "single_tokens": 94
+  },
+  {
+    "suite": "new",
+    "question": "Was box N counted? An auditor personally counted N after discovering an error in the first tally.",
+    "expected": "yes",
+    "compact": {
+      "answer": "uncertain",
+      "flat": "uncertain",
+      "tokens": 113,
+      "raw": {
+        "yes": [],
+        "no": [],
+        "invalid": []
+      }
+    },
+    "current": {
+      "case": 1,
+      "expected": "yes",
+      "tokens": 382,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Was box N counted?",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "An auditor personally counted N after discovering an error in the first tally.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    },
+    "single": {
+      "answer": "uncertain"
+    },
+    "single_tokens": 91
+  },
+  {
+    "suite": "new",
+    "question": "Was desk seven occupied at three? The camera shows an occupied desk but its time setting was lost. No one can date the image.",
+    "expected": "uncertain",
+    "compact": {
+      "answer": "uncertain",
+      "flat": "uncertain",
+      "tokens": 121,
+      "raw": {
+        "yes": [],
+        "no": [],
+        "invalid": []
+      }
+    },
+    "current": {
+      "case": 1,
+      "expected": "uncertain",
+      "tokens": 554,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The camera shows an occupied desk",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The camera shows an occupied desk",
+                "requires": []
+              }
+            ]
+          },
+          {
+            "claim": "The camera's time setting was lost",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "its time setting was lost",
+                "requires": []
+              }
+            ]
+          },
+          {
+            "claim": "No one can date the image",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "No one can date the image",
+                "requires": []
+              }
+            ]
+          },
+          {
+            "claim": "Desk seven was occupied at three",
+            "evidence": [
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "source_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "dependency_only": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      },
+      "recursive": {
+        "answer": "uncertain",
+        "state": "unsupported"
+      }
+    },
+    "single": {
+      "answer": "uncertain"
+    },
+    "single_tokens": 99
+  },
+  {
+    "suite": "new",
+    "question": "Was desk seven occupied at three? An inspector stood beside desk seven at three and saw the empty chair and vacant desk.",
+    "expected": "no",
+    "compact": {
+      "answer": "no",
+      "flat": "no",
+      "tokens": 139,
+      "raw": {
+        "yes": [],
+        "no": [
+          "An inspector stood beside desk seven at three and saw the empty chair and vacant desk."
+        ],
+        "invalid": []
+      }
+    },
+    "current": {
+      "case": 1,
+      "expected": "no",
+      "tokens": 392,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "Desk seven was occupied at three.",
+            "evidence": [
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "An inspector stood beside desk seven at three and saw the empty chair and vacant desk.",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "no",
+        "state": "substantiated"
+      }
+    },
+    "single": {
+      "answer": "no"
+    },
+    "single_tokens": 92
+  },
+  {
+    "suite": "new",
+    "question": "Did the banner cause more visitors to enter? The crowd grew after installation. Admission fees were waived that same day. There was no way to isolate the banner's effect.",
+    "expected": "uncertain",
+    "compact": {
+      "answer": "uncertain",
+      "flat": "uncertain",
+      "tokens": 128,
+      "raw": {
+        "yes": [],
+        "no": [],
+        "invalid": []
+      }
+    },
+    "current": {
+      "case": 1,
+      "expected": "uncertain",
+      "tokens": 420,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The banner caused more visitors to enter",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "The crowd grew after installation.",
+                "requires": []
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "yes",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "yes",
+        "state": "substantiated"
+      }
+    },
+    "single": {
+      "answer": "uncertain"
+    },
+    "single_tokens": 106
+  },
+  {
+    "suite": "new",
+    "question": "Did the power go off at noon? A continuous voltage recorder showed normal voltage throughout noon. The outage alarm was traced to a loose alarm cable.",
+    "expected": "no",
+    "compact": {
+      "answer": "uncertain",
+      "flat": "uncertain",
+      "tokens": 123,
+      "raw": {
+        "yes": [],
+        "no": [],
+        "invalid": []
+      }
+    },
+    "current": {
+      "case": 1,
+      "expected": "no",
+      "tokens": 418,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "The power went off at noon",
+            "evidence": [
+              {
+                "answer": "no",
+                "strength": 2,
+                "quote": "A continuous voltage recorder showed normal voltage throughout noon.",
+                "requires": []
+              },
+              {
+                "answer": "gap",
+                "strength": 1,
+                "quote": "",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "flat": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "source_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "dependency_only": {
+        "answer": "no",
+        "state": "substantiated"
+      },
+      "recursive": {
+        "answer": "no",
+        "state": "substantiated"
+      }
+    },
+    "single": {
+      "answer": "no"
+    },
+    "single_tokens": 100
+  }
+]
