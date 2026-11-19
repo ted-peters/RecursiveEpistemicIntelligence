@@ -1,0 +1,396 @@
+{
+  "model": "qwen3:4b-instruct",
+  "model_digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "rows": [
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 35?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 20: yes if claim 18 is yes.\nClaim 23: yes.\nClaim 4: no.\nClaim 18: yes if claim 4 is no.\nClaim 35: yes if claim 20 is yes and claim 23 is yes.",
+      "expected": "yes",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 184
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 35?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 20: yes if claim 18 is yes.\nClaim 23: yes.\nClaim 4: yes.\nClaim 18: yes if claim 4 is no.\nClaim 35: yes if claim 20 is yes and claim 23 is yes.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 184
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 29?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 29: no if claim 15 is no and claim 16 is yes.\nClaim 29: yes.\nClaim 13: yes if claim 12 is no.\nClaim 15: no if claim 13 is yes.\nClaim 16: yes.\nClaim 12: no if claim 1 is no.\nClaim 1: no.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 205
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 29?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 29: no if claim 15 is no and claim 16 is yes.\nClaim 29: yes.\nClaim 13: yes if claim 12 is no.\nClaim 15: no if claim 13 is yes.\nClaim 16: yes.\nClaim 12: no if claim 1 is no.\nClaim 1: yes.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 205
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 38?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 38: yes.\nClaim 12: yes if claim 2 is yes.\nClaim 38: yes if claim 26 is yes and claim 27 is yes.\nClaim 27: yes.\nClaim 2: yes.\nClaim 24: no if claim 12 is yes.\nClaim 26: yes if claim 25 is no.\nClaim 25: no if claim 24 is no.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 218
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 38?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 38: yes.\nClaim 12: yes if claim 2 is yes.\nClaim 38: yes if claim 26 is yes and claim 27 is yes.\nClaim 27: yes.\nClaim 2: no.\nClaim 24: no if claim 12 is yes.\nClaim 26: yes if claim 25 is no.\nClaim 25: no if claim 24 is no.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 218
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 40?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 13: no if claim 1 is yes.\nClaim 26: yes if claim 18 is yes.\nClaim 30: yes if claim 26 is yes.\nClaim 31: yes.\nClaim 18: yes if claim 14 is no.\nClaim 40: no if claim 30 is yes and claim 31 is yes.\nClaim 14: no if claim 13 is no.\nClaim 1: yes.",
+      "expected": "no",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 226
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 40?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 13: no if claim 1 is yes.\nClaim 26: yes if claim 18 is yes.\nClaim 30: yes if claim 26 is yes.\nClaim 31: yes.\nClaim 18: yes if claim 14 is no.\nClaim 40: no if claim 30 is yes and claim 31 is yes.\nClaim 14: no if claim 13 is no.\nClaim 1: no.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 226
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 38?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 8: no if claim 6 is no.\nClaim 38: no.\nClaim 27: yes.\nClaim 6: no.\nClaim 38: yes if claim 25 is yes and claim 27 is yes.\nClaim 25: yes if claim 8 is no.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 189
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 38?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 8: no if claim 6 is no.\nClaim 38: no.\nClaim 27: yes.\nClaim 6: yes.\nClaim 38: yes if claim 25 is yes and claim 27 is yes.\nClaim 25: yes if claim 8 is no.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 189
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 33?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 33: no if claim 31 is no and claim 32 is yes.\nClaim 4: yes.\nClaim 31: no if claim 25 is no.\nClaim 25: no if claim 17 is yes.\nClaim 32: yes.\nClaim 33: no.\nClaim 17: yes if claim 4 is yes.",
+      "expected": "no",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 205
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 33?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 33: no if claim 31 is no and claim 32 is yes.\nClaim 4: no.\nClaim 31: no if claim 25 is no.\nClaim 25: no if claim 17 is yes.\nClaim 32: yes.\nClaim 33: no.\nClaim 17: yes if claim 4 is yes.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 204
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 40?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 5: no if claim 1 is yes.\nClaim 9: no if claim 5 is no.\nClaim 34: yes.\nClaim 11: no if claim 9 is no.\nClaim 40: yes if claim 26 is no and claim 34 is yes.\nClaim 1: yes.\nClaim 26: no if claim 11 is no.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 207
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 40?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 5: no if claim 1 is yes.\nClaim 9: no if claim 5 is no.\nClaim 34: yes.\nClaim 11: no if claim 9 is no.\nClaim 40: yes if claim 26 is no and claim 34 is yes.\nClaim 1: no.\nClaim 26: no if claim 11 is no.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 207
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 40?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 24: yes if claim 20 is no.\nClaim 30: yes if claim 24 is yes.\nClaim 20: no if claim 17 is no.\nClaim 40: no if claim 30 is yes and claim 36 is yes.\nClaim 17: no if claim 14 is yes.\nClaim 36: yes.\nClaim 40: yes.\nClaim 14: yes if claim 11 is no.\nClaim 11: no.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 235
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 40?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 24: yes if claim 20 is no.\nClaim 30: yes if claim 24 is yes.\nClaim 20: no if claim 17 is no.\nClaim 40: no if claim 30 is yes and claim 36 is yes.\nClaim 17: no if claim 14 is yes.\nClaim 36: yes.\nClaim 40: yes.\nClaim 14: yes if claim 11 is no.\nClaim 11: yes.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 235
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 36?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 36: yes if claim 6 is no and claim 10 is yes.\nClaim 36: yes.\nClaim 2: yes.\nClaim 6: no if claim 3 is yes.\nClaim 10: yes.\nClaim 3: yes if claim 2 is yes.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 186
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 36?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 36: yes if claim 6 is no and claim 10 is yes.\nClaim 36: yes.\nClaim 2: no.\nClaim 6: no if claim 3 is yes.\nClaim 10: yes.\nClaim 3: yes if claim 2 is yes.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 186
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 35?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 28: no if claim 27 is no.\nClaim 23: yes if claim 1 is yes.\nClaim 1: yes.\nClaim 27: no if claim 23 is yes.\nClaim 35: no if claim 28 is no and claim 32 is yes.\nClaim 32: yes.",
+      "expected": "no",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 198
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 35?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 28: no if claim 27 is no.\nClaim 23: yes if claim 1 is yes.\nClaim 1: no.\nClaim 27: no if claim 23 is yes.\nClaim 35: no if claim 28 is no and claim 32 is yes.\nClaim 32: yes.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 198
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 36?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 36: no.\nClaim 19: no if claim 10 is no.\nClaim 10: no.\nClaim 26: no if claim 25 is yes.\nClaim 25: yes if claim 21 is no.\nClaim 31: yes.\nClaim 21: no if claim 19 is no.\nClaim 36: yes if claim 26 is no and claim 31 is yes.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 221
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 36?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 36: no.\nClaim 19: no if claim 10 is no.\nClaim 10: yes.\nClaim 26: no if claim 25 is yes.\nClaim 25: yes if claim 21 is no.\nClaim 31: yes.\nClaim 21: no if claim 19 is no.\nClaim 36: yes if claim 26 is no and claim 31 is yes.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 221
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 33?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 25: no if claim 24 is yes.\nClaim 33: no if claim 30 is no and claim 32 is yes.\nClaim 24: yes if claim 16 is yes.\nClaim 27: no if claim 25 is no.\nClaim 16: yes.\nClaim 28: yes if claim 27 is no.\nClaim 32: yes.\nClaim 33: no.\nClaim 30: no if claim 28 is yes.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 234
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      }
+    },
+    {
+      "kind": "register",
+      "question": "What is the answer for claim 33?\nEvidence register. Each numbered claim can have several equally strong reports. A conditional report counts only when every prerequisite has its required answer. Missing or conflicting support means uncertain. Use only reports for the requested claim.\nClaim 25: no if claim 24 is yes.\nClaim 33: no if claim 30 is no and claim 32 is yes.\nClaim 24: yes if claim 16 is yes.\nClaim 27: no if claim 25 is no.\nClaim 16: no.\nClaim 28: yes if claim 27 is no.\nClaim 32: yes.\nClaim 33: no.\nClaim 30: no if claim 28 is yes.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 234
+      }
+    },
+    {
+      "kind": "prose",
+      "question": "Did the quartet play an encore? The recording covers the entire concert and ends with an encore by all four players.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 92
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 92
+      }
+    },
+    {
+      "kind": "prose",
+      "question": "Was the copper disk magnetic? The label was missing. The case beside it contained a magnet, but no one tested the disk.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 98
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 98
+      }
+    },
+    {
+      "kind": "prose",
+      "question": "Was booth five occupied at noon? The noon panorama shows its whole interior empty.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 87
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 87
+      }
+    },
+    {
+      "kind": "prose",
+      "question": "Was the last page signed? The legal assistant inspected the original and saw the signature on its last page.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 92
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 92
+      }
+    },
+    {
+      "kind": "prose",
+      "question": "Did sanding cause the variation in gloss? Both the coating and sanding technique changed, and only the finished pieces were compared.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 98
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 98
+      }
+    },
+    {
+      "kind": "prose",
+      "question": "Did the clock chime at ten? The bell was disconnected all morning. The hands showed ten without any sound.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 91
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 91
+      }
+    }
+  ]
+}

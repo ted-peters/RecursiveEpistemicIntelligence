@@ -34,6 +34,8 @@ conventional AI on independent held-out tasks.
 
 ## Adaptive REI experiments
 
+For questions with explicitly declared dependencies, the experimental evidence-budget mode uses the graph engine directly. It scored 24/24 on 12 pairs of synthetic register questions, using zero model tokens. The same Qwen3 4B model with a single evidence prompt scored 13/24. On a separate 24-question prose test, both scored 20/24 and the mode used 6.3% fewer tokens. [Usage, scope and recorded trials](research/adaptive_rei/evidence_budget_results.md)
+
 The [evidence-graph experiments](research/adaptive_rei/rei_findings.md) include the engine, benchmark, measurement scripts and recorded Qwen3 4B outputs. On 18 new synthetic questions, single-pass evidence instructions answered 16 correctly, direct prompting answered 15 and full REI answered 12. The [compact trial](research/adaptive_rei/rei_compact_results.json) answered 4 of those 18 correctly and 3 of 6 additional questions.
 
 Run the deterministic engine comparison from the repository root with `python3 research/adaptive_rei/adaptive_rei_engine.py`. For the Ollama comparison, run `rei_measure.py` from a separate output directory to preserve the recorded results. Pass its `rei_measurements.json` to `rei_compact_trial.py` to repeat the compact trial.
