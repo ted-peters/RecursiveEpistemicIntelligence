@@ -10,6 +10,7 @@ from urllib.request import urlopen
 from adaptive_rei_benchmark import SINGLE_PASS, predict
 from evidence_register import decide, evidence_passage, register_answer
 from report_chain import report_chain_answer
+from question_focus import decide as focused_decide
 
 # Byte-identical mirror of the original Google release, verified below.
 URL = ("https://raw.githubusercontent.com/svinkapeppa/boolq/"
@@ -38,6 +39,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", type=Path, help="Optional local copy of the official dev.jsonl")
     parser.add_argument("--url", default="http://127.0.0.1:11434")
+    parser.add_argument("--question-focus", action="store_true",
+                        help="Compare the experimental fallback on 120 fresh questions.")
     args = parser.parse_args()
     if args.data:
         raw = args.data.read_bytes()
@@ -52,21 +55,34 @@ def main():
     with urlopen(args.url + "/api/tags", timeout=30) as response:
         models = json.load(response)["models"]
     digest = next(m["digest"] for m in models if m["name"] == MODEL)
+    seed = SEED
+    indices = random.Random(seed).sample(range(len(data)), SAMPLE)
+    policy = decide
+    if args.question_focus:
+        prior = Path(__file__).with_name("results") / "boolq_trial.json"
+        previous = [data[r["index"]] for r in json.loads(prior.read_text())["rows"]]
+        questions = {r["question"] for r in previous}
+        passages = {r["passage"] for r in previous}
+        eligible = [i for i, r in enumerate(data)
+                    if r["question"] not in questions and r["passage"] not in passages]
+        seed = 20261120
+        indices = random.Random(seed).sample(eligible, 120)
+        policy = focused_decide
     rows = []
-    for order, index in enumerate(random.Random(SEED).sample(range(len(data)), SAMPLE)):
+    for order, index in enumerate(indices):
         text = texts[index]
         expected = "yes" if data[index]["answer"] else "no"
         result = {"index": index, "route": route(text), "expected": expected}
         for arm in (("baseline", "rei") if order % 2 == 0 else ("rei", "baseline")):
             if arm == "rei":
-                answer, tokens = decide(args.url, MODEL, text)
+                answer, tokens = policy(args.url, MODEL, text)
             else:
                 answer, tokens = predict(args.url, MODEL, SINGLE_PASS, text)
             result[arm] = {"answer": answer.get("answer"), "tokens": tokens}
         rows.append(result)
     totals = {arm: {"correct": sum(r[arm]["answer"] == r["expected"] for r in rows),
                     "tokens": sum(r[arm]["tokens"] for r in rows)} for arm in ("baseline", "rei")}
-    print(json.dumps({"data_url": URL, "sha256": DIGEST, "seed": SEED, "model": MODEL,
+    print(json.dumps({"data_url": URL, "sha256": DIGEST, "seed": seed, "policy": policy.__module__, "model": MODEL,
                       "model_digest": digest, "full_split_routes": coverage,
                       "sample_totals": totals, "rows": rows}))
 
