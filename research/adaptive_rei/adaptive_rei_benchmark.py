@@ -427,15 +427,22 @@ if __name__ == "__main__":
     modes.add_argument("--rei", action="store_true", help="Compare REI with recursion off and on.")
     modes.add_argument("--evidence-budget", metavar="PASSAGE",
                        help="Answer one evidence question using explicit dependencies or the single-pass prompt.")
+    modes.add_argument("--plain-verdict", metavar="PASSAGE",
+                       help="Use the short, plain-text model verdict for prose.")
     modes.add_argument("--quick", action="store_true", help="Run only the two single-pass prompts.")
     args = parser.parse_args()
     try:
         cases = {"original": CASES, "fresh": FRESH_CASES, "chain": [(CHAIN_CASE, "uncertain")],
                  "all": CASES + FRESH_CASES + [(CHAIN_CASE, "uncertain")] + REGRESSION_CASES}[args.suite]
         url = args.url.rstrip("/")
-        if args.evidence_budget is not None:
-            from evidence_register import decide
-            answer, tokens = decide(url, args.model, args.evidence_budget)
+        if args.evidence_budget is not None or args.plain_verdict is not None:
+            if args.plain_verdict is not None:
+                from plain_verdict import decide
+                passage = args.plain_verdict
+            else:
+                from evidence_register import decide
+                passage = args.evidence_budget
+            answer, tokens = decide(url, args.model, passage)
             print(json.dumps({"model": args.model, "answer": answer.get("answer"), "tokens": tokens}))
             raise SystemExit(0)
         if args.rei:
