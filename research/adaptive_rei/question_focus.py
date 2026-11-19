@@ -11,13 +11,18 @@ INSTRUCTION = (
 )
 
 
+def prose_prompt(text):
+    prose = evidence_passage(text)
+    question, delimiter, body = prose.partition("?")
+    if not (delimiter and question.strip() and body.strip()) or "?" in body:
+        return SINGLE_PASS, prose
+    return INSTRUCTION, body.strip() + "\n\nQuestion: " + question.strip() + "?"
+
+
 def decide(url, model, text):
     for resolver in (register_answer, report_chain_answer):
         result = resolver(text)
         if result is not None:
             return {"answer": result}, 0
-    prose = evidence_passage(text)
-    question, delimiter, body = prose.partition("?")
-    if not (delimiter and question.strip() and body.strip()) or "?" in body:
-        return predict(url, model, SINGLE_PASS, prose)
-    return predict(url, model, INSTRUCTION, body.strip() + "\n\nQuestion: " + question.strip() + "?")
+    instruction, prose = prose_prompt(text)
+    return predict(url, model, instruction, prose)
