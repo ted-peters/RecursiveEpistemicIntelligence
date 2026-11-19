@@ -1,0 +1,542 @@
+{
+  "data_url": "https://raw.githubusercontent.com/svinkapeppa/boolq/65cad7c96c62f80b37394434fc4bf5a6148ccafc/dev.jsonl",
+  "sha256": "ebc29ea3808c5c611672384b3de56e83349fe38fc1fe876fd29b674d81d0a80a",
+  "seed": 20261119,
+  "model": "qwen3:4b-instruct",
+  "model_digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "full_split_routes": {
+    "unchanged_prompt": 3270
+  },
+  "sample_totals": {
+    "baseline": {
+      "correct": 29,
+      "tokens": 8299
+    },
+    "rei": {
+      "correct": 29,
+      "tokens": 8299
+    }
+  },
+  "rows": [
+    {
+      "index": 3252,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 239
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 239
+      }
+    },
+    {
+      "index": 1970,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 253
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 253
+      }
+    },
+    {
+      "index": 2888,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 271
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 271
+      }
+    },
+    {
+      "index": 2115,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 298
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 298
+      }
+    },
+    {
+      "index": 2926,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 153
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 153
+      }
+    },
+    {
+      "index": 3153,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 113
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 113
+      }
+    },
+    {
+      "index": 2499,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 213
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 213
+      }
+    },
+    {
+      "index": 887,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 200
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 200
+      }
+    },
+    {
+      "index": 84,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 223
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 223
+      }
+    },
+    {
+      "index": 1040,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 184
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 184
+      }
+    },
+    {
+      "index": 2317,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 148
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 148
+      }
+    },
+    {
+      "index": 2837,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 325
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 325
+      }
+    },
+    {
+      "index": 1817,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 175
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 175
+      }
+    },
+    {
+      "index": 1482,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 145
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 145
+      }
+    },
+    {
+      "index": 225,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 366
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 366
+      }
+    },
+    {
+      "index": 1125,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 212
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 212
+      }
+    },
+    {
+      "index": 2491,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 197
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 197
+      }
+    },
+    {
+      "index": 206,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 273
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 273
+      }
+    },
+    {
+      "index": 2777,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 130
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 130
+      }
+    },
+    {
+      "index": 2727,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 154
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 154
+      }
+    },
+    {
+      "index": 746,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 256
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 256
+      }
+    },
+    {
+      "index": 2967,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 201
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 201
+      }
+    },
+    {
+      "index": 1159,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 256
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 256
+      }
+    },
+    {
+      "index": 112,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 168
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 168
+      }
+    },
+    {
+      "index": 2483,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 195
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 195
+      }
+    },
+    {
+      "index": 1992,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 233
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 233
+      }
+    },
+    {
+      "index": 2077,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 127
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 127
+      }
+    },
+    {
+      "index": 1353,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 198
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 198
+      }
+    },
+    {
+      "index": 1227,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 129
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 129
+      }
+    },
+    {
+      "index": 2299,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 321
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 321
+      }
+    },
+    {
+      "index": 2259,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 331
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 331
+      }
+    },
+    {
+      "index": 239,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 157
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 157
+      }
+    },
+    {
+      "index": 25,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 186
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 186
+      }
+    },
+    {
+      "index": 949,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 191
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 191
+      }
+    },
+    {
+      "index": 924,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 175
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 175
+      }
+    },
+    {
+      "index": 1958,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 152
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 152
+      }
+    },
+    {
+      "index": 251,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 186
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 186
+      }
+    },
+    {
+      "index": 683,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 219
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 219
+      }
+    },
+    {
+      "index": 1294,
+      "route": "unchanged_prompt",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 211
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 211
+      }
+    },
+    {
+      "index": 1587,
+      "route": "unchanged_prompt",
+      "expected": "no",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 135
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 135
+      }
+    }
+  ]
+}

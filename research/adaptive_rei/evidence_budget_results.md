@@ -72,3 +72,13 @@ The 30-question comparison used 12 synthetic pairs with a single evidence change
 The 81.0% reduction is specific to this mix of passages. The 24 chain examples share a small vocabulary, use explicit attribution and were authored for this parser. The controls had identical predictions in both arms. The result does not estimate performance on independently written natural language.
 
 [Individual predictions and token counts](results/report_chain_trial.json) · [GitHub experiment](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/44614458220)
+
+## Independent BoolQ evaluation
+
+All 3,270 development questions followed the ordinary Qwen path with identical inputs to the single-pass baseline. The existing graph and aside rules had zero coverage on this split.
+
+On 40 questions selected without replacement using seed 20261119, both arms answered 29 correctly (72.5%) and used 8,299 model-reported tokens each. Every paired prediction matched. Four errors were abstentions on questions labeled no, and seven selected the opposite yes/no label. The benchmark has binary labels and does not assess whether abstention is appropriate when evidence is genuinely missing.
+
+The trial used the original question and passage, added a question-mark separator, and passed no labels to the model. Both arms used the same Qwen3 4B digest and alternated order. The REI policy was frozen before selecting examples. This measures transfer to independently authored information-seeking questions. It does not directly test authored report-chain interventions or rule out exposure to this public corpus during model training.
+
+[BoolQ, Clark et al.](https://github.com/google-research-datasets/boolean-questions) · [Per-example results and dataset checksum](results/boolq_trial.json) · [GitHub run](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/44618397433)
