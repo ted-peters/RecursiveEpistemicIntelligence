@@ -1,7 +1,6 @@
 """Experimental one-call fallback that reads the passage before the exact question."""
 from adaptive_rei_benchmark import SINGLE_PASS, predict
-from evidence_register import evidence_passage, register_answer
-from report_chain import report_chain_answer
+from evidence_register import evidence_passage, explicit_answer
 
 INSTRUCTION = (
     'Read the passage. Answer the exact question, matching the entity, relationship, '
@@ -20,9 +19,8 @@ def prose_prompt(text):
 
 
 def decide(url, model, text):
-    for resolver in (register_answer, report_chain_answer):
-        result = resolver(text)
-        if result is not None:
-            return {"answer": result}, 0
+    result = explicit_answer(text)
+    if result is not None:
+        return {"answer": result}, 0
     instruction, prose = prose_prompt(text)
     return predict(url, model, instruction, prose)

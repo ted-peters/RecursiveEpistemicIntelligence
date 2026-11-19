@@ -1,0 +1,2103 @@
+{
+  "data_url": "https://raw.githubusercontent.com/svinkapeppa/boolq/65cad7c96c62f80b37394434fc4bf5a6148ccafc/dev.jsonl",
+  "sha256": "ebc29ea3808c5c611672384b3de56e83349fe38fc1fe876fd29b674d81d0a80a",
+  "seed": 20261121,
+  "policy": "implied_evidence",
+  "model": "qwen3:4b-instruct",
+  "model_digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "full_split_routes": {
+    "implied_evidence": 3270
+  },
+  "sample_totals": {
+    "baseline": {
+      "correct": 107,
+      "tokens": 33015
+    },
+    "rei": {
+      "correct": 97,
+      "tokens": 30255
+    }
+  },
+  "rows": [
+    {
+      "index": 2315,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 184
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 167
+      }
+    },
+    {
+      "index": 771,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 169
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 189
+      }
+    },
+    {
+      "index": 1236,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 196
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 179
+      }
+    },
+    {
+      "index": 1533,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 194
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 211
+      }
+    },
+    {
+      "index": 2670,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 266
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 249
+      }
+    },
+    {
+      "index": 370,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 104
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 121
+      }
+    },
+    {
+      "index": 1484,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 213
+      },
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 196
+      }
+    },
+    {
+      "index": 334,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 290
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 307
+      }
+    },
+    {
+      "index": 18,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 260
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 243
+      }
+    },
+    {
+      "index": 796,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 156
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 173
+      }
+    },
+    {
+      "index": 706,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 214
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 197
+      }
+    },
+    {
+      "index": 1593,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 231
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 248
+      }
+    },
+    {
+      "index": 1543,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 300
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 283
+      }
+    },
+    {
+      "index": 755,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 198
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 215
+      }
+    },
+    {
+      "index": 727,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 192
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 175
+      }
+    },
+    {
+      "index": 2611,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 125
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 146
+      }
+    },
+    {
+      "index": 1604,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 212
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 195
+      }
+    },
+    {
+      "index": 1731,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 209
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 226
+      }
+    },
+    {
+      "index": 1546,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 231
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 214
+      }
+    },
+    {
+      "index": 1512,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 84
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 104
+      }
+    },
+    {
+      "index": 2639,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 144
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 124
+      }
+    },
+    {
+      "index": 511,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 241
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 258
+      }
+    },
+    {
+      "index": 1078,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 162
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 142
+      }
+    },
+    {
+      "index": 1799,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 303
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 320
+      }
+    },
+    {
+      "index": 351,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 148
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 128
+      }
+    },
+    {
+      "index": 2060,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 245
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 261
+      }
+    },
+    {
+      "index": 355,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 488
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 471
+      }
+    },
+    {
+      "index": 1442,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 121
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 141
+      }
+    },
+    {
+      "index": 655,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 219
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 202
+      }
+    },
+    {
+      "index": 412,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 207
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 224
+      }
+    },
+    {
+      "index": 1016,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 247
+      },
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 231
+      }
+    },
+    {
+      "index": 2971,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 229
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 246
+      }
+    },
+    {
+      "index": 925,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 200
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 183
+      }
+    },
+    {
+      "index": 1632,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 157
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 174
+      }
+    },
+    {
+      "index": 11,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 188
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 170
+      }
+    },
+    {
+      "index": 2288,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 369
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 385
+      }
+    },
+    {
+      "index": 2821,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 238
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 221
+      }
+    },
+    {
+      "index": 1895,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 254
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 272
+      }
+    },
+    {
+      "index": 116,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 145
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 125
+      }
+    },
+    {
+      "index": 958,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 145
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 162
+      }
+    },
+    {
+      "index": 857,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 145
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 125
+      }
+    },
+    {
+      "index": 2700,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 194
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 211
+      }
+    },
+    {
+      "index": 773,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 159
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 139
+      }
+    },
+    {
+      "index": 586,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 79
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 99
+      }
+    },
+    {
+      "index": 1158,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 180
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 160
+      }
+    },
+    {
+      "index": 2715,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 158
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 175
+      }
+    },
+    {
+      "index": 3113,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 176
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 159
+      }
+    },
+    {
+      "index": 2716,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 206
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 223
+      }
+    },
+    {
+      "index": 1633,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 193
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 176
+      }
+    },
+    {
+      "index": 1647,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 101
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 121
+      }
+    },
+    {
+      "index": 1694,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 240
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 223
+      }
+    },
+    {
+      "index": 1908,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 145
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 165
+      }
+    },
+    {
+      "index": 2561,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 152
+      },
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 132
+      }
+    },
+    {
+      "index": 2893,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 201
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 218
+      }
+    },
+    {
+      "index": 2020,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 241
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 224
+      }
+    },
+    {
+      "index": 1896,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 363
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 380
+      }
+    },
+    {
+      "index": 1169,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 160
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 143
+      }
+    },
+    {
+      "index": 2281,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 108
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 128
+      }
+    },
+    {
+      "index": 91,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 210
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 193
+      }
+    },
+    {
+      "index": 967,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 264
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 285
+      }
+    },
+    {
+      "index": 2622,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 263
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 245
+      }
+    },
+    {
+      "index": 3024,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 215
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 232
+      }
+    },
+    {
+      "index": 1074,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 229
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 212
+      }
+    },
+    {
+      "index": 2055,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 200
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 217
+      }
+    },
+    {
+      "index": 3109,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 193
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 173
+      }
+    },
+    {
+      "index": 2316,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 138
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 155
+      }
+    },
+    {
+      "index": 2076,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 174
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 154
+      }
+    },
+    {
+      "index": 1741,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 194
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 211
+      }
+    },
+    {
+      "index": 2120,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 203
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 186
+      }
+    },
+    {
+      "index": 2028,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 154
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 173
+      }
+    },
+    {
+      "index": 515,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 217
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 200
+      }
+    },
+    {
+      "index": 2892,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 153
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 170
+      }
+    },
+    {
+      "index": 2196,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 96
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 76
+      }
+    },
+    {
+      "index": 2580,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 360
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 380
+      }
+    },
+    {
+      "index": 3242,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 152
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 131
+      }
+    },
+    {
+      "index": 1595,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 154
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 171
+      }
+    },
+    {
+      "index": 3038,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 189
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 172
+      }
+    },
+    {
+      "index": 341,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 235
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 252
+      }
+    },
+    {
+      "index": 1726,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 238
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 221
+      }
+    },
+    {
+      "index": 521,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 145
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 162
+      }
+    },
+    {
+      "index": 1508,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 161
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 143
+      }
+    },
+    {
+      "index": 1367,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 128
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 145
+      }
+    },
+    {
+      "index": 429,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 223
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 206
+      }
+    },
+    {
+      "index": 1352,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 159
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 176
+      }
+    },
+    {
+      "index": 840,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 142
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 125
+      }
+    },
+    {
+      "index": 1166,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 160
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 177
+      }
+    },
+    {
+      "index": 34,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 193
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 173
+      }
+    },
+    {
+      "index": 2533,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "yes",
+        "tokens": 150
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 170
+      }
+    },
+    {
+      "index": 1733,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 186
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 166
+      }
+    },
+    {
+      "index": 1650,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 236
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 253
+      }
+    },
+    {
+      "index": 2101,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 154
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 134
+      }
+    },
+    {
+      "index": 3209,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 112
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 129
+      }
+    },
+    {
+      "index": 1356,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 198
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 181
+      }
+    },
+    {
+      "index": 1382,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 132
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 152
+      }
+    },
+    {
+      "index": 140,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 180
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 163
+      }
+    },
+    {
+      "index": 2092,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 330
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 350
+      }
+    },
+    {
+      "index": 2964,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 134
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 116
+      }
+    },
+    {
+      "index": 2376,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 106
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 126
+      }
+    },
+    {
+      "index": 596,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 435
+      },
+      "rei": {
+        "answer": null,
+        "tokens": 536
+      }
+    },
+    {
+      "index": 1820,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 129
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 146
+      }
+    },
+    {
+      "index": 2704,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 182
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 162
+      }
+    },
+    {
+      "index": 2512,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 155
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 175
+      }
+    },
+    {
+      "index": 3090,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 285
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 268
+      }
+    },
+    {
+      "index": 2446,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 263
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 280
+      }
+    },
+    {
+      "index": 566,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 178
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 161
+      }
+    },
+    {
+      "index": 2279,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 163
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 180
+      }
+    },
+    {
+      "index": 3008,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 120
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 103
+      }
+    },
+    {
+      "index": 2921,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 197
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 214
+      }
+    },
+    {
+      "index": 2352,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 166
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 145
+      }
+    },
+    {
+      "index": 2255,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 137
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 156
+      }
+    },
+    {
+      "index": 2090,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 237
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 220
+      }
+    },
+    {
+      "index": 977,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 145
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 166
+      }
+    },
+    {
+      "index": 2163,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 249
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 232
+      }
+    },
+    {
+      "index": 447,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 269
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 286
+      }
+    },
+    {
+      "index": 1510,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 233
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 216
+      }
+    },
+    {
+      "index": 289,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 359
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 379
+      }
+    },
+    {
+      "index": 1678,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 158
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 138
+      }
+    },
+    {
+      "index": 1340,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 148
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 168
+      }
+    },
+    {
+      "index": 1086,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 213
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 193
+      }
+    },
+    {
+      "index": 3256,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 192
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 209
+      }
+    },
+    {
+      "index": 2563,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 225
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 208
+      }
+    },
+    {
+      "index": 1102,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "yes",
+        "tokens": 170
+      },
+      "baseline": {
+        "answer": "zone 1 and 2",
+        "tokens": 192
+      }
+    },
+    {
+      "index": 2843,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 159
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 142
+      }
+    },
+    {
+      "index": 108,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "yes",
+        "tokens": 141
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 161
+      }
+    },
+    {
+      "index": 182,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 197
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 177
+      }
+    },
+    {
+      "index": 2623,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 229
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 246
+      }
+    },
+    {
+      "index": 1033,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 228
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 211
+      }
+    },
+    {
+      "index": 754,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 179
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 196
+      }
+    },
+    {
+      "index": 2751,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 230
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 213
+      }
+    },
+    {
+      "index": 2725,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 225
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 242
+      }
+    },
+    {
+      "index": 3191,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 174
+      },
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 158
+      }
+    },
+    {
+      "index": 2040,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 116
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 135
+      }
+    },
+    {
+      "index": 2606,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 284
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 267
+      }
+    },
+    {
+      "index": 2472,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "no",
+        "tokens": 170
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 187
+      }
+    },
+    {
+      "index": 3234,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 132
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 112
+      }
+    },
+    {
+      "index": 506,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 147
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 164
+      }
+    },
+    {
+      "index": 2107,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 122
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 102
+      }
+    },
+    {
+      "index": 3192,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "uncertain",
+        "tokens": 89
+      },
+      "baseline": {
+        "answer": "uncertain",
+        "tokens": 109
+      }
+    },
+    {
+      "index": 2165,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "no",
+        "tokens": 121
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 101
+      }
+    },
+    {
+      "index": 2658,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 192
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 209
+      }
+    },
+    {
+      "index": 3117,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 197
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 177
+      }
+    },
+    {
+      "index": 2962,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 349
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 366
+      }
+    },
+    {
+      "index": 1348,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 362
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 345
+      }
+    },
+    {
+      "index": 2950,
+      "route": "implied_evidence",
+      "expected": "no",
+      "rei": {
+        "answer": "no",
+        "tokens": 151
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 168
+      }
+    },
+    {
+      "index": 1333,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 170
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 153
+      }
+    },
+    {
+      "index": 283,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 275
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 292
+      }
+    },
+    {
+      "index": 2867,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 173
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 156
+      }
+    },
+    {
+      "index": 1151,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 78
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 98
+      }
+    },
+    {
+      "index": 2175,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 102
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 85
+      }
+    },
+    {
+      "index": 346,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 279
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 296
+      }
+    },
+    {
+      "index": 208,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 242
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 225
+      }
+    },
+    {
+      "index": 3063,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 143
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 160
+      }
+    },
+    {
+      "index": 2345,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 279
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 262
+      }
+    },
+    {
+      "index": 2789,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 167
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 187
+      }
+    },
+    {
+      "index": 274,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 164
+      },
+      "rei": {
+        "answer": "yes",
+        "tokens": 147
+      }
+    },
+    {
+      "index": 3057,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 395
+      },
+      "baseline": {
+        "answer": "no",
+        "tokens": 412
+      }
+    },
+    {
+      "index": 889,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "baseline": {
+        "answer": "yes",
+        "tokens": 227
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 210
+      }
+    },
+    {
+      "index": 237,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 191
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 208
+      }
+    },
+    {
+      "index": 2677,
+      "route": "implied_evidence",
+      "expected": "no",
+      "baseline": {
+        "answer": "no",
+        "tokens": 184
+      },
+      "rei": {
+        "answer": "no",
+        "tokens": 164
+      }
+    },
+    {
+      "index": 2329,
+      "route": "implied_evidence",
+      "expected": "yes",
+      "rei": {
+        "answer": "yes",
+        "tokens": 166
+      },
+      "baseline": {
+        "answer": "yes",
+        "tokens": 183
+      }
+    }
+  ]
+}

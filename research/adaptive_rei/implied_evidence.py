@@ -1,7 +1,6 @@
 """One-call prose candidate for questions supported by ordinary implications."""
 from adaptive_rei_benchmark import predict
-from evidence_register import evidence_passage, register_answer
-from report_chain import report_chain_answer
+from evidence_register import evidence_passage, explicit_answer
 
 INSTRUCTION = (
     "Answer from the passage, including ordinary implications. Match exactly who did what, "
@@ -10,8 +9,7 @@ INSTRUCTION = (
 
 
 def decide(url, model, text):
-    for resolver in (register_answer, report_chain_answer):
-        result = resolver(text)
-        if result is not None:
-            return {"answer": result}, 0
+    result = explicit_answer(text)
+    if result is not None:
+        return {"answer": result}, 0
     return predict(url, model, INSTRUCTION, evidence_passage(text))
