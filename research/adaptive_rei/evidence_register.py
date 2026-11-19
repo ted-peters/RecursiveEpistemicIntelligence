@@ -39,9 +39,29 @@ def register_answer(passage):
     return evaluate(claims)[requested].answer
 
 
+# Only remove a complete sentence whose author explicitly introduces an aside.
+# Keep clauses joined by a contrast, since the second clause can be decisive.
+ASIDE = re.compile(
+    r"^(?:unrelated(?:ly)?[:,]|(?:as )?an unrelated (?:note|aside)[:,]|"
+    r"(?:in|on) an unrelated (?:matter|note)[,:])", re.I
+)
+CONTRAST = re.compile(r"\b(?:but|however|yet|although|whereas|except|actually)\b|[;?]", re.I)
+
+
+def evidence_passage(passage):
+    question, separator, body = passage.partition("?")
+    if not separator or "?" in body or "\n" in body:
+        return passage
+    sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])", body.strip())
+    retained = [s for s in sentences if not (ASIDE.match(s) and not CONTRAST.search(s))]
+    if not retained or len(retained) == len(sentences):
+        return passage
+    return question + "? " + " ".join(retained)
+
+
 def decide(url, model, passage):
     from adaptive_rei_benchmark import SINGLE_PASS, predict
     result = register_answer(passage)
     if result is None:
-        return predict(url, model, SINGLE_PASS, passage)
+        return predict(url, model, SINGLE_PASS, evidence_passage(passage))
     return {"answer": result}, 0

@@ -1,10 +1,17 @@
 name: Adaptive evidence budget trial
 on:
   workflow_dispatch:
+    inputs:
+      trial:
+        type: choice
+        options: [aside, register, prompt]
+        default: aside
   push:
     branches: [adaptive-rei-consolidation]
     paths:
       - research/adaptive_rei/evidence_budget*.py
+      - research/adaptive_rei/evidence_register.py
+      - research/adaptive_rei/aside_cases.json
       - research/adaptive_rei/evidence_budget_cases.json
       - .github/workflows/adaptive-evidence-budget.yml
 permissions:
@@ -28,7 +35,15 @@ jobs:
           done
           /tmp/rei-ollama/bin/ollama pull qwen3:4b-instruct
       - name: Compare both policies on frozen questions
-        run: python3 research/adaptive_rei/evidence_budget_register_trial.py | tee evidence-budget-results.json
+        env:
+          TRIAL: ${{ inputs.trial || 'aside' }}
+        run: |
+          cd research/adaptive_rei
+          case "$TRIAL" in
+            aside) python3 evidence_budget_trial.py --register --cases aside_cases.json ;;
+            register) python3 evidence_budget_register_trial.py ;;
+            prompt) python3 evidence_budget_trial.py ;;
+          esac | tee "$GITHUB_WORKSPACE/evidence-budget-results.json"
         shell: bash
       - uses: actions/upload-artifact@v4
         with:
