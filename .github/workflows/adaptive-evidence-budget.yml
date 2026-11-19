@@ -4,11 +4,12 @@ on:
     inputs:
       trial:
         type: choice
-        options: [reports, aside, register, prompt]
+        options: [reports, aside, register, prompt, boolq]
         default: reports
   push:
-    branches: [adaptive-rei-consolidation]
+    branches: [adaptive-rei-consolidation, external-boolq-evaluation]
     paths:
+      - research/adaptive_rei/boolq_trial.py
       - research/adaptive_rei/evidence_budget*.py
       - research/adaptive_rei/evidence_register.py
       - research/adaptive_rei/report_chain.py
@@ -38,10 +39,11 @@ jobs:
           /tmp/rei-ollama/bin/ollama pull qwen3:4b-instruct
       - name: Compare both policies on frozen questions
         env:
-          TRIAL: ${{ inputs.trial || 'reports' }}
+          TRIAL: ${{ inputs.trial || (github.ref_name == 'external-boolq-evaluation' && 'boolq') || 'reports' }}
         run: |
           cd research/adaptive_rei
           case "$TRIAL" in
+            boolq) python3 boolq_trial.py ;;
             reports) python3 evidence_budget_trial.py --register --cases report_chain_cases.json ;;
             aside) python3 evidence_budget_trial.py --register --cases aside_cases.json ;;
             register) python3 evidence_budget_register_trial.py ;;
