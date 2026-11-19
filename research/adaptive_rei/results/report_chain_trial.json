@@ -1,0 +1,378 @@
+{
+  "model": "qwen3:4b-instruct",
+  "model_digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "summary": {
+    "single": {
+      "correct": 19,
+      "tokens": 3004
+    },
+    "candidate": {
+      "correct": 29,
+      "tokens": 572
+    },
+    "meets_target": true
+  },
+  "rows": [
+    {
+      "question": "Did the beacon flash? The log says it did. The memo copied the log. The bulletin copied the memo.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 94
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the beacon flash? The log says it did. The memo copied the log. The bulletin copied the memo. The log was withdrawn.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 100
+      }
+    },
+    {
+      "question": "Did the train depart? The station record says it did not. The notice relied solely on the station record. The digest copied the notice.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 96
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the train depart? The station record says it did not. The notice relied solely on the station record. The digest copied the notice. The station record was retracted.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 107
+      }
+    },
+    {
+      "question": "Did the curtain fall? The log states it did. The report says it did not. The summary copied the report.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "no",
+        "tokens": 95
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the curtain fall? The log states it did. The report says it did not. The summary copied the report. The report was withdrawn.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 101
+      }
+    },
+    {
+      "question": "Did the whistle sound? The ledger said it did not. The notice stated it did. The bulletin was copied from the notice.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 98
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the whistle sound? The ledger said it did not. The notice stated it did. The bulletin was copied from the notice. The notice was invalidated.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 103
+      }
+    },
+    {
+      "question": "Did the hatch open? The field log said that it did. The report relied solely on the field log. The field log was retracted.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 101
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the hatch open? The field log said that it did. The report relied solely on the field log. The field log was retracted. The crew memo says it did not.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 109
+      }
+    },
+    {
+      "question": "Did the relay trip? The station log says it did not. The daily digest copied the station log. The station log was invalidated.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 99
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the relay trip? The station log says it did not. The daily digest copied the station log. The station log was invalidated. The control record says it did.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 106
+      }
+    },
+    {
+      "question": "Did the crane rotate? The crew log says it did. The office memo copied the crew log. The office memo was withdrawn.",
+      "expected": "yes",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 98
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the crane rotate? The crew log says it did. The office memo copied the crew log. The office memo was withdrawn. The harbor ledger says it did not.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 106
+      }
+    },
+    {
+      "question": "Did the valve close? The inspection log says it did not. The summary copied the inspection log. The summary was withdrawn.",
+      "expected": "no",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 97
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the valve close? The inspection log says it did not. The summary copied the inspection log. The summary was withdrawn. The shift report says it did.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 104
+      }
+    },
+    {
+      "question": "Did the cable snap? The report says it did. The bulletin says it did not. The transcript copied the bulletin. The summary copied the transcript.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "no",
+        "tokens": 101
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the cable snap? The report says it did. The bulletin says it did not. The transcript copied the bulletin. The summary copied the transcript. The report was retracted.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 108
+      }
+    },
+    {
+      "question": "Did the pump stop? The memo said it did not. The crew log stated it did. The notice copied the memo. The digest copied the notice.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 103
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the pump stop? The memo said it did not. The crew log stated it did. The notice copied the memo. The digest copied the notice. The memo was retracted.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 109
+      }
+    },
+    {
+      "question": "Did the float sink? The summary copied the memo. The memo copied the field record. The field record says it did not.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 94
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the float sink? The summary copied the memo. The memo copied the field record. The field record says it did not. The field record was invalidated.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 104
+      }
+    },
+    {
+      "question": "Did the marker move? The transcript was copied from the log. The bulletin relied solely on the transcript. The log says it did.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 95
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 0
+      }
+    },
+    {
+      "question": "Did the marker move? The transcript was copied from the log. The bulletin relied solely on the transcript. The log says it did. The log was withdrawn.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 0
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 104
+      }
+    },
+    {
+      "question": "Did the signal change? The field report says it did. A technician replayed the recording and saw it stay red throughout.",
+      "expected": "no",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 97
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 97
+      }
+    },
+    {
+      "question": "Did the lift descend? The office memo copied a schedule. No one recorded whether it actually ran.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 92
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 92
+      }
+    },
+    {
+      "question": "Did the vessel dock? A dated harbor photograph clearly shows it tied up at the designated berth.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 90
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 90
+      }
+    },
+    {
+      "question": "Did the lamp light? The log says it did. The report copied the log. The log was withdrawn. Independently, the inspector saw the lamp light.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 103
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 103
+      }
+    },
+    {
+      "question": "Did the alarm sound? The station log says it did. A later audit found that entry concerned a different date. No other observation was available.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 101
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 101
+      }
+    },
+    {
+      "question": "Did the gate rise? Continuous video of the gate shows it closed throughout the specified interval.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 89
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 89
+      }
+    }
+  ],
+  "cases_sha256": "ceba58e20a0c25d4b64e665a3e6481fa1e263470f9d672cf6e0fe7b21fe35327"
+}

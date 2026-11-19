@@ -1,0 +1,306 @@
+{
+  "model": "qwen3:4b-instruct",
+  "model_digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "summary": {
+    "single": {
+      "correct": 20,
+      "tokens": 2491
+    },
+    "candidate": {
+      "correct": 20,
+      "tokens": 2333
+    },
+    "meets_target": false
+  },
+  "rows": [
+    {
+      "question": "Did the lantern burn through midnight? The wick was still alight at 12:01 after burning continuously since dusk. On an unrelated note, the restoration date stamped on its handle is unreliable.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 113
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 98
+      }
+    },
+    {
+      "question": "Was the north hatch shut at the alarm? Its alarm-time contact sensor was broken. Unrelated: the south stairwell was photographed closed that evening.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 89
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 102
+      }
+    },
+    {
+      "question": "Was the typewriter ribbon unused when sold? The buyer found yesterday's typed letter imprinted along its length. In an unrelated matter, an auction catalog mistakenly described the desk as new.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 108
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 90
+      }
+    },
+    {
+      "question": "Were both gloves in the box? At sealing, an inspector counted one left glove and one right glove inside. An unrelated aside: the scale was due for calibration.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 94
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 105
+      }
+    },
+    {
+      "question": "Was the sculpture installed before the dedication? The photograph shows it installed, but the photo has no recoverable date. Unrelatedly, the curator confirmed the gallery opened on time.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 105
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 95
+      }
+    },
+    {
+      "question": "Did syringe A deliver five milliliters? A calibrated collection tube measured two milliliters in the complete discharge. As an unrelated note, the plunger manufacturer retracted a shipping estimate.",
+      "expected": "no",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 93
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 108
+      }
+    },
+    {
+      "question": "Was the orchestra playing when the lights failed? The live audio captures uninterrupted playing across the instant the power monitor marked failure. Unrelated: an earlier draft of the program omitted the orchestra.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 108
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 95
+      }
+    },
+    {
+      "question": "Was the north tile cracked before unloading? An undated photo shows the crack after the crate arrived. On an unrelated note, the date on a customs receipt was authenticated.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 93
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 104
+      }
+    },
+    {
+      "question": "Was the pedestrian bridge open at noon? A continuous recording shows its gate padlocked from eleven until one. In an unrelated matter, a letter about the road bridge was withdrawn.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 106
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 92
+      }
+    },
+    {
+      "question": "Did parcel P weigh more than its empty carton? The carton and parcel were weighed on the same functioning scale; they registered 240 and 870 grams respectively. Unrelated: a separate lot of postage labels had incorrect weights.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 109
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 122
+      }
+    },
+    {
+      "question": "Did a thermostat replacement cause the lower energy bill? Heating demand dropped during a warm spell at the same time. An unrelated note: the final bill was independently verified.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 105
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 94
+      }
+    },
+    {
+      "question": "Was the bulb drawing current when inspected? An open circuit isolated its leads for the entire inspection. On an unrelated note, the invoice erroneously listed another bulb model.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 90
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 104
+      }
+    },
+    {
+      "question": "Was the ferry docked at dawn? The harbor master saw it tie up before first light and remain until breakfast.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 94
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 94
+      }
+    },
+    {
+      "question": "Was the compass working during the ascent? A compass passed inspection afterward, but its serial number was never matched to the one carried.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 98
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 98
+      }
+    },
+    {
+      "question": "Did the plate contain nickel? Two independent assays of the plate both found none down to the specified detection limit. The question concerns nickel above that limit.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 98
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 98
+      }
+    },
+    {
+      "question": "Did the coach leave by four? The depot summary derives from a provisional timetable. Separately, a timestamped recording shows departure at 3:54.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 104
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 104
+      }
+    },
+    {
+      "question": "Was the coin from 1890? Its sleeve was labeled 1890. The label came from the discarded sleeve of a different coin.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 104
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 104
+      }
+    },
+    {
+      "question": "Was the cylinder full? The original estimate said full. A direct internal inspection at the specified time established it was half empty.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 96
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 96
+      }
+    },
+    {
+      "question": "Was the gemstone synthetic? The report was copied from an earlier guess. An independent examination of this stone identified the growth pattern diagnostic of synthesis.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 100
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 100
+      }
+    },
+    {
+      "question": "Did the first whistle precede the flag? A film shows the flag but has no soundtrack. An audio file contains the whistle but has no synchronized clock.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 103
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 103
+      }
+    },
+    {
+      "question": "Was railcar nine present at the depot? A complete time-matched inventory of all depot tracks identifies each occupied railcar; number nine was logged at a different depot.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 105
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 105
+      }
+    },
+    {
+      "question": "Did the archive contain a signed original? An archivist photographed the signed original in its folder. A receipt for its unrelated storage box was missing.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 101
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 101
+      }
+    },
+    {
+      "question": "Was latch K secure? Unrelated: a report mentions latch J, but it also states that K could not be inspected. No other observations were available.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 103
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 103
+      }
+    },
+    {
+      "question": "Was the enamel waterproof in the immersion test? The examiner observed water penetrating the enamel during immersion and recorded the failure immediately.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 95
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 95
+      }
+    }
+  ],
+  "cases_sha256": "7899884f256290f03ff0acaf102f3238e8c6fdfbabd8f13faf640284956d61cb"
+}

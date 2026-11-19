@@ -1,0 +1,54 @@
+name: Adaptive evidence budget trial
+on:
+  workflow_dispatch:
+    inputs:
+      trial:
+        type: choice
+        options: [reports, aside, register, prompt]
+        default: reports
+  push:
+    branches: [adaptive-rei-consolidation]
+    paths:
+      - research/adaptive_rei/evidence_budget*.py
+      - research/adaptive_rei/evidence_register.py
+      - research/adaptive_rei/report_chain.py
+      - research/adaptive_rei/report_chain_cases.json
+      - research/adaptive_rei/aside_cases.json
+      - research/adaptive_rei/evidence_budget_cases.json
+      - .github/workflows/adaptive-evidence-budget.yml
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start pinned Ollama on CPU
+        run: |
+          curl -fsSL --retry 3 https://github.com/ollama/ollama/releases/download/v0.12.11/ollama-linux-amd64.tgz -o /tmp/ollama.tgz
+          echo 'fb140ea4243706d0087b0108418ee5c6f74edcebf5f14e2f289b8e36bd303d0f  /tmp/ollama.tgz' | sha256sum -c
+          mkdir /tmp/rei-ollama
+          tar -xzf /tmp/ollama.tgz -C /tmp/rei-ollama
+          /tmp/rei-ollama/bin/ollama serve > /tmp/ollama.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://localhost:11434/api/tags; then break; fi
+            sleep 2
+          done
+          /tmp/rei-ollama/bin/ollama pull qwen3:4b-instruct
+      - name: Compare both policies on frozen questions
+        env:
+          TRIAL: ${{ inputs.trial || 'reports' }}
+        run: |
+          cd research/adaptive_rei
+          case "$TRIAL" in
+            reports) python3 evidence_budget_trial.py --register --cases report_chain_cases.json ;;
+            aside) python3 evidence_budget_trial.py --register --cases aside_cases.json ;;
+            register) python3 evidence_budget_register_trial.py ;;
+            prompt) python3 evidence_budget_trial.py ;;
+          esac | tee "$GITHUB_WORKSPACE/evidence-budget-results.json"
+        shell: bash
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evidence-budget-results
+          path: evidence-budget-results.json
