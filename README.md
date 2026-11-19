@@ -34,6 +34,8 @@ conventional AI on independent held-out tasks.
 
 ## Adaptive REI experiments
 
+An opt-in `--plain-verdict` mode scored 161/200 versus 144/200 for single-pass Qwen on a fresh BoolQ sample while reducing model tokens by 17.4%. On 48 existing three-label controls it scored 39 versus 42. [Usage and paired results](research/adaptive_rei/evidence_budget_results.md#opt-in-plain-verdict)
+
 Short prose passages with explicitly named report dependencies can now use the graph engine directly. In a 30-question synthetic trial covering report chains and ordinary prose controls, this mode scored 29/30 with 572 model tokens. The single-pass baseline scored 19/30 with 3,004 tokens. [Trial breakdown and example](research/adaptive_rei/evidence_budget_results.md#follow-up-trial-on-named-reports-in-prose)
 
 For questions with explicitly declared dependencies, the experimental evidence-budget mode uses the graph engine directly. It scored 24/24 on 12 pairs of synthetic register questions, using zero model tokens. The same Qwen3 4B model with a single evidence prompt scored 13/24. On a separate 24-question prose test, both scored 20/24 and the mode used 6.3% fewer tokens. [Usage, scope and recorded trials](research/adaptive_rei/evidence_budget_results.md)

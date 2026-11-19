@@ -1,0 +1,626 @@
+[
+  {
+    "suite": "aside_cases.json",
+    "index": 0,
+    "expected": "yes",
+    "baseline": {
+      "answer": "yes",
+      "tokens": 113
+    },
+    "rei": {
+      "answer": "yes",
+      "tokens": 59
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 1,
+    "expected": "uncertain",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 50
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 102
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 2,
+    "expected": "no",
+    "baseline": {
+      "answer": "no",
+      "tokens": 108
+    },
+    "rei": {
+      "answer": "yes",
+      "tokens": 54
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 3,
+    "expected": "yes",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 55
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 102
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 4,
+    "expected": "uncertain",
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 105
+    },
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 56
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 5,
+    "expected": "no",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 57
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 108
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 6,
+    "expected": "yes",
+    "baseline": {
+      "answer": "yes",
+      "tokens": 108
+    },
+    "rei": {
+      "answer": "yes",
+      "tokens": 56
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 7,
+    "expected": "uncertain",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 54
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 104
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 8,
+    "expected": "no",
+    "baseline": {
+      "answer": "no",
+      "tokens": 106
+    },
+    "rei": {
+      "answer": "no",
+      "tokens": 53
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 9,
+    "expected": "yes",
+    "rei": {
+      "answer": "yes",
+      "tokens": 70
+    },
+    "baseline": {
+      "answer": "yes",
+      "tokens": 122
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 10,
+    "expected": "uncertain",
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 105
+    },
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 55
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 11,
+    "expected": "no",
+    "rei": {
+      "answer": "no",
+      "tokens": 51
+    },
+    "baseline": {
+      "answer": "no",
+      "tokens": 104
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 12,
+    "expected": "yes",
+    "baseline": {
+      "answer": "yes",
+      "tokens": 94
+    },
+    "rei": {
+      "answer": "yes",
+      "tokens": 55
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 13,
+    "expected": "uncertain",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 59
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 98
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 14,
+    "expected": "no",
+    "baseline": {
+      "answer": "no",
+      "tokens": 98
+    },
+    "rei": {
+      "answer": "no",
+      "tokens": 62
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 15,
+    "expected": "yes",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 65
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 104
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 16,
+    "expected": "uncertain",
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 104
+    },
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 65
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 17,
+    "expected": "no",
+    "rei": {
+      "answer": "no",
+      "tokens": 57
+    },
+    "baseline": {
+      "answer": "no",
+      "tokens": 96
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 18,
+    "expected": "yes",
+    "baseline": {
+      "answer": "yes",
+      "tokens": 100
+    },
+    "rei": {
+      "answer": "yes",
+      "tokens": 61
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 19,
+    "expected": "uncertain",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 64
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 103
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 20,
+    "expected": "no",
+    "baseline": {
+      "answer": "no",
+      "tokens": 105
+    },
+    "rei": {
+      "answer": "no",
+      "tokens": 66
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 21,
+    "expected": "yes",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 62
+    },
+    "baseline": {
+      "answer": "yes",
+      "tokens": 100
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 22,
+    "expected": "uncertain",
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 103
+    },
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 64
+    }
+  },
+  {
+    "suite": "aside_cases.json",
+    "index": 23,
+    "expected": "no",
+    "rei": {
+      "answer": "no",
+      "tokens": 56
+    },
+    "baseline": {
+      "answer": "no",
+      "tokens": 95
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 0,
+    "expected": "uncertain",
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 102
+    },
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 63
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 1,
+    "expected": "no",
+    "rei": {
+      "answer": "no",
+      "tokens": 67
+    },
+    "baseline": {
+      "answer": "no",
+      "tokens": 106
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 2,
+    "expected": "yes",
+    "baseline": {
+      "answer": "yes",
+      "tokens": 101
+    },
+    "rei": {
+      "answer": "yes",
+      "tokens": 62
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 3,
+    "expected": "uncertain",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 66
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 105
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 4,
+    "expected": "no",
+    "baseline": {
+      "answer": "no",
+      "tokens": 104
+    },
+    "rei": {
+      "answer": "no",
+      "tokens": 65
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 5,
+    "expected": "yes",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 65
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 104
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 6,
+    "expected": "uncertain",
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 104
+    },
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 65
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 7,
+    "expected": "yes",
+    "rei": {
+      "answer": "yes",
+      "tokens": 72
+    },
+    "baseline": {
+      "answer": "yes",
+      "tokens": 111
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 8,
+    "expected": "no",
+    "baseline": {
+      "answer": "no",
+      "tokens": 101
+    },
+    "rei": {
+      "answer": "no",
+      "tokens": 62
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 9,
+    "expected": "uncertain",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 62
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 101
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 10,
+    "expected": "yes",
+    "baseline": {
+      "answer": "yes",
+      "tokens": 106
+    },
+    "rei": {
+      "answer": "yes",
+      "tokens": 67
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 11,
+    "expected": "no",
+    "rei": {
+      "answer": "no",
+      "tokens": 67
+    },
+    "baseline": {
+      "answer": "no",
+      "tokens": 106
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 12,
+    "expected": "uncertain",
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 102
+    },
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 63
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 13,
+    "expected": "yes",
+    "rei": {
+      "answer": "yes",
+      "tokens": 62
+    },
+    "baseline": {
+      "answer": "yes",
+      "tokens": 101
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 14,
+    "expected": "no",
+    "baseline": {
+      "answer": "no",
+      "tokens": 106
+    },
+    "rei": {
+      "answer": "no",
+      "tokens": 67
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 15,
+    "expected": "uncertain",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 60
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 99
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 16,
+    "expected": "yes",
+    "baseline": {
+      "answer": "yes",
+      "tokens": 102
+    },
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 64
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 17,
+    "expected": "no",
+    "rei": {
+      "answer": "no",
+      "tokens": 68
+    },
+    "baseline": {
+      "answer": "no",
+      "tokens": 107
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 18,
+    "expected": "uncertain",
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 100
+    },
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 61
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 19,
+    "expected": "no",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 60
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 99
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 20,
+    "expected": "yes",
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 108
+    },
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 69
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 21,
+    "expected": "uncertain",
+    "rei": {
+      "answer": "uncertain",
+      "tokens": 62
+    },
+    "baseline": {
+      "answer": "uncertain",
+      "tokens": 101
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 22,
+    "expected": "no",
+    "baseline": {
+      "answer": "no",
+      "tokens": 103
+    },
+    "rei": {
+      "answer": "no",
+      "tokens": 64
+    }
+  },
+  {
+    "suite": "evidence_budget_cases.json",
+    "index": 23,
+    "expected": "yes",
+    "rei": {
+      "answer": "yes",
+      "tokens": 58
+    },
+    "baseline": {
+      "answer": "yes",
+      "tokens": 97
+    }
+  }
+]

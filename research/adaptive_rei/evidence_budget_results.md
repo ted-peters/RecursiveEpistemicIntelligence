@@ -82,3 +82,30 @@ On 40 questions selected without replacement using seed 20261119, both arms answ
 The trial used the original question and passage, added a question-mark separator, and passed no labels to the model. Both arms used the same Qwen3 4B digest and alternated order. The REI policy was frozen before selecting examples. This measures transfer to independently authored information-seeking questions. It does not directly test authored report-chain interventions or rule out exposure to this public corpus during model training.
 
 [BoolQ, Clark et al.](https://github.com/google-research-datasets/boolean-questions) · [Per-example results and dataset checksum](results/boolq_trial.json) · [GitHub run](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/44618397433)
+
+## Prose fallback trials after the BoolQ audit
+
+A review of the seven wrong yes/no answers suggested a distinction between the exact question and related statements in the passage. For example, item 2888 distinguishes the right to contest a scrum from common practice. Item 84 describes participating in a World Series and winning a different sport's championship. Items 225 and 2491 change the scope of a category or policy, and item 1159 mentions both an original concert and later performances. The two naming questions (2777 and 2077) illustrate why blanket synonym rules are risky. These are observations about the text and the labels. The experiment did not record an internal explanation for any prediction.
+
+Each candidate was compared with a newly run single-pass Qwen baseline. Each successive random sample excluded questions and passages seen in any preceding sample. All counts include prompt and output tokens. The per-example files contain dataset indices, labels, answers and token counts.
+
+| Trial | Single-pass correct | Candidate correct | Single-pass tokens | Candidate tokens |
+|---|---:|---:|---:|---:|
+| Passage first, exact question last | 82/120 | 68/120 | 23,557 | 23,400 |
+| Allow ordinary implications | 107/160 | 97/160 | 33,015 | 30,255 |
+
+The question-last prompt corrected eight errors and introduced 22. It returned uncertain 38 times, compared with 12 for the baseline. The implication prompt scored 32/40 on the development sample previously used for error analysis, then corrected ten errors and introduced 20 on its fresh sample. On 48 existing three-label controls, the same implication prompt scored 34/48 versus 42/48 for the baseline and recovered 13/16 of the expected uncertain answers versus 16/16. Neither trial supports replacing the default fallback.
+
+[Question-last data](results/boolq_question_focus.json) · [Implication data](results/boolq_implied.json) · [Three-label controls](results/implied_controls.json)
+
+### Opt-in plain verdict
+
+Run `python3 research/adaptive_rei/adaptive_rei_benchmark.py --plain-verdict 'YOUR QUESTION? YOUR PASSAGE'` for a single decision. The CLI returns JSON to its caller. Internally the model receives a short instruction and returns a single word. The mode removes the JSON decoding constraint, caps generation at 12 tokens, and counts an unrecognized reply as a failure. Structured inputs still use the existing graph rules. The prompt, model output format and generation cap changed together, so these data measure their combined effect.
+
+On 200 fresh BoolQ questions, this mode scored **161/200 (80.5%)** against **144/200 (72.0%)** for the single-pass JSON baseline. It corrected 24 errors and introduced seven. Total model tokens fell from **42,519 to 35,101 (17.4%)**. Both arms used Qwen3 4B with temperature 0 and seed 42. The exact two-sided paired McNemar test gives p = 0.0033 on this sample. The trial followed two unsuccessful designs on separate samples of the same public development split.
+
+On the 48 existing three-label controls, plain verdict scored **39/48** against **42/48**, using 2,947 versus 4,963 tokens. Both modes correctly abstained on all 16 cases labeled uncertain. Because of the overall control regression, plain verdict is opt-in. Each arm was run live with the local Ollama model. Sample indices, prompts, decoding settings and per-case results are available for replication.
+
+To reproduce the 200-question comparison, run `python3 research/adaptive_rei/boolq_trial.py --plain`. To repeat the three-label control run, use `python3 research/adaptive_rei/uncertainty_trial.py plain`.
+
+[BoolQ results](results/boolq_plain_verdict.json) · [Three-label controls](results/plain_controls.json)
