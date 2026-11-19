@@ -1,0 +1,306 @@
+{
+  "model": "qwen3:4b-instruct",
+  "model_digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "summary": {
+    "single": {
+      "correct": 21,
+      "tokens": 2476
+    },
+    "candidate": {
+      "correct": 16,
+      "tokens": 2198
+    },
+    "meets_target": false
+  },
+  "rows": [
+    {
+      "question": "Did the cello travel in coach B? The travel manifest lists coach B. Its author copied the booking request; the seating allocation was never recovered.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 102
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 96
+      }
+    },
+    {
+      "question": "Was the relief valve open when the whistle sounded? A synchronized inspection film shows its stem in the closed position at that moment. A gauge calibration from the following week was withdrawn.",
+      "expected": "no",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 101
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 106
+      }
+    },
+    {
+      "question": "Was comet N visible before dawn? The observatory summary cites an unsigned sketch. A separate timestamped image independently shows N above the horizon before sunrise.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 101
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 95
+      }
+    },
+    {
+      "question": "Did the revised recipe cause the bread to keep longer? The bakery changed both the recipe and the storage humidity. Shelf life improved, but no batches isolated either change.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 78
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 105
+      }
+    },
+    {
+      "question": "Was vial J refrigerated during transit? A label says it was. The courier recorded J in an uncooled rack for the entire trip at room temperature.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 104
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 89
+      }
+    },
+    {
+      "question": "Had the oak germinated by day 8? A day 7 photograph of the tagged seed shows an emerging root. A separate notebook lost its date stamp.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 88
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 104
+      }
+    },
+    {
+      "question": "Was the library door locked at nine? Two equally reliable guards tried the same door at nine, one reporting locked and the other unlocked. The camera was off.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 104
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 88
+      }
+    },
+    {
+      "question": "Did switching filters cause the haze reduction in this controlled test? Identical chambers were randomly assigned the old or new filters. Only chambers with the new filters cleared, repeatedly, with all other settings fixed.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 84
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 111
+      }
+    },
+    {
+      "question": "Did Mira attend rehearsal? The printed program lists her as a performer. Continuous footage and the stage manager independently place her elsewhere for the entire rehearsal.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 101
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 85
+      }
+    },
+    {
+      "question": "Did the needle exceed mark six? The printed trace stops at four. The recorder disconnected halfway through; no one watched the rest of the run.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 85
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 101
+      }
+    },
+    {
+      "question": "Was the orchard watered before sunset? The crew leader repeated a plan to water it. A separate flow recorder on the orchard line documents irrigation an hour before sunset.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 106
+      },
+      "candidate": {
+        "answer": "yes",
+        "tokens": 100
+      }
+    },
+    {
+      "question": "Was kiln C firing at midnight? A dashboard shows a flame. Its icon was based on kiln B. A correctly assigned thermal record shows C remained cold all night.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 100
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 106
+      }
+    },
+    {
+      "question": "Did the ferry reach pier six? Its log cites a broadcast. The broadcast relayed the same log entry. The harbor had no other position records.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 102
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 96
+      }
+    },
+    {
+      "question": "Did the jacket contain wool? A laboratory tested a sample cut directly from the jacket and identified wool fibers. Its shipping carton was mislabeled.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "yes",
+        "tokens": 95
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 101
+      }
+    },
+    {
+      "question": "Was the east lens fitted during the eclipse? Two articles describe it, both derived from the same schedule. The installer documented that only the west lens was mounted throughout the eclipse.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 106
+      },
+      "candidate": {
+        "answer": "no",
+        "tokens": 100
+      }
+    },
+    {
+      "question": "Was the final digit seven? A witness saw seven on the display before the final update. The display went dark immediately after the update.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 83
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 99
+      }
+    },
+    {
+      "question": "Did the bell ring twice during the ceremony? The ceremony recording clearly captures two distinct strikes. A clerk later retracted a statement about the bell's weight.",
+      "expected": "yes",
+      "single": {
+        "answer": "yes",
+        "tokens": 102
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 97
+      }
+    },
+    {
+      "question": "Did the new sign cause an increase in visits? Daily visits averaged 80 before installation and 80 after. The question is about an actual increase across those two periods.",
+      "expected": "no",
+      "candidate": {
+        "answer": "no",
+        "tokens": 80
+      },
+      "single": {
+        "answer": "no",
+        "tokens": 107
+      }
+    },
+    {
+      "question": "Was crate H empty on arrival? Customs reported it empty based on a scanner. The scanner detected metal only. No one opened the crate.",
+      "expected": "uncertain",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 100
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 94
+      }
+    },
+    {
+      "question": "Was the ink dry by noon? The noon blot test transferred wet ink from the entry. The handwriting expert's unrelated estimate was withdrawn.",
+      "expected": "no",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 93
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 99
+      }
+    },
+    {
+      "question": "Was the diver below ten meters at the horn? A pressure reading indicated twelve meters; its calibration was invalid. A separate calibrated depth camera placed her at eleven meters at the horn.",
+      "expected": "yes",
+      "single": {
+        "answer": "uncertain",
+        "tokens": 108
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 102
+      }
+    },
+    {
+      "question": "Was the third movement performed? The conductor's note says yes. It quotes an advance playlist; the sound archive ends before the second movement finishes.",
+      "expected": "uncertain",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 85
+      },
+      "single": {
+        "answer": "uncertain",
+        "tokens": 101
+      }
+    },
+    {
+      "question": "Did the pilot use runway four? The tower log was transcribed from an obsolete plan naming runway four. Independent landing footage shows the pilot using runway two exclusively.",
+      "expected": "no",
+      "single": {
+        "answer": "no",
+        "tokens": 103
+      },
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 102
+      }
+    },
+    {
+      "question": "Was the brass key returned? The receipt was lost. Two witnesses independently watched the borrower hand that exact key back to its owner.",
+      "expected": "yes",
+      "candidate": {
+        "answer": "uncertain",
+        "tokens": 82
+      },
+      "single": {
+        "answer": "yes",
+        "tokens": 97
+      }
+    }
+  ],
+  "cases_sha256": "addc118ae541d724ce988707a12632a29dd9b58a25936c804629137a2a1e3596"
+}

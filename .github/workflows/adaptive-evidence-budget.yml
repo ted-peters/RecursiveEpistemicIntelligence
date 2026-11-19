@@ -28,7 +28,7 @@ jobs:
           done
           /tmp/rei-ollama/bin/ollama pull qwen3:4b-instruct
       - name: Compare both policies on frozen questions
-        run: python3 research/adaptive_rei/evidence_budget_trial.py | tee evidence-budget-results.json
+        run: python3 research/adaptive_rei/evidence_budget_register_trial.py | tee evidence-budget-results.json
         shell: bash
       - uses: actions/upload-artifact@v4
         with:
