@@ -1,0 +1,122 @@
+[
+  [
+    "Did the beacon flash? The log says it did. The memo copied the log. The bulletin copied the memo.",
+    "yes"
+  ],
+  [
+    "Did the beacon flash? The log says it did. The memo copied the log. The bulletin copied the memo. The log was withdrawn.",
+    "uncertain"
+  ],
+  [
+    "Did the train depart? The station record says it did not. The notice relied solely on the station record. The digest copied the notice.",
+    "no"
+  ],
+  [
+    "Did the train depart? The station record says it did not. The notice relied solely on the station record. The digest copied the notice. The station record was retracted.",
+    "uncertain"
+  ],
+  [
+    "Did the curtain fall? The log states it did. The report says it did not. The summary copied the report.",
+    "uncertain"
+  ],
+  [
+    "Did the curtain fall? The log states it did. The report says it did not. The summary copied the report. The report was withdrawn.",
+    "yes"
+  ],
+  [
+    "Did the whistle sound? The ledger said it did not. The notice stated it did. The bulletin was copied from the notice.",
+    "uncertain"
+  ],
+  [
+    "Did the whistle sound? The ledger said it did not. The notice stated it did. The bulletin was copied from the notice. The notice was invalidated.",
+    "no"
+  ],
+  [
+    "Did the hatch open? The field log said that it did. The report relied solely on the field log. The field log was retracted.",
+    "uncertain"
+  ],
+  [
+    "Did the hatch open? The field log said that it did. The report relied solely on the field log. The field log was retracted. The crew memo says it did not.",
+    "no"
+  ],
+  [
+    "Did the relay trip? The station log says it did not. The daily digest copied the station log. The station log was invalidated.",
+    "uncertain"
+  ],
+  [
+    "Did the relay trip? The station log says it did not. The daily digest copied the station log. The station log was invalidated. The control record says it did.",
+    "yes"
+  ],
+  [
+    "Did the crane rotate? The crew log says it did. The office memo copied the crew log. The office memo was withdrawn.",
+    "yes"
+  ],
+  [
+    "Did the crane rotate? The crew log says it did. The office memo copied the crew log. The office memo was withdrawn. The harbor ledger says it did not.",
+    "uncertain"
+  ],
+  [
+    "Did the valve close? The inspection log says it did not. The summary copied the inspection log. The summary was withdrawn.",
+    "no"
+  ],
+  [
+    "Did the valve close? The inspection log says it did not. The summary copied the inspection log. The summary was withdrawn. The shift report says it did.",
+    "uncertain"
+  ],
+  [
+    "Did the cable snap? The report says it did. The bulletin says it did not. The transcript copied the bulletin. The summary copied the transcript.",
+    "uncertain"
+  ],
+  [
+    "Did the cable snap? The report says it did. The bulletin says it did not. The transcript copied the bulletin. The summary copied the transcript. The report was retracted.",
+    "no"
+  ],
+  [
+    "Did the pump stop? The memo said it did not. The crew log stated it did. The notice copied the memo. The digest copied the notice.",
+    "uncertain"
+  ],
+  [
+    "Did the pump stop? The memo said it did not. The crew log stated it did. The notice copied the memo. The digest copied the notice. The memo was retracted.",
+    "yes"
+  ],
+  [
+    "Did the float sink? The summary copied the memo. The memo copied the field record. The field record says it did not.",
+    "no"
+  ],
+  [
+    "Did the float sink? The summary copied the memo. The memo copied the field record. The field record says it did not. The field record was invalidated.",
+    "uncertain"
+  ],
+  [
+    "Did the marker move? The transcript was copied from the log. The bulletin relied solely on the transcript. The log says it did.",
+    "yes"
+  ],
+  [
+    "Did the marker move? The transcript was copied from the log. The bulletin relied solely on the transcript. The log says it did. The log was withdrawn.",
+    "uncertain"
+  ],
+  [
+    "Did the signal change? The field report says it did. A technician replayed the recording and saw it stay red throughout.",
+    "no"
+  ],
+  [
+    "Did the lift descend? The office memo copied a schedule. No one recorded whether it actually ran.",
+    "uncertain"
+  ],
+  [
+    "Did the vessel dock? A dated harbor photograph clearly shows it tied up at the designated berth.",
+    "yes"
+  ],
+  [
+    "Did the lamp light? The log says it did. The report copied the log. The log was withdrawn. Independently, the inspector saw the lamp light.",
+    "yes"
+  ],
+  [
+    "Did the alarm sound? The station log says it did. A later audit found that entry concerned a different date. No other observation was available.",
+    "uncertain"
+  ],
+  [
+    "Did the gate rise? Continuous video of the gate shows it closed throughout the specified interval.",
+    "no"
+  ]
+]

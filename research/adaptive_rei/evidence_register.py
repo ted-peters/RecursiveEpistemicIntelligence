@@ -2,6 +2,7 @@
 import re
 
 from adaptive_rei_engine import Evidence, evaluate
+from report_chain import report_chain_answer
 
 RULES = (
     "Evidence register. Each numbered claim can have several equally strong reports. "
@@ -62,6 +63,8 @@ def evidence_passage(passage):
 def decide(url, model, passage):
     from adaptive_rei_benchmark import SINGLE_PASS, predict
     result = register_answer(passage)
+    if result is None:
+        result = report_chain_answer(passage)
     if result is None:
         return predict(url, model, SINGLE_PASS, evidence_passage(passage))
     return {"answer": result}, 0
