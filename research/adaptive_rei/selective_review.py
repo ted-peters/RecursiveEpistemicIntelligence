@@ -43,6 +43,7 @@ def review(url, model, text, first, tokens, *, compact=False, skip_gaps=False):
     spans = [span.strip() for span in spans if span.strip()]
     if (compact or skip_gaps) and spans and UNRESOLVED_END.search(spans[-1]) and not re.search(
             r"\b(?:but|although|however|except|yet)\b", spans[-1], re.I):
+        result["review_skipped"] = "explicit_evidence_gap"
         return result, tokens
     numbered = "\n".join(f"{i}. {span}" for i, span in enumerate(spans, 1))
     output, extra = predict(url, model, COMPACT_INSTRUCTION if compact else INSTRUCTION, numbered + "\nQuestion: " + question + "?", max_tokens=40)

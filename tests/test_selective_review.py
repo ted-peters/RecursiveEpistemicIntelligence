@@ -30,15 +30,16 @@ class SelectiveReviewTests(unittest.TestCase):
                 self.assertEqual(result["answer"], "yes" if valid else "uncertain")
                 self.assertEqual(result["citation"], "The door stood open throughout." if valid else None)
 
-    def test_compact_skips_terminal_gap_without_spending_tokens(self):
+    def test_budgeted_skips_terminal_gap_without_spending_tokens(self):
         text = "Was crate B inspected? Its log copied crate A. No independent record survives."
         with patch.object(selective_review, "predict", side_effect=AssertionError):
-            result, total = selective_review.review("", "", text, {"answer": "uncertain"}, 23, compact=True)
+            result, total = selective_review.review("", "", text, {"answer": "uncertain"}, 23, skip_gaps=True)
         self.assertEqual((result["answer"], total, result["review_tokens"]), ("uncertain", 23, 0))
+        self.assertEqual(result["review_skipped"], "explicit_evidence_gap")
 
-    def test_compact_keeps_review_after_contrasting_observation(self):
+    def test_budgeted_keeps_review_after_contrasting_observation(self):
         text = "Was it sealed? No independent record survives, but the inspector saw it sealed."
         with patch.object(selective_review, "predict", return_value=({"answer": "yes", "statement": 1}, 30)):
-            result, total = selective_review.review("", "", text, {"answer": "uncertain"}, 23, compact=True)
+            result, total = selective_review.review("", "", text, {"answer": "uncertain"}, 23, skip_gaps=True)
         self.assertEqual((result["answer"], total), ("yes", 53))
         self.assertIn("the inspector saw it sealed", result["citation"])
