@@ -5,10 +5,10 @@ from adaptive_rei_benchmark import predict
 from plain_verdict import decide as plain_decide
 
 INSTRUCTION = (
-    'Does one numbered statement settle the question? Check its subject, time, and '
-    'the direction of the claim. If other evidence defeats it, or assumptions are '
-    'needed, keep uncertain. Return JSON {"answer":"yes|no|uncertain","statement":0}. '
-    'For yes or no, replace 0 with the number of the decisive statement.'
+    "Read the numbered passage and answer its question. Select the statement that best "
+    "answers it. Use what the statement implies about the exact question. If the evidence "
+    "is missing, contradicted, or about a different subject or time, answer uncertain. "
+    "Output JSON fields in order: statement (integer), answer (yes, no, or uncertain)."
 )
 
 
@@ -23,7 +23,7 @@ def decide(url, model, text):
     spans = re.split(r"(?<=[.!?])\s+(?=[A-Z\"“])|\n+", body.strip())
     spans = [span.strip() for span in spans if span.strip()]
     numbered = "\n".join(f"{i}. {span}" for i, span in enumerate(spans, 1))
-    output, extra = predict(url, model, INSTRUCTION, question + "?\n" + numbered, max_tokens=40)
+    output, extra = predict(url, model, INSTRUCTION, numbered + "\nQuestion: " + question + "?", max_tokens=40)
     result["review_tokens"] = extra
     index = output.get("statement")
     if (output.get("answer") in ("yes", "no") and type(index) is int
