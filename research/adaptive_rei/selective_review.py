@@ -27,12 +27,12 @@ UNRESOLVED_END = re.compile(
 )
 
 
-def decide(url, model, text, *, compact=False):
+def decide(url, model, text, *, compact=False, skip_gaps=False):
     first, tokens = plain_decide(url, model, text)
-    return review(url, model, text, first, tokens, compact=compact)
+    return review(url, model, text, first, tokens, compact=compact, skip_gaps=skip_gaps)
 
 
-def review(url, model, text, first, tokens, *, compact=False):
+def review(url, model, text, first, tokens, *, compact=False, skip_gaps=False):
     result = {"answer": first["answer"], "initial_answer": first["answer"],
               "initial_tokens": tokens, "review_tokens": 0, "citation": None}
     question, separator, body = text.partition("?")
@@ -41,7 +41,7 @@ def review(url, model, text, first, tokens, *, compact=False):
         return result, tokens
     spans = re.split(r"(?<=[.!?])\s+(?=[A-Z\"“])|\n+", body.strip())
     spans = [span.strip() for span in spans if span.strip()]
-    if compact and spans and UNRESOLVED_END.search(spans[-1]) and not re.search(
+    if (compact or skip_gaps) and spans and UNRESOLVED_END.search(spans[-1]) and not re.search(
             r"\b(?:but|although|however|except|yet)\b", spans[-1], re.I):
         return result, tokens
     numbered = "\n".join(f"{i}. {span}" for i, span in enumerate(spans, 1))
