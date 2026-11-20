@@ -31,3 +31,5 @@ Four overrides matched the expected answers. Checking the actual cited spans exp
 Use `python3 research/adaptive_rei/adaptive_rei_benchmark.py --cited-review 'QUESTION? PASSAGE'` for the opt-in mode. The output contains the initial and final answers, any cited span, and the cost of each stage. The existing plain-verdict mode remains available for a single-call decision.
 
 [Per-question data](results/evidence_first_review.json) · [Live evaluation](https://github.com/ted-peters/RecursiveEpistemicIntelligence/actions/runs/44770713666)
+
+[Budgeted review follow-up and control results](budgeted_review_results.md)
