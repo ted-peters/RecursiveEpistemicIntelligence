@@ -1,0 +1,74 @@
+[
+  [
+    "Was the mural dry by opening time? The painter touched it after closing and found it dry. Nobody tested it earlier.",
+    "uncertain"
+  ],
+  [
+    "Was brass present in drawer C? An inventory of drawer C lists a solid brass dial.",
+    "yes"
+  ],
+  [
+    "Did the engine run for the entire hour? Its log records a shutdown halfway through that hour.",
+    "no"
+  ],
+  [
+    "Was the west curtain raised before the music? The stage camera shows the curtain rising but has no sound or synchronized clock.",
+    "uncertain"
+  ],
+  [
+    "Did the third bird hatch? The keeper saw that bird emerge from its shell.",
+    "yes"
+  ],
+  [
+    "Was the crate empty on inspection? The inspector counted several jars inside the crate.",
+    "no"
+  ],
+  [
+    "Did swapping bulbs save electricity? Usage fell after the swap, but operating hours also fell and neither effect was measured separately.",
+    "uncertain"
+  ],
+  [
+    "Did the spring break at noon? At noon it was found broken; its last inspection was a month earlier.",
+    "uncertain"
+  ],
+  [
+    "Was the chair assembled before sale? The receipt records assembly after sale and specifies that it was sold unassembled.",
+    "no"
+  ],
+  [
+    "Was the jar sealed during shipment? The shipper saw it sealed at dispatch; the seal was broken on arrival, with no record of when.",
+    "uncertain"
+  ],
+  [
+    "Did the gate reopen that afternoon? A time-stamped film shows it reopening at three that afternoon.",
+    "yes"
+  ],
+  [
+    "Was the eastern clock slow? A comparison showed two clocks disagreeing. There was no time standard and neither had been calibrated.",
+    "uncertain"
+  ],
+  [
+    "Did the parcel contain the map? The recipient unfolded the map taken directly from this parcel.",
+    "yes"
+  ],
+  [
+    "Did the cup survive the fall intact? Its handle broke off during the fall.",
+    "no"
+  ],
+  [
+    "Was seat eight occupied during the finale? A photograph before the finale shows an audience member there. There is no record of who stayed.",
+    "uncertain"
+  ],
+  [
+    "Was the switch turned by hand? The observer saw it turn behind a screen that hid the mechanism.",
+    "uncertain"
+  ],
+  [
+    "Did the roll contain twelve sheets? The whole roll was unwrapped and all eleven sheets were counted.",
+    "no"
+  ],
+  [
+    "Was the box heavier after filling? The same calibrated balance registered a higher mass for the filled box.",
+    "yes"
+  ]
+]

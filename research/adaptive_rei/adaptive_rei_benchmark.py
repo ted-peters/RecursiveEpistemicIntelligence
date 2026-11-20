@@ -429,12 +429,19 @@ if __name__ == "__main__":
                        help="Answer one evidence question using explicit dependencies or the single-pass prompt.")
     modes.add_argument("--plain-verdict", metavar="PASSAGE",
                        help="Use the short, plain-text model verdict for prose.")
+    modes.add_argument("--cited-review", metavar="PASSAGE",
+                       help="Review uncertain prose answers and expose the cited span and review cost.")
     modes.add_argument("--quick", action="store_true", help="Run only the two single-pass prompts.")
     args = parser.parse_args()
     try:
         cases = {"original": CASES, "fresh": FRESH_CASES, "chain": [(CHAIN_CASE, "uncertain")],
                  "all": CASES + FRESH_CASES + [(CHAIN_CASE, "uncertain")] + REGRESSION_CASES}[args.suite]
         url = args.url.rstrip("/")
+        if args.cited_review is not None:
+            from selective_review import decide
+            answer, tokens = decide(url, args.model, args.cited_review)
+            print(json.dumps({"model": args.model, **answer, "tokens": tokens}))
+            raise SystemExit(0)
         if args.evidence_budget is not None or args.plain_verdict is not None:
             if args.plain_verdict is not None:
                 from plain_verdict import decide

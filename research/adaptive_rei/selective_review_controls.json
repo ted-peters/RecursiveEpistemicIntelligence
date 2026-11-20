@@ -1,0 +1,20 @@
+[
+ ["Was the fan turning at noon? A work order called for a noon test. The only actual reading is from one o'clock.","uncertain"],
+ ["Was locker L empty on arrival? A time-matched inspection of L lists two boots inside.","no"],
+ ["Did the float cross the painted line? A camera recorded the float passing the line. Its unrelated shipping label had faded.","yes"],
+ ["Did the awning reduce the heat? An awning went up on the first cool day. The measurements cannot separate these effects.","uncertain"],
+ ["Did the third tray receive wax? Its card was copied from tray two. No independent check of tray three was made.","uncertain"],
+ ["Was the mirror in its case at closing? A closing photograph shows a vacant case. A shipping list describes the original packing.","no"],
+ ["Was the east tap flowing during the test? The observer drew a full cup from the east tap during the test.","yes"],
+ ["Was the ledger signed before delivery? The signature is visible. Neither the signature nor delivery has a recoverable timestamp.","uncertain"],
+ ["Did either skater finish? The second skater was recorded crossing the finish line.","yes"],
+ ["Had the ticket expired by Sunday? The ticket states it remained valid through Monday of that week.","no"],
+ ["Was the north pump running? The status sheet says yes. Its row was populated from a different pump. No one visited the north pump.","uncertain"],
+ ["Was the switch pressed twice? A counter started at an unknown value. It displayed two after the inspection.","uncertain"],
+ ["Was the picture hung before the hall opened? The installer signed a receipt afterward. The receipt records payment only.","uncertain"],
+ ["Did the tablet dissolve completely? A solid piece of that tablet remained after the test ended.","no"],
+ ["Was the tunnel clear at dawn? A dawn sweep found an obstruction. The contractor had expected an empty tunnel.","no"],
+ ["Did the blue pennant fly? A color recording shows the blue pennant raised and flying during the ceremony.","yes"],
+ ["Did the red team arrive first? One timekeeper says red, the other blue. Their clocks could not be reconciled.","uncertain"],
+ ["Was the display working when the visitor arrived? The visitor read the changing figures on that display on arrival.","yes"]
+]
