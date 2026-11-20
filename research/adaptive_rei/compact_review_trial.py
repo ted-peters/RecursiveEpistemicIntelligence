@@ -38,6 +38,7 @@ def main():
     parser.add_argument("--data", type=Path)
     parser.add_argument("--url", default="http://127.0.0.1:11434")
     parser.add_argument("--budgeted", action="store_true")
+    parser.add_argument("--shard", type=int, choices=range(4))
     args = parser.parse_args()
     if args.data:
         raw = args.data.read_bytes()
@@ -56,6 +57,8 @@ def main():
         digest = next(m["digest"] for m in json.load(response)["models"] if m["name"] == MODEL)
     rows = []
     for n, (suite, index, text, expected) in enumerate(cases):
+        if args.shard is not None and n % 4 != args.shard:
+            continue
         row = {"suite": suite, "index": index, "expected": expected}
         for arm in (("json", "plain") if n % 2 == 0 else ("plain", "json")):
             output, tokens = (predict(args.url, MODEL, SINGLE_PASS, text) if arm == "json"
