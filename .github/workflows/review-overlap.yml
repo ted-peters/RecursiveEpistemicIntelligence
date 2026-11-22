@@ -13,6 +13,9 @@ jobs:
   compare:
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    strategy:
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
     steps:
       - uses: actions/checkout@v4
       - name: Start pinned Ollama on CPU
@@ -29,10 +32,26 @@ jobs:
           /tmp/rei-ollama/bin/ollama pull qwen3:4b-instruct
       - name: Run paired comparison
         run: |
-          python3 research/adaptive_rei/review_overlap_trial.py > result.json
+          python3 research/adaptive_rei/review_overlap_trial.py --shards 8 --shard ${{ matrix.shard }} > result.json
           jq '.summary' result.json
         shell: bash
       - uses: actions/upload-artifact@v4
         with:
-          name: review-overlap-results
+          name: review-overlap-${{ matrix.shard }}
+          path: result.json
+  summarize:
+    needs: compare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: review-overlap-*
+          path: shards
+      - name: Combine paired results
+        run: |
+          jq -s '.[0] as $meta | [.[].rows[]] as $rows | if ($rows|length) != 258 or ($rows|unique_by([.suite,.index])|length) != 258 then error("incomplete trial") else $meta + {rows:$rows,summary:(map(.summary)|reduce .[] as $s ({}; reduce ($s|to_entries[]) as $g (.; reduce ($g.value|to_entries[]) as $a (.; reduce ($a.value|to_entries[]) as $m (.; .[$g.key][$a.key][$m.key] += $m.value)))))} end' shards/*/result.json > result.json
+          jq '.summary' result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paired-review-results
           path: result.json

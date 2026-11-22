@@ -17,7 +17,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", type=Path)
     parser.add_argument("--url", default="http://127.0.0.1:11434")
+    parser.add_argument("--shard", type=int, default=0)
+    parser.add_argument("--shards", type=int, default=1)
     args = parser.parse_args()
+    if not 0 <= args.shard < args.shards:
+        parser.error("shard index outside shard count")
     if args.data:
         raw = args.data.read_bytes()
     else:
@@ -41,7 +45,7 @@ def main():
     with urlopen(args.url + "/api/tags", timeout=30) as response:
         digest = next(m["digest"] for m in json.load(response)["models"] if m["name"] == MODEL)
     rows = []
-    for suite, i, text, expected in cases:
+    for suite, i, text, expected in cases[args.shard::args.shards]:
         first, tokens = plain_decide(args.url, MODEL, text)
         candidate, cost = review(args.url, MODEL, text, first, tokens, check_overlap=True)
         # A surviving call uses the identical prompt, parameters and model in both arms.
