@@ -1,0 +1,20 @@
+[
+ ["Was the auditorium vacant when the curtain rose? At the beginning of the performance every seat in the hall was occupied.", "no"],
+ ["Had the vessel departed by sunrise? Its logbook includes a sailing plan for early morning. Nobody saw the actual departure.", "uncertain"],
+ ["Did the refrigerating apparatus stop during the night? The cooling unit ran without interruption from dusk until daybreak.", "no"],
+ ["Was the silver trophy returned before the awards ceremony? A signed receipt lists its return, but bears no date.", "uncertain"],
+ ["Was the entire orchestra silent after the conductor stopped? One violinist continued playing after the baton came down.", "no"],
+ ["Did the exhibition admit children free of charge? Visitors under eighteen entered without paying.", "yes"],
+ ["Did the survey cover every apartment? Three residents were interviewed; the building's total number of units is unknown.", "uncertain"],
+ ["Was the cashier's drawer empty at opening? The till contained two banknotes when the shop first admitted customers.", "no"],
+ ["Did the guide reach the summit before noon? A photograph places her on the peak. The camera clock had reset.", "uncertain"],
+ ["Was the new seating plan responsible for higher attendance? Ticket prices fell on the day the seating changed. Their separate contributions are unknown.", "uncertain"],
+ ["Was the west corridor accessible during the drill? A locked grille blocked its only entrance throughout the exercise.", "no"],
+ ["Was the last participant disqualified? The final entrant was removed from the standings for breaking the rules.", "yes"],
+ ["Did both packages contain glass? The first carton held a bottle. The second was never opened.", "uncertain"],
+ ["Was the concert ticket transferable? The ticket conditions allow its holder to give it to another person before admission.", "yes"],
+ ["Was the same garment worn at both performances? Two outfits appear identical in photographs, and the costume tags are illegible.", "uncertain"],
+ ["Was the courier on time at the northern depot? At that location the driver arrived before the delivery deadline.", "yes"],
+ ["Did the minute hand move during the inspection? Two images taken an hour apart show the same position. Nothing recorded the interval.", "uncertain"],
+ ["Did the committee reach a unanimous decision? One member voted against the adopted proposal.", "no"]
+]

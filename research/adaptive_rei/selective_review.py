@@ -3,6 +3,7 @@ import re
 
 from adaptive_rei_benchmark import predict
 from plain_verdict import decide as plain_decide
+from review_overlap import lacks_overlap
 
 INSTRUCTION = (
     "Read the numbered passage and answer its question. Select the statement that best "
@@ -27,12 +28,12 @@ UNRESOLVED_END = re.compile(
 )
 
 
-def decide(url, model, text, *, compact=False, skip_gaps=False):
+def decide(url, model, text, *, compact=False, skip_gaps=False, check_overlap=False):
     first, tokens = plain_decide(url, model, text)
-    return review(url, model, text, first, tokens, compact=compact, skip_gaps=skip_gaps)
+    return review(url, model, text, first, tokens, compact=compact, skip_gaps=skip_gaps, check_overlap=check_overlap)
 
 
-def review(url, model, text, first, tokens, *, compact=False, skip_gaps=False):
+def review(url, model, text, first, tokens, *, compact=False, skip_gaps=False, check_overlap=False):
     result = {"answer": first["answer"], "initial_answer": first["answer"],
               "initial_tokens": tokens, "review_tokens": 0, "citation": None}
     question, separator, body = text.partition("?")
@@ -41,9 +42,12 @@ def review(url, model, text, first, tokens, *, compact=False, skip_gaps=False):
         return result, tokens
     spans = re.split(r"(?<=[.!?])\s+(?=[A-Z\"“])|\n+", body.strip())
     spans = [span.strip() for span in spans if span.strip()]
-    if (compact or skip_gaps) and spans and UNRESOLVED_END.search(spans[-1]) and not re.search(
+    if (compact or skip_gaps or check_overlap) and spans and UNRESOLVED_END.search(spans[-1]) and not re.search(
             r"\b(?:but|although|however|except|yet)\b", spans[-1], re.I):
         result["review_skipped"] = "explicit_evidence_gap"
+        return result, tokens
+    if check_overlap and lacks_overlap(question, spans):
+        result["review_skipped"] = "low_question_overlap"
         return result, tokens
     numbered = "\n".join(f"{i}. {span}" for i, span in enumerate(spans, 1))
     output, extra = predict(url, model, COMPACT_INSTRUCTION if compact else INSTRUCTION, numbered + "\nQuestion: " + question + "?", max_tokens=40)
