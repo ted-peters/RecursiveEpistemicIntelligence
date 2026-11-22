@@ -43,3 +43,20 @@ class SelectiveReviewTests(unittest.TestCase):
             result, total = selective_review.review("", "", text, {"answer": "uncertain"}, 23, skip_gaps=True)
         self.assertEqual((result["answer"], total), ("yes", 53))
         self.assertIn("the inspector saw it sealed", result["citation"])
+
+    def test_low_overlap_filter_is_opt_in(self):
+        text = "Did every passenger board before sunset? The manifest lists three people."
+        first = {"answer": "uncertain"}
+        with patch.object(selective_review, "predict", return_value=({"answer": "no", "statement": 1}, 30)) as predict:
+            skipped, total = selective_review.review("", "", text, first, 23, check_overlap=True)
+            predict.assert_not_called()
+            self.assertEqual((skipped["review_skipped"], total), ("low_question_overlap", 23))
+            reviewed, total = selective_review.review("", "", text, first, 23, skip_gaps=True)
+            self.assertEqual((reviewed["answer"], total), ("no", 53))
+
+    def test_short_or_matching_questions_keep_review(self):
+        for text in ("Was it closed? The lock engaged.",
+                     "Did all passengers board before sunset? Two passengers did board before sunset."):
+            with self.subTest(text=text), patch.object(selective_review, "predict", return_value=({}, 30)):
+                reviewed, total = selective_review.review("", "", text, {"answer": "uncertain"}, 23, check_overlap=True)
+                self.assertEqual((reviewed["review_tokens"], total), (30, 53))

@@ -6,6 +6,7 @@ from pathlib import Path
 import random
 from urllib.request import urlopen
 
+from adaptive_rei_benchmark import SINGLE_PASS, predict
 from boolq_trial import DIGEST, MODEL, URL, ORIGINAL, FOCUS, IMPLIED, passage, sample_indices
 from compact_review_trial import ROOT
 from plain_verdict import decide as plain_decide
@@ -49,13 +50,21 @@ def main():
             current, current_cost = review(args.url, MODEL, text, first, tokens, skip_gaps=True)
         else:
             current, current_cost = candidate, cost
+        baseline, baseline_cost = predict(args.url, MODEL, SINGLE_PASS, text)
         rows.append({"suite": suite, "index": i, "expected": expected,
+                     "single_pass": baseline.get("answer"), "single_pass_tokens": baseline_cost,
                      "plain": first["answer"], "plain_tokens": tokens,
                      "budgeted": current["answer"], "budgeted_tokens": current_cost,
                      "candidate": candidate["answer"], "candidate_tokens": cost,
                      "skip": candidate.get("review_skipped"), "citation": candidate["citation"]})
+    summary = {}
+    for suite in ("boolq", "control"):
+        group = [r for r in rows if r["suite"] == suite]
+        summary[suite] = {arm: {"correct": sum(r[arm] == r["expected"] for r in group),
+                                "questions": len(group), "tokens": sum(r[arm + "_tokens"] for r in group)}
+                          for arm in ("single_pass", "plain", "budgeted", "candidate")}
     print(json.dumps({"model": MODEL, "digest": digest, "data_sha256": DIGEST,
-                      "seed": 20261127, "excluded": len(used), "rows": rows}))
+                      "seed": 20261127, "excluded": len(used), "summary": summary, "rows": rows}))
 
 
 if __name__ == "__main__":
