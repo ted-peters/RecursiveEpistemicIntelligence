@@ -433,12 +433,19 @@ if __name__ == "__main__":
                        help="Review uncertain prose answers and expose the cited span and review cost.")
     modes.add_argument("--budgeted-review", metavar="PASSAGE",
                        help="Skip review on an explicit closing evidence gap.")
+    modes.add_argument("--claim-scope", metavar="PASSAGE",
+                       help="Compare the question with what the evidence establishes.")
     modes.add_argument("--quick", action="store_true", help="Run only the two single-pass prompts.")
     args = parser.parse_args()
     try:
         cases = {"original": CASES, "fresh": FRESH_CASES, "chain": [(CHAIN_CASE, "uncertain")],
                  "all": CASES + FRESH_CASES + [(CHAIN_CASE, "uncertain")] + REGRESSION_CASES}[args.suite]
         url = args.url.rstrip("/")
+        if args.claim_scope is not None:
+            from claim_scope import decide
+            answer, tokens = decide(url, args.model, args.claim_scope)
+            print(json.dumps({"model": args.model, **answer, "tokens": tokens}))
+            raise SystemExit(0)
         if args.cited_review is not None or args.budgeted_review is not None:
             from selective_review import decide
             skip_gaps = args.budgeted_review is not None
