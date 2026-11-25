@@ -7,13 +7,20 @@ RULE = ("Select the line answering the exact question. For what was recorded, us
         "Return JSON: line (number, 0 if unknown), answer (yes/no/uncertain).")
 
 
-def decide(url, model, passage):
+GUIDANCE = (" Before committing, could the cited statement and the other facts still be "
+            "true if the opposite answer were true? If both answers fit, use uncertain. "
+            "Accept direct observations as stated.")
+
+def decide(url, model, passage, *, check_opposite=False):
     question, sep, body = passage.partition("?")
     if not sep or not body.strip():
         raise ValueError("Provide a question followed by a passage.")
     lines = re.split(r"(?<=[.!?])\s+|\n+", body.strip())
     numbered = "\n".join(f"{i}. {line}" for i, line in enumerate(lines, 1))
-    result, tokens = predict(url, model, RULE, numbered + "\n" + question + "?", max_tokens=40)
+    instruction = RULE
+    if check_opposite:
+        instruction += GUIDANCE
+    result, tokens = predict(url, model, instruction, numbered + "\n" + question + "?", max_tokens=40)
     index = result.get("line")
     cited = type(index) is int and 1 <= index <= len(lines)
     answer = result.get("answer")

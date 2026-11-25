@@ -1,0 +1,10 @@
+[
+ ["The chalkboard lists the soup as onion. The cook tasted a different pot only.",["Does the board describe the soup as onion?","yes"],["Did the cook taste the listed pot?","no"],["Was the listed soup actually onion?","uncertain"]],
+ ["A technician counted four plugs in the box at noon. The packing slip listed five.",["Were there five plugs in the box at noon?","no"],["Did the slip list five plugs?","yes"],["Were there five plugs in the box before shipping?","uncertain"]],
+ ["The posted roster assigns Mira to Tuesday. An observer saw Mira at the desk on Wednesday only.",["Did Mira staff the desk on Tuesday?","uncertain"],["Did the observer see Mira there on Wednesday?","yes"],["Did the observer see Mira there on Tuesday?","no"]],
+ ["A map labels the courtyard oak. A botanist examined its sole tree and identified it as a pine.",["Did the map label the courtyard pine?","no"],["Was its tree a pine when examined?","yes"],["Had the tree been replaced since the map was made?","uncertain"]],
+ ["A reservation names booth six. The guest used booth seven throughout lunch.",["Did the guest use booth six during lunch?","no"],["Was booth six reserved?","yes"],["Was booth six occupied by another guest?","uncertain"]],
+ ["The wrapper says 80 grams. A scale measured the contents at 78 grams after opening.",["Did the contents weigh 80 grams before opening?","uncertain"],["Did the wrapper state 80 grams?","yes"],["Did the scale show 80 grams after opening?","no"]],
+ ["The clerk recorded a green scarf. A buyer inspected the scarf itself under daylight and found it blue.",["Was the scarf blue at inspection?","yes"],["Did the clerk record a blue scarf?","no"],["Did the clerk inspect the scarf before making the entry?","uncertain"]],
+ ["The poster promised a duet. A listener attended only the opening solo and left before the second piece.",["Did a duet occur later?","uncertain"],["Did the poster promise a duet?","yes"],["Did the listener stay for the second piece?","no"]]
+]
