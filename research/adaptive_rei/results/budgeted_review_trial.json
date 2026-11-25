@@ -1,0 +1,2833 @@
+{
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "seed": 20261126,
+  "data_sha256": "ebc29ea3808c5c611672384b3de56e83349fe38fc1fe876fd29b674d81d0a80a",
+  "rows": [
+    {
+      "suite": "boolq",
+      "index": 1,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 302
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 341
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 302,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 302,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 93,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 138
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 102
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 102,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 102,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 103,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 231
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 192
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 192,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 192,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 123,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 132
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 168
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 132,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 132,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 137,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 307
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 343
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 307,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 307,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 261,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 128
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 89
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 89,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 89,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 282,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 141
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 177
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 141,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 141,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 292,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 176
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 211
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 176,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 176,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 323,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 248
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 209
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 209,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 209,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 360,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 476
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 440
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 440,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 440,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 365,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 137
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 173
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 137,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 137,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 439,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 318
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 282
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 282,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 282,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 457,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 87
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 126
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 87,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 87,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 464,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 171
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 135
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 135,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 135,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 465,
+      "expected": "yes",
+      "plain": {
+        "answer": "no",
+        "tokens": 163
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 199
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 163,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 163,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 594,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 96
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 135
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 96,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 96,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 606,
+      "expected": "yes",
+      "json": {
+        "answer": "no",
+        "tokens": 178
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 142
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 142,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 142,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 671,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 306
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 342
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 306,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 306,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 678,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 183
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 219
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 183,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 183,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 703,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 275
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 311
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 275,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 275,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 748,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 251
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 215
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 215,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 215,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 786,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 100
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 136
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 100,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 100,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 817,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 219
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 255
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 219,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 219,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 844,
+      "expected": "yes",
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 263
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 301
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 604,
+        "citation": "In general, people no longer break in the engines of their own vehicles after purchasing a car or motorcycle, because the process is done in production."
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 604,
+        "citation": "In general, people no longer break in the engines of their own vehicles after purchasing a car or motorcycle, because the process is done in production."
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 858,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 256
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 220
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 220,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 220,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 969,
+      "expected": "yes",
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 97
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 136
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 258,
+        "citation": "In the United States where excessive salt is considered unhealthy, salt is stored in the shaker with the fewest holes, but in parts of Europe where pepper was historically a rare spice, this is reversed."
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 258,
+        "citation": "In the United States where excessive salt is considered unhealthy, salt is stored in the shaker with the fewest holes, but in parts of Europe where pepper was historically a rare spice, this is reversed."
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 981,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 123
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 160
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 123,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 123,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 988,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 275
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 311
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 275,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 275,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1084,
+      "expected": "yes",
+      "json": {
+        "answer": "no",
+        "tokens": 121
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 82
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 82,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 82,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1127,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 202
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 166
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 166,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 166,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1130,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 86
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 122
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 86,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 86,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1145,
+      "expected": "yes",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 250
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 213
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 213,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 213,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1155,
+      "expected": "yes",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 206
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 169
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 169,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 169,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1185,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 332
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 296
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 296,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 296,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1228,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 116
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 152
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 116,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 116,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1237,
+      "expected": "no",
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 123
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 159
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 313,
+        "citation": null
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 313,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1248,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 268
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 232
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 232,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 232,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1315,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 148
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 184
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 148,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 148,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1335,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 341
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 305
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 305,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 305,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1349,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 268
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 304
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 268,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 268,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1362,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 173
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 137
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 137,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 137,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1370,
+      "expected": "no",
+      "plain": {
+        "answer": "yes",
+        "tokens": 234
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 270
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 234,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 234,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1398,
+      "expected": "yes",
+      "json": {
+        "answer": "no",
+        "tokens": 468
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 433
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 433,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 433,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1432,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 101
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 140
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 101,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 101,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1457,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 224
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 188
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 188,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 188,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1485,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 153
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 193
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 153,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 153,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1509,
+      "expected": "yes",
+      "json": {
+        "answer": "no",
+        "tokens": 195
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 156
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 156,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 156,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1536,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 194
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 158
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 158,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 158,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1558,
+      "expected": "no",
+      "plain": {
+        "answer": "yes",
+        "tokens": 180
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 217
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 180,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 180,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1590,
+      "expected": "yes",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 280
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 243
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 243,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 243,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1661,
+      "expected": "yes",
+      "json": {
+        "answer": "no",
+        "tokens": 567
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 528
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 528,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 528,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1664,
+      "expected": "yes",
+      "json": {
+        "answer": "no",
+        "tokens": 179
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 143
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 143,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 143,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1760,
+      "expected": "yes",
+      "json": {
+        "answer": "no",
+        "tokens": 269
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 234
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 543,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 543,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1761,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 186
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 150
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 150,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 150,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1777,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 212
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 176
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 176,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 176,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1784,
+      "expected": "yes",
+      "plain": {
+        "answer": "no",
+        "tokens": 76
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 112
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 76,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 76,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1809,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 128
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 93
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 251,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 251,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1813,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 105
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 66
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 66,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 66,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1855,
+      "expected": "yes",
+      "json": {
+        "answer": "no",
+        "tokens": 193
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 154
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 154,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 154,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1892,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 194
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 158
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 158,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 158,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1910,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 233
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 269
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 233,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 233,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1915,
+      "expected": "yes",
+      "json": {
+        "answer": "no",
+        "tokens": 206
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 170
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 170,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 170,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 1986,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 234
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 198
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 198,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 198,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2016,
+      "expected": "yes",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 233
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 196
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 196,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 196,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2019,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 229
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 265
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 229,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 229,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2029,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 251
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 215
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 215,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 215,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2083,
+      "expected": "no",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 144
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 104
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 104,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 104,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2091,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 149
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 185
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 149,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 149,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2095,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 113
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 149
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 113,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 113,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2102,
+      "expected": "no",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 270
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 234
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 537,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 537,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2126,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 256
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 295
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 256,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 256,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2149,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 268
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 304
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 268,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 268,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2184,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 134
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 170
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 134,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 134,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2204,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 157
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 121
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 121,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 121,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2263,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 262
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 226
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 226,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 226,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2337,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 197
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 161
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 161,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 161,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2391,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 131
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 170
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 131,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 131,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2400,
+      "expected": "no",
+      "json": {
+        "answer": "yes",
+        "tokens": 174
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 138
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 138,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 138,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2447,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 206
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 170
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 170,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 170,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2531,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 92
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 131
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 92,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 92,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2602,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 144
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 183
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 144,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 144,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2603,
+      "expected": "yes",
+      "plain": {
+        "answer": "no",
+        "tokens": 124
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 161
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 124,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 124,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2620,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 221
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 185
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 185,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 185,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2629,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 147
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 183
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 147,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 147,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2662,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 146
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 183
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 146,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 146,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2675,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 209
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 173
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 173,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 173,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2681,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 65
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 104
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 65,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 65,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2790,
+      "expected": "yes",
+      "plain": {
+        "answer": "no",
+        "tokens": 153
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 189
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 153,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 153,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2813,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 89
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 128
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 89,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 89,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2815,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 149
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 184
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 149,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 149,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2877,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 149
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 185
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 149,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 149,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2883,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 334
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 298
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 298,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 298,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 2968,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 97
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 133
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 97,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 97,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 3011,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 461
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 425
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 425,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 425,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 3176,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 206
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 170
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 170,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 170,
+        "citation": null
+      }
+    },
+    {
+      "suite": "boolq",
+      "index": 3230,
+      "expected": "yes",
+      "plain": {
+        "answer": "no",
+        "tokens": 99
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 135
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 99,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 99,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 0,
+      "expected": "uncertain",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 94
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 55
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 175,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 55,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 1,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 52
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 91
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 52,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 52,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 2,
+      "expected": "uncertain",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 93
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 57
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 179,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 57,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 3,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 60
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 99
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 60,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 60,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 4,
+      "expected": "uncertain",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 90
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 51
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 167,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 51,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 5,
+      "expected": "uncertain",
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 53
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 92
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 53,
+        "citation": null
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 171,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 6,
+      "expected": "uncertain",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 93
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 54
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 173,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 54,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 7,
+      "expected": "uncertain",
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 54
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 93
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 54,
+        "citation": null
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 173,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 8,
+      "expected": "yes",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 97
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 58
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 181,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 58,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 9,
+      "expected": "uncertain",
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 55
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 94
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 55,
+        "citation": null
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 175,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 10,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 93
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 54
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 54,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 54,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 11,
+      "expected": "uncertain",
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 55
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 94
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 55,
+        "citation": null
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 175,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 12,
+      "expected": "uncertain",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 94
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 55
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 174,
+        "citation": "A crack is visible on arrival."
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 55,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 13,
+      "expected": "uncertain",
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 52
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 91
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 52,
+        "citation": null
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 169,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 14,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 92
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 53
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 53,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 53,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 15,
+      "expected": "no",
+      "plain": {
+        "answer": "yes",
+        "tokens": 51
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 90
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 51,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 51,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 16,
+      "expected": "yes",
+      "json": {
+        "answer": "yes",
+        "tokens": 90
+      },
+      "plain": {
+        "answer": "yes",
+        "tokens": 51
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 51,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 51,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 17,
+      "expected": "uncertain",
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 53
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 91
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 53,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 170,
+        "citation": "Its assigned occupant slept elsewhere."
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 18,
+      "expected": "uncertain",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 90
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 51
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 167,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 51,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 19,
+      "expected": "yes",
+      "plain": {
+        "answer": "yes",
+        "tokens": 58
+      },
+      "json": {
+        "answer": "yes",
+        "tokens": 97
+      },
+      "budgeted": {
+        "answer": "yes",
+        "tokens": 58,
+        "citation": null
+      },
+      "current": {
+        "answer": "yes",
+        "tokens": 58,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 20,
+      "expected": "no",
+      "json": {
+        "answer": "no",
+        "tokens": 94
+      },
+      "plain": {
+        "answer": "no",
+        "tokens": 58
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 58,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 58,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 21,
+      "expected": "uncertain",
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 57
+      },
+      "json": {
+        "answer": "uncertain",
+        "tokens": 93
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 57,
+        "citation": null
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 179,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 22,
+      "expected": "uncertain",
+      "json": {
+        "answer": "uncertain",
+        "tokens": 91
+      },
+      "plain": {
+        "answer": "uncertain",
+        "tokens": 55
+      },
+      "current": {
+        "answer": "uncertain",
+        "tokens": 175,
+        "citation": null
+      },
+      "budgeted": {
+        "answer": "uncertain",
+        "tokens": 55,
+        "citation": null
+      }
+    },
+    {
+      "suite": "budgeted_review_controls",
+      "index": 23,
+      "expected": "no",
+      "plain": {
+        "answer": "no",
+        "tokens": 61
+      },
+      "json": {
+        "answer": "no",
+        "tokens": 100
+      },
+      "budgeted": {
+        "answer": "no",
+        "tokens": 61,
+        "citation": null
+      },
+      "current": {
+        "answer": "no",
+        "tokens": 61,
+        "citation": null
+      }
+    }
+  ],
+  "summary": {
+    "boolq": {
+      "n": 96,
+      "differences": [],
+      "skipped": 0,
+      "json": {
+        "correct": 62,
+        "tokens": 21050,
+        "validAbstentions": 0
+      },
+      "plain": {
+        "correct": 77,
+        "tokens": 17524,
+        "validAbstentions": 0
+      },
+      "current": {
+        "correct": 77,
+        "tokens": 18986,
+        "validAbstentions": 0
+      },
+      "budgeted": {
+        "correct": 77,
+        "tokens": 18986,
+        "validAbstentions": 0
+      }
+    },
+    "budgeted_review_controls": {
+      "n": 24,
+      "differences": [
+        [
+          12,
+          "uncertain",
+          "yes",
+          "uncertain"
+        ],
+        [
+          17,
+          "uncertain",
+          "no",
+          "uncertain"
+        ]
+      ],
+      "skipped": 15,
+      "json": {
+        "correct": 22,
+        "tokens": 2236,
+        "validAbstentions": 13
+      },
+      "plain": {
+        "correct": 22,
+        "tokens": 1313,
+        "validAbstentions": 14
+      },
+      "current": {
+        "correct": 20,
+        "tokens": 3101,
+        "validAbstentions": 12
+      },
+      "budgeted": {
+        "correct": 22,
+        "tokens": 1313,
+        "validAbstentions": 14
+      }
+    }
+  }
+}

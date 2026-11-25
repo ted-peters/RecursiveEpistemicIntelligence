@@ -1,0 +1,485 @@
+[
+  {
+    "suite": "boolq",
+    "index": 180,
+    "expected": "yes",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 106,
+      "review_tokens": 171,
+      "citation": null,
+      "tokens": 277
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 106,
+      "review_tokens": 149,
+      "citation": null,
+      "tokens": 255
+    }
+  },
+  {
+    "suite": "boolq",
+    "index": 501,
+    "expected": "yes",
+    "current": {
+      "answer": "yes",
+      "initial_answer": "uncertain",
+      "initial_tokens": 140,
+      "review_tokens": 206,
+      "citation": "Kingsnakes use constriction to kill their prey and tend to be opportunistic when it comes to their diet; they will eat other snakes (ophiophagy), including venomous snakes.",
+      "tokens": 346
+    },
+    "compact": {
+      "answer": "yes",
+      "initial_answer": "uncertain",
+      "initial_tokens": 140,
+      "review_tokens": 184,
+      "citation": "The common kingsnake is known to be immune to the venom of other snakes and does eat rattlesnakes, but it is not necessarily immune to the venom of snakes from different localities.",
+      "tokens": 324
+    }
+  },
+  {
+    "suite": "boolq",
+    "index": 1106,
+    "expected": "no",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 92,
+      "review_tokens": 159,
+      "citation": null,
+      "tokens": 251
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 92,
+      "review_tokens": 137,
+      "citation": null,
+      "tokens": 229
+    }
+  },
+  {
+    "suite": "boolq",
+    "index": 1718,
+    "expected": "no",
+    "current": {
+      "answer": "no",
+      "initial_answer": "uncertain",
+      "initial_tokens": 89,
+      "review_tokens": 155,
+      "citation": "Extended-release dosage consists of sustained-release (SR) and controlled-release (CR) dosage.",
+      "tokens": 244
+    },
+    "compact": {
+      "answer": "no",
+      "initial_answer": "uncertain",
+      "initial_tokens": 89,
+      "review_tokens": 133,
+      "citation": "Extended-release dosage consists of sustained-release (SR) and controlled-release (CR) dosage.",
+      "tokens": 222
+    }
+  },
+  {
+    "suite": "boolq",
+    "index": 2384,
+    "expected": "yes",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 117,
+      "review_tokens": 184,
+      "citation": null,
+      "tokens": 301
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 117,
+      "review_tokens": 158,
+      "citation": null,
+      "tokens": 275
+    }
+  },
+  {
+    "suite": "boolq",
+    "index": 2703,
+    "expected": "no",
+    "current": {
+      "answer": "no",
+      "initial_answer": "uncertain",
+      "initial_tokens": 220,
+      "review_tokens": 292,
+      "citation": "Rarely, a bone affected by Paget's disease can transform into a malignant bone cancer.",
+      "tokens": 512
+    },
+    "compact": {
+      "answer": "no",
+      "initial_answer": "uncertain",
+      "initial_tokens": 220,
+      "review_tokens": 270,
+      "citation": "Rarely, a bone affected by Paget's disease can transform into a malignant bone cancer.",
+      "tokens": 490
+    }
+  },
+  {
+    "suite": "boolq",
+    "index": 2930,
+    "expected": "yes",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 96,
+      "review_tokens": 161,
+      "citation": null,
+      "tokens": 257
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 96,
+      "review_tokens": 139,
+      "citation": null,
+      "tokens": 235
+    }
+  },
+  {
+    "suite": "boolq",
+    "index": 3025,
+    "expected": "no",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 127,
+      "review_tokens": 190,
+      "citation": null,
+      "tokens": 317
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 127,
+      "review_tokens": 164,
+      "citation": null,
+      "tokens": 291
+    }
+  },
+  {
+    "suite": "evidence_first_controls.json",
+    "index": 0,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 57,
+      "review_tokens": 122,
+      "citation": null,
+      "tokens": 179
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 57,
+      "review_tokens": 100,
+      "citation": null,
+      "tokens": 157
+    }
+  },
+  {
+    "suite": "evidence_first_controls.json",
+    "index": 3,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 57,
+      "review_tokens": 120,
+      "citation": null,
+      "tokens": 177
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 57,
+      "review_tokens": 98,
+      "citation": null,
+      "tokens": 155
+    }
+  },
+  {
+    "suite": "evidence_first_controls.json",
+    "index": 6,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 57,
+      "review_tokens": 120,
+      "citation": null,
+      "tokens": 177
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 57,
+      "review_tokens": 98,
+      "citation": null,
+      "tokens": 155
+    }
+  },
+  {
+    "suite": "evidence_first_controls.json",
+    "index": 7,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 55,
+      "review_tokens": 118,
+      "citation": null,
+      "tokens": 173
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 55,
+      "review_tokens": 96,
+      "citation": null,
+      "tokens": 151
+    }
+  },
+  {
+    "suite": "evidence_first_controls.json",
+    "index": 11,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 58,
+      "review_tokens": 123,
+      "citation": null,
+      "tokens": 181
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 58,
+      "review_tokens": 101,
+      "citation": null,
+      "tokens": 159
+    }
+  },
+  {
+    "suite": "evidence_first_controls.json",
+    "index": 14,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 60,
+      "review_tokens": 125,
+      "citation": null,
+      "tokens": 185
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 60,
+      "review_tokens": 103,
+      "citation": null,
+      "tokens": 163
+    }
+  },
+  {
+    "suite": "evidence_first_controls.json",
+    "index": 15,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 53,
+      "review_tokens": 116,
+      "citation": null,
+      "tokens": 169
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 53,
+      "review_tokens": 94,
+      "citation": null,
+      "tokens": 147
+    }
+  },
+  {
+    "suite": "selective_review_controls.json",
+    "index": 0,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 59,
+      "review_tokens": 124,
+      "citation": null,
+      "tokens": 183
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 59,
+      "review_tokens": 102,
+      "citation": null,
+      "tokens": 161
+    }
+  },
+  {
+    "suite": "selective_review_controls.json",
+    "index": 2,
+    "expected": "yes",
+    "current": {
+      "answer": "yes",
+      "initial_answer": "uncertain",
+      "initial_tokens": 57,
+      "review_tokens": 121,
+      "citation": "A camera recorded the float passing the line.",
+      "tokens": 178
+    },
+    "compact": {
+      "answer": "yes",
+      "initial_answer": "uncertain",
+      "initial_tokens": 57,
+      "review_tokens": 99,
+      "citation": "A camera recorded the float passing the line.",
+      "tokens": 156
+    }
+  },
+  {
+    "suite": "selective_review_controls.json",
+    "index": 3,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 59,
+      "review_tokens": 124,
+      "citation": null,
+      "tokens": 183
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 59,
+      "review_tokens": 0,
+      "citation": null,
+      "tokens": 59
+    }
+  },
+  {
+    "suite": "selective_review_controls.json",
+    "index": 4,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 57,
+      "review_tokens": 122,
+      "citation": null,
+      "tokens": 179
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 57,
+      "review_tokens": 0,
+      "citation": null,
+      "tokens": 57
+    }
+  },
+  {
+    "suite": "selective_review_controls.json",
+    "index": 7,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 56,
+      "review_tokens": 121,
+      "citation": null,
+      "tokens": 177
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 56,
+      "review_tokens": 99,
+      "citation": null,
+      "tokens": 155
+    }
+  },
+  {
+    "suite": "selective_review_controls.json",
+    "index": 11,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 54,
+      "review_tokens": 119,
+      "citation": null,
+      "tokens": 173
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 54,
+      "review_tokens": 97,
+      "citation": null,
+      "tokens": 151
+    }
+  },
+  {
+    "suite": "selective_review_controls.json",
+    "index": 12,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 55,
+      "review_tokens": 120,
+      "citation": null,
+      "tokens": 175
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 55,
+      "review_tokens": 98,
+      "citation": null,
+      "tokens": 153
+    }
+  },
+  {
+    "suite": "selective_review_controls.json",
+    "index": 16,
+    "expected": "uncertain",
+    "current": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 58,
+      "review_tokens": 123,
+      "citation": null,
+      "tokens": 181
+    },
+    "compact": {
+      "answer": "uncertain",
+      "initial_answer": "uncertain",
+      "initial_tokens": 58,
+      "review_tokens": 0,
+      "citation": null,
+      "tokens": 58
+    }
+  }
+]
