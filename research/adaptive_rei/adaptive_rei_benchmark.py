@@ -435,12 +435,18 @@ if __name__ == "__main__":
                        help="Skip review on an explicit closing evidence gap.")
     modes.add_argument("--claim-scope", metavar="PASSAGE",
                        help="Compare the question with what the evidence establishes.")
+    modes.add_argument("--report-event", metavar="PASSAGE", help="Experimental report and event comparison.")
     modes.add_argument("--quick", action="store_true", help="Run only the two single-pass prompts.")
     args = parser.parse_args()
     try:
         cases = {"original": CASES, "fresh": FRESH_CASES, "chain": [(CHAIN_CASE, "uncertain")],
                  "all": CASES + FRESH_CASES + [(CHAIN_CASE, "uncertain")] + REGRESSION_CASES}[args.suite]
         url = args.url.rstrip("/")
+        if args.report_event is not None:
+            from plain_verdict import decide
+            answer, tokens = decide(url, args.model, args.report_event, separate_reports=True)
+            print(json.dumps({"model": args.model, **answer, "tokens": tokens}))
+            raise SystemExit(0)
         if args.claim_scope is not None:
             from claim_scope import decide
             answer, tokens = decide(url, args.model, args.claim_scope)
