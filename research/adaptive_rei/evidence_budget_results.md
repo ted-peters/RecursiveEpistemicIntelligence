@@ -109,3 +109,5 @@ On the 48 existing three-label controls, plain verdict scored **39/48** against 
 To reproduce the 200-question comparison, run `python3 research/adaptive_rei/boolq_trial.py --plain`. To repeat the three-label control run, use `python3 research/adaptive_rei/uncertainty_trial.py plain`.
 
 [BoolQ results](results/boolq_plain_verdict.json) · [Three-label controls](results/plain_controls.json)
+
+[Selective review follow-up: accuracy, token costs and citation audit](selective_review_results.md)
