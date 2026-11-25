@@ -1,0 +1,11 @@
+[
+ ["The ledger lists bay three as vacant. A guard looking inside saw a bicycle in bay three.",["Did the ledger list bay three as vacant?","yes",1],["Was bay three vacant when the guard looked?","no",2]],
+ ["At dusk a villager watched the beacon shine. The duty sheet marked it unlit.",["Did the duty sheet describe the beacon as lit?","no",2],["Was the beacon shining at dusk?","yes",1]],
+ ["The nursery register lists a pear tree in plot four. A botanist visited plot five only.",["Does the register put a pear tree in plot four?","yes",1],["Was there actually a pear tree in plot four?","uncertain",0]],
+ ["A caller heard the chime twice. The operator entered a single chime in the journal.",["Did the caller hear just one chime?","no",1],["Did the operator record a single chime?","yes",2]],
+ ["The shop board described the blue pot as sold. A visitor saw it on a shelf without seeing any transaction.",["Did a buyer actually purchase the blue pot?","uncertain",0],["Did the shop board describe the blue pot as unsold?","no",1]],
+ ["An usher watched the final guest enter before noon. The guest book page for that date was lost before anyone checked its entries.",["Did the final guest enter before noon?","yes",1],["Did the guest book record that final arrival?","uncertain",0]],
+ ["The cook's note says the jar contained sugar. A tester sampled the contents and identified pure salt.",["Was sugar the substance named in the note?","yes",1],["Did the tested jar contain sugar?","no",2]],
+ ["A volunteer watched the blue banner come down. The available log covers the red banner exclusively.",["Does the available log cover the blue banner?","no",2],["Was the blue banner taken down?","yes",1]],
+ ["The form classified the print as a copy. The examiner saw only its frame and could not authenticate the print.",["Was the print in fact a copy?","uncertain",0],["Did the form classify the print as an original?","no",1]]
+]
