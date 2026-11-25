@@ -1,0 +1,160 @@
+{
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "rows": [
+    {
+      "packet": "service",
+      "question": "Did some scheduled services take place after their deadline?",
+      "expected": "yes",
+      "single_pass": "uncertain",
+      "single_pass_tokens": 111,
+      "rei": "yes",
+      "rei_tokens": 208,
+      "citation": "The service review counted 164 assignments completed late and 21 never performed.",
+      "citation_sufficient": true
+    },
+    {
+      "packet": "service",
+      "question": "Was every planned service performed?",
+      "expected": "no",
+      "single_pass": "no",
+      "single_pass_tokens": 106,
+      "rei": "no",
+      "rei_tokens": 67,
+      "citation": null,
+      "citation_sufficient": false
+    },
+    {
+      "packet": "service",
+      "question": "Did the last scheduled assignment take place?",
+      "expected": "uncertain",
+      "single_pass": "uncertain",
+      "single_pass_tokens": 109,
+      "rei": "uncertain",
+      "rei_tokens": 205,
+      "citation": null,
+      "citation_sufficient": false
+    },
+    {
+      "packet": "tickets",
+      "question": "Were any defects already logged before the visits?",
+      "expected": "yes",
+      "single_pass": "yes",
+      "single_pass_tokens": 111,
+      "rei": "yes",
+      "rei_tokens": 72,
+      "citation": null,
+      "citation_sufficient": false
+    },
+    {
+      "packet": "tickets",
+      "question": "Did the register list every defect the visitors identified?",
+      "expected": "no",
+      "single_pass": "uncertain",
+      "single_pass_tokens": 113,
+      "rei": "no",
+      "rei_tokens": 212,
+      "citation": "The ticket register contained entries for 59 of those defects, with 28 entered before the visits.",
+      "citation_sufficient": false
+    },
+    {
+      "packet": "tickets",
+      "question": "Had all 28 previously logged defects been repaired by the end of the month?",
+      "expected": "uncertain",
+      "single_pass": "uncertain",
+      "single_pass_tokens": 120,
+      "rei": "uncertain",
+      "rei_tokens": 227,
+      "citation": null,
+      "citation_sufficient": false
+    },
+    {
+      "packet": "roof",
+      "question": "Had officials reported securing funds for the roof projects?",
+      "expected": "yes",
+      "single_pass": "yes",
+      "single_pass_tokens": 91,
+      "rei": "yes",
+      "rei_tokens": 55,
+      "citation": null,
+      "citation_sufficient": false
+    },
+    {
+      "packet": "roof",
+      "question": "Had roof repairs at all six centers been completed?",
+      "expected": "uncertain",
+      "single_pass": "uncertain",
+      "single_pass_tokens": 92,
+      "rei": "uncertain",
+      "rei_tokens": 175,
+      "citation": null,
+      "citation_sufficient": false
+    },
+    {
+      "packet": "rounds",
+      "question": "Did inspection teams carry out inspections during the two-round period?",
+      "expected": "yes",
+      "single_pass": "yes",
+      "single_pass_tokens": 103,
+      "rei": "yes",
+      "rei_tokens": 64,
+      "citation": null,
+      "citation_sufficient": false
+    },
+    {
+      "packet": "rounds",
+      "question": "Was every center inspected at least once?",
+      "expected": "no",
+      "single_pass": "no",
+      "single_pass_tokens": 99,
+      "rei": "no",
+      "rei_tokens": 60,
+      "citation": null,
+      "citation_sufficient": false
+    },
+    {
+      "packet": "rides",
+      "question": "Did all database entries have a matching entry on the ride card?",
+      "expected": "no",
+      "single_pass": "no",
+      "single_pass_tokens": 115,
+      "rei": "no",
+      "rei_tokens": 76,
+      "citation": null,
+      "citation_sufficient": false
+    },
+    {
+      "packet": "rides",
+      "question": "Were all 1,857 spot checks actually performed?",
+      "expected": "uncertain",
+      "single_pass": "no",
+      "single_pass_tokens": 115,
+      "rei": "no",
+      "rei_tokens": 76,
+      "citation": null,
+      "citation_sufficient": false
+    },
+    {
+      "packet": "removed",
+      "question": "Did inspection entries exist for rides classified as removed?",
+      "expected": "yes",
+      "single_pass": "uncertain",
+      "single_pass_tokens": 118,
+      "rei": "yes",
+      "rei_tokens": 224,
+      "citation": "Inspection data attributed 294 inspections to those same rides.",
+      "citation_sufficient": false
+    },
+    {
+      "packet": "removed",
+      "question": "Did inspectors actually inspect all 16 rides after removal?",
+      "expected": "uncertain",
+      "single_pass": "uncertain",
+      "single_pass_tokens": 120,
+      "rei": "uncertain",
+      "rei_tokens": 229,
+      "citation": null,
+      "citation_sufficient": false
+    }
+  ]
+}

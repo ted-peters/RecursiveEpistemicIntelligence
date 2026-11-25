@@ -1,0 +1,58 @@
+[
+  {
+    "id": "service",
+    "source": "https://comptroller.nyc.gov/wp-content/uploads/documents/MD16_103A.pdf",
+    "evidence": ["The sample contained 849 planned service assignments.", "The service review counted 164 assignments completed late and 21 never performed."],
+    "claims": [
+      ["Did some scheduled services take place after their deadline?", "yes", [2]],
+      ["Was every planned service performed?", "no", [2]],
+      ["Did the last scheduled assignment take place?", "uncertain", []]
+    ]
+  },
+  {
+    "id": "tickets",
+    "source": "https://comptroller.nyc.gov/reports/audit-of-the-department-of-parks-and-recreations-oversight-of-indoor-recreation-centers/",
+    "evidence": ["Site visits identified 135 defects.", "The ticket register contained entries for 59 of those defects, with 28 entered before the visits."],
+    "claims": [
+      ["Were any defects already logged before the visits?", "yes", [2]],
+      ["Did the register list every defect the visitors identified?", "no", [1, 2]],
+      ["Had all 28 previously logged defects been repaired by the end of the month?", "uncertain", []]
+    ]
+  },
+  {
+    "id": "roof",
+    "source": "https://comptroller.nyc.gov/reports/audit-of-the-department-of-parks-and-recreations-oversight-of-indoor-recreation-centers/",
+    "evidence": ["Officials said funding was secured for projects covering roofs at six centers."],
+    "claims": [
+      ["Had officials reported securing funds for the roof projects?", "yes", [1]],
+      ["Had roof repairs at all six centers been completed?", "uncertain", []]
+    ]
+  },
+  {
+    "id": "rounds",
+    "source": "https://comptroller.nyc.gov/reports/audit-of-the-department-of-parks-and-recreations-oversight-of-indoor-recreation-centers/",
+    "evidence": ["Inspection teams completed 53 inspections across two rounds.", "One center received no inspection in either round."],
+    "claims": [
+      ["Did inspection teams carry out inspections during the two-round period?", "yes", [1]],
+      ["Was every center inspected at least once?", "no", [2]]
+    ]
+  },
+  {
+    "id": "rides",
+    "source": "https://comptroller.nyc.gov/reports/audit-report-on-the-department-of-buildings-controls-over-the-inspection-of-amusement-devices/",
+    "evidence": ["A database attributed 1,857 spot checks to sampled rides.", "Only 267 entries had a corresponding entry on the individual ride card."],
+    "claims": [
+      ["Did all database entries have a matching entry on the ride card?", "no", [2]],
+      ["Were all 1,857 spot checks actually performed?", "uncertain", []]
+    ]
+  },
+  {
+    "id": "removed",
+    "source": "https://comptroller.nyc.gov/reports/audit-report-on-the-department-of-buildings-controls-over-the-inspection-of-amusement-devices/",
+    "evidence": ["A register classified 16 rides as removed.", "Inspection data attributed 294 inspections to those same rides.", "The records did not resolve which classification or inspection entries were erroneous."],
+    "claims": [
+      ["Did inspection entries exist for rides classified as removed?", "yes", [1, 2]],
+      ["Did inspectors actually inspect all 16 rides after removal?", "uncertain", []]
+    ]
+  }
+]
