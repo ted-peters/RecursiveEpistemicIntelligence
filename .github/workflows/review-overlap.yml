@@ -1,0 +1,57 @@
+name: Review eligibility comparison
+on:
+  workflow_dispatch:
+  push:
+    branches: [review-overlap-trial]
+    paths:
+      - research/adaptive_rei/review_overlap_trial.py
+      - research/adaptive_rei/overlap_controls.json
+      - .github/workflows/review-overlap.yml
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start pinned Ollama on CPU
+        run: |
+          curl -fsSL --retry 3 https://github.com/ollama/ollama/releases/download/v0.12.11/ollama-linux-amd64.tgz -o /tmp/ollama.tgz
+          echo 'fb140ea4243706d0087b0108418ee5c6f74edcebf5f14e2f289b8e36bd303d0f  /tmp/ollama.tgz' | sha256sum -c
+          mkdir /tmp/rei-ollama
+          tar -xzf /tmp/ollama.tgz -C /tmp/rei-ollama
+          /tmp/rei-ollama/bin/ollama serve > /tmp/ollama.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://localhost:11434/api/tags; then break; fi
+            sleep 2
+          done
+          /tmp/rei-ollama/bin/ollama pull qwen3:4b-instruct
+      - name: Run paired comparison
+        run: |
+          python3 research/adaptive_rei/review_overlap_trial.py --shards 8 --shard ${{ matrix.shard }} > result.json
+          jq '.summary' result.json
+        shell: bash
+      - uses: actions/upload-artifact@v4
+        with:
+          name: review-overlap-${{ matrix.shard }}
+          path: result.json
+  summarize:
+    needs: compare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: review-overlap-*
+          path: shards
+      - name: Combine paired results
+        run: |
+          jq -s '.[0] as $meta | [.[].rows[]] as $rows | if ($rows|length) != 258 or ($rows|unique_by([.suite,.index])|length) != 258 then error("incomplete trial") else $meta + {rows:$rows,summary:(map(.summary)|reduce .[] as $s ({}; reduce ($s|to_entries[]) as $g (.; reduce ($g.value|to_entries[]) as $a (.; reduce ($a.value|to_entries[]) as $m (.; .[$g.key][$a.key][$m.key] += $m.value)))))} end' shards/*/result.json > result.json
+          jq '.summary' result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paired-review-results
+          path: result.json
