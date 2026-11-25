@@ -1,0 +1,10 @@
+[
+ ["Were all archive carts serviced?","Of nine carts on the service schedule, only three have signed service cards.","A custodian saw the mechanic service all nine carts.","A custodian saw two carts remain untouched for the whole service visit."],
+ ["Did the crew replace the station clock battery?","The clock job folder contains a quote. The completion sheet is missing.","The station manager watched the crew fit a new battery.","The crew chief said the battery replacement was skipped."],
+ ["Was the gallery fan cleaned last week?","The cleaning log has no entry for the gallery fan last week.","A gallery attendant watched the cleaner finish the fan last week.","The cleaner confirmed the gallery fan was left dirty throughout last week."],
+ ["Were the six park benches varnished on Tuesday?","Only four completion slips for Tuesday could be found in the bench file.","The groundskeeper watched the crew varnish all six benches on Tuesday.","The groundskeeper counted two benches the crew left unvarnished that Tuesday."],
+ ["Was the reading room thermostat tested in May?","The May testing certificate for the reading room thermostat is unavailable.","A librarian witnessed the thermostat test there in May.","The technician confirmed the May test was postponed until July."],
+ ["Did the depot team clean both water tanks?","One cleaning report survives for a two-tank order. The other report is missing.","An observer watched workers clean the inside of both tanks.","The depot supervisor confirmed the second tank remained sealed and uncleaned."],
+ ["Was the museum cart wheel replaced during the visit?","The parts desk issued a new wheel. The installation receipt is blank.","The curator saw the mechanic remove the old wheel and install the replacement.","The curator saw the mechanic leave with the new wheel after abandoning the repair."],
+ ["Did all five door closers receive adjustments?","The work plan lists five closers. Only two adjustments have corresponding entries in the log.","The building manager observed adjustments to every one of the five closers.","The building manager saw the crew skip the last closer."]
+]
