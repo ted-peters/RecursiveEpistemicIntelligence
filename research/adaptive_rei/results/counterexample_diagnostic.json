@@ -1,0 +1,1034 @@
+[
+  {
+    "packet": 0,
+    "question": "Does the board describe the soup as onion?",
+    "expected": "yes",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": null,
+        "tokens": 149,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": null,
+        "tokens": 149,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": null,
+        "tokens": 141,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 107
+      }
+    ]
+  },
+  {
+    "packet": 0,
+    "question": "Did the cook taste the listed pot?",
+    "expected": "no",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question is: 'Did the cook taste the listed pot?' The only information provided is",
+        "reason": "length",
+        "answer": null,
+        "tokens": 163,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question is: 'Did the cook taste the listed pot?' The only information provided is that 'the chalkboard lists the soup as onion' and 'the cook tasted a different pot only.' The phrase 'a different pot' implies that the pot tasted was not the one listed on the chalkboard. However, the term 'different' is ambiguous \u2014 it could mean a different pot from the one being served (i.e., the listed one), or it could mean a different pot from the one used to make the soup.",
+        "reason": "length",
+        "answer": null,
+        "tokens": 251,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 141,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 106
+      }
+    ]
+  },
+  {
+    "packet": 0,
+    "question": "Was the listed soup actually onion?",
+    "expected": "uncertain",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The line stating 'The chalkboard lists the soup as onion' provides the recorded information,",
+        "reason": "length",
+        "answer": null,
+        "tokens": 162,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The line stating 'The chalkboard lists the soup as onion' provides the recorded information, but it does not confirm whether the soup was actually onion. The cook's statement in line 2 \u2014 'tasted a different pot only' \u2014 suggests the cook did not taste the soup listed on the chalkboard, but it does not confirm whether the soup was actually onion or not. There is no direct observation or witness confirming the actual content of the soup. Therefore, we cannot determine with certainty whether the listed soup was actually onion.",
+        "reason": "length",
+        "answer": null,
+        "tokens": 250,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 140,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 105
+      }
+    ]
+  },
+  {
+    "packet": 1,
+    "question": "Were there five plugs in the box at noon?",
+    "expected": "no",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"consistency\": \"Both answers fit. The technician counted four plugs at noon, which directly contradicts the claim",
+        "reason": "length",
+        "answer": null,
+        "tokens": 165,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"consistency\": \"Both answers fit. The technician counted four plugs at noon, which directly contradicts the claim of five plugs. However, the packing slip listed five, which may reflect a prior record or a different time. Since the technician's observation is a direct observation at the time in question, and the packing slip is a record from earlier, the statement 'there were five plugs in the box at noon' cannot be confirmed by either the count or the slip. The facts do not resolve the contradiction. Therefore, the truth of the statement is",
+        "reason": "length",
+        "answer": null,
+        "tokens": 253,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 143,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 108
+      }
+    ]
+  },
+  {
+    "packet": 1,
+    "question": "Did the slip list five plugs?",
+    "expected": "yes",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 147,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 147,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 139,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 104
+      }
+    ]
+  },
+  {
+    "packet": 1,
+    "question": "Were there five plugs in the box before shipping?",
+    "expected": "uncertain",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question is: 'Were there five plugs in the box before shipping?'\\n\\n",
+        "reason": "length",
+        "answer": null,
+        "tokens": 165,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question is: 'Were there five plugs in the box before shipping?'\\n\\nLine 1 states: 'A technician counted four plugs in the box at noon.' This is a direct observation of the state of the box at a specific time (noon), but it does not specify whether this was before or after shipping. The timing of 'before shipping' is not established.\\n\\nLine 2: 'The packing slip listed five.' This is a record of what was intended or documented, but it does not confirm",
+        "reason": "length",
+        "answer": null,
+        "tokens": 253,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 143,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 108
+      }
+    ]
+  },
+  {
+    "packet": 2,
+    "question": "Did Mira staff the desk on Tuesday?",
+    "expected": "uncertain",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The posted roster assigns Mira to Tuesday (line 1), which suggests she was scheduled",
+        "reason": "length",
+        "answer": null,
+        "tokens": 168,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"consistency\": \"Both answers fit: The roster assigns Mira to Tuesday, which suggests she was scheduled to staff the desk on Tuesday. However, the observer saw her only on Wednesday, which contradicts the Tuesday assignment unless the observer is mistaken or the roster is incorrect. Since the question is whether she staffed the desk on Tuesday, and we have a scheduled assignment but no direct observation of her being present on Tuesday, the truth of the statement is uncertain. The opposite answer (no) could still be true if the roster is incorrect or if",
+        "reason": "length",
+        "answer": null,
+        "tokens": 256,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 146,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 111
+      }
+    ]
+  },
+  {
+    "packet": 2,
+    "question": "Did the observer see Mira there on Wednesday?",
+    "expected": "yes",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 154,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 154,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 146,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 111
+      }
+    ]
+  },
+  {
+    "packet": 2,
+    "question": "Did the observer see Mira there on Tuesday?",
+    "expected": "no",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The observer saw Mira at the desk on Wednesday only. The question is whether the observer",
+        "reason": "length",
+        "answer": null,
+        "tokens": 169,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The observer saw Mira at the desk on Wednesday only. The question is whether the observer saw Mira there on Tuesday. There is no direct statement or observation about Tuesday. The posted roster assigns Mira to Tuesday, but that does not confirm whether the observer saw her on Tuesday. Since the observer's statement only specifies Wednesday, and there is no evidence of Tuesday observation, we cannot confirm whether the observer saw Mira on Tuesday. Therefore, the truth of the statement 'the observer saw Mira there on Tuesday' is not",
+        "reason": "length",
+        "answer": null,
+        "tokens": 257,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 147,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 112
+      }
+    ]
+  },
+  {
+    "packet": 3,
+    "question": "Did the map label the courtyard pine?",
+    "expected": "no",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The map labels the courtyard oak (line 1). The botanist identifies the tree",
+        "reason": "length",
+        "answer": null,
+        "tokens": 168,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The map labels the courtyard oak (line 1). The botanist identifies the tree as a pine (line 2). The statement 'the map labels the courtyard pine' would require the map to label a pine, but the map is said to label an oak. There is no direct statement that the map labels a pine. The facts are: (1) the map labels the courtyard oak; (2) the tree is a pine. This creates a contradiction unless the map labels the oak, and the tree is a",
+        "reason": "length",
+        "answer": null,
+        "tokens": 256,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 146,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 111
+      }
+    ]
+  },
+  {
+    "packet": 3,
+    "question": "Was its tree a pine when examined?",
+    "expected": "yes",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\",\n  \"could_be_opposite\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 154,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\",\n  \"could_be_opposite\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 154,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 145,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 110
+      }
+    ]
+  },
+  {
+    "packet": 3,
+    "question": "Had the tree been replaced since the map was made?",
+    "expected": "uncertain",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The map labels the courtyard oak, which implies the tree was present and identifiable at the time",
+        "reason": "length",
+        "answer": null,
+        "tokens": 171,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The map labels the courtyard oak, which implies the tree was present and identifiable at the time the map was made. The botanist later examined the sole tree and identified it as a pine. However, the map labels it as an 'oak,' and a pine is not an oak. This discrepancy suggests a contradiction unless the tree was replaced. The question is whether the tree could have been replaced since the map was made. The map's label (oak) and the botanist's identification (pine) are factual",
+        "reason": "length",
+        "answer": null,
+        "tokens": 259,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 149,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 114
+      }
+    ]
+  },
+  {
+    "packet": 4,
+    "question": "Did the guest use booth six during lunch?",
+    "expected": "no",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question is whether the guest used booth six during lunch. There is no direct statement or",
+        "reason": "length",
+        "answer": null,
+        "tokens": 161,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question is whether the guest used booth six during lunch. There is no direct statement or observation in the provided lines that confirms or denies the guest using booth six. Line 1 states that a reservation names booth six, but this does not indicate that the guest used it. Line 2 states the guest used booth seven throughout lunch, which implies they did not use booth six during lunch. However, the absence of a statement about booth six being used does not confirm it was not used. Since the facts do not explicitly state whether",
+        "reason": "length",
+        "answer": null,
+        "tokens": 249,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 139,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 104
+      }
+    ]
+  },
+  {
+    "packet": 4,
+    "question": "Was booth six reserved?",
+    "expected": "yes",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\",\n  \"before_committing\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 144,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\",\n  \"before_committing\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 144,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 134,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 100
+      }
+    ]
+  },
+  {
+    "packet": 4,
+    "question": "Was booth six occupied by another guest?",
+    "expected": "uncertain",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question asks whether booth six was occupied by another guest. The only information provided is that",
+        "reason": "length",
+        "answer": null,
+        "tokens": 160,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question asks whether booth six was occupied by another guest. The only information provided is that a reservation names booth six (statement 1) and that the guest used booth seven throughout lunch (statement 2). There is no direct observation or statement about the occupancy of booth six during the time of lunch. Therefore, we cannot determine from the given facts whether booth six was occupied by another guest. The statement about booth six being reserved does not imply occupancy by another guest \u2014 it only indicates a reservation. Without a witness or record confirming",
+        "reason": "length",
+        "answer": null,
+        "tokens": 248,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 138,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 103
+      }
+    ]
+  },
+  {
+    "packet": 5,
+    "question": "Did the contents weigh 80 grams before opening?",
+    "expected": "uncertain",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question asks whether the contents weighed 80 grams before opening. The wrapper says ",
+        "reason": "length",
+        "answer": null,
+        "tokens": 170,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question asks whether the contents weighed 80 grams before opening. The wrapper says 80 grams, which is a label indicating the declared weight, not necessarily the actual weight before opening. A scale measured the contents at 78 grams after opening, which suggests that the actual weight of the contents decreased after opening. However, this does not directly confirm or deny the weight before opening. There is no direct observation or measurement of the weight before opening. Therefore, the exact weight before opening is not recorded or witnessed. The",
+        "reason": "length",
+        "answer": null,
+        "tokens": 258,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 148,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 112
+      }
+    ]
+  },
+  {
+    "packet": 5,
+    "question": "Did the wrapper state 80 grams?",
+    "expected": "yes",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 153,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 153,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 145,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 110
+      }
+    ]
+  },
+  {
+    "packet": 5,
+    "question": "Did the scale show 80 grams after opening?",
+    "expected": "no",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"no\",\n  \"both_fit\": false\n}",
+        "reason": "stop",
+        "answer": "no",
+        "tokens": 154,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"no\",\n  \"both_fit\": false\n}",
+        "reason": "stop",
+        "answer": "no",
+        "tokens": 154,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"no\"\n}",
+        "reason": "stop",
+        "answer": "no",
+        "tokens": 147,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"no\"\n}",
+        "reason": "stop",
+        "answer": "no",
+        "tokens": 112
+      }
+    ]
+  },
+  {
+    "packet": 6,
+    "question": "Was the scarf blue at inspection?",
+    "expected": "yes",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 150,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 150,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 142,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 107
+      }
+    ]
+  },
+  {
+    "packet": 6,
+    "question": "Did the clerk record a blue scarf?",
+    "expected": "no",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"consistency\": \"Both answers fit: the clerk could have recorded a green scarf (as stated in line ",
+        "reason": "length",
+        "answer": null,
+        "tokens": 166,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"consistency\": \"Both answers fit: the clerk could have recorded a green scarf (as stated in line 1), and the buyer saw it as blue (as stated in line 2). The recorded statement and the observation could both be true independently. Since the clerk's record and the buyer's observation are about different things (recorded vs. observed), and there is no contradiction between them, the truth of the recorded statement (green) and the observed fact (blue) can coexist. Therefore, it is uncertain whether the clerk recorded a",
+        "reason": "length",
+        "answer": null,
+        "tokens": 254,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 144,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 109
+      }
+    ]
+  },
+  {
+    "packet": 6,
+    "question": "Did the clerk inspect the scarf before making the entry?",
+    "expected": "uncertain",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question is whether the clerk inspected the scarf before making the entry. There is no direct",
+        "reason": "length",
+        "answer": null,
+        "tokens": 169,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question is whether the clerk inspected the scarf before making the entry. There is no direct statement or observation from a witness that states or implies whether the clerk inspected the scarf. The clerk recorded a green scarf (line 1), but a buyer later found it blue under daylight (line 2). This discrepancy suggests a possible error in the recording, but it does not confirm whether the clerk inspected the scarf. There is no evidence provided about the clerk's actions prior to recording. Therefore, the truth of the statement about inspection is",
+        "reason": "length",
+        "answer": null,
+        "tokens": 257,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 147,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 112
+      }
+    ]
+  },
+  {
+    "packet": 7,
+    "question": "Did a duet occur later?",
+    "expected": "uncertain",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question is: 'Did a duet occur later?' The only relevant information provided is",
+        "reason": "length",
+        "answer": null,
+        "tokens": 166,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\",\n  \"reasoning\": \"The question is: 'Did a duet occur later?' The only relevant information provided is that the poster promised a duet, and a listener attended only the opening solo and left before the second piece. There is no direct statement or witness account confirming or denying that a duet occurred. The poster's promise does not guarantee that a duet actually happened. The listener's attendance only confirms they saw the opening solo and left before the second piece, which implies the second piece (possibly the duet) did not occur for them",
+        "reason": "length",
+        "answer": null,
+        "tokens": 254,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 144,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 109
+      }
+    ]
+  },
+  {
+    "packet": 7,
+    "question": "Did the poster promise a duet?",
+    "expected": "yes",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 152,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 152,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 1,\n  \"answer\": \"yes\"\n}",
+        "reason": "stop",
+        "answer": "yes",
+        "tokens": 144,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 0,\n  \"answer\": \"uncertain\"\n}",
+        "reason": "stop",
+        "answer": "uncertain",
+        "tokens": 110
+      }
+    ]
+  },
+  {
+    "packet": 7,
+    "question": "Did the listener stay for the second piece?",
+    "expected": "no",
+    "probes": [
+      {
+        "limit": 40,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"no\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "no",
+        "tokens": 153,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 128,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"no\",\n  \"both_answers_fit\": false\n}",
+        "reason": "stop",
+        "answer": "no",
+        "tokens": 153,
+        "constrained": false,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"no\"\n}",
+        "reason": "stop",
+        "answer": "no",
+        "tokens": 145,
+        "check_opposite": true
+      },
+      {
+        "limit": 40,
+        "constrained": true,
+        "check_opposite": false,
+        "raw": "{\n  \"line\": 2,\n  \"answer\": \"no\"\n}",
+        "reason": "stop",
+        "answer": "no",
+        "tokens": 110
+      }
+    ]
+  }
+]
