@@ -5,7 +5,7 @@ import urllib.request
 from evidence_register import evidence_passage, explicit_answer
 
 
-def decide(url, model, text, *, separate_reports=False, trace_sources=False):
+def decide(url, model, text, *, separate_reports=False, trace_sources=False, constrained=False):
     result = explicit_answer(text)
     if result is not None:
         return {"answer": result}, 0
@@ -24,10 +24,17 @@ def decide(url, model, text, *, separate_reports=False, trace_sources=False):
                           + question + "?\nAnswer yes, no, or uncertain:")
     payload = {"model": model, "prompt": prompt, "stream": False,
                "options": {"temperature": 0, "seed": 42, "num_predict": 12}}
+    if constrained:
+        payload["format"] = {"type": "string", "enum": ["yes", "no", "uncertain"]}
     request = urllib.request.Request(url + "/api/generate", json.dumps(payload).encode(),
                                      {"Content-Type": "application/json"})
     with urllib.request.urlopen(request, timeout=90) as response:
         output = json.load(response)
     answer = output["response"].strip().lower().removesuffix(".")
+    if constrained:
+        try:
+            answer = json.loads(output["response"])
+        except ValueError:
+            answer = None
     return {"answer": answer if answer in ("yes", "no", "uncertain") else None}, (
         output["prompt_eval_count"] + output["eval_count"])
