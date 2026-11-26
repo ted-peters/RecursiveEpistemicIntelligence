@@ -1,0 +1,462 @@
+{
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "rows": [
+    {
+      "question": "Was tray K ceramic?",
+      "kind": "copy",
+      "lines": [
+        "The shop card calls tray K ceramic without giving a source.",
+        "The sales leaflet repeats the shop card.",
+        "The price tag uses the leaflet description."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 0,
+      "answer": "uncertain",
+      "tokens": 88,
+      "selection_tokens": 88,
+      "conventional": "yes",
+      "conventional_tokens": 106,
+      "current": "yes",
+      "current_tokens": 67
+    },
+    {
+      "question": "Was tray K ceramic?",
+      "kind": "wrong_item",
+      "lines": [
+        "A technician tested tray L and identified ceramic.",
+        "The sales leaflet repeats the shop card.",
+        "The shop card calls tray K ceramic without giving a source."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 1,
+      "answer": "uncertain",
+      "tokens": 135,
+      "selection_tokens": 88,
+      "conventional": "uncertain",
+      "conventional_tokens": 107,
+      "current": "uncertain",
+      "current_tokens": 203
+    },
+    {
+      "question": "Was tray K ceramic?",
+      "kind": "supports",
+      "lines": [
+        "The sales leaflet repeats the shop card.",
+        "The shop card calls tray K ceramic without giving a source.",
+        "A technician tested tray K and identified ceramic."
+      ],
+      "expected": "yes",
+      "expected_line": 3,
+      "selected": 3,
+      "answer": "yes",
+      "tokens": 134,
+      "selection_tokens": 88,
+      "conventional": "yes",
+      "conventional_tokens": 106,
+      "current": "yes",
+      "current_tokens": 67
+    },
+    {
+      "question": "Was tray K ceramic?",
+      "kind": "contradicts",
+      "lines": [
+        "The shop card calls tray K ceramic without giving a source.",
+        "The sales leaflet repeats the shop card.",
+        "A technician tested tray K and identified steel."
+      ],
+      "expected": "no",
+      "expected_line": 3,
+      "selected": 3,
+      "answer": "no",
+      "tokens": 134,
+      "selection_tokens": 88,
+      "conventional": "no",
+      "conventional_tokens": 106,
+      "current": "no",
+      "current_tokens": 67
+    },
+    {
+      "question": "Did the west pump run at noon?",
+      "kind": "copy",
+      "lines": [
+        "The dashboard imports the rota.",
+        "The noon bulletin repeats the dashboard status.",
+        "The rota scheduled the west pump to run at noon."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 3,
+      "answer": "yes",
+      "tokens": 140,
+      "selection_tokens": 88,
+      "conventional": "yes",
+      "conventional_tokens": 106,
+      "current": "yes",
+      "current_tokens": 67
+    },
+    {
+      "question": "Did the west pump run at noon?",
+      "kind": "wrong_item",
+      "lines": [
+        "The dashboard imports the rota.",
+        "The rota scheduled the west pump to run at noon.",
+        "At noon a mechanic watched the east pump run."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 3,
+      "answer": "uncertain",
+      "tokens": 141,
+      "selection_tokens": 90,
+      "conventional": "uncertain",
+      "conventional_tokens": 109,
+      "current": "yes",
+      "current_tokens": 206
+    },
+    {
+      "question": "Did the west pump run at noon?",
+      "kind": "supports",
+      "lines": [
+        "At noon a mechanic stood beside the west pump and watched it run.",
+        "The rota scheduled the west pump to run at noon.",
+        "The dashboard imports the rota."
+      ],
+      "expected": "yes",
+      "expected_line": 1,
+      "selected": 1,
+      "answer": "yes",
+      "tokens": 148,
+      "selection_tokens": 94,
+      "conventional": "yes",
+      "conventional_tokens": 112,
+      "current": "yes",
+      "current_tokens": 73
+    },
+    {
+      "question": "Did the west pump run at noon?",
+      "kind": "contradicts",
+      "lines": [
+        "The dashboard imports the rota.",
+        "At noon a mechanic at the west pump found it stationary and switched off.",
+        "The rota scheduled the west pump to run at noon."
+      ],
+      "expected": "no",
+      "expected_line": 2,
+      "selected": 2,
+      "answer": "yes",
+      "tokens": 150,
+      "selection_tokens": 95,
+      "conventional": "no",
+      "conventional_tokens": 113,
+      "current": "no",
+      "current_tokens": 74
+    },
+    {
+      "question": "Were there eight spoons in box B?",
+      "kind": "copy",
+      "lines": [
+        "The receipt reproduces the billing quantity.",
+        "The packing estimate lists eight spoons for box B.",
+        "The billing system copies the packing estimate."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 2,
+      "answer": "uncertain",
+      "tokens": 142,
+      "selection_tokens": 89,
+      "conventional": "yes",
+      "conventional_tokens": 107,
+      "current": "yes",
+      "current_tokens": 68
+    },
+    {
+      "question": "Were there eight spoons in box B?",
+      "kind": "wrong_item",
+      "lines": [
+        "The billing system copies the packing estimate.",
+        "An inspector emptied box D and counted eight spoons.",
+        "The packing estimate lists eight spoons for box B."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 3,
+      "answer": "uncertain",
+      "tokens": 145,
+      "selection_tokens": 92,
+      "conventional": "uncertain",
+      "conventional_tokens": 111,
+      "current": "yes",
+      "current_tokens": 210
+    },
+    {
+      "question": "Were there eight spoons in box B?",
+      "kind": "supports",
+      "lines": [
+        "An inspector emptied box B and counted eight spoons.",
+        "The packing estimate lists eight spoons for box B.",
+        "The billing system copies the packing estimate."
+      ],
+      "expected": "yes",
+      "expected_line": 1,
+      "selected": 1,
+      "answer": "yes",
+      "tokens": 144,
+      "selection_tokens": 92,
+      "conventional": "yes",
+      "conventional_tokens": 110,
+      "current": "yes",
+      "current_tokens": 71
+    },
+    {
+      "question": "Were there eight spoons in box B?",
+      "kind": "contradicts",
+      "lines": [
+        "An inspector emptied box B and counted only five spoons.",
+        "The billing system copies the packing estimate.",
+        "The packing estimate lists eight spoons for box B."
+      ],
+      "expected": "no",
+      "expected_line": 1,
+      "selected": 1,
+      "answer": "no",
+      "tokens": 146,
+      "selection_tokens": 93,
+      "conventional": "uncertain",
+      "conventional_tokens": 112,
+      "current": "no",
+      "current_tokens": 72
+    },
+    {
+      "question": "Was the foyer sign lit at closing?",
+      "kind": "copy",
+      "lines": [
+        "The handover form reproduces the lighting plan.",
+        "The lighting plan called for the foyer sign to be off at closing.",
+        "The caretaker's email quotes the handover form."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 2,
+      "answer": "no",
+      "tokens": 150,
+      "selection_tokens": 96,
+      "conventional": "no",
+      "conventional_tokens": 114,
+      "current": "no",
+      "current_tokens": 75
+    },
+    {
+      "question": "Was the foyer sign lit at closing?",
+      "kind": "wrong_item",
+      "lines": [
+        "The handover form reproduces the lighting plan.",
+        "At closing an usher saw the lobby clock glowing.",
+        "The lighting plan called for the foyer sign to be off at closing."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 2,
+      "answer": "uncertain",
+      "tokens": 146,
+      "selection_tokens": 95,
+      "conventional": "uncertain",
+      "conventional_tokens": 114,
+      "current": "no",
+      "current_tokens": 74
+    },
+    {
+      "question": "Was the foyer sign lit at closing?",
+      "kind": "supports",
+      "lines": [
+        "The lighting plan called for the foyer sign to be off at closing.",
+        "The handover form reproduces the lighting plan.",
+        "At closing an usher saw the foyer sign glowing."
+      ],
+      "expected": "yes",
+      "expected_line": 3,
+      "selected": 3,
+      "answer": "yes",
+      "tokens": 145,
+      "selection_tokens": 95,
+      "conventional": "uncertain",
+      "conventional_tokens": 114,
+      "current": "no",
+      "current_tokens": 74
+    },
+    {
+      "question": "Was the foyer sign lit at closing?",
+      "kind": "contradicts",
+      "lines": [
+        "The lighting plan called for the foyer sign to be off at closing.",
+        "At closing an usher checked the foyer sign and found it dark.",
+        "The handover form reproduces the lighting plan."
+      ],
+      "expected": "no",
+      "expected_line": 2,
+      "selected": 2,
+      "answer": "no",
+      "tokens": 151,
+      "selection_tokens": 98,
+      "conventional": "yes",
+      "conventional_tokens": 116,
+      "current": "yes",
+      "current_tokens": 77
+    },
+    {
+      "question": "Did the tray reach table six before eight?",
+      "kind": "copy",
+      "lines": [
+        "The waiter schedule reproduces the bookings estimate.",
+        "The printed itinerary quotes the schedule.",
+        "The bookings file predicts the tray will arrive at table six after eight."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 3,
+      "answer": "no",
+      "tokens": 147,
+      "selection_tokens": 92,
+      "conventional": "no",
+      "conventional_tokens": 110,
+      "current": "no",
+      "current_tokens": 71
+    },
+    {
+      "question": "Did the tray reach table six before eight?",
+      "kind": "wrong_item",
+      "lines": [
+        "The bookings file predicts the tray will arrive at table six after eight.",
+        "A diner at table seven accepted a tray at seven thirty.",
+        "The waiter schedule reproduces the bookings estimate."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 2,
+      "answer": "uncertain",
+      "tokens": 151,
+      "selection_tokens": 97,
+      "conventional": "no",
+      "conventional_tokens": 115,
+      "current": "no",
+      "current_tokens": 76
+    },
+    {
+      "question": "Did the tray reach table six before eight?",
+      "kind": "supports",
+      "lines": [
+        "The waiter schedule reproduces the bookings estimate.",
+        "The bookings file predicts the tray will arrive at table six after eight.",
+        "A diner at table six accepted the tray at seven thirty."
+      ],
+      "expected": "yes",
+      "expected_line": 3,
+      "selected": 3,
+      "answer": "uncertain",
+      "tokens": 151,
+      "selection_tokens": 97,
+      "conventional": "no",
+      "conventional_tokens": 115,
+      "current": "no",
+      "current_tokens": 76
+    },
+    {
+      "question": "Did the tray reach table six before eight?",
+      "kind": "contradicts",
+      "lines": [
+        "The bookings file predicts the tray will arrive at table six after eight.",
+        "The waiter schedule reproduces the bookings estimate.",
+        "A diner watched the tray arrive at table six for the first time at nine."
+      ],
+      "expected": "no",
+      "expected_line": 3,
+      "selected": 3,
+      "answer": "no",
+      "tokens": 158,
+      "selection_tokens": 101,
+      "conventional": "no",
+      "conventional_tokens": 119,
+      "current": "no",
+      "current_tokens": 80
+    },
+    {
+      "question": "Was the north locker empty on Monday morning?",
+      "kind": "copy",
+      "lines": [
+        "A display mirrored the roster entry.",
+        "The roster marks the north locker occupied on Monday morning without an inspection.",
+        "The newsletter quoted the display."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 2,
+      "answer": "no",
+      "tokens": 144,
+      "selection_tokens": 89,
+      "conventional": "no",
+      "conventional_tokens": 107,
+      "current": "yes",
+      "current_tokens": 68
+    },
+    {
+      "question": "Was the north locker empty on Monday morning?",
+      "kind": "wrong_item",
+      "lines": [
+        "The roster marks the north locker occupied on Monday morning without an inspection.",
+        "On Monday morning the attendant opened the south locker and saw nothing inside.",
+        "A display mirrored the roster entry."
+      ],
+      "expected": "uncertain",
+      "expected_line": 0,
+      "selected": 2,
+      "answer": "uncertain",
+      "tokens": 153,
+      "selection_tokens": 97,
+      "conventional": "uncertain",
+      "conventional_tokens": 116,
+      "current": "no",
+      "current_tokens": 220
+    },
+    {
+      "question": "Was the north locker empty on Monday morning?",
+      "kind": "supports",
+      "lines": [
+        "A display mirrored the roster entry.",
+        "On Monday morning the attendant opened the north locker and saw nothing inside.",
+        "The roster marks the north locker occupied on Monday morning without an inspection."
+      ],
+      "expected": "yes",
+      "expected_line": 2,
+      "selected": 2,
+      "answer": "yes",
+      "tokens": 152,
+      "selection_tokens": 97,
+      "conventional": "uncertain",
+      "conventional_tokens": 116,
+      "current": "no",
+      "current_tokens": 76
+    },
+    {
+      "question": "Was the north locker empty on Monday morning?",
+      "kind": "contradicts",
+      "lines": [
+        "The roster marks the north locker occupied on Monday morning without an inspection.",
+        "On Monday morning the attendant opened the north locker and found a coat inside.",
+        "A display mirrored the roster entry."
+      ],
+      "expected": "no",
+      "expected_line": 2,
+      "selected": 2,
+      "answer": "no",
+      "tokens": 154,
+      "selection_tokens": 98,
+      "conventional": "no",
+      "conventional_tokens": 116,
+      "current": "yes",
+      "current_tokens": 77
+    }
+  ]
+}
