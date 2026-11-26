@@ -1,0 +1,924 @@
+{
+  "digests": {
+    "qwen3:4b-instruct": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+    "llama3.2:1b": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878"
+  },
+  "rows": [
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was sample K amber? A catalogue repeats the collector's untested guess that K was amber.",
+      "expected": "uncertain",
+      "original": "uncertain",
+      "fact": "A catalogue repeats the collector's untested guess that K was amber.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 108,
+      "checked_tokens": 108
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was sample K amber? A laboratory tested K and identified glass with no amber present.",
+      "expected": "no",
+      "original": "no",
+      "fact": "A laboratory tested K and identified glass with no amber present.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 103,
+      "checked_tokens": 204
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was sample K amber? A laboratory tested K and identified amber.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "A laboratory tested K and identified amber.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 95,
+      "checked_tokens": 95
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was the stage empty at 18:00? A photograph at 18:20 shows an empty stage. The preceding interval is undocumented.",
+      "expected": "uncertain",
+      "original": "uncertain",
+      "fact": "A photograph at 18:20 shows an empty stage.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 121,
+      "checked_tokens": 121
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was the stage empty at 18:00? At 18:00 an usher saw a violinist standing on stage.",
+      "expected": "no",
+      "original": "no",
+      "fact": "At 18:00 an usher saw a violinist standing on stage.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 120,
+      "checked_tokens": 238
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was the stage empty at 18:00? At 18:00 an usher checked the whole stage and found it empty.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "At 18:00 an usher checked the whole stage and found it empty.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 122,
+      "checked_tokens": 122
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Did the east locker contain the medal? The medal was delivered to the building. Its storage location was never logged.",
+      "expected": "uncertain",
+      "original": "uncertain",
+      "fact": "The medal was delivered but storage location was never logged.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 109,
+      "checked_tokens": 109
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Did the east locker contain the medal? The custodian opened the east locker and found it completely empty.",
+      "expected": "no",
+      "original": "no",
+      "fact": "The east locker was completely empty.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 102,
+      "checked_tokens": 202
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Did the east locker contain the medal? The custodian opened the east locker and saw the medal inside.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "The custodian opened the east locker and saw the medal inside.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 108,
+      "checked_tokens": 108
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Had all six rolls been stamped? Four rolls had readable stamps. The remaining two were never inspected.",
+      "expected": "uncertain",
+      "original": "uncertain",
+      "fact": "Four rolls had readable stamps. Remaining two never inspected.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 106,
+      "checked_tokens": 106
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Had all six rolls been stamped? Four rolls were stamped and the remaining two were inspected and found unstamped.",
+      "expected": "no",
+      "original": "no",
+      "fact": "Four rolls stamped; two unstamped; not all six rolls stamped.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 110,
+      "checked_tokens": 218
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Had all six rolls been stamped? All six rolls were examined separately and each bore a stamp.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "All six rolls were examined and each bore a stamp.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 104,
+      "checked_tokens": 104
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was Mira a voting member? Members wear green pins; visitors may wear them too. Mira wore a green pin.",
+      "expected": "uncertain",
+      "original": "uncertain",
+      "fact": "Mira wore a green pin.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 107,
+      "checked_tokens": 107
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was Mira a voting member? The complete membership register explicitly classified Mira as a nonmember visitor.",
+      "expected": "no",
+      "original": "no",
+      "fact": "Mira was classified as a nonmember visitor.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 105,
+      "checked_tokens": 208
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was Mira a voting member? The complete membership register identified Mira as a voting member.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "The complete membership register identified Mira as a voting member.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 105,
+      "checked_tokens": 105
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was the first whistle before 09:00? The whistle was heard that morning; nobody recorded the time.",
+      "expected": "uncertain",
+      "original": "uncertain",
+      "fact": "The whistle was heard that morning; nobody recorded the time.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 111,
+      "checked_tokens": 111
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was the first whistle before 09:00? The first whistle sounded at 09:03.",
+      "expected": "no",
+      "original": "no",
+      "fact": "The first whistle sounded at 09:03.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 110,
+      "checked_tokens": 218
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "fresh",
+      "question": "Was the first whistle before 09:00? The first whistle sounded at 08:57.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "The first whistle sounded at 08:57.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 110,
+      "checked_tokens": 110
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Can seven complete sets of four be assembled? There are 27 pencils available.",
+      "expected": "no",
+      "original": "no",
+      "fact": "27 pencils available; each set needs 4 pencils.",
+      "review": {
+        "answer": "uncertain"
+      },
+      "checked": "uncertain",
+      "original_tokens": 103,
+      "checked_tokens": 206
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Are exactly nine slips left? There were 15; six were removed. Someone may have removed others.",
+      "expected": "uncertain",
+      "original": "uncertain",
+      "fact": "15 total; 6 removed; unknown if others removed.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 110,
+      "checked_tokens": 110
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Are 31 seats left? There were 45 vacant seats; 14 guests then sat down and nobody else moved.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "45 vacant seats; 14 sat down; 31 left.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 117,
+      "checked_tokens": 117
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Is Nur an editor? Every editor has an access card. Nur has a card; contractors can have cards too.",
+      "expected": "uncertain",
+      "original": "uncertain",
+      "fact": "Every editor has an access card. Nur has a card.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 110,
+      "checked_tokens": 110
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Is kiosk M powered? Every operating kiosk is powered. M is operating.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "Every operating kiosk is powered. M is operating.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 102,
+      "checked_tokens": 102
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Is parcel G insured? Every insured parcel bears a seal. G has no seal.",
+      "expected": "no",
+      "original": "no",
+      "fact": "Every insured parcel bears a seal. G has no seal.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 103,
+      "checked_tokens": 204
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Was the first train after 14:30? The first train arrived at 2:35 p.m. that day.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "The first train arrived at 2:35 p.m. that day.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 118,
+      "checked_tokens": 118
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Was the hall vacant at ten? The only count occurred at 10:12 and found it empty.",
+      "expected": "uncertain",
+      "original": "no",
+      "fact": "The only count was at 10:12, not at 10:00.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 118,
+      "checked_tokens": 234
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Did the first visitor arrive before 07:15? The first visitor arrived at 7:20 a.m.",
+      "expected": "no",
+      "original": "no",
+      "fact": "The first visitor arrived at 7:20 a.m.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 113,
+      "checked_tokens": 224
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Did the journal report a cancellation? The journal lists a postponement only. Later the organizer cancelled the event.",
+      "expected": "no",
+      "original": "no",
+      "fact": "The journal lists a postponement only.",
+      "review": {
+        "answer": "uncertain"
+      },
+      "checked": "uncertain",
+      "original_tokens": 104,
+      "checked_tokens": 207
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Was the sample pure gold? A brochure repeats the owner's untested guess that it was pure gold.",
+      "expected": "uncertain",
+      "original": "no",
+      "fact": "A brochure repeats an untested guess, not a verified fact.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 108,
+      "checked_tokens": 214
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Was the blue folder handed over? A witness saw the recipient accept the blue folder, although the tracking screen said pending.",
+      "expected": "yes",
+      "original": "uncertain",
+      "fact": "Witness saw acceptance, tracking says pending.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 107,
+      "checked_tokens": 107
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Did every tested valve pass? Only valves A and B were tested and both passed.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "Only valves A and B were tested and both passed.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 102,
+      "checked_tokens": 102
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Were all ten exhibits displayed? Nine were displayed and one remained boxed all day.",
+      "expected": "no",
+      "original": "no",
+      "fact": "Nine were displayed and one remained boxed all day.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 100,
+      "checked_tokens": 198
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Were all the cans sealed? Five of seven were examined and found sealed; the other two were never examined.",
+      "expected": "uncertain",
+      "original": "uncertain",
+      "fact": "Five of seven cans examined were sealed; two unexamined.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 110,
+      "checked_tokens": 110
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Did the sale alone cause the increase? A discount and a newspaper feature started together before orders increased.",
+      "expected": "uncertain",
+      "original": "uncertain",
+      "fact": "A discount and feature started before orders increased.",
+      "review": null,
+      "checked": "uncertain",
+      "original_tokens": 104,
+      "checked_tokens": 104
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Did tomorrow's concert cause last week's noise by its performance? The concert's only performance is tomorrow.",
+      "expected": "no",
+      "original": "no",
+      "fact": "The concert's only performance is tomorrow.",
+      "review": {
+        "answer": "keep"
+      },
+      "checked": "no",
+      "original_tokens": 103,
+      "checked_tokens": 204
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "suite": "prior",
+      "question": "Did trigger Z start the motor in this test? The motor started in the test and trigger Z was its only possible cause.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "The motor started and trigger Z was its only possible cause.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 111,
+      "checked_tokens": 111
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was sample K amber? A catalogue repeats the collector's untested guess that K was amber.",
+      "expected": "uncertain",
+      "original": "yes",
+      "fact": "Collector's untested guess that K was amber",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 124,
+      "checked_tokens": 124
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was sample K amber? A laboratory tested K and identified glass with no amber present.",
+      "expected": "no",
+      "original": "no",
+      "fact": "Sample K amber was tested and identified glass with no amber present.",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 126,
+      "checked_tokens": 245
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was sample K amber? A laboratory tested K and identified amber.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "Sample K amber was tested and identified by a laboratory.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 119,
+      "checked_tokens": 119
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was the stage empty at 18:00? A photograph at 18:20 shows an empty stage. The preceding interval is undocumented.",
+      "expected": "uncertain",
+      "original": "yes",
+      "fact": "Photograph shows empty stage at 18:20",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 134,
+      "checked_tokens": 134
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was the stage empty at 18:00? At 18:00 an usher saw a violinist standing on stage.",
+      "expected": "no",
+      "original": "no",
+      "fact": "The stage was empty at 18:00.",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 130,
+      "checked_tokens": 255
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was the stage empty at 18:00? At 18:00 an usher checked the whole stage and found it empty.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "The usher checked the whole stage and found it empty at 18:00.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 137,
+      "checked_tokens": 137
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Did the east locker contain the medal? The medal was delivered to the building. Its storage location was never logged.",
+      "expected": "uncertain",
+      "original": "no",
+      "fact": "The east locker was empty.",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 120,
+      "checked_tokens": 238
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Did the east locker contain the medal? The custodian opened the east locker and found it completely empty.",
+      "expected": "no",
+      "original": "no",
+      "fact": "The custodian opened the east locker and found it completely empty.",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 129,
+      "checked_tokens": 253
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Did the east locker contain the medal? The custodian opened the east locker and saw the medal inside.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "The custodian opened the east locker and saw the medal inside.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 129,
+      "checked_tokens": 129
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Had all six rolls been stamped? Four rolls had readable stamps. The remaining two were never inspected.",
+      "expected": "uncertain",
+      "original": "yes",
+      "fact": "Four rolls had readable stamps.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 146,
+      "checked_tokens": 146
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Had all six rolls been stamped? Four rolls were stamped and the remaining two were inspected and found unstamped.",
+      "expected": "no",
+      "original": "yes",
+      "fact": "Four rolls were stamped and the remaining two were inspected and found unstamped.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 153,
+      "checked_tokens": 153
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Had all six rolls been stamped? All six rolls were examined separately and each bore a stamp.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "All six rolls were stamped",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 120,
+      "checked_tokens": 120
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was Mira a voting member? Members wear green pins; visitors may wear them too. Mira wore a green pin.",
+      "expected": "uncertain",
+      "original": "yes",
+      "fact": "Mira wore a green pin.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 127,
+      "checked_tokens": 127
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was Mira a voting member? The complete membership register explicitly classified Mira as a nonmember visitor.",
+      "expected": "no",
+      "original": "no",
+      "fact": "Mira was a nonmember visitor.",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 124,
+      "checked_tokens": 239
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was Mira a voting member? The complete membership register identified Mira as a voting member.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "Mira was a voting member",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 121,
+      "checked_tokens": 121
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was the first whistle before 09:00? The whistle was heard that morning; nobody recorded the time.",
+      "expected": "uncertain",
+      "original": "no",
+      "fact": "The whistle was heard that morning; nobody recorded the time.",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 129,
+      "checked_tokens": 253
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was the first whistle before 09:00? The first whistle sounded at 09:03.",
+      "expected": "no",
+      "original": "yes",
+      "fact": "The first whistle sounded at 09:03",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 125,
+      "checked_tokens": 125
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "fresh",
+      "question": "Was the first whistle before 09:00? The first whistle sounded at 08:57.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "The first whistle sounded at 08:57",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 125,
+      "checked_tokens": 125
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Can seven complete sets of four be assembled? There are 27 pencils available.",
+      "expected": "no",
+      "original": "no",
+      "fact": "There are 27 pencils available.",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 139,
+      "checked_tokens": 252
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Are exactly nine slips left? There were 15; six were removed. Someone may have removed others.",
+      "expected": "uncertain",
+      "original": "yes",
+      "fact": "There were 15 slips and 6 were removed.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 150,
+      "checked_tokens": 150
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Are 31 seats left? There were 45 vacant seats; 14 guests then sat down and nobody else moved.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "There were 45 vacant seats.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 153,
+      "checked_tokens": 153
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Is Nur an editor? Every editor has an access card. Nur has a card; contractors can have cards too.",
+      "expected": "uncertain",
+      "original": "yes",
+      "fact": "Nur has a card",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 145,
+      "checked_tokens": 145
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Is kiosk M powered? Every operating kiosk is powered. M is operating.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "Every operating kiosk is powered.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 119,
+      "checked_tokens": 119
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Is parcel G insured? Every insured parcel bears a seal. G has no seal.",
+      "expected": "no",
+      "original": "no",
+      "fact": "Every insured parcel bears a seal.",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 120,
+      "checked_tokens": 234
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Was the first train after 14:30? The first train arrived at 2:35 p.m. that day.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "The first train arrived at 2:35 p.m.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 132,
+      "checked_tokens": 132
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Was the hall vacant at ten? The only count occurred at 10:12 and found it empty.",
+      "expected": "uncertain",
+      "original": "yes",
+      "fact": "The count occurred at 10:12 and found it empty.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 129,
+      "checked_tokens": 129
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Did the first visitor arrive before 07:15? The first visitor arrived at 7:20 a.m.",
+      "expected": "no",
+      "original": "yes",
+      "fact": "The first visitor arrived at 7:20 a.m.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 130,
+      "checked_tokens": 130
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Did the journal report a cancellation? The journal lists a postponement only. Later the organizer cancelled the event.",
+      "expected": "no",
+      "original": "no",
+      "fact": "Journal lists postponement, not cancellation.",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 146,
+      "checked_tokens": 266
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Was the sample pure gold? A brochure repeats the owner's untested guess that it was pure gold.",
+      "expected": "uncertain",
+      "original": "no",
+      "fact": "Brochure repeats owner's untested guess that it was pure gold.",
+      "review": {
+        "answer": "No"
+      },
+      "checked": "no",
+      "original_tokens": 161,
+      "checked_tokens": 286
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Was the blue folder handed over? A witness saw the recipient accept the blue folder, although the tracking screen said pending.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "Witness saw recipient accept blue folder",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 126,
+      "checked_tokens": 126
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Did every tested valve pass? Only valves A and B were tested and both passed.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "Only valves A and B were tested and both passed.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 123,
+      "checked_tokens": 123
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Were all ten exhibits displayed? Nine were displayed and one remained boxed all day.",
+      "expected": "no",
+      "original": "yes",
+      "fact": "Nine exhibits were displayed and one remained boxed.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 120,
+      "checked_tokens": 120
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Were all the cans sealed? Five of seven were examined and found sealed; the other two were never examined.",
+      "expected": "uncertain",
+      "original": "yes",
+      "fact": "Five of seven cans were examined and found sealed.",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 149,
+      "checked_tokens": 149
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Did the sale alone cause the increase? A discount and a newspaper feature started together before orders increased.",
+      "expected": "uncertain",
+      "original": "no",
+      "fact": "Sale alone caused the increase",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 164,
+      "checked_tokens": 278
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Did tomorrow's concert cause last week's noise by its performance? The concert's only performance is tomorrow.",
+      "expected": "no",
+      "original": "no",
+      "fact": "The concert's only performance is tomorrow.",
+      "review": {
+        "answer": "no"
+      },
+      "checked": "no",
+      "original_tokens": 120,
+      "checked_tokens": 239
+    },
+    {
+      "model": "llama3.2:1b",
+      "suite": "prior",
+      "question": "Did trigger Z start the motor in this test? The motor started in the test and trigger Z was its only possible cause.",
+      "expected": "yes",
+      "original": "yes",
+      "fact": "Motor started in test",
+      "review": null,
+      "checked": "yes",
+      "original_tokens": 121,
+      "checked_tokens": 121
+    }
+  ]
+}
