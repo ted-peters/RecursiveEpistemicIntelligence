@@ -1,0 +1,368 @@
+{
+  "digests": {
+    "qwen3:4b-instruct": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+    "llama3.2:1b": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878"
+  },
+  "rows": [
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "count",
+      "question": "Are there exactly 19 tiles left? A box started with 28 tiles. Seven were removed, then two more were removed.",
+      "expected": "yes",
+      "direct": "yes",
+      "direct_tokens": 99,
+      "rei": "yes",
+      "rei_tokens": 60
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "count",
+      "question": "Can five full bags of six beads be made? There are 29 beads and none will be added.",
+      "expected": "no",
+      "direct": "no",
+      "direct_tokens": 93,
+      "rei": "yes",
+      "rei_tokens": 54
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "count",
+      "question": "Are exactly 13 envelopes left? A stack started with 20. One person took seven and a second person may have taken more.",
+      "expected": "uncertain",
+      "direct": "uncertain",
+      "direct_tokens": 101,
+      "rei": "uncertain",
+      "rei_tokens": 189
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "logic",
+      "question": "Is Sima licensed? Everyone who signed register K is licensed. Sima signed register K.",
+      "expected": "yes",
+      "direct": "yes",
+      "direct_tokens": 90,
+      "rei": "yes",
+      "rei_tokens": 51
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "logic",
+      "question": "Is bin C wooden? Every wooden bin has a brass tag. Bin C has no brass tag.",
+      "expected": "no",
+      "direct": "no",
+      "direct_tokens": 91,
+      "rei": "no",
+      "rei_tokens": 52
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "logic",
+      "question": "Is Vela a member? All members wear a badge. Vela wears a badge. Visitors may wear badges too.",
+      "expected": "uncertain",
+      "direct": "uncertain",
+      "direct_tokens": 96,
+      "rei": "yes",
+      "rei_tokens": 180
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "time",
+      "question": "Had the north lift arrived by noon? The north lift arrived at 11:55 a.m. that day.",
+      "expected": "yes",
+      "direct": "yes",
+      "direct_tokens": 93,
+      "rei": "yes",
+      "rei_tokens": 57
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "time",
+      "question": "Was the first chime before 16:00? The first chime sounded at 4:05 p.m. that day.",
+      "expected": "no",
+      "direct": "yes",
+      "direct_tokens": 101,
+      "rei": "yes",
+      "rei_tokens": 62
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "time",
+      "question": "Was the shutter closed at 09:00? The only observation was made at 09:10, when it was closed.",
+      "expected": "uncertain",
+      "direct": "uncertain",
+      "direct_tokens": 102,
+      "rei": "uncertain",
+      "rei_tokens": 189
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "source",
+      "question": "Was the purple crate actually weighed? A witness watched it being weighed. The order slip still said pending.",
+      "expected": "yes",
+      "direct": "uncertain",
+      "direct_tokens": 93,
+      "rei": "uncertain",
+      "rei_tokens": 173
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "source",
+      "question": "Did the clerk record a refund? The clerk recorded an exchange only. The customer separately received a refund.",
+      "expected": "no",
+      "direct": "uncertain",
+      "direct_tokens": 93,
+      "rei": "no",
+      "rei_tokens": 53
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "source",
+      "question": "Was the ring actually copper? A seller guessed it was copper. A catalogue copied the guess without examining the ring.",
+      "expected": "uncertain",
+      "direct": "uncertain",
+      "direct_tokens": 95,
+      "rei": "uncertain",
+      "rei_tokens": 177
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "scope",
+      "question": "Was every checked card legible? The reader checked four of nine cards; all four checked cards were legible.",
+      "expected": "yes",
+      "direct": "uncertain",
+      "direct_tokens": 95,
+      "rei": "yes",
+      "rei_tokens": 174
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "scope",
+      "question": "Did all seven stalls open? Six stalls opened. The seventh stayed closed the entire day.",
+      "expected": "no",
+      "direct": "no",
+      "direct_tokens": 89,
+      "rei": "no",
+      "rei_tokens": 50
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "scope",
+      "question": "Was every jar airtight? The inspector tested three of four jars. All three passed; the fourth was untouched.",
+      "expected": "uncertain",
+      "direct": "uncertain",
+      "direct_tokens": 96,
+      "rei": "uncertain",
+      "rei_tokens": 179
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "cause",
+      "question": "Did switch B cause the lamp to turn on in this trial? The circuit was functioning, B was the sole possible trigger, and the lamp turned on in the trial.",
+      "expected": "yes",
+      "direct": "yes",
+      "direct_tokens": 105,
+      "rei": "yes",
+      "rei_tokens": 66
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "cause",
+      "question": "Did the new bell cause yesterday's alarm? The alarm sounded yesterday and the new bell was first installed today.",
+      "expected": "no",
+      "direct": "no",
+      "direct_tokens": 93,
+      "rei": "no",
+      "rei_tokens": 54
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "domain": "cause",
+      "question": "Did the wider shelves alone cause sales to rise? The shelves were widened and prices fell that day. Sales then increased.",
+      "expected": "uncertain",
+      "direct": "uncertain",
+      "direct_tokens": 93,
+      "rei": "uncertain",
+      "rei_tokens": 179
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "count",
+      "question": "Are there exactly 19 tiles left? A box started with 28 tiles. Seven were removed, then two more were removed.",
+      "expected": "yes",
+      "direct": "no",
+      "direct_tokens": 114,
+      "rei": "no",
+      "rei_tokens": 75
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "count",
+      "question": "Can five full bags of six beads be made? There are 29 beads and none will be added.",
+      "expected": "no",
+      "direct": "no",
+      "direct_tokens": 109,
+      "rei": "no",
+      "rei_tokens": 71
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "count",
+      "question": "Are exactly 13 envelopes left? A stack started with 20. One person took seven and a second person may have taken more.",
+      "expected": "uncertain",
+      "direct": "no",
+      "direct_tokens": 115,
+      "rei": "no",
+      "rei_tokens": 76
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "logic",
+      "question": "Is Sima licensed? Everyone who signed register K is licensed. Sima signed register K.",
+      "expected": "yes",
+      "direct": "yes",
+      "direct_tokens": 107,
+      "rei": "no",
+      "rei_tokens": 68
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "logic",
+      "question": "Is bin C wooden? Every wooden bin has a brass tag. Bin C has no brass tag.",
+      "expected": "no",
+      "direct": "no",
+      "direct_tokens": 108,
+      "rei": "no",
+      "rei_tokens": 69
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "logic",
+      "question": "Is Vela a member? All members wear a badge. Vela wears a badge. Visitors may wear badges too.",
+      "expected": "uncertain",
+      "direct": "yes",
+      "direct_tokens": 112,
+      "rei": "no",
+      "rei_tokens": 73
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "time",
+      "question": "Had the north lift arrived by noon? The north lift arrived at 11:55 a.m. that day.",
+      "expected": "yes",
+      "direct": "no",
+      "direct_tokens": 111,
+      "rei": "no",
+      "rei_tokens": 73
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "time",
+      "question": "Was the first chime before 16:00? The first chime sounded at 4:05 p.m. that day.",
+      "expected": "no",
+      "direct": "no",
+      "direct_tokens": 115,
+      "rei": "no",
+      "rei_tokens": 76
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "time",
+      "question": "Was the shutter closed at 09:00? The only observation was made at 09:10, when it was closed.",
+      "expected": "uncertain",
+      "direct": "no",
+      "direct_tokens": 114,
+      "rei": "no",
+      "rei_tokens": 75
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "source",
+      "question": "Was the purple crate actually weighed? A witness watched it being weighed. The order slip still said pending.",
+      "expected": "yes",
+      "direct": "no",
+      "direct_tokens": 109,
+      "rei": "no",
+      "rei_tokens": 71
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "source",
+      "question": "Did the clerk record a refund? The clerk recorded an exchange only. The customer separately received a refund.",
+      "expected": "no",
+      "direct": "no",
+      "direct_tokens": 109,
+      "rei": "no",
+      "rei_tokens": 70
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "source",
+      "question": "Was the ring actually copper? A seller guessed it was copper. A catalogue copied the guess without examining the ring.",
+      "expected": "uncertain",
+      "direct": "no",
+      "direct_tokens": 111,
+      "rei": "no",
+      "rei_tokens": 72
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "scope",
+      "question": "Was every checked card legible? The reader checked four of nine cards; all four checked cards were legible.",
+      "expected": "yes",
+      "direct": "yes",
+      "direct_tokens": 111,
+      "rei": "no",
+      "rei_tokens": 72
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "scope",
+      "question": "Did all seven stalls open? Six stalls opened. The seventh stayed closed the entire day.",
+      "expected": "no",
+      "direct": "no",
+      "direct_tokens": 106,
+      "rei": "no",
+      "rei_tokens": 67
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "scope",
+      "question": "Was every jar airtight? The inspector tested three of four jars. All three passed; the fourth was untouched.",
+      "expected": "uncertain",
+      "direct": "yes",
+      "direct_tokens": 112,
+      "rei": "no",
+      "rei_tokens": 73
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "cause",
+      "question": "Did switch B cause the lamp to turn on in this trial? The circuit was functioning, B was the sole possible trigger, and the lamp turned on in the trial.",
+      "expected": "yes",
+      "direct": "yes",
+      "direct_tokens": 122,
+      "rei": "no",
+      "rei_tokens": 83
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "cause",
+      "question": "Did the new bell cause yesterday's alarm? The alarm sounded yesterday and the new bell was first installed today.",
+      "expected": "no",
+      "direct": "no",
+      "direct_tokens": 110,
+      "rei": "no",
+      "rei_tokens": 72
+    },
+    {
+      "model": "llama3.2:1b",
+      "domain": "cause",
+      "question": "Did the wider shelves alone cause sales to rise? The shelves were widened and prices fell that day. Sales then increased.",
+      "expected": "uncertain",
+      "direct": "yes",
+      "direct_tokens": 112,
+      "rei": "no",
+      "rei_tokens": 73
+    }
+  ]
+}

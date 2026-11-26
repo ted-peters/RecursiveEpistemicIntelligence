@@ -1,0 +1,20 @@
+[
+ ["count","Can seven complete sets of four be assembled? There are 27 pencils available.","no"],
+ ["count","Are exactly nine slips left? There were 15; six were removed. Someone may have removed others.","uncertain"],
+ ["count","Are 31 seats left? There were 45 vacant seats; 14 guests then sat down and nobody else moved.","yes"],
+ ["logic","Is Nur an editor? Every editor has an access card. Nur has a card; contractors can have cards too.","uncertain"],
+ ["logic","Is kiosk M powered? Every operating kiosk is powered. M is operating.","yes"],
+ ["logic","Is parcel G insured? Every insured parcel bears a seal. G has no seal.","no"],
+ ["time","Was the first train after 14:30? The first train arrived at 2:35 p.m. that day.","yes"],
+ ["time","Was the hall vacant at ten? The only count occurred at 10:12 and found it empty.","uncertain"],
+ ["time","Did the first visitor arrive before 07:15? The first visitor arrived at 7:20 a.m.","no"],
+ ["source","Did the journal report a cancellation? The journal lists a postponement only. Later the organizer cancelled the event.","no"],
+ ["source","Was the sample pure gold? A brochure repeats the owner's untested guess that it was pure gold.","uncertain"],
+ ["source","Was the blue folder handed over? A witness saw the recipient accept the blue folder, although the tracking screen said pending.","yes"],
+ ["scope","Did every tested valve pass? Only valves A and B were tested and both passed.","yes"],
+ ["scope","Were all ten exhibits displayed? Nine were displayed and one remained boxed all day.","no"],
+ ["scope","Were all the cans sealed? Five of seven were examined and found sealed; the other two were never examined.","uncertain"],
+ ["cause","Did the sale alone cause the increase? A discount and a newspaper feature started together before orders increased.","uncertain"],
+ ["cause","Did tomorrow's concert cause last week's noise by its performance? The concert's only performance is tomorrow.","no"],
+ ["cause","Did trigger Z start the motor in this test? The motor started in the test and trigger Z was its only possible cause.","yes"]
+]
