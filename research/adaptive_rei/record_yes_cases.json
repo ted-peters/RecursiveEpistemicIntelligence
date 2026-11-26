@@ -1,0 +1,10 @@
+[
+ ["urn","Was the urn made of bronze?","Does the catalogue describe the urn as bronze?","The catalogue describes the urn as bronze.","A metallurgist tested that urn and identified bronze.","A metallurgist tested that urn and identified painted plaster."],
+ ["trunk","Did the trunk contain velvet?","Does the manifest list velvet in the trunk?","The manifest lists velvet inside the trunk.","A porter opened the trunk and handled the velvet inside.","A porter opened the trunk and found it completely empty."],
+ ["lamp","Was the landing lamp lit at six?","Does the sheet mark the landing lamp as lit at six?","The sheet marks the landing lamp as lit at six.","A visitor saw it shining at six.","A visitor looking directly at the lamp saw it dark at six."],
+ ["valve","Was the garden tap closed at dawn?","Does the log mark the garden tap closed at dawn?","The log marks the garden tap closed at dawn.","The gardener physically checked at dawn and found the tap closed.","The gardener physically checked at dawn and found the tap wide open."],
+ ["rug","Was the rug woven from wool?","Does the label describe the rug as wool?","The label identifies the rug as wool.","A laboratory identified the fibers as wool.","A laboratory found that the fibers were entirely nylon."],
+ ["cart","Did the cart reach the depot on Monday?","Does the ticket say the cart arrived on Monday?","The ticket marks the cart as having arrived at the depot on Monday.","The gatekeeper saw it enter the depot that Monday.","The driver confirmed the cart stayed in the village all Monday."],
+ ["crate","Were there six cups in the crate when sealed?","Does the inventory list six cups when the crate was sealed?","The inventory lists six cups in the crate at sealing.","The packer counted six cups inside as the lid closed.","The packer counted just four cups inside as the lid closed."],
+ ["lock","Was the service hatch locked at noon?","Does the checklist mark the service hatch locked at noon?","The checklist marks the service hatch locked at noon.","At noon the attendant tested the hatch and found it locked.","At noon the attendant tested the hatch and found it unlocked."]
+]
