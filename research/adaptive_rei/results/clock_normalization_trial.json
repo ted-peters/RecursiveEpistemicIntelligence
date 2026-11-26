@@ -1,0 +1,1060 @@
+{
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "rows": [
+    {
+      "suite": "fresh",
+      "passage": "Was the lantern burning at quarter past eight in the evening?\nQuoted sentence: At 20:15 a clerk found the lantern burning.",
+      "expected": "supports",
+      "covered": true,
+      "minutes": [
+        1215,
+        1215
+      ],
+      "single": "contradicts",
+      "single_tokens": 98,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 90,
+      "normalized": "contradicts",
+      "normalized_tokens": 84
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the lantern burning at quarter past eight in the evening?\nQuoted sentence: At 20:15 a clerk found the lantern extinguished.",
+      "expected": "contradicts",
+      "covered": true,
+      "minutes": [
+        1215,
+        1215
+      ],
+      "single": "contradicts",
+      "single_tokens": 99,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 91,
+      "normalized": "contradicts",
+      "normalized_tokens": 85
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the lantern burning at quarter past eight in the evening?\nQuoted sentence: At 08:15 a clerk found the lantern burning.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        1215,
+        495
+      ],
+      "single": "supports",
+      "single_tokens": 96,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 90,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the lantern burning at quarter past eight in the evening?\nQuoted sentence: At 08:15 a clerk found the lantern extinguished.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        1215,
+        495
+      ],
+      "single": "contradicts",
+      "single_tokens": 99,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 91,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the hatch fastened at quarter to nine in the morning?\nQuoted sentence: At 08:45 a clerk found the hatch fastened.",
+      "expected": "supports",
+      "covered": true,
+      "minutes": [
+        525,
+        525
+      ],
+      "single": "contradicts",
+      "single_tokens": 100,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "contradicts",
+      "normalized_tokens": 86
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the hatch fastened at quarter to nine in the morning?\nQuoted sentence: At 08:45 a clerk found the hatch unfastened.",
+      "expected": "contradicts",
+      "covered": true,
+      "minutes": [
+        525,
+        525
+      ],
+      "single": "contradicts",
+      "single_tokens": 101,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 93,
+      "normalized": "contradicts",
+      "normalized_tokens": 87
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the hatch fastened at quarter to nine in the morning?\nQuoted sentence: At 09:15 a clerk found the hatch fastened.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        525,
+        555
+      ],
+      "single": "contradicts",
+      "single_tokens": 100,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the hatch fastened at quarter to nine in the morning?\nQuoted sentence: At 09:15 a clerk found the hatch unfastened.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        525,
+        555
+      ],
+      "single": "contradicts",
+      "single_tokens": 101,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 93,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the dial stationary at half past two in the afternoon?\nQuoted sentence: At 14:30 a clerk found the dial stationary.",
+      "expected": "supports",
+      "covered": true,
+      "minutes": [
+        870,
+        870
+      ],
+      "single": "supports",
+      "single_tokens": 96,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 172,
+      "normalized": "supports",
+      "normalized_tokens": 82
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the dial stationary at half past two in the afternoon?\nQuoted sentence: At 14:30 a clerk found the dial moving.",
+      "expected": "contradicts",
+      "covered": true,
+      "minutes": [
+        870,
+        870
+      ],
+      "single": "contradicts",
+      "single_tokens": 98,
+      "gate": "same",
+      "staged": "contradicts",
+      "staged_tokens": 174,
+      "normalized": "contradicts",
+      "normalized_tokens": 84
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the dial stationary at half past two in the afternoon?\nQuoted sentence: At 02:30 a clerk found the dial stationary.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        870,
+        150
+      ],
+      "single": "contradicts",
+      "single_tokens": 98,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 172,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the dial stationary at half past two in the afternoon?\nQuoted sentence: At 02:30 a clerk found the dial moving.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        870,
+        150
+      ],
+      "single": "contradicts",
+      "single_tokens": 98,
+      "gate": "same",
+      "staged": "contradicts",
+      "staged_tokens": 174,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the booth occupied at 12:09 a.m.?\nQuoted sentence: At 00:09 a clerk found the booth occupied.",
+      "expected": "supports",
+      "covered": true,
+      "minutes": [
+        9,
+        9
+      ],
+      "single": "contradicts",
+      "single_tokens": 101,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 93,
+      "normalized": "supports",
+      "normalized_tokens": 85
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the booth occupied at 12:09 a.m.?\nQuoted sentence: At 00:09 a clerk found the booth vacant.",
+      "expected": "contradicts",
+      "covered": true,
+      "minutes": [
+        9,
+        9
+      ],
+      "single": "contradicts",
+      "single_tokens": 101,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 93,
+      "normalized": "contradicts",
+      "normalized_tokens": 87
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the booth occupied at 12:09 a.m.?\nQuoted sentence: At 12:09 p.m. a clerk found the booth occupied.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        9,
+        729
+      ],
+      "single": "contradicts",
+      "single_tokens": 104,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 96,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the booth occupied at 12:09 a.m.?\nQuoted sentence: At 12:09 p.m. a clerk found the booth vacant.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        9,
+        729
+      ],
+      "single": "contradicts",
+      "single_tokens": 104,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 96,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the hopper empty at ten to four in the afternoon?\nQuoted sentence: At 15:50 a clerk found the hopper empty.",
+      "expected": "supports",
+      "covered": true,
+      "minutes": [
+        950,
+        950
+      ],
+      "single": "irrelevant",
+      "single_tokens": 99,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "contradicts",
+      "normalized_tokens": 86
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the hopper empty at ten to four in the afternoon?\nQuoted sentence: At 15:50 a clerk found the hopper full.",
+      "expected": "contradicts",
+      "covered": true,
+      "minutes": [
+        950,
+        950
+      ],
+      "single": "irrelevant",
+      "single_tokens": 99,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "contradicts",
+      "normalized_tokens": 86
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the hopper empty at ten to four in the afternoon?\nQuoted sentence: At 16:10 a clerk found the hopper empty.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        950,
+        970
+      ],
+      "single": "contradicts",
+      "single_tokens": 100,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the hopper empty at ten to four in the afternoon?\nQuoted sentence: At 16:10 a clerk found the hopper full.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        950,
+        970
+      ],
+      "single": "contradicts",
+      "single_tokens": 100,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the panel lit at five past seven in the morning?\nQuoted sentence: At 07:05 a clerk found the panel lit.",
+      "expected": "supports",
+      "covered": true,
+      "minutes": [
+        425,
+        425
+      ],
+      "single": "supports",
+      "single_tokens": 96,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 172,
+      "normalized": "supports",
+      "normalized_tokens": 82
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the panel lit at five past seven in the morning?\nQuoted sentence: At 07:05 a clerk found the panel dark.",
+      "expected": "contradicts",
+      "covered": true,
+      "minutes": [
+        425,
+        425
+      ],
+      "single": "supports",
+      "single_tokens": 96,
+      "gate": "same",
+      "staged": "contradicts",
+      "staged_tokens": 174,
+      "normalized": "contradicts",
+      "normalized_tokens": 84
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the panel lit at five past seven in the morning?\nQuoted sentence: At 07:50 a clerk found the panel lit.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        425,
+        470
+      ],
+      "single": "contradicts",
+      "single_tokens": 98,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 90,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "fresh",
+      "passage": "Was the panel lit at five past seven in the morning?\nQuoted sentence: At 07:50 a clerk found the panel dark.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        425,
+        470
+      ],
+      "single": "contradicts",
+      "single_tokens": 98,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 90,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the kiln warm at nine thirty in the morning?\nQuoted sentence: At 09:30 a clerk found the kiln warm.",
+      "expected": "supports",
+      "covered": false,
+      "minutes": [
+        null,
+        570
+      ],
+      "single": "supports",
+      "single_tokens": 97,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 171,
+      "normalized": "supports",
+      "normalized_tokens": 171
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the kiln warm at nine thirty in the morning?\nQuoted sentence: At 09:30 a clerk found the kiln cold.",
+      "expected": "contradicts",
+      "covered": false,
+      "minutes": [
+        null,
+        570
+      ],
+      "single": "contradicts",
+      "single_tokens": 99,
+      "gate": "same",
+      "staged": "contradicts",
+      "staged_tokens": 176,
+      "normalized": "contradicts",
+      "normalized_tokens": 176
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the kiln warm at nine thirty in the morning?\nQuoted sentence: At 09:13 a clerk found the kiln warm.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        553
+      ],
+      "single": "supports",
+      "single_tokens": 97,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 91,
+      "normalized": "irrelevant",
+      "normalized_tokens": 91
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the kiln warm at nine thirty in the morning?\nQuoted sentence: At 09:13 a clerk found the kiln cold.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        553
+      ],
+      "single": "contradicts",
+      "single_tokens": 99,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 91,
+      "normalized": "irrelevant",
+      "normalized_tokens": 91
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the canopy extended at three quarters past one in the afternoon?\nQuoted sentence: At 13:45 a clerk found the canopy extended.",
+      "expected": "supports",
+      "covered": false,
+      "minutes": [
+        null,
+        825
+      ],
+      "single": "contradicts",
+      "single_tokens": 99,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 91,
+      "normalized": "irrelevant",
+      "normalized_tokens": 91
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the canopy extended at three quarters past one in the afternoon?\nQuoted sentence: At 13:45 a clerk found the canopy retracted.",
+      "expected": "contradicts",
+      "covered": false,
+      "minutes": [
+        null,
+        825
+      ],
+      "single": "contradicts",
+      "single_tokens": 100,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "irrelevant",
+      "normalized_tokens": 92
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the canopy extended at three quarters past one in the afternoon?\nQuoted sentence: At 13:15 a clerk found the canopy extended.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        795
+      ],
+      "single": "contradicts",
+      "single_tokens": 99,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 91,
+      "normalized": "irrelevant",
+      "normalized_tokens": 91
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the canopy extended at three quarters past one in the afternoon?\nQuoted sentence: At 13:15 a clerk found the canopy retracted.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        795
+      ],
+      "single": "contradicts",
+      "single_tokens": 100,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "irrelevant",
+      "normalized_tokens": 92
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the basin dry at eight in the evening?\nQuoted sentence: At 20:00 a clerk found the basin dry.",
+      "expected": "supports",
+      "covered": true,
+      "minutes": [
+        1200,
+        1200
+      ],
+      "single": "supports",
+      "single_tokens": 94,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 168,
+      "normalized": "supports",
+      "normalized_tokens": 80
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the basin dry at eight in the evening?\nQuoted sentence: At 20:00 a clerk found the basin wet.",
+      "expected": "contradicts",
+      "covered": true,
+      "minutes": [
+        1200,
+        1200
+      ],
+      "single": "supports",
+      "single_tokens": 94,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 88,
+      "normalized": "contradicts",
+      "normalized_tokens": 82
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the basin dry at eight in the evening?\nQuoted sentence: At 08:00 a clerk found the basin dry.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        1200,
+        480
+      ],
+      "single": "supports",
+      "single_tokens": 94,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 168,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the basin dry at eight in the evening?\nQuoted sentence: At 08:00 a clerk found the basin wet.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        1200,
+        480
+      ],
+      "single": "contradicts",
+      "single_tokens": 96,
+      "gate": "same",
+      "staged": "contradicts",
+      "staged_tokens": 170,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the platform occupied at eleven fifty in the morning?\nQuoted sentence: At ten minutes before noon a clerk found the platform occupied.",
+      "expected": "supports",
+      "covered": false,
+      "minutes": [
+        null,
+        null
+      ],
+      "single": "contradicts",
+      "single_tokens": 95,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 87,
+      "normalized": "irrelevant",
+      "normalized_tokens": 87
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the platform occupied at eleven fifty in the morning?\nQuoted sentence: At ten minutes before noon a clerk found the platform vacant.",
+      "expected": "contradicts",
+      "covered": false,
+      "minutes": [
+        null,
+        null
+      ],
+      "single": "contradicts",
+      "single_tokens": 95,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 87,
+      "normalized": "irrelevant",
+      "normalized_tokens": 87
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the platform occupied at eleven fifty in the morning?\nQuoted sentence: At ten minutes after noon a clerk found the platform occupied.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        null
+      ],
+      "single": "contradicts",
+      "single_tokens": 95,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 87,
+      "normalized": "irrelevant",
+      "normalized_tokens": 87
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the platform occupied at eleven fifty in the morning?\nQuoted sentence: At ten minutes after noon a clerk found the platform vacant.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        null
+      ],
+      "single": "contradicts",
+      "single_tokens": 95,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 87,
+      "normalized": "irrelevant",
+      "normalized_tokens": 87
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the fan stationary at half past seven in the evening?\nQuoted sentence: At 19:30 a clerk found the fan stationary.",
+      "expected": "supports",
+      "covered": true,
+      "minutes": [
+        1170,
+        1170
+      ],
+      "single": "supports",
+      "single_tokens": 96,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 172,
+      "normalized": "supports",
+      "normalized_tokens": 82
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the fan stationary at half past seven in the evening?\nQuoted sentence: At 19:30 a clerk found the fan spinning.",
+      "expected": "contradicts",
+      "covered": true,
+      "minutes": [
+        1170,
+        1170
+      ],
+      "single": "supports",
+      "single_tokens": 96,
+      "gate": "same",
+      "staged": "contradicts",
+      "staged_tokens": 174,
+      "normalized": "contradicts",
+      "normalized_tokens": 84
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the fan stationary at half past seven in the evening?\nQuoted sentence: At 19:03 a clerk found the fan stationary.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        1170,
+        1143
+      ],
+      "single": "supports",
+      "single_tokens": 96,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 90,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the fan stationary at half past seven in the evening?\nQuoted sentence: At 19:03 a clerk found the fan spinning.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        1170,
+        1143
+      ],
+      "single": "contradicts",
+      "single_tokens": 98,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 90,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the counter staffed at five past ten in the morning?\nQuoted sentence: At 10:05 a.m. a clerk found the counter staffed.",
+      "expected": "supports",
+      "covered": true,
+      "minutes": [
+        605,
+        605
+      ],
+      "single": "supports",
+      "single_tokens": 101,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 95,
+      "normalized": "contradicts",
+      "normalized_tokens": 89
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the counter staffed at five past ten in the morning?\nQuoted sentence: At 10:05 a.m. a clerk found the counter unattended.",
+      "expected": "contradicts",
+      "covered": true,
+      "minutes": [
+        605,
+        605
+      ],
+      "single": "contradicts",
+      "single_tokens": 103,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 95,
+      "normalized": "contradicts",
+      "normalized_tokens": 89
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the counter staffed at five past ten in the morning?\nQuoted sentence: At 10:50 a.m. a clerk found the counter staffed.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        605,
+        650
+      ],
+      "single": "irrelevant",
+      "single_tokens": 102,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 95,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the counter staffed at five past ten in the morning?\nQuoted sentence: At 10:50 a.m. a clerk found the counter unattended.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        605,
+        650
+      ],
+      "single": "irrelevant",
+      "single_tokens": 102,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 95,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the awning raised at quarter to six in the evening?\nQuoted sentence: At 17:45 a clerk found the awning raised.",
+      "expected": "supports",
+      "covered": true,
+      "minutes": [
+        1065,
+        1065
+      ],
+      "single": "contradicts",
+      "single_tokens": 100,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "contradicts",
+      "normalized_tokens": 86
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the awning raised at quarter to six in the evening?\nQuoted sentence: At 17:45 a clerk found the awning lowered.",
+      "expected": "contradicts",
+      "covered": true,
+      "minutes": [
+        1065,
+        1065
+      ],
+      "single": "contradicts",
+      "single_tokens": 100,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "contradicts",
+      "normalized_tokens": 86
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the awning raised at quarter to six in the evening?\nQuoted sentence: At 18:15 a clerk found the awning raised.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        1065,
+        1095
+      ],
+      "single": "contradicts",
+      "single_tokens": 100,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the awning raised at quarter to six in the evening?\nQuoted sentence: At 18:15 a clerk found the awning lowered.",
+      "expected": "irrelevant",
+      "covered": true,
+      "minutes": [
+        1065,
+        1095
+      ],
+      "single": "contradicts",
+      "single_tokens": 100,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "irrelevant",
+      "normalized_tokens": 0
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the chest sealed at one minute past midnight?\nQuoted sentence: At 00:01 a clerk found the chest sealed.",
+      "expected": "supports",
+      "covered": false,
+      "minutes": [
+        null,
+        1
+      ],
+      "single": "supports",
+      "single_tokens": 94,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 168,
+      "normalized": "supports",
+      "normalized_tokens": 168
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the chest sealed at one minute past midnight?\nQuoted sentence: At 00:01 a clerk found the chest unsealed.",
+      "expected": "contradicts",
+      "covered": false,
+      "minutes": [
+        null,
+        1
+      ],
+      "single": "contradicts",
+      "single_tokens": 97,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 89,
+      "normalized": "irrelevant",
+      "normalized_tokens": 89
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the chest sealed at one minute past midnight?\nQuoted sentence: At 12:01 p.m. a clerk found the chest sealed.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        721
+      ],
+      "single": "irrelevant",
+      "single_tokens": 98,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 91,
+      "normalized": "irrelevant",
+      "normalized_tokens": 91
+    },
+    {
+      "suite": "prior",
+      "passage": "Was the chest sealed at one minute past midnight?\nQuoted sentence: At 12:01 p.m. a clerk found the chest unsealed.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        721
+      ],
+      "single": "irrelevant",
+      "single_tokens": 99,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 92,
+      "normalized": "irrelevant",
+      "normalized_tokens": 92
+    },
+    {
+      "suite": "context",
+      "passage": "Was the shutter closed at Monday at noon?\nQuoted sentence: At Tuesday at noon a clerk found the shutter closed.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        null
+      ],
+      "single": "irrelevant",
+      "single_tokens": 91,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 84,
+      "normalized": "irrelevant",
+      "normalized_tokens": 84
+    },
+    {
+      "suite": "context",
+      "passage": "Was the shutter closed at Tuesday at 08:00?\nQuoted sentence: At Monday at 08:00 a clerk found the shutter closed.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        null
+      ],
+      "single": "irrelevant",
+      "single_tokens": 101,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 94,
+      "normalized": "irrelevant",
+      "normalized_tokens": 94
+    },
+    {
+      "suite": "context",
+      "passage": "Was the shutter closed at 08:00 UTC?\nQuoted sentence: At 08:00 UTC+02:00 a clerk found the shutter closed.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        null,
+        null
+      ],
+      "single": "contradicts",
+      "single_tokens": 106,
+      "gate": "different",
+      "staged": "irrelevant",
+      "staged_tokens": 98,
+      "normalized": "irrelevant",
+      "normalized_tokens": 98
+    },
+    {
+      "suite": "context",
+      "passage": "Was the shutter closed at 8 p.m.?\nQuoted sentence: At eight a clerk found the shutter closed.",
+      "expected": "irrelevant",
+      "covered": false,
+      "minutes": [
+        1200,
+        null
+      ],
+      "single": "supports",
+      "single_tokens": 90,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 160,
+      "normalized": "supports",
+      "normalized_tokens": 160
+    },
+    {
+      "suite": "context",
+      "passage": "Was the shutter closed at Friday at noon?\nQuoted sentence: At Friday at midday a clerk found the shutter closed.",
+      "expected": "supports",
+      "covered": false,
+      "minutes": [
+        null,
+        null
+      ],
+      "single": "supports",
+      "single_tokens": 91,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 162,
+      "normalized": "supports",
+      "normalized_tokens": 162
+    },
+    {
+      "suite": "context",
+      "passage": "Was the shutter closed at around noon?\nQuoted sentence: At noon a clerk found the shutter closed.",
+      "expected": "supports",
+      "covered": false,
+      "minutes": [
+        null,
+        720
+      ],
+      "single": "supports",
+      "single_tokens": 87,
+      "gate": "same",
+      "staged": "supports",
+      "staged_tokens": 151,
+      "normalized": "supports",
+      "normalized_tokens": 151
+    }
+  ]
+}
