@@ -1,56 +1,48 @@
 # Recursive Epistemic Intelligence (REI)
 
-**A philosophy-driven, evidence-aware AI reasoning research project.**
+REI is a Python research project for reasoning with evidence. Its starting question is philosophical: when one reason depends on another, how far should an inquiry go? The REI-1.0 engine represents claims, sources, and reasons in a graph. It can ask bounded follow-up questions, track which evidence supports or challenges a claim, and revise an assessment when evidence changes.
 
-> **Status:** REI-1.0 research software. **Not a pretrained model. Not yet demonstrated to outperform conventional AI.** Public demos use fictional examples and scripted review metadata.
+The default branch (`main`) contains the graph engine, examples, demos, and the Challenge 5 and 6 studies. Later Adaptive REI experiments use an existing language model to test ways of answering and reviewing questions. Those experiments have their own code and results on research branches.
 
-REI examines how provisional beliefs can remain open to challenge, how sources can support or oppose claims, and how changes in evidence propagate through a structured epistemic graph. The project explores philosophical infinite regress as an **open-ended obligation to justify**, while keeping computation and operational safeguards finite.
+## Try the graph
 
-## Start here
+From the repository root, run these commands in a Python environment. The package supports Python 3.10 and later. Use Python 3.13 to reproduce the archived report checks used by CI.
 
-- **For visitors:** Explore the Hugging Face demo (after the Space is published). See `space/README.md`.
-- **For developers:** Original Python engine is `rei0/`; automated tests are in `tests/`; use `python -m pip install .` and `python -m unittest discover -s tests -v`.
-- **For researchers:** Read [`docs/REI_Master_Blueprint_v1.md`](docs/REI_Master_Blueprint_v1.md), [`docs/RESEARCH_STATUS.md`](docs/RESEARCH_STATUS.md) and [`research/challenge5/`](research/challenge5/).
-- **For the owner (no command line):** Read [`PUBLISHING_GUIDE.md`](PUBLISHING_GUIDE.md).
-
-## The four evidence states
-
-| State | Meaning |
-|---|---|
-| `NEITHER` | No admissible verified support or opposition recorded |
-| `SUPPORT_ONLY` | Some admissible support and no admissible opposition recorded |
-| `ATTACK_ONLY` | Some admissible opposition and no admissible support recorded |
-| `BOTH` | Admissible support and opposition coexist |
-
-None of these states establishes objective truth, probability of correctness, or source authenticity.
-
-## Repository guide
-
-```text
-rei0/               Original REI-1.0 Python research engine
-tests/              REI-1.0 regression tests
-docs/               Blueprint, protocols, and research status
-examples/           Synthetic development examples
-research/challenge5 Public research protocol, code, task statements
-space/              Hugging Face Gradio demo source
-.github/workflows/   GitHub CI configuration
-PUBLISHING_GUIDE.md Publishing without a command line
+```sh
+python -m pip install .
+python -m examples.quick_example
 ```
 
-The original REI-1.0 instructions are preserved in [`docs/REI_1.0_ORIGINAL_README.md`](docs/REI_1.0_ORIGINAL_README.md). The MIT license of the source is preserved.
+The example asks whether a lamp is lit. Initially the graph reports `NEITHER`. After a scripted reviewer accepts the sensor reading and its connection to the claim, the graph reports `SUPPORT_ONLY`. This example runs locally without a model download or API key. [Example source](examples/quick_example.py)
 
-## Important limitations
+| Evidence state | What the graph has recorded for the claim |
+|---|---|
+| `NEITHER` | No admissible evidence on either side |
+| `SUPPORT_ONLY` | Admissible evidence for the claim only |
+| `ATTACK_ONLY` | Admissible evidence against the claim only |
+| `BOTH` | Admissible evidence on both sides |
 
-- This repository has no trained network weights or claimed general-purpose inference endpoint.
-- Synthetic benchmark outputs **are not** measured AI performance.
-- A verifier signature proves a reviewer made a decision, not that a fact is true.
-- Question text from Challenge 5 has circulated and is not a truly blind holdout.
-- Public Spaces do not expose secrets or run live, paid inference by default.
+These states describe the reviewed record. The quality of an assessment depends on the sources and the review. For the interactive examples with fictional evidence and simulated approvals, see the [Gradio demo](space/) or the [static demo](space-static/).
 
-## Contributing
+## What has been tested?
 
-Contributions should include tests and distinguish mathematical design, deterministic software behavior, and real empirical findings. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+**Challenge 5** provides public tasks, a study protocol, and evaluation code. Its synthetic runs exercise the evaluation pipeline. The tasks have circulated publicly, which limits their use as a blind holdout. [Challenge 5 materials](research/challenge5/)
 
-## License
+**Challenge 6** ran four methods on the same six hand-authored questions using a pinned Qwen3 4B model through llama.cpp. Failures count in the scores.
 
-MIT — see [`LICENSE`](LICENSE).
+| Method | Correct | Reported tokens |
+|---|---:|---:|
+| Single pass | 2/6 | 1,545 |
+| Self-critique | 4/6 | 7,568 |
+| Fixed-depth inquiry | 1/6 | 5,222 |
+| REI graph-guided inquiry | 3/6 | 7,972 |
+
+Self-critique led this pilot. The small public sample and differing token use limit what it can establish about general model performance. [Challenge 6 results, failures, and reproduction details](research/challenge6/ACTUAL_RESULTS.md)
+
+**Adaptive REI research branches** explore when a second review or a deterministic rule improves an answer. In one Qwen3 4B comparison on 240 BoolQ questions, budgeted review scored 189/240 using 43,392 tokens. The single-pass prompt scored 159/240 using 50,246 tokens. On 18 targeted controls in that same run, single pass scored 18/18 and budgeted review scored 17/18. These scores apply to those prompts, questions, and model. Later work tests whether REI can identify the relevant observation and preserve its timing when extracting evidence from prose. [Paired benchmark report](https://github.com/ted-peters/RecursiveEpistemicIntelligence/blob/04db61bc2beb0785ce0ee511ed131b5b0197b34a/research/adaptive_rei/review_overlap_results.md) · [Prose time-extraction experiment](https://github.com/ted-peters/RecursiveEpistemicIntelligence/pull/54)
+
+## Development and research materials
+
+- Explore the [engine](rei0/), [original REI-1.0 guide](docs/REI_1.0_ORIGINAL_README.md), and [design blueprint](docs/REI_Master_Blueprint_v1.md).
+- Run the regression suite from the repository root with `python -m unittest discover -s tests -v`. The [research status notes](docs/RESEARCH_STATUS.md) explain the Python-version sensitivity of the archived checks.
+- See the [contribution guide](CONTRIBUTING.md), [publishing guide](PUBLISHING_GUIDE.md), and [MIT license](LICENSE).
