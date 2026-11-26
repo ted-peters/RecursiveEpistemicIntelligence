@@ -1,0 +1,294 @@
+{
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "rows": [
+    {
+      "question": "Was cart E loaded at noon?",
+      "passage": "The report was filed at 15:00. At midday the porter saw cart E loaded.",
+      "group": "plain",
+      "expected": "supports",
+      "requested": "noon",
+      "observed": "midday",
+      "extracted": {
+        "requested": "noon",
+        "observed": "midday"
+      },
+      "both_correct": true,
+      "routed": true,
+      "baseline": "contradicts",
+      "baseline_tokens": 100,
+      "candidate": "contradicts",
+      "candidate_tokens": 192
+    },
+    {
+      "question": "Was bay two occupied at eight in the evening?",
+      "passage": "At 08:00 a guard found bay two occupied. His notes were transcribed at 20:00.",
+      "group": "plain",
+      "expected": "irrelevant",
+      "requested": "eight in the evening",
+      "observed": "08:00",
+      "extracted": {
+        "requested": "eight in the evening",
+        "observed": "08:00"
+      },
+      "both_correct": true,
+      "routed": true,
+      "baseline": "supports",
+      "baseline_tokens": 106,
+      "candidate": "irrelevant",
+      "candidate_tokens": 120
+    },
+    {
+      "question": "Was the grille open at quarter past four in the afternoon?",
+      "passage": "A notice predicted an opening at 17:00. The guard inspected the grille at 16:15 and found it shut.",
+      "group": "plain",
+      "expected": "contradicts",
+      "requested": "quarter past four in the afternoon",
+      "observed": "16:15",
+      "extracted": {
+        "requested": "Was the grille open at quarter past four in the afternoon?",
+        "observed": "The guard inspected the grille at 16:15 and found it shut."
+      },
+      "both_correct": false,
+      "routed": false,
+      "baseline": "contradicts",
+      "baseline_tokens": 113,
+      "candidate": "contradicts",
+      "candidate_tokens": 256
+    },
+    {
+      "question": "Was the display lit at half past nine in the morning?",
+      "passage": "The visitor arrived at 09:00 and photographed the lit display at 09:30.",
+      "group": "plain",
+      "expected": "supports",
+      "requested": "half past nine in the morning",
+      "observed": "09:30",
+      "extracted": {
+        "requested": "half past nine in the morning",
+        "observed": "09:30"
+      },
+      "both_correct": true,
+      "routed": true,
+      "baseline": "contradicts",
+      "baseline_tokens": 106,
+      "candidate": "contradicts",
+      "candidate_tokens": 212
+    },
+    {
+      "question": "Was the north chair vacant at 10:00?",
+      "passage": "At 10:00 the usher checked the south chair. She found the north chair vacant at 10:20.",
+      "group": "plain",
+      "expected": "irrelevant",
+      "requested": "10:00",
+      "observed": "10:20",
+      "extracted": {
+        "requested": "10:00",
+        "observed": "10:20"
+      },
+      "both_correct": true,
+      "routed": true,
+      "baseline": "contradicts",
+      "baseline_tokens": 112,
+      "candidate": "irrelevant",
+      "candidate_tokens": 125
+    },
+    {
+      "question": "Was the tray empty at midnight?",
+      "passage": "The attendant found the tray full at 00:00 and submitted the form at noon.",
+      "group": "plain",
+      "expected": "contradicts",
+      "requested": "midnight",
+      "observed": "00:00",
+      "extracted": {
+        "requested": "Was the tray empty at midnight?",
+        "observed": "The attendant found the tray full at 00:00"
+      },
+      "both_correct": false,
+      "routed": false,
+      "baseline": "contradicts",
+      "baseline_tokens": 98,
+      "candidate": "contradicts",
+      "candidate_tokens": 218
+    },
+    {
+      "question": "Was the beacon dark at 21:15?",
+      "passage": "The schedule predicted darkness at 21:15. At quarter past nine in the evening the watcher saw the beacon dark.",
+      "group": "plain",
+      "expected": "supports",
+      "requested": "21:15",
+      "observed": "quarter past nine in the evening",
+      "extracted": {
+        "requested": "21:15",
+        "observed": "quarter past nine in the evening"
+      },
+      "both_correct": true,
+      "routed": true,
+      "baseline": "supports",
+      "baseline_tokens": 107,
+      "candidate": "supports",
+      "candidate_tokens": 216
+    },
+    {
+      "question": "Was the stall closed at five in the afternoon?",
+      "passage": "A customer found the stall closed at 05:00. The bill was printed at 17:00.",
+      "group": "plain",
+      "expected": "irrelevant",
+      "requested": "five in the afternoon",
+      "observed": "05:00",
+      "extracted": {
+        "requested": "Was the stall closed at five in the afternoon?",
+        "observed": "A customer found the stall closed at 05:00."
+      },
+      "both_correct": false,
+      "routed": false,
+      "baseline": "supports",
+      "baseline_tokens": 105,
+      "candidate": "supports",
+      "candidate_tokens": 237
+    },
+    {
+      "question": "Was the upper latch fastened on Monday at noon?",
+      "passage": "The lower latch was checked on Monday at noon. The keeper found the upper latch fastened on Tuesday at noon.",
+      "group": "day",
+      "expected": "irrelevant",
+      "requested": "Monday at noon",
+      "observed": "Tuesday at noon",
+      "extracted": {
+        "requested": "Was the upper latch fastened on Monday at noon?",
+        "observed": "The keeper found the upper latch fastened on Tuesday at noon."
+      },
+      "both_correct": false,
+      "routed": false,
+      "baseline": "contradicts",
+      "baseline_tokens": 105,
+      "candidate": "contradicts",
+      "candidate_tokens": 235
+    },
+    {
+      "question": "Was the meter running on Friday at 14:00?",
+      "passage": "The file was opened on Saturday at 14:00. A witness saw the meter running on Friday at 2 p.m.",
+      "group": "day",
+      "expected": "supports",
+      "requested": "Friday at 14:00",
+      "observed": "Friday at 2 p.m.",
+      "extracted": {
+        "requested": "Friday at 14:00",
+        "observed": "Friday at 2 p.m."
+      },
+      "both_correct": true,
+      "routed": false,
+      "baseline": "irrelevant",
+      "baseline_tokens": 112,
+      "candidate": "irrelevant",
+      "candidate_tokens": 242
+    },
+    {
+      "question": "Was the window open at 08:00 UTC?",
+      "passage": "The camera showed the window open at 08:00 UTC+02:00. The image was uploaded at 08:00 UTC.",
+      "group": "zone",
+      "expected": "irrelevant",
+      "requested": "08:00 UTC",
+      "observed": "08:00 UTC+02:00",
+      "extracted": {
+        "requested": "08:00 UTC",
+        "observed": "08:00 UTC+02:00"
+      },
+      "both_correct": true,
+      "routed": false,
+      "baseline": "contradicts",
+      "baseline_tokens": 118,
+      "candidate": "contradicts",
+      "candidate_tokens": 257
+    },
+    {
+      "question": "Was panel J lit at 10:00 UTC?",
+      "passage": "The monitor captured panel J dark at 12:00 UTC+02:00. Its export finished at 12:30 UTC+02:00.",
+      "group": "zone",
+      "expected": "contradicts",
+      "requested": "10:00 UTC",
+      "observed": "12:00 UTC+02:00",
+      "extracted": {
+        "requested": "10:00 UTC",
+        "observed": "12:00 UTC+02:00"
+      },
+      "both_correct": true,
+      "routed": false,
+      "baseline": "contradicts",
+      "baseline_tokens": 123,
+      "candidate": "contradicts",
+      "candidate_tokens": 267
+    },
+    {
+      "question": "Was the bell ringing at exactly noon?",
+      "passage": "A passerby heard the bell around noon; the notebook gives no exact minute.",
+      "group": "approximate",
+      "expected": "irrelevant",
+      "requested": "exactly noon",
+      "observed": "around noon",
+      "extracted": {
+        "requested": "Was the bell ringing at exactly noon?",
+        "observed": "A passerby heard the bell around noon;"
+      },
+      "both_correct": false,
+      "routed": false,
+      "baseline": "contradicts",
+      "baseline_tokens": 95,
+      "candidate": "contradicts",
+      "candidate_tokens": 208
+    },
+    {
+      "question": "Was the dial stationary at exactly 16:00?",
+      "passage": "The engineer found the dial stationary shortly before 16:00 and left immediately.",
+      "group": "approximate",
+      "expected": "irrelevant",
+      "requested": "exactly 16:00",
+      "observed": "shortly before 16:00",
+      "extracted": {
+        "requested": "16:00",
+        "observed": "shortly before 16:00"
+      },
+      "both_correct": false,
+      "routed": false,
+      "baseline": "contradicts",
+      "baseline_tokens": 102,
+      "candidate": "contradicts",
+      "candidate_tokens": 221
+    },
+    {
+      "question": "Was the booth staffed around midday?",
+      "passage": "The receipt was printed at dusk. At noon the visitor saw an attendant in the booth.",
+      "group": "approximate",
+      "expected": "supports",
+      "requested": "around midday",
+      "observed": "noon",
+      "extracted": {
+        "requested": "Was the booth staffed around midday?",
+        "observed": "At noon the visitor saw an attendant in the booth."
+      },
+      "both_correct": false,
+      "routed": false,
+      "baseline": "supports",
+      "baseline_tokens": 96,
+      "candidate": "supports",
+      "candidate_tokens": 215
+    },
+    {
+      "question": "Was the cupboard locked at 8 p.m.?",
+      "passage": "The guard tested the cupboard at eight and found it locked. The entry does not specify morning or evening.",
+      "group": "ambiguous",
+      "expected": "irrelevant",
+      "requested": "8 p.m.",
+      "observed": "eight",
+      "extracted": {
+        "requested": "8 p.m.",
+        "observed": "eight"
+      },
+      "both_correct": true,
+      "routed": false,
+      "baseline": "supports",
+      "baseline_tokens": 101,
+      "candidate": "supports",
+      "candidate_tokens": 211
+    }
+  ]
+}

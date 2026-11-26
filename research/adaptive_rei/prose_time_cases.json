@@ -1,0 +1,18 @@
+[
+ ["Was cart E loaded at noon?","The report was filed at 15:00. At midday the porter saw cart E loaded.","noon","midday","supports","plain"],
+ ["Was bay two occupied at eight in the evening?","At 08:00 a guard found bay two occupied. His notes were transcribed at 20:00.","eight in the evening","08:00","irrelevant","plain"],
+ ["Was the grille open at quarter past four in the afternoon?","A notice predicted an opening at 17:00. The guard inspected the grille at 16:15 and found it shut.","quarter past four in the afternoon","16:15","contradicts","plain"],
+ ["Was the display lit at half past nine in the morning?","The visitor arrived at 09:00 and photographed the lit display at 09:30.","half past nine in the morning","09:30","supports","plain"],
+ ["Was the north chair vacant at 10:00?","At 10:00 the usher checked the south chair. She found the north chair vacant at 10:20.","10:00","10:20","irrelevant","plain"],
+ ["Was the tray empty at midnight?","The attendant found the tray full at 00:00 and submitted the form at noon.","midnight","00:00","contradicts","plain"],
+ ["Was the beacon dark at 21:15?","The schedule predicted darkness at 21:15. At quarter past nine in the evening the watcher saw the beacon dark.","21:15","quarter past nine in the evening","supports","plain"],
+ ["Was the stall closed at five in the afternoon?","A customer found the stall closed at 05:00. The bill was printed at 17:00.","five in the afternoon","05:00","irrelevant","plain"],
+ ["Was the upper latch fastened on Monday at noon?","The lower latch was checked on Monday at noon. The keeper found the upper latch fastened on Tuesday at noon.","Monday at noon","Tuesday at noon","irrelevant","day"],
+ ["Was the meter running on Friday at 14:00?","The file was opened on Saturday at 14:00. A witness saw the meter running on Friday at 2 p.m.","Friday at 14:00","Friday at 2 p.m.","supports","day"],
+ ["Was the window open at 08:00 UTC?","The camera showed the window open at 08:00 UTC+02:00. The image was uploaded at 08:00 UTC.","08:00 UTC","08:00 UTC+02:00","irrelevant","zone"],
+ ["Was panel J lit at 10:00 UTC?","The monitor captured panel J dark at 12:00 UTC+02:00. Its export finished at 12:30 UTC+02:00.","10:00 UTC","12:00 UTC+02:00","contradicts","zone"],
+ ["Was the bell ringing at exactly noon?","A passerby heard the bell around noon; the notebook gives no exact minute.","exactly noon","around noon","irrelevant","approximate"],
+ ["Was the dial stationary at exactly 16:00?","The engineer found the dial stationary shortly before 16:00 and left immediately.","exactly 16:00","shortly before 16:00","irrelevant","approximate"],
+ ["Was the booth staffed around midday?","The receipt was printed at dusk. At noon the visitor saw an attendant in the booth.","around midday","noon","supports","approximate"],
+ ["Was the cupboard locked at 8 p.m.?","The guard tested the cupboard at eight and found it locked. The entry does not specify morning or evening.","8 p.m.","eight","irrelevant","ambiguous"]
+]
