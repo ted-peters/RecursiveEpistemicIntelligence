@@ -1,0 +1,726 @@
+{
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "rows": [
+    {
+      "question": "Was cabinet F open at noon?",
+      "kind": "support",
+      "lines": [
+        "The plan assigned cabinet F an open status at noon.",
+        "A clerk saw cabinet F standing open at midday.",
+        "A status board repeated the plan."
+      ],
+      "expected": "yes",
+      "key": 2,
+      "base": "yes",
+      "base_tokens": 107,
+      "current": "yes",
+      "current_tokens": 68,
+      "index": 2,
+      "original": "yes",
+      "original_tokens": 139,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 2,
+      "checked": "yes",
+      "checked_tokens": 227
+    },
+    {
+      "question": "Was cabinet F open at noon?",
+      "kind": "contradiction",
+      "lines": [
+        "At midday a clerk found cabinet F shut.",
+        "The plan assigned cabinet F an open status at noon.",
+        "A status board repeated the plan."
+      ],
+      "expected": "no",
+      "key": 1,
+      "base": "uncertain",
+      "base_tokens": 107,
+      "current": "no",
+      "current_tokens": 67,
+      "index": 1,
+      "original": "no",
+      "original_tokens": 137,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 175
+    },
+    {
+      "question": "Was cabinet F open at noon?",
+      "kind": "other_item",
+      "lines": [
+        "The plan assigned cabinet F an open status at noon.",
+        "A status board repeated the plan.",
+        "At noon a clerk saw cabinet E standing open."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "uncertain",
+      "base_tokens": 107,
+      "current": "yes",
+      "current_tokens": 202,
+      "index": 3,
+      "original": "uncertain",
+      "original_tokens": 138,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 175
+    },
+    {
+      "question": "Was cabinet F open at noon?",
+      "kind": "other_time",
+      "lines": [
+        "At dawn a clerk saw cabinet F standing open.",
+        "The plan assigned cabinet F an open status at noon.",
+        "A status board repeated the plan."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "yes",
+      "base_tokens": 106,
+      "current": "yes",
+      "current_tokens": 202,
+      "index": 1,
+      "original": "yes",
+      "original_tokens": 137,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 175
+    },
+    {
+      "question": "Was cabinet F open at noon?",
+      "kind": "copy",
+      "lines": [
+        "The plan assigned cabinet F an open status at noon.",
+        "A status board repeated the plan.",
+        "The daily summary cited the same published status."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "yes",
+      "base_tokens": 105,
+      "current": "yes",
+      "current_tokens": 66,
+      "index": 1,
+      "original": "yes",
+      "original_tokens": 137,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 175
+    },
+    {
+      "question": "Was the west scale empty at closing?",
+      "kind": "support",
+      "lines": [
+        "The shift brief quoted the checklist.",
+        "At closing a porter saw nothing on the west scale.",
+        "The routine checklist predicted the west scale would be empty at closing."
+      ],
+      "expected": "yes",
+      "key": 2,
+      "base": "yes",
+      "base_tokens": 110,
+      "current": "yes",
+      "current_tokens": 71,
+      "index": 2,
+      "original": "yes",
+      "original_tokens": 143,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 2,
+      "checked": "yes",
+      "checked_tokens": 232
+    },
+    {
+      "question": "Was the west scale empty at closing?",
+      "kind": "contradiction",
+      "lines": [
+        "At closing a porter found a crate on the west scale.",
+        "The shift brief quoted the checklist.",
+        "The routine checklist predicted the west scale would be empty at closing."
+      ],
+      "expected": "no",
+      "key": 1,
+      "base": "uncertain",
+      "base_tokens": 112,
+      "current": "no",
+      "current_tokens": 72,
+      "index": 1,
+      "original": "no",
+      "original_tokens": 145,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 1,
+      "checked": "no",
+      "checked_tokens": 235
+    },
+    {
+      "question": "Was the west scale empty at closing?",
+      "kind": "other_item",
+      "lines": [
+        "At closing a porter saw nothing on the east scale.",
+        "The shift brief quoted the checklist.",
+        "The routine checklist predicted the west scale would be empty at closing."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "uncertain",
+      "base_tokens": 111,
+      "current": "uncertain",
+      "current_tokens": 211,
+      "index": 1,
+      "original": "uncertain",
+      "original_tokens": 144,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 181
+    },
+    {
+      "question": "Was the west scale empty at closing?",
+      "kind": "other_time",
+      "lines": [
+        "At opening a porter saw nothing on the west scale.",
+        "The routine checklist predicted the west scale would be empty at closing.",
+        "The shift brief quoted the checklist."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "uncertain",
+      "base_tokens": 111,
+      "current": "yes",
+      "current_tokens": 210,
+      "index": 1,
+      "original": "uncertain",
+      "original_tokens": 144,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 181
+    },
+    {
+      "question": "Was the west scale empty at closing?",
+      "kind": "copy",
+      "lines": [
+        "The shift brief quoted the checklist.",
+        "The daily summary cited the same published status.",
+        "The routine checklist predicted the west scale would be empty at closing."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "yes",
+      "base_tokens": 108,
+      "current": "yes",
+      "current_tokens": 69,
+      "index": 3,
+      "original": "uncertain",
+      "original_tokens": 144,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 181
+    },
+    {
+      "question": "Did beacon C shine at sunset?",
+      "kind": "support",
+      "lines": [
+        "The event program scheduled beacon C to shine at sunset.",
+        "At sundown an observer saw beacon C lit.",
+        "The handout reprinted the program."
+      ],
+      "expected": "yes",
+      "key": 2,
+      "base": "yes",
+      "base_tokens": 104,
+      "current": "yes",
+      "current_tokens": 68,
+      "index": 2,
+      "original": "yes",
+      "original_tokens": 138,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 2,
+      "checked": "yes",
+      "checked_tokens": 225
+    },
+    {
+      "question": "Did beacon C shine at sunset?",
+      "kind": "contradiction",
+      "lines": [
+        "The handout reprinted the program.",
+        "The event program scheduled beacon C to shine at sunset.",
+        "At sundown an observer saw beacon C dark."
+      ],
+      "expected": "no",
+      "key": 3,
+      "base": "no",
+      "base_tokens": 107,
+      "current": "yes",
+      "current_tokens": 68,
+      "index": 3,
+      "original": "no",
+      "original_tokens": 138,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 176
+    },
+    {
+      "question": "Did beacon C shine at sunset?",
+      "kind": "other_item",
+      "lines": [
+        "At sunset an observer saw beacon G lit.",
+        "The handout reprinted the program.",
+        "The event program scheduled beacon C to shine at sunset."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "yes",
+      "base_tokens": 106,
+      "current": "yes",
+      "current_tokens": 67,
+      "index": 3,
+      "original": "yes",
+      "original_tokens": 138,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 176
+    },
+    {
+      "question": "Did beacon C shine at sunset?",
+      "kind": "other_time",
+      "lines": [
+        "The event program scheduled beacon C to shine at sunset.",
+        "The handout reprinted the program.",
+        "At sunrise an observer saw beacon C lit."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "uncertain",
+      "base_tokens": 107,
+      "current": "yes",
+      "current_tokens": 67,
+      "index": 3,
+      "original": "uncertain",
+      "original_tokens": 137,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 174
+    },
+    {
+      "question": "Did beacon C shine at sunset?",
+      "kind": "copy",
+      "lines": [
+        "The handout reprinted the program.",
+        "The daily summary cited the same published status.",
+        "The event program scheduled beacon C to shine at sunset."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "yes",
+      "base_tokens": 106,
+      "current": "yes",
+      "current_tokens": 67,
+      "index": 3,
+      "original": "yes",
+      "original_tokens": 138,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 176
+    },
+    {
+      "question": "Was the upper gate bolted at six in the morning?",
+      "kind": "support",
+      "lines": [
+        "The rota predicts the upper gate will be unbolted at six in the morning.",
+        "At 6 a.m. the keeper tested the upper gate and found the bolt engaged.",
+        "A notice quotes that rota."
+      ],
+      "expected": "yes",
+      "key": 2,
+      "base": "no",
+      "base_tokens": 126,
+      "current": "no",
+      "current_tokens": 87,
+      "index": 2,
+      "original": "yes",
+      "original_tokens": 170,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 2,
+      "checked": "yes",
+      "checked_tokens": 270
+    },
+    {
+      "question": "Was the upper gate bolted at six in the morning?",
+      "kind": "contradiction",
+      "lines": [
+        "At 6 a.m. the keeper saw the bolt on the upper gate fully retracted.",
+        "The rota predicts the upper gate will be unbolted at six in the morning.",
+        "A notice quotes that rota."
+      ],
+      "expected": "no",
+      "key": 1,
+      "base": "no",
+      "base_tokens": 127,
+      "current": "no",
+      "current_tokens": 88,
+      "index": 1,
+      "original": "no",
+      "original_tokens": 172,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 210
+    },
+    {
+      "question": "Was the upper gate bolted at six in the morning?",
+      "kind": "other_item",
+      "lines": [
+        "At 6 a.m. the keeper tested the lower gate and found the bolt engaged.",
+        "A notice quotes that rota.",
+        "The rota predicts the upper gate will be unbolted at six in the morning."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "uncertain",
+      "base_tokens": 127,
+      "current": "no",
+      "current_tokens": 87,
+      "index": 1,
+      "original": "no",
+      "original_tokens": 170,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 208
+    },
+    {
+      "question": "Was the upper gate bolted at six in the morning?",
+      "kind": "other_time",
+      "lines": [
+        "The rota predicts the upper gate will be unbolted at six in the morning.",
+        "At 6 p.m. the keeper tested the upper gate and found the bolt engaged.",
+        "A notice quotes that rota."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "no",
+      "base_tokens": 126,
+      "current": "no",
+      "current_tokens": 87,
+      "index": 2,
+      "original": "no",
+      "original_tokens": 170,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 208
+    },
+    {
+      "question": "Was the upper gate bolted at six in the morning?",
+      "kind": "copy",
+      "lines": [
+        "The daily summary cited the same published status.",
+        "A notice quotes that rota.",
+        "The rota predicts the upper gate will be unbolted at six in the morning."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "no",
+      "base_tokens": 117,
+      "current": "no",
+      "current_tokens": 78,
+      "index": 3,
+      "original": "no",
+      "original_tokens": 161,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 199
+    },
+    {
+      "question": "Was cart nine present at Monday's count?",
+      "kind": "support",
+      "lines": [
+        "The inventory projection copied that estimate.",
+        "The estimate put cart nine off site for Monday's count.",
+        "During Monday's count the clerk photographed cart nine on site."
+      ],
+      "expected": "yes",
+      "key": 3,
+      "base": "uncertain",
+      "base_tokens": 112,
+      "current": "no",
+      "current_tokens": 72,
+      "index": 3,
+      "original": "yes",
+      "original_tokens": 146,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 3,
+      "checked": "yes",
+      "checked_tokens": 237
+    },
+    {
+      "question": "Was cart nine present at Monday's count?",
+      "kind": "contradiction",
+      "lines": [
+        "The inventory projection copied that estimate.",
+        "The estimate put cart nine off site for Monday's count.",
+        "During Monday's count the clerk verified cart nine was off site."
+      ],
+      "expected": "no",
+      "key": 3,
+      "base": "no",
+      "base_tokens": 112,
+      "current": "yes",
+      "current_tokens": 73,
+      "index": 3,
+      "original": "no",
+      "original_tokens": 148,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 3,
+      "checked": "no",
+      "checked_tokens": 240
+    },
+    {
+      "question": "Was cart nine present at Monday's count?",
+      "kind": "other_item",
+      "lines": [
+        "During Monday's count the clerk photographed cart ten on site.",
+        "The estimate put cart nine off site for Monday's count.",
+        "The inventory projection copied that estimate."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "uncertain",
+      "base_tokens": 112,
+      "current": "no",
+      "current_tokens": 212,
+      "index": 1,
+      "original": "uncertain",
+      "original_tokens": 147,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 184
+    },
+    {
+      "question": "Was cart nine present at Monday's count?",
+      "kind": "other_time",
+      "lines": [
+        "The estimate put cart nine off site for Monday's count.",
+        "The inventory projection copied that estimate.",
+        "During Sunday's count the clerk photographed cart nine on site."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "uncertain",
+      "base_tokens": 112,
+      "current": "uncertain",
+      "current_tokens": 213,
+      "index": 3,
+      "original": "uncertain",
+      "original_tokens": 147,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 184
+    },
+    {
+      "question": "Was cart nine present at Monday's count?",
+      "kind": "copy",
+      "lines": [
+        "The daily summary cited the same published status.",
+        "The estimate put cart nine off site for Monday's count.",
+        "The inventory projection copied that estimate."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "uncertain",
+      "base_tokens": 109,
+      "current": "no",
+      "current_tokens": 206,
+      "index": 2,
+      "original": "no",
+      "original_tokens": 143,
+      "check": {
+        "answer": "no"
+      },
+      "kept": 0,
+      "checked": "uncertain",
+      "checked_tokens": 181
+    },
+    {
+      "question": "Was the lobby clock running at midnight?",
+      "kind": "support",
+      "lines": [
+        "The service forecast marked the lobby clock stopped at midnight.",
+        "At midnight the attendant watched the lobby clock tick.",
+        "The bulletin repeated the forecast."
+      ],
+      "expected": "yes",
+      "key": 2,
+      "base": "uncertain",
+      "base_tokens": 107,
+      "current": "uncertain",
+      "current_tokens": 203,
+      "index": 2,
+      "original": "yes",
+      "original_tokens": 138,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 2,
+      "checked": "yes",
+      "checked_tokens": 226
+    },
+    {
+      "question": "Was the lobby clock running at midnight?",
+      "kind": "contradiction",
+      "lines": [
+        "At midnight the attendant observed that the lobby clock had stopped.",
+        "The bulletin repeated the forecast.",
+        "The service forecast marked the lobby clock stopped at midnight."
+      ],
+      "expected": "no",
+      "key": 1,
+      "base": "no",
+      "base_tokens": 108,
+      "current": "no",
+      "current_tokens": 69,
+      "index": 1,
+      "original": "no",
+      "original_tokens": 142,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 1,
+      "checked": "no",
+      "checked_tokens": 232
+    },
+    {
+      "question": "Was the lobby clock running at midnight?",
+      "kind": "other_item",
+      "lines": [
+        "The bulletin repeated the forecast.",
+        "The service forecast marked the lobby clock stopped at midnight.",
+        "At midnight the attendant watched the hall clock tick."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "uncertain",
+      "base_tokens": 107,
+      "current": "no",
+      "current_tokens": 67,
+      "index": 3,
+      "original": "uncertain",
+      "original_tokens": 139,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 3,
+      "checked": "uncertain",
+      "checked_tokens": 227
+    },
+    {
+      "question": "Was the lobby clock running at midnight?",
+      "kind": "other_time",
+      "lines": [
+        "At midday the attendant watched the lobby clock tick.",
+        "The bulletin repeated the forecast.",
+        "The service forecast marked the lobby clock stopped at midnight."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "uncertain",
+      "base_tokens": 108,
+      "current": "yes",
+      "current_tokens": 68,
+      "index": 3,
+      "original": "no",
+      "original_tokens": 140,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 3,
+      "checked": "no",
+      "checked_tokens": 229
+    },
+    {
+      "question": "Was the lobby clock running at midnight?",
+      "kind": "copy",
+      "lines": [
+        "The daily summary cited the same published status.",
+        "The bulletin repeated the forecast.",
+        "The service forecast marked the lobby clock stopped at midnight."
+      ],
+      "expected": "uncertain",
+      "key": 0,
+      "base": "no",
+      "base_tokens": 105,
+      "current": "yes",
+      "current_tokens": 66,
+      "index": 3,
+      "original": "no",
+      "original_tokens": 138,
+      "check": {
+        "answer": "yes"
+      },
+      "kept": 3,
+      "checked": "no",
+      "checked_tokens": 227
+    }
+  ]
+}
