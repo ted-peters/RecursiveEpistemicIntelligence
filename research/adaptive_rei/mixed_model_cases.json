@@ -1,0 +1,20 @@
+[
+ ["count","Are there exactly 19 tiles left? A box started with 28 tiles. Seven were removed, then two more were removed.","yes"],
+ ["count","Can five full bags of six beads be made? There are 29 beads and none will be added.","no"],
+ ["count","Are exactly 13 envelopes left? A stack started with 20. One person took seven and a second person may have taken more.","uncertain"],
+ ["logic","Is Sima licensed? Everyone who signed register K is licensed. Sima signed register K.","yes"],
+ ["logic","Is bin C wooden? Every wooden bin has a brass tag. Bin C has no brass tag.","no"],
+ ["logic","Is Vela a member? All members wear a badge. Vela wears a badge. Visitors may wear badges too.","uncertain"],
+ ["time","Had the north lift arrived by noon? The north lift arrived at 11:55 a.m. that day.","yes"],
+ ["time","Was the first chime before 16:00? The first chime sounded at 4:05 p.m. that day.","no"],
+ ["time","Was the shutter closed at 09:00? The only observation was made at 09:10, when it was closed.","uncertain"],
+ ["source","Was the purple crate actually weighed? A witness watched it being weighed. The order slip still said pending.","yes"],
+ ["source","Did the clerk record a refund? The clerk recorded an exchange only. The customer separately received a refund.","no"],
+ ["source","Was the ring actually copper? A seller guessed it was copper. A catalogue copied the guess without examining the ring.","uncertain"],
+ ["scope","Was every checked card legible? The reader checked four of nine cards; all four checked cards were legible.","yes"],
+ ["scope","Did all seven stalls open? Six stalls opened. The seventh stayed closed the entire day.","no"],
+ ["scope","Was every jar airtight? The inspector tested three of four jars. All three passed; the fourth was untouched.","uncertain"],
+ ["cause","Did switch B cause the lamp to turn on in this trial? The circuit was functioning, B was the sole possible trigger, and the lamp turned on in the trial.","yes"],
+ ["cause","Did the new bell cause yesterday's alarm? The alarm sounded yesterday and the new bell was first installed today.","no"],
+ ["cause","Did the wider shelves alone cause sales to rise? The shelves were widened and prices fell that day. Sales then increased.","uncertain"]
+]
