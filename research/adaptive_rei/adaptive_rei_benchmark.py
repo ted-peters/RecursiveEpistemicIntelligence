@@ -6,6 +6,7 @@ import urllib.request
 
 from adaptive_rei_engine import POLICIES, Evidence, evaluate
 from evidence_schema import GRAPH
+from quantity_comparison import quantity_verdict
 
 CASES = [
     ("Did the package arrive? A signed delivery receipt identifies the package and its recipient.", "yes"),
@@ -262,10 +263,13 @@ REGRESSION_CASES = [
 ]
 
 
-def single_fact_verdict(url, model, question, *, check_contradiction=False):
+def single_fact_verdict(url, model, question, *, check_contradiction=False, exact_quantities=True):
     claim, separator, passage = question.partition("?")
     if not separator or not claim.strip() or not passage.strip():
         raise ValueError("Supply one question followed by its evidence passage")
+    exact = quantity_verdict(question) if exact_quantities else None
+    if exact is not None:
+        return _single_fact_result(question, claim, passage, exact, method="exact_quantity", tokens=0)
     roles = {"supports": "yes", "contradicts": "no", "unresolved": "gap"}
     schema = {"type": "object", "properties": {
         "relation": {"type": "string", "enum": list(roles)}},
@@ -293,11 +297,14 @@ def single_fact_verdict(url, model, question, *, check_contradiction=False):
         tokens += extra
         if finding.get("finding") == "ruled_out":
             role = "contradicts"
-    item = dict(answer=roles[role], strength=2, quote=passage.strip(), requires=[])
+    return _single_fact_result(question, claim, passage, roles[role], extraction=result, tokens=tokens, **check)
+
+
+def _single_fact_result(question, claim, passage, role, **details):
+    item = dict(answer=role, strength=2, quote=passage.strip(), requires=[])
     graph = {"claims": [{"claim": claim.strip(), "evidence": [item]}]}
     decision = evaluate(parse_evidence(graph, question))[1]
-    return dict(answer=decision.answer, state=decision.state, extraction=result,
-                graph=graph, tokens=tokens, **check)
+    return dict(answer=decision.answer, state=decision.state, graph=graph, **details)
 
 
 def captured_scanner_chain(graph):

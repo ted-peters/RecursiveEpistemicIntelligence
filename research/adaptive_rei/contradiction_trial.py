@@ -1,4 +1,5 @@
 """Compare single-fact verdicts with and without a separate contradiction check."""
+import argparse
 import json
 from urllib.request import urlopen
 
@@ -7,6 +8,9 @@ from revision_pairs_trial import ROOT, URL
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--quantity", action="store_true")
+    args = parser.parse_args()
     saved = json.loads((ROOT / "results/schema_single_fact.json").read_text())
     model = saved["model"]
     with urlopen(URL + "/api/tags", timeout=30) as response:
@@ -15,13 +19,16 @@ def main():
             raise ValueError("Model digest mismatch")
     cases = [("previous", x["claim"], x["question"], x["expected"]) for x in saved["results"]]
     controls = json.loads((ROOT / "contradiction_controls.json").read_text())
-    for claim, *passages in controls:
+    if args.quantity:
+        controls += json.loads((ROOT / "quantity_confirmation.json").read_text())
+    for index, (claim, *passages) in enumerate(controls):
         for expected, passage in zip(("yes", "no", "uncertain"), passages, strict=True):
-            cases.append(("new", claim, f'Is this claim true: "{claim}"? {passage}', expected))
+            cases.append(("confirmation" if index >= 8 else "new", claim, f'Is this claim true: "{claim}"? {passage}', expected))
     rows = []
     for suite, claim, question, expected in cases:
-        base = single_fact_verdict(URL, model, question)
-        checked = single_fact_verdict(URL, model, question, check_contradiction=True)
+        base = single_fact_verdict(URL, model, question, exact_quantities=False)
+        checked = single_fact_verdict(URL, model, question, check_contradiction=not args.quantity,
+                                      exact_quantities=args.quantity)
         rows.append(dict(suite=suite, claim=claim, question=question, expected=expected,
                          base=base, checked=checked))
     print(json.dumps(dict(model=model, digest=saved["digest"], rows=rows), indent=2))
