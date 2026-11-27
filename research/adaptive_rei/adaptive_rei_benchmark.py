@@ -39,10 +39,10 @@ SINGLE_PASS = RULE + (
 SCREEN = RULE + " Also return review as a boolean. Set it true only when resolving a conflict or checking a shaky assumption could change the answer."
 REVIEW = RULE + " Follow each disputed claim through its supporting assumptions. Weigh independent evidence and abstain if decisive support is missing."
 
-def predict(url, model, instruction, case, *, max_tokens=128):
+def predict(url, model, instruction, case, *, max_tokens=128, output_format="json"):
     payload = {
         "model": model, "prompt": instruction + "\n\n" + case,
-        "stream": False, "format": "json",
+        "stream": False, "format": output_format,
         "options": {"temperature": 0, "seed": 42, "num_predict": max_tokens},
     }
     request = urllib.request.Request(
@@ -368,7 +368,9 @@ def copied_measurement(case):
     return {"claims": [{"claim": question, "evidence": items}]}
 
 
-def benchmark_rei(url, model, cases):
+def benchmark_rei(url, model, cases, *, schema_extraction=False):
+    from evidence_schema import GRAPH
+
     totals = {f"{name}_correct": 0 for name, _, _ in POLICIES}
     totals.update(corrected=0, regressed=0, invalid_extractions=0, extraction_tokens=0)
     rows = []
@@ -378,7 +380,8 @@ def benchmark_rei(url, model, cases):
         graph = copied_measurement(case)
         tokens = 0
         if graph is None:
-            graph, tokens = predict(url, model, instruction, case, max_tokens=768)
+            graph, tokens = predict(url, model, instruction, case, max_tokens=768,
+                                    output_format=GRAPH if schema_extraction else "json")
         totals["extraction_tokens"] += tokens
         row = {"case": index, "expected": expected, "tokens": tokens, "extraction": graph}
         rows.append(row)
@@ -437,6 +440,7 @@ if __name__ == "__main__":
                        help="Compare the question with what the evidence establishes.")
     modes.add_argument("--report-event", metavar="PASSAGE", help="Experimental report and event comparison.")
     modes.add_argument("--quick", action="store_true", help="Run only the two single-pass prompts.")
+    modes.add_argument("--rei-schema", action="store_true", help="Run REI with schema-constrained graph extraction.")
     args = parser.parse_args()
     try:
         cases = {"original": CASES, "fresh": FRESH_CASES, "chain": [(CHAIN_CASE, "uncertain")],
@@ -469,8 +473,8 @@ if __name__ == "__main__":
             answer, tokens = decide(url, args.model, passage)
             print(json.dumps({"model": args.model, "answer": answer.get("answer"), "tokens": tokens}))
             raise SystemExit(0)
-        if args.rei:
-            result = benchmark_rei(url, args.model, cases)
+        if args.rei or args.rei_schema:
+            result = benchmark_rei(url, args.model, cases, schema_extraction=args.rei_schema)
         else:
             result = benchmark(url, args.model, cases, quick=args.quick)
         print(json.dumps({"suite": args.suite, **result}, indent=2))
