@@ -1,0 +1,1254 @@
+{
+  "model": "llama3.2:1b",
+  "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878",
+  "rows": [
+    {
+      "claim": "Ari attended the rehearsal.",
+      "evidence": "Ari played cello throughout the rehearsal.",
+      "suite": "fresh",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 76
+      },
+      "quote": {
+        "raw": "\"I don't have any information about Ari attending the rehearsal.\"",
+        "value": "I don't have any information about Ari attending the rehearsal.",
+        "stop": "stop",
+        "tokens": 91
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 92
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Ari attended the rehearsal.",
+      "evidence": "Ari missed the entire rehearsal.",
+      "suite": "fresh",
+      "expected": "no",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 74
+      },
+      "quote": {
+        "raw": "\"I missed the entire rehearsal.\"",
+        "value": "I missed the entire rehearsal.",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "guided": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Ari attended the rehearsal.",
+      "evidence": "Ari lent a cello to a friend for the rehearsal.",
+      "suite": "fresh",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 80
+      },
+      "quote": {
+        "raw": "\"I lent a cello to a friend for the rehearsal.\"",
+        "value": "I lent a cello to a friend for the rehearsal.",
+        "stop": "stop",
+        "tokens": 95
+      },
+      "guided": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 95
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Every crate on the dock was inspected.",
+      "evidence": "The supervisor inspected all nine crates on the dock.",
+      "suite": "fresh",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 81
+      },
+      "quote": {
+        "raw": "\"I inspected all nine crates on the dock.\"",
+        "value": "I inspected all nine crates on the dock.",
+        "stop": "stop",
+        "tokens": 93
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 94
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Every crate on the dock was inspected.",
+      "evidence": "One of the nine dockside crates was left uninspected.",
+      "suite": "fresh",
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "quote": {
+        "raw": "\"I am unable to verify the exact words from the passage most relevant to deciding the claim. However, the passage states, 'One of the nine dockside crates was left uninspected.'\"",
+        "value": "I am unable to verify the exact words from the passage most relevant to deciding the claim. However, the passage states, 'One of the nine dockside crates was left uninspected.'",
+        "stop": "stop",
+        "tokens": 123
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 124
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Every crate on the dock was inspected.",
+      "evidence": "The supervisor inspected the three crates nearest the ramp.",
+      "suite": "fresh",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 81
+      },
+      "quote": {
+        "raw": "\"Therefore, every crate on the dock was inspected.\"",
+        "value": "Therefore, every crate on the dock was inspected.",
+        "stop": "stop",
+        "tokens": 95
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 95
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The parcel contained a compass.",
+      "evidence": "Opening the parcel revealed a compass.",
+      "suite": "fresh",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 76
+      },
+      "quote": {
+        "raw": "\"I have it on good authority that the parcel contained a compass.\"",
+        "value": "I have it on good authority that the parcel contained a compass.",
+        "stop": "stop",
+        "tokens": 92
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 93
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The parcel contained a compass.",
+      "evidence": "The parcel held only a folded map.",
+      "suite": "fresh",
+      "expected": "no",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 77
+      },
+      "quote": {
+        "raw": "\"There was no compass in the parcel.\"",
+        "value": "There was no compass in the parcel.",
+        "stop": "stop",
+        "tokens": 88
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 89
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The parcel contained a compass.",
+      "evidence": "The packing suggestion listed a compass.",
+      "suite": "fresh",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 76
+      },
+      "quote": {
+        "raw": "\"I have not been told that the parcel contained a compass.\"",
+        "value": "I have not been told that the parcel contained a compass.",
+        "stop": "stop",
+        "tokens": 91
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 92
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The museum acquired the sculpture in May.",
+      "evidence": "The museum completed the sculpture purchase on May 19.",
+      "suite": "fresh",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 82
+      },
+      "quote": {
+        "raw": "\"There is no mention of the museum acquiring the sculpture in May. The passage actually says: 'The museum completed the sculpture purchase on May 19.'\"",
+        "value": "There is no mention of the museum acquiring the sculpture in May. The passage actually says: 'The museum completed the sculpture purchase on May 19.'",
+        "stop": "stop",
+        "tokens": 115
+      },
+      "guided": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 115
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The museum acquired the sculpture in May.",
+      "evidence": "The museum first acquired the sculpture on July 2 of that year.",
+      "suite": "fresh",
+      "expected": "no",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 85
+      },
+      "quote": {
+        "raw": "\"I acquired the sculpture on July 2 of that year.\"",
+        "value": "I acquired the sculpture on July 2 of that year.",
+        "stop": "stop",
+        "tokens": 100
+      },
+      "guided": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 100
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The museum acquired the sculpture in May.",
+      "evidence": "The museum discussed buying the sculpture at its May meeting.",
+      "suite": "fresh",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 82
+      },
+      "quote": {
+        "raw": "\"I acquired the sculpture in May.\"",
+        "value": "I acquired the sculpture in May.",
+        "stop": "stop",
+        "tokens": 92
+      },
+      "guided": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 92
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Both lanterns were lit at sunset.",
+      "evidence": "At sunset the ranger saw flames in both lanterns.",
+      "suite": "fresh",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 82
+      },
+      "quote": {
+        "raw": "\"There were flames in both lanterns.\"",
+        "value": "There were flames in both lanterns.",
+        "stop": "stop",
+        "tokens": 93
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 94
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Both lanterns were lit at sunset.",
+      "evidence": "At sunset one lantern was burning and the other was dark.",
+      "suite": "fresh",
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "quote": {
+        "raw": "\"I claim: Both lanterns were lit at sunset.\"",
+        "value": "I claim: Both lanterns were lit at sunset.",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "guided": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Both lanterns were lit at sunset.",
+      "evidence": "At sunset the ranger could see one burning lantern; the second was behind a screen.",
+      "suite": "fresh",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 88
+      },
+      "quote": {
+        "raw": "\"There was one burning lantern; the second was behind a screen.\"",
+        "value": "There was one burning lantern; the second was behind a screen.",
+        "stop": "stop",
+        "tokens": 104
+      },
+      "guided": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 104
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The ticket paid the full fare.",
+      "evidence": "The fare was twelve dollars and the ticket covered twelve dollars.",
+      "suite": "fresh",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 82
+      },
+      "quote": {
+        "raw": "\"There was no mention of the fare being twelve dollars. The passage only states that the fare was twelve dollars and the ticket covered twelve dollars.\"",
+        "value": "There was no mention of the fare being twelve dollars. The passage only states that the fare was twelve dollars and the ticket covered twelve dollars.",
+        "stop": "stop",
+        "tokens": 113
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 114
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The ticket paid the full fare.",
+      "evidence": "The fare was fifteen dollars and the ticket covered only ten dollars.",
+      "suite": "fresh",
+      "expected": "no",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "quote": {
+        "raw": "\"There was no mention of the ticket paying the full fare.\"",
+        "value": "There was no mention of the ticket paying the full fare.",
+        "stop": "stop",
+        "tokens": 98
+      },
+      "guided": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 98
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The ticket paid the full fare.",
+      "evidence": "The ticket covered ten dollars; the applicable fare was never stated.",
+      "suite": "fresh",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "quote": {
+        "raw": "\"There was no mention of the fare being paid.\"",
+        "value": "There was no mention of the fare being paid.",
+        "stop": "stop",
+        "tokens": 96
+      },
+      "guided": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 96
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Luz translated the letter.",
+      "evidence": "Luz prepared the letter's translation herself.",
+      "suite": "fresh",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 77
+      },
+      "quote": {
+        "raw": "\"I did not translate the letter.\"",
+        "value": "I did not translate the letter.",
+        "stop": "stop",
+        "tokens": 86
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 87
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Luz translated the letter.",
+      "evidence": "Ben alone translated the letter; Luz merely printed it.",
+      "suite": "fresh",
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 79
+      },
+      "quote": {
+        "raw": "\"I merely printed it.\"",
+        "value": "I merely printed it.",
+        "stop": "stop",
+        "tokens": 87
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 88
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Luz translated the letter.",
+      "evidence": "Luz delivered a translated copy of the letter.",
+      "suite": "fresh",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 78
+      },
+      "quote": {
+        "raw": "\"I have not translated the letter.\"",
+        "value": "I have not translated the letter.",
+        "stop": "stop",
+        "tokens": 87
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 88
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The eastern path was closed on Tuesday.",
+      "evidence": "The eastern path remained barricaded to all users throughout Tuesday.",
+      "suite": "fresh",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "quote": {
+        "raw": "\"There was no mention of the eastern path being closed on Tuesday.\"",
+        "value": "There was no mention of the eastern path being closed on Tuesday.",
+        "stop": "stop",
+        "tokens": 99
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 100
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The eastern path was closed on Tuesday.",
+      "evidence": "The eastern path was open to everyone all Tuesday.",
+      "suite": "fresh",
+      "expected": "no",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 81
+      },
+      "quote": {
+        "raw": "\"There was no mention of the eastern path being closed on Tuesday.\"",
+        "value": "There was no mention of the eastern path being closed on Tuesday.",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 98
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The eastern path was closed on Tuesday.",
+      "evidence": "The western path was closed all Tuesday for repairs.",
+      "suite": "fresh",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 81
+      },
+      "quote": {
+        "raw": "\"There was no mention of the eastern path being closed on Tuesday.\"",
+        "value": "There was no mention of the eastern path being closed on Tuesday.",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "guided": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Nia visited the observatory.",
+      "evidence": "Nia spent the afternoon touring the observatory.",
+      "suite": "prior",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 80
+      },
+      "quote": {
+        "raw": "\"I do not have any information about Nia visiting the observatory.\"",
+        "value": "I do not have any information about Nia visiting the observatory.",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 98
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Nia visited the observatory.",
+      "evidence": "Nia has never been to the observatory.",
+      "suite": "prior",
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 80
+      },
+      "quote": {
+        "raw": "\"I have never been to the observatory.\"",
+        "value": "I have never been to the observatory.",
+        "stop": "stop",
+        "tokens": 92
+      },
+      "guided": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 92
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Nia visited the observatory.",
+      "evidence": "Nia bought her brother a ticket to tour the observatory.",
+      "suite": "prior",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "quote": {
+        "raw": "\"I do not have any information about Nia visiting the observatory. The passage only mentions that Nia bought her brother a ticket to tour the observatory.\"",
+        "value": "I do not have any information about Nia visiting the observatory. The passage only mentions that Nia bought her brother a ticket to tour the observatory.",
+        "stop": "stop",
+        "tokens": 118
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 119
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "All the peaches in basket R were ripe.",
+      "evidence": "The grower checked every peach in basket R; every one was ripe.",
+      "suite": "prior",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 88
+      },
+      "quote": {
+        "raw": "\"There was no mention of the peaches in basket R being ripe in the passage.\"",
+        "value": "There was no mention of the peaches in basket R being ripe in the passage.",
+        "stop": "stop",
+        "tokens": 108
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 109
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "All the peaches in basket R were ripe.",
+      "evidence": "The grower checked every peach in basket R; one was still green and unripe.",
+      "suite": "prior",
+      "expected": "no",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 91
+      },
+      "quote": {
+        "raw": "\"There was one peach in basket R that was still green and unripe.\"",
+        "value": "There was one peach in basket R that was still green and unripe.",
+        "stop": "stop",
+        "tokens": 109
+      },
+      "guided": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 109
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "All the peaches in basket R were ripe.",
+      "evidence": "The grower checked the top layer in basket R; those peaches were ripe.",
+      "suite": "prior",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 90
+      },
+      "quote": {
+        "raw": "\"There are no peaches in basket R.\"",
+        "value": "There are no peaches in basket R.",
+        "stop": "stop",
+        "tokens": 102
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 103
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The red canoe crossed the lake before lunch.",
+      "evidence": "Before lunch the red canoe reached the opposite shore.",
+      "suite": "prior",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 82
+      },
+      "quote": {
+        "raw": "\"I have no evidence to support the claim that the red canoe crossed the lake before lunch.\"",
+        "value": "I have no evidence to support the claim that the red canoe crossed the lake before lunch.",
+        "stop": "stop",
+        "tokens": 103
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 104
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The red canoe crossed the lake before lunch.",
+      "evidence": "The red canoe made its first lake crossing after lunch that day.",
+      "suite": "prior",
+      "expected": "no",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 85
+      },
+      "quote": {
+        "raw": "\"There is no mention of the red canoe crossing the lake before lunch.\"",
+        "value": "There is no mention of the red canoe crossing the lake before lunch.",
+        "stop": "stop",
+        "tokens": 102
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 103
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The red canoe crossed the lake before lunch.",
+      "evidence": "Before lunch the red canoe was launched toward the opposite shore.",
+      "suite": "prior",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 84
+      },
+      "quote": {
+        "raw": "\"There was no mention of the red canoe crossing the lake before lunch.\"",
+        "value": "There was no mention of the red canoe crossing the lake before lunch.",
+        "stop": "stop",
+        "tokens": 101
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 102
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Idris wrote the unsigned note.",
+      "evidence": "Idris identified the unsigned note as one he had personally written.",
+      "suite": "prior",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 85
+      },
+      "quote": {
+        "raw": "\"Idris identified the unsigned note as one he had personally written.\"",
+        "value": "Idris identified the unsigned note as one he had personally written.",
+        "stop": "stop",
+        "tokens": 102
+      },
+      "guided": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 102
+      },
+      "verbatim": true,
+      "full_passage": true
+    },
+    {
+      "claim": "Idris wrote the unsigned note.",
+      "evidence": "Mae alone wrote the unsigned note and Idris only delivered it.",
+      "suite": "prior",
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 85
+      },
+      "quote": {
+        "raw": "\"Irrespective of whether Idris wrote the unsigned note, Mae alone wrote the unsigned note and Idris only delivered it.\"",
+        "value": "Irrespective of whether Idris wrote the unsigned note, Mae alone wrote the unsigned note and Idris only delivered it.",
+        "stop": "stop",
+        "tokens": 116
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 116
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "Idris wrote the unsigned note.",
+      "evidence": "Idris delivered the unsigned note to the front desk.",
+      "suite": "prior",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "quote": {
+        "raw": "\"I did not write the unsigned note.\"",
+        "value": "I did not write the unsigned note.",
+        "stop": "stop",
+        "tokens": 94
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 95
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The archive holds the original portrait.",
+      "evidence": "The archivist authenticated the portrait held by the archive as the original.",
+      "suite": "prior",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 84
+      },
+      "quote": {
+        "raw": "\"I do not know what you are talking about.\"",
+        "value": "I do not know what you are talking about.",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 98
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The archive holds the original portrait.",
+      "evidence": "The archive holds only a reproduction of the portrait; the original was destroyed.",
+      "suite": "prior",
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 85
+      },
+      "quote": {
+        "raw": "\"I have not been able to find any information that suggests the archive holds the original portrait.\"",
+        "value": "I have not been able to find any information that suggests the archive holds the original portrait.",
+        "stop": "stop",
+        "tokens": 106
+      },
+      "guided": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 106
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The archive holds the original portrait.",
+      "evidence": "The archive holds a portrait that resembles a photograph of the original.",
+      "suite": "prior",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "quote": {
+        "raw": "\"I do not have any information about the original portrait.\"",
+        "value": "I do not have any information about the original portrait.",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 98
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The donation covered the entire repair bill.",
+      "evidence": "The repair cost 400 dollars and the donation for it was 400 dollars.",
+      "suite": "prior",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 87
+      },
+      "quote": {
+        "raw": "\"I have not been quoted any words from the passage that would support the claim that the donation covered the entire repair bill. The passage only states that the repair cost $400 and the donation was also $400, but it does not indicate that the donation covered the entire bill.\"",
+        "value": "I have not been quoted any words from the passage that would support the claim that the donation covered the entire repair bill. The passage only states that the repair cost $400 and the donation was also $400, but it does not indicate that the donation covered the entire bill.",
+        "stop": "stop",
+        "tokens": 145
+      },
+      "guided": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 145
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The donation covered the entire repair bill.",
+      "evidence": "The repair cost 400 dollars and the donation for it was 300 dollars.",
+      "suite": "prior",
+      "expected": "no",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 87
+      },
+      "quote": {
+        "raw": "\"I am unable to verify the exact words from the passage most relevant to deciding the claim. The passage provided does not mention the donation covering the entire repair bill.\"",
+        "value": "I am unable to verify the exact words from the passage most relevant to deciding the claim. The passage provided does not mention the donation covering the entire repair bill.",
+        "stop": "stop",
+        "tokens": 122
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 123
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The donation covered the entire repair bill.",
+      "evidence": "The donation was 400 dollars; the final repair bill has not yet been calculated.",
+      "suite": "prior",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 88
+      },
+      "quote": {
+        "raw": "\"I have not been able to determine whether the donation covered the entire repair bill.\"",
+        "value": "I have not been able to determine whether the donation covered the entire repair bill.",
+        "stop": "stop",
+        "tokens": 107
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 108
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The audience heard the second movement.",
+      "evidence": "The audience remained in the hall and listened to the entire second movement.",
+      "suite": "prior",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 84
+      },
+      "quote": {
+        "raw": "\"I have no evidence to support the claim that the audience heard the second movement.\"",
+        "value": "I have no evidence to support the claim that the audience heard the second movement.",
+        "stop": "stop",
+        "tokens": 103
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 104
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The audience heard the second movement.",
+      "evidence": "The concert ended after the first movement and the second was never played.",
+      "suite": "prior",
+      "expected": "no",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 84
+      },
+      "quote": {
+        "raw": "\"I think the audience heard the second movement.\"",
+        "value": "I think the audience heard the second movement.",
+        "stop": "stop",
+        "tokens": 96
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The audience heard the second movement.",
+      "evidence": "The program distributed to the audience included a second movement.",
+      "suite": "prior",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 81
+      },
+      "quote": {
+        "raw": "\"I have no evidence to support the claim that the audience heard the second movement.\"",
+        "value": "I have no evidence to support the claim that the audience heard the second movement.",
+        "stop": "stop",
+        "tokens": 100
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 101
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The bakery opened on Sunday.",
+      "evidence": "A customer bought bread inside the bakery on Sunday.",
+      "suite": "prior",
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 79
+      },
+      "quote": {
+        "raw": "\"I do not have access to any information that would allow me to verify the claim that the bakery opened on Sunday. However, I can tell you that the passage does not mention the bakery opening on Sunday. It only mentions a customer buying bread inside the bakery on Sunday.\"",
+        "value": "I do not have access to any information that would allow me to verify the claim that the bakery opened on Sunday. However, I can tell you that the passage does not mention the bakery opening on Sunday. It only mentions a customer buying bread inside the bakery on Sunday.",
+        "stop": "stop",
+        "tokens": 136
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 137
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The bakery opened on Sunday.",
+      "evidence": "The bakery remained closed to customers all Sunday.",
+      "suite": "prior",
+      "expected": "no",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 78
+      },
+      "quote": {
+        "raw": "\"There was no mention of the bakery being open on Sunday.\"",
+        "value": "There was no mention of the bakery being open on Sunday.",
+        "stop": "stop",
+        "tokens": 93
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 94
+      },
+      "verbatim": false,
+      "full_passage": false
+    },
+    {
+      "claim": "The bakery opened on Sunday.",
+      "evidence": "A baker prepared dough inside the bakery on Sunday before the scheduled opening.",
+      "suite": "prior",
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"no\"",
+        "value": "no",
+        "stop": "stop",
+        "tokens": 83
+      },
+      "quote": {
+        "raw": "\"There was no mention of the bakery opening on Sunday in the passage.\"",
+        "value": "There was no mention of the bakery opening on Sunday in the passage.",
+        "stop": "stop",
+        "tokens": 100
+      },
+      "guided": {
+        "raw": "\"uncertain\"",
+        "value": "uncertain",
+        "stop": "stop",
+        "tokens": 101
+      },
+      "verbatim": false,
+      "full_passage": false
+    }
+  ]
+}
