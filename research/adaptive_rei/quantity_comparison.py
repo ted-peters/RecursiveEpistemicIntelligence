@@ -9,8 +9,20 @@ FRAME = (r"(?P<subject>the [a-z]+(?: [a-z]+){0,5}?) "
 VALUE = rf"(?P<number>{NUMBER}) (?P<unit>[a-z]+)"
 CLAIM = re.compile(FRAME + r"(?P<bound>at least|at most|less than|more than) " + VALUE)
 OBSERVATION = re.compile(FRAME + r"(?:exactly )?" + VALUE)
-UNITS = {"liter", "liters", "meter", "meters", "kilogram", "kilograms", "gram", "grams",
-         "dollar", "dollars", "cent", "cents"}
+# Each exponent converts a value to the smallest supported unit in its group.
+UNITS = {
+    "liter": ("volume", 3), "milliliter": ("volume", 0),
+    "meter": ("length", 3), "centimeter": ("length", 1), "millimeter": ("length", 0),
+    "kilogram": ("mass", 3), "gram": ("mass", 0),
+    "dollar": ("money", 2), "cent": ("money", 0),
+}
+
+
+def normalized_value(number, exponent):
+    value = Decimal(WORDS.index(number) if number in WORDS else number)
+    # Adjust the exponent directly to avoid rounding long decimal inputs.
+    sign, digits, power = value.as_tuple()
+    return Decimal((sign, digits, power + exponent))
 
 
 def quantity_verdict(question):
@@ -24,11 +36,12 @@ def quantity_verdict(question):
     verbs = {claim["verb"], fact["verb"]}
     if len(verbs) > 1 and verbs != {"held", "contained"}:
         return None
-    if (claim["unit"] not in UNITS or fact["unit"] not in UNITS
-            or claim["unit"].rstrip("s") != fact["unit"].rstrip("s")):
+    claim_unit = UNITS.get(claim["unit"].removesuffix("s"))
+    fact_unit = UNITS.get(fact["unit"].removesuffix("s"))
+    if not claim_unit or not fact_unit or claim_unit[0] != fact_unit[0]:
         return None
-    bound, observed = [Decimal(WORDS.index(n) if n in WORDS else n)
-                       for n in (claim["number"], fact["number"])]
+    bound = normalized_value(claim["number"], claim_unit[1])
+    observed = normalized_value(fact["number"], fact_unit[1])
     satisfied = {"at least": observed >= bound, "at most": observed <= bound,
                  "less than": observed < bound, "more than": observed > bound}
     return "yes" if satisfied[claim["bound"]] else "no"
