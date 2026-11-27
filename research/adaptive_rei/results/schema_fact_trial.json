@@ -1,0 +1,333 @@
+{
+  "model": "llama3.2:1b",
+  "cases": 32,
+  "scores": {
+    "flat_correct": 0,
+    "source_only_correct": 0,
+    "dependency_only_correct": 0,
+    "recursive_correct": 0,
+    "corrected": 0,
+    "regressed": 0,
+    "invalid_extractions": 32,
+    "extraction_tokens": 33654
+  },
+  "results": [
+    {
+      "case": 1,
+      "expected": "yes",
+      "tokens": 368,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "yes/no proposition",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "exact words in the text",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "extraction_error": "Invalid evidence for claim 1",
+      "claim": "The kiln reached at least 800 degrees.",
+      "question": "Is this claim true: \"The kiln reached at least 800 degrees.\"? The kiln peaked at 805 degrees."
+    },
+    {
+      "case": 2,
+      "expected": "no",
+      "tokens": 368,
+      "extraction": {
+        "claims": [
+          {
+            "claim": "yes/no proposition",
+            "evidence": [
+              {
+                "answer": "yes",
+                "strength": 2,
+                "quote": "exact words in the text",
+                "requires": []
+              }
+            ]
+          }
+        ]
+      },
+      "extraction_error": "Invalid evidence for claim 1",
+      "claim": "The kiln reached at least 800 degrees.",
+      "question": "Is this claim true: \"The kiln reached at least 800 degrees.\"? The kiln peaked at 795 degrees."
+    },
+    {
+      "case": 3,
+      "expected": "no",
+      "tokens": 1098,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "Fewer than six owls were counted.",
+      "question": "Is this claim true: \"Fewer than six owls were counted.\"? Observers counted exactly seven owls."
+    },
+    {
+      "case": 4,
+      "expected": "yes",
+      "tokens": 1098,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "Fewer than six owls were counted.",
+      "question": "Is this claim true: \"Fewer than six owls were counted.\"? Observers counted exactly five owls."
+    },
+    {
+      "case": 5,
+      "expected": "yes",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The cable exceeded ten meters in length.",
+      "question": "Is this claim true: \"The cable exceeded ten meters in length.\"? The cable measured exactly eleven meters."
+    },
+    {
+      "case": 6,
+      "expected": "no",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The cable exceeded ten meters in length.",
+      "question": "Is this claim true: \"The cable exceeded ten meters in length.\"? The cable measured exactly nine meters."
+    },
+    {
+      "case": 7,
+      "expected": "no",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The jug held at most four liters.",
+      "question": "Is this claim true: \"The jug held at most four liters.\"? The jug contained exactly five liters."
+    },
+    {
+      "case": 8,
+      "expected": "yes",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The jug held at most four liters.",
+      "question": "Is this claim true: \"The jug held at most four liters.\"? The jug contained exactly three liters."
+    },
+    {
+      "case": 9,
+      "expected": "yes",
+      "tokens": 1097,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The brass key was in drawer C.",
+      "question": "Is this claim true: \"The brass key was in drawer C.\"? The brass key lay in drawer C."
+    },
+    {
+      "case": 10,
+      "expected": "no",
+      "tokens": 1097,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The brass key was in drawer C.",
+      "question": "Is this claim true: \"The brass key was in drawer C.\"? The brass key lay in drawer B."
+    },
+    {
+      "case": 11,
+      "expected": "no",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The velvet sash was green.",
+      "question": "Is this claim true: \"The velvet sash was green.\"? The velvet sash was solid purple."
+    },
+    {
+      "case": 12,
+      "expected": "yes",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The velvet sash was green.",
+      "question": "Is this claim true: \"The velvet sash was green.\"? The velvet sash was solid green."
+    },
+    {
+      "case": 13,
+      "expected": "yes",
+      "tokens": 1099,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "Mira won the spelling final.",
+      "question": "Is this claim true: \"Mira won the spelling final.\"? The sole winner of the spelling final was Mira."
+    },
+    {
+      "case": 14,
+      "expected": "no",
+      "tokens": 1098,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "Mira won the spelling final.",
+      "question": "Is this claim true: \"Mira won the spelling final.\"? The sole winner of the spelling final was Hugo."
+    },
+    {
+      "case": 15,
+      "expected": "no",
+      "tokens": 1101,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The only stop on the shuttle route was Elm.",
+      "question": "Is this claim true: \"The only stop on the shuttle route was Elm.\"? The shuttle route had just one stop, Ash."
+    },
+    {
+      "case": 16,
+      "expected": "yes",
+      "tokens": 1101,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The only stop on the shuttle route was Elm.",
+      "question": "Is this claim true: \"The only stop on the shuttle route was Elm.\"? The shuttle route had just one stop, Elm."
+    },
+    {
+      "case": 17,
+      "expected": "yes",
+      "tokens": 1099,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The bell rang before the curtain rose.",
+      "question": "Is this claim true: \"The bell rang before the curtain rose.\"? The bell rang once, before the curtain rose."
+    },
+    {
+      "case": 18,
+      "expected": "no",
+      "tokens": 1099,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The bell rang before the curtain rose.",
+      "question": "Is this claim true: \"The bell rang before the curtain rose.\"? The bell rang once, after the curtain rose."
+    },
+    {
+      "case": 19,
+      "expected": "no",
+      "tokens": 1095,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The only delivery came after noon.",
+      "question": "Is this claim true: \"The only delivery came after noon.\"? The only delivery came before noon."
+    },
+    {
+      "case": 20,
+      "expected": "yes",
+      "tokens": 1095,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The only delivery came after noon.",
+      "question": "Is this claim true: \"The only delivery came after noon.\"? The only delivery came after noon."
+    },
+    {
+      "case": 21,
+      "expected": "yes",
+      "tokens": 1101,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The drum solo came first in the recital.",
+      "question": "Is this claim true: \"The drum solo came first in the recital.\"? In the recital the drum solo came first."
+    },
+    {
+      "case": 22,
+      "expected": "no",
+      "tokens": 1101,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The drum solo came first in the recital.",
+      "question": "Is this claim true: \"The drum solo came first in the recital.\"? In the recital the drum solo came last."
+    },
+    {
+      "case": 23,
+      "expected": "no",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The launch occurred on a weekend.",
+      "question": "Is this claim true: \"The launch occurred on a weekend.\"? The launch took place on a Monday."
+    },
+    {
+      "case": 24,
+      "expected": "yes",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The launch occurred on a weekend.",
+      "question": "Is this claim true: \"The launch occurred on a weekend.\"? The launch took place on a Saturday."
+    },
+    {
+      "case": 25,
+      "expected": "yes",
+      "tokens": 1095,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The pantry latch was fastened.",
+      "question": "Is this claim true: \"The pantry latch was fastened.\"? The pantry latch was fastened."
+    },
+    {
+      "case": 26,
+      "expected": "no",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The pantry latch was fastened.",
+      "question": "Is this claim true: \"The pantry latch was fastened.\"? The pantry latch was unfastened."
+    },
+    {
+      "case": 27,
+      "expected": "no",
+      "tokens": 1097,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The guest list included Rina.",
+      "question": "Is this claim true: \"The guest list included Rina.\"? The final guest list explicitly excluded Rina."
+    },
+    {
+      "case": 28,
+      "expected": "yes",
+      "tokens": 1097,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The guest list included Rina.",
+      "question": "Is this claim true: \"The guest list included Rina.\"? The final guest list explicitly included Rina."
+    },
+    {
+      "case": 29,
+      "expected": "yes",
+      "tokens": 1097,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The same tile survived the drop intact.",
+      "question": "Is this claim true: \"The same tile survived the drop intact.\"? After the drop that tile was intact."
+    },
+    {
+      "case": 30,
+      "expected": "no",
+      "tokens": 1097,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The same tile survived the drop intact.",
+      "question": "Is this claim true: \"The same tile survived the drop intact.\"? After the drop that tile was shattered."
+    },
+    {
+      "case": 31,
+      "expected": "no",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The ferry made its scheduled crossing.",
+      "question": "Is this claim true: \"The ferry made its scheduled crossing.\"? The operator canceled the scheduled ferry crossing."
+    },
+    {
+      "case": 32,
+      "expected": "yes",
+      "tokens": 1096,
+      "extraction": {},
+      "extraction_error": "Expected 1 to 20 claims",
+      "claim": "The ferry made its scheduled crossing.",
+      "question": "Is this claim true: \"The ferry made its scheduled crossing.\"? The operator completed the scheduled ferry crossing."
+    }
+  ],
+  "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878"
+}

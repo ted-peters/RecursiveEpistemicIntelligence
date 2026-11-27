@@ -5,6 +5,7 @@ import re
 import urllib.request
 
 from adaptive_rei_engine import POLICIES, Evidence, evaluate
+from evidence_schema import GRAPH
 
 CASES = [
     ("Did the package arrive? A signed delivery receipt identifies the package and its recipient.", "yes"),
@@ -261,6 +262,28 @@ REGRESSION_CASES = [
 ]
 
 
+def single_fact_verdict(url, model, question):
+    claim, separator, passage = question.partition("?")
+    if not separator or not claim.strip() or not passage.strip():
+        raise ValueError("Supply one question followed by its evidence passage")
+    roles = {"supports": "yes", "contradicts": "no", "unresolved": "gap"}
+    schema = {"type": "object", "properties": {
+        "relation": {"type": "string", "enum": list(roles)}},
+        "required": ["relation"], "additionalProperties": False}
+    instruction = ("Classify the passage relative to the claim. Its relation is supports if "
+                   "the claim follows, contradicts if the claim is false, or unresolved "
+                   "if neither conclusion follows.")
+    result, tokens = predict(url, model, instruction, question, max_tokens=32, output_format=schema)
+    role = result.get("relation")
+    if not isinstance(role, str) or role not in roles:
+        return dict(answer=None, error="Missing or invalid relation", extraction=result, tokens=tokens)
+    item = dict(answer=roles[role], strength=2, quote=passage.strip(), requires=[])
+    graph = {"claims": [{"claim": claim.strip(), "evidence": [item]}]}
+    decision = evaluate(parse_evidence(graph, question))[1]
+    return dict(answer=decision.answer, state=decision.state, extraction=result,
+                graph=graph, tokens=tokens)
+
+
 def captured_scanner_chain(graph):
     """Recognize the expected source, correction and dependent certificate by quoted anchors."""
     rows = graph["claims"]
@@ -369,8 +392,6 @@ def copied_measurement(case):
 
 
 def benchmark_rei(url, model, cases, *, schema_extraction=False):
-    from evidence_schema import GRAPH
-
     totals = {f"{name}_correct": 0 for name, _, _ in POLICIES}
     totals.update(corrected=0, regressed=0, invalid_extractions=0, extraction_tokens=0)
     rows = []
@@ -441,11 +462,16 @@ if __name__ == "__main__":
     modes.add_argument("--report-event", metavar="PASSAGE", help="Experimental report and event comparison.")
     modes.add_argument("--quick", action="store_true", help="Run only the two single-pass prompts.")
     modes.add_argument("--rei-schema", action="store_true", help="Run REI with schema-constrained graph extraction.")
+    modes.add_argument("--single-fact-schema", metavar="QUESTION",
+                       help="Classify a single supplied passage as evidence for one question.")
     args = parser.parse_args()
     try:
         cases = {"original": CASES, "fresh": FRESH_CASES, "chain": [(CHAIN_CASE, "uncertain")],
                  "all": CASES + FRESH_CASES + [(CHAIN_CASE, "uncertain")] + REGRESSION_CASES}[args.suite]
         url = args.url.rstrip("/")
+        if args.single_fact_schema is not None:
+            print(json.dumps(single_fact_verdict(url, args.model, args.single_fact_schema)))
+            raise SystemExit(0)
         if args.report_event is not None:
             from plain_verdict import decide
             answer, tokens = decide(url, args.model, args.report_event, separate_reports=True)
@@ -478,5 +504,5 @@ if __name__ == "__main__":
         else:
             result = benchmark(url, args.model, cases, quick=args.quick)
         print(json.dumps({"suite": args.suite, **result}, indent=2))
-    except (OSError, KeyError) as error:
+    except (OSError, KeyError, ValueError) as error:
         parser.exit(1, f"Benchmark could not complete: {error}\n")
