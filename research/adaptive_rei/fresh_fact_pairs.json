@@ -1,0 +1,18 @@
+[
+  ["The kiln reached at least 800 degrees.", "The kiln peaked at {} degrees.", "805", "795"],
+  ["Fewer than six owls were counted.", "Observers counted exactly {} owls.", "five", "seven"],
+  ["The cable exceeded ten meters in length.", "The cable measured exactly {} meters.", "eleven", "nine"],
+  ["The jug held at most four liters.", "The jug contained exactly {} liters.", "three", "five"],
+  ["The brass key was in drawer C.", "The brass key lay in drawer {}.", "C", "B"],
+  ["The velvet sash was green.", "The velvet sash was solid {}.", "green", "purple"],
+  ["Mira won the spelling final.", "The sole winner of the spelling final was {}.", "Mira", "Hugo"],
+  ["The only stop on the shuttle route was Elm.", "The shuttle route had just one stop, {}.", "Elm", "Ash"],
+  ["The bell rang before the curtain rose.", "The bell rang once, {} the curtain rose.", "before", "after"],
+  ["The only delivery came after noon.", "The only delivery came {} noon.", "after", "before"],
+  ["The drum solo came first in the recital.", "In the recital the drum solo came {}.", "first", "last"],
+  ["The launch occurred on a weekend.", "The launch took place on a {}.", "Saturday", "Monday"],
+  ["The pantry latch was fastened.", "The pantry latch was {}.", "fastened", "unfastened"],
+  ["The guest list included Rina.", "The final guest list explicitly {} Rina.", "included", "excluded"],
+  ["The same tile survived the drop intact.", "After the drop that tile was {}.", "intact", "shattered"],
+  ["The ferry made its scheduled crossing.", "The operator {} the scheduled ferry crossing.", "completed", "canceled"]
+]
