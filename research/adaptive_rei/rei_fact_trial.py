@@ -1,5 +1,6 @@
 """Compare the existing recursive evidence pipeline with direct Llama verdicts."""
 import json
+from urllib.error import HTTPError
 from urllib.request import urlopen
 
 from adaptive_rei_benchmark import benchmark_rei
@@ -18,7 +19,19 @@ def main():
         question = f'Is this claim true: "{case["claim"]}"? {case["passage"]}'
         direct = generate(VERDICT + "\n\n" + question,
                           dict(type="string", enum=["yes", "no", "uncertain"]), 12)
-        rei = benchmark_rei(URL, MODEL, [(question, case["expected"])])["results"][0]
+        server_errors = []
+        for attempt in range(2):
+            try:
+                rei = benchmark_rei(URL, MODEL, [(question, case["expected"])])["results"][0]
+                break
+            except HTTPError as error:
+                if error.code != 500:
+                    raise
+                server_errors.append(error.read().decode(errors="replace"))
+        else:
+            rei = {"request_error": "HTTP 500 after two attempts"}
+        if server_errors:
+            rei["server_errors"] = server_errors
         rows.append(dict(**case, question=question, matched_direct=direct, rei=rei))
     print(json.dumps(dict(model=MODEL, digest=previous["digest"], rows=rows), indent=2))
 
