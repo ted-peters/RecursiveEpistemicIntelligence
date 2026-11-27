@@ -1,0 +1,198 @@
+{
+  "model": "llama3.2:1b",
+  "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878",
+  "rows": [
+    {
+      "claim": "Ari attended the rehearsal.",
+      "expected": "yes",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 84,
+      "direction_tokens": 66
+    },
+    {
+      "claim": "Ari attended the rehearsal.",
+      "expected": "no",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 82,
+      "direction_tokens": 64
+    },
+    {
+      "claim": "Ari attended the rehearsal.",
+      "expected": "uncertain",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 88,
+      "direction_tokens": 70
+    },
+    {
+      "claim": "Every crate on the dock was inspected.",
+      "expected": "yes",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 88,
+      "direction_tokens": 70
+    },
+    {
+      "claim": "Every crate on the dock was inspected.",
+      "expected": "no",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 90,
+      "direction_tokens": 72
+    },
+    {
+      "claim": "Every crate on the dock was inspected.",
+      "expected": "uncertain",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 88,
+      "direction_tokens": 70
+    },
+    {
+      "claim": "The parcel contained a compass.",
+      "expected": "yes",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 83,
+      "direction_tokens": 65
+    },
+    {
+      "claim": "The parcel contained a compass.",
+      "expected": "no",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 84,
+      "direction_tokens": 66
+    },
+    {
+      "claim": "The parcel contained a compass.",
+      "expected": "uncertain",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 83,
+      "direction_tokens": 65
+    },
+    {
+      "claim": "The museum acquired the sculpture in May.",
+      "expected": "yes",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 89,
+      "direction_tokens": 71
+    },
+    {
+      "claim": "The museum acquired the sculpture in May.",
+      "expected": "no",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 92,
+      "direction_tokens": 74
+    },
+    {
+      "claim": "The museum acquired the sculpture in May.",
+      "expected": "uncertain",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 89,
+      "direction_tokens": 71
+    },
+    {
+      "claim": "Both lanterns were lit at sunset.",
+      "expected": "yes",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 89,
+      "direction_tokens": 71
+    },
+    {
+      "claim": "Both lanterns were lit at sunset.",
+      "expected": "no",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 90,
+      "direction_tokens": 72
+    },
+    {
+      "claim": "Both lanterns were lit at sunset.",
+      "expected": "uncertain",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 95,
+      "direction_tokens": 77
+    },
+    {
+      "claim": "The ticket paid the full fare.",
+      "expected": "yes",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 89,
+      "direction_tokens": 71
+    },
+    {
+      "claim": "The ticket paid the full fare.",
+      "expected": "no",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 90,
+      "direction_tokens": 72
+    },
+    {
+      "claim": "The ticket paid the full fare.",
+      "expected": "uncertain",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 90,
+      "direction_tokens": 72
+    },
+    {
+      "claim": "Luz translated the letter.",
+      "expected": "yes",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 84,
+      "direction_tokens": 66
+    },
+    {
+      "claim": "Luz translated the letter.",
+      "expected": "no",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 87,
+      "direction_tokens": 69
+    },
+    {
+      "claim": "Luz translated the letter.",
+      "expected": "uncertain",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 85,
+      "direction_tokens": 67
+    },
+    {
+      "claim": "The eastern path was closed on Tuesday.",
+      "expected": "yes",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 90,
+      "direction_tokens": 72
+    },
+    {
+      "claim": "The eastern path was closed on Tuesday.",
+      "expected": "no",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 88,
+      "direction_tokens": 70
+    },
+    {
+      "claim": "The eastern path was closed on Tuesday.",
+      "expected": "uncertain",
+      "gate": "settled",
+      "direction": "yes",
+      "gate_tokens": 88,
+      "direction_tokens": 70
+    }
+  ]
+}
