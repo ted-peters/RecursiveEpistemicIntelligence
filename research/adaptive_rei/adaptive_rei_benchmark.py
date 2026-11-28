@@ -7,6 +7,7 @@ import urllib.request
 from adaptive_rei_engine import POLICIES, Evidence, evaluate
 from evidence_schema import GRAPH
 from quantity_comparison import quantity_role
+from capacity_reading import read_capacity
 
 CASES = [
     ("Did the package arrive? A signed delivery receipt identifies the package and its recipient.", "yes"),
@@ -267,6 +268,13 @@ def single_fact_verdict(url, model, question, *, check_contradiction=False, exac
     claim, separator, passage = question.partition("?")
     if not separator or not claim.strip() or not passage.strip():
         raise ValueError("Supply one question followed by its evidence passage")
+    wrapped = re.fullmatch(r'Is this claim true: "([^"?]+)"', claim.strip())
+    if exact_quantities and wrapped:
+        capacity = read_capacity(wrapped[1], passage)
+        if capacity is not None:
+            role, kind = capacity
+            return _single_fact_result(question, claim, passage, role, method="capacity_reading",
+                                       observation_kind=kind, tokens=0)
     exact = quantity_role(question) if exact_quantities else None
     if exact is not None:
         return _single_fact_result(question, claim, passage, exact, method="measurement_gap" if exact == "gap" else "exact_quantity", tokens=0)
