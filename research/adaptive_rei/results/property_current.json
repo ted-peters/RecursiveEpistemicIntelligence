@@ -1,0 +1,2614 @@
+{
+  "model": "llama3.2:1b",
+  "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878",
+  "rows": [
+    {
+      "claim": "The blue parcel weighed at most 2.4 kilograms.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "standard",
+      "question": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"? The blue parcel weighed 2400 grams.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The blue parcel weighed 2400 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue parcel weighed at most 2.4 kilograms.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"? The scale reading for the blue parcel was 2400 grams.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The scale reading for the blue parcel was 2400 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue parcel weighed at most 2.4 kilograms.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "standard",
+      "question": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"? The blue parcel weighed 2402 grams.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The blue parcel weighed 2402 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue parcel weighed at most 2.4 kilograms.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"? The scale reading for the blue parcel was 2402 grams.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The scale reading for the blue parcel was 2402 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue parcel weighed at most 2.4 kilograms.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"? The gray parcel weighed 2402 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The gray parcel weighed 2402 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue parcel weighed at most 2.4 kilograms.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"? The scale reading for the gray parcel was 2402 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The scale reading for the gray parcel was 2402 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue parcel weighed at most 2.4 kilograms.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"? The blue parcel measured 24 centimeters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The blue parcel measured 24 centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue parcel weighed at most 2.4 kilograms.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"? The blue parcel was 24 centimeters long.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue parcel weighed at most 2.4 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The blue parcel was 24 centimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The pendant weighed less than 60 grams.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "standard",
+      "question": "Is this claim true: \"The pendant weighed less than 60 grams.\"? The pendant weighed 0.059 kilograms.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pendant weighed less than 60 grams.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The pendant weighed 0.059 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The pendant weighed less than 60 grams.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The pendant weighed less than 60 grams.\"? On the scale, the pendant registered 0.059 kilograms.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pendant weighed less than 60 grams.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "On the scale, the pendant registered 0.059 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The pendant weighed less than 60 grams.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "standard",
+      "question": "Is this claim true: \"The pendant weighed less than 60 grams.\"? The pendant weighed 0.060 kilograms.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pendant weighed less than 60 grams.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The pendant weighed 0.060 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The pendant weighed less than 60 grams.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The pendant weighed less than 60 grams.\"? On the scale, the pendant registered 0.060 kilograms.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pendant weighed less than 60 grams.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "On the scale, the pendant registered 0.060 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The pendant weighed less than 60 grams.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The pendant weighed less than 60 grams.\"? The brooch weighed 0.060 kilograms.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pendant weighed less than 60 grams.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The brooch weighed 0.060 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The pendant weighed less than 60 grams.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The pendant weighed less than 60 grams.\"? On the scale, the brooch registered 0.060 kilograms.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pendant weighed less than 60 grams.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "On the scale, the brooch registered 0.060 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The pendant weighed less than 60 grams.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The pendant weighed less than 60 grams.\"? The pendant cost 60 dollars.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pendant weighed less than 60 grams.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The pendant cost 60 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The pendant weighed less than 60 grams.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The pendant weighed less than 60 grams.\"? The price of the pendant was 60 dollars.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pendant weighed less than 60 grams.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The price of the pendant was 60 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The dowel measured at least 35 centimeters.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "standard",
+      "question": "Is this claim true: \"The dowel measured at least 35 centimeters.\"? The dowel measured 350 millimeters.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The dowel measured at least 35 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The dowel measured 350 millimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The dowel measured at least 35 centimeters.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The dowel measured at least 35 centimeters.\"? The dowel was 350 millimeters long.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The dowel measured at least 35 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The dowel was 350 millimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The dowel measured at least 35 centimeters.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "standard",
+      "question": "Is this claim true: \"The dowel measured at least 35 centimeters.\"? The dowel measured 349 millimeters.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The dowel measured at least 35 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The dowel measured 349 millimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The dowel measured at least 35 centimeters.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The dowel measured at least 35 centimeters.\"? The dowel was 349 millimeters long.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The dowel measured at least 35 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The dowel was 349 millimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The dowel measured at least 35 centimeters.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The dowel measured at least 35 centimeters.\"? The peg measured 349 millimeters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The dowel measured at least 35 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The peg measured 349 millimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The dowel measured at least 35 centimeters.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The dowel measured at least 35 centimeters.\"? The peg was 349 millimeters long.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The dowel measured at least 35 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The peg was 349 millimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The dowel measured at least 35 centimeters.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The dowel measured at least 35 centimeters.\"? The dowel weighed 350 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The dowel measured at least 35 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The dowel weighed 350 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The dowel measured at least 35 centimeters.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The dowel measured at least 35 centimeters.\"? The mass of the dowel was 350 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The dowel measured at least 35 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The mass of the dowel was 350 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The cord measured more than 0.8 meters.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "standard",
+      "question": "Is this claim true: \"The cord measured more than 0.8 meters.\"? The cord measured 81 centimeters.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cord measured more than 0.8 meters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The cord measured 81 centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The cord measured more than 0.8 meters.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The cord measured more than 0.8 meters.\"? End to end, the cord was 81 centimeters long.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cord measured more than 0.8 meters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "End to end, the cord was 81 centimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The cord measured more than 0.8 meters.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "standard",
+      "question": "Is this claim true: \"The cord measured more than 0.8 meters.\"? The cord measured 80 centimeters.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cord measured more than 0.8 meters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The cord measured 80 centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The cord measured more than 0.8 meters.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The cord measured more than 0.8 meters.\"? End to end, the cord was 80 centimeters long.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cord measured more than 0.8 meters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "End to end, the cord was 80 centimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The cord measured more than 0.8 meters.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The cord measured more than 0.8 meters.\"? The strap measured 80 centimeters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cord measured more than 0.8 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The strap measured 80 centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The cord measured more than 0.8 meters.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The cord measured more than 0.8 meters.\"? End to end, the strap was 80 centimeters long.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cord measured more than 0.8 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "End to end, the strap was 80 centimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The cord measured more than 0.8 meters.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The cord measured more than 0.8 meters.\"? The cord cost 80 cents.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cord measured more than 0.8 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The cord cost 80 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The cord measured more than 0.8 meters.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The cord measured more than 0.8 meters.\"? The price of the cord was 80 cents.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cord measured more than 0.8 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The price of the cord was 80 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The silver pitcher contained at most 1.6 liters.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "standard",
+      "question": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"? The silver pitcher held 1600 milliliters.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The silver pitcher held 1600 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The silver pitcher contained at most 1.6 liters.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"? There were 1600 milliliters of water in the silver pitcher.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "There were 1600 milliliters of water in the silver pitcher.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 102
+      }
+    },
+    {
+      "claim": "The silver pitcher contained at most 1.6 liters.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "standard",
+      "question": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"? The silver pitcher held 1601 milliliters.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The silver pitcher held 1601 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The silver pitcher contained at most 1.6 liters.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"? There were 1601 milliliters of water in the silver pitcher.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "There were 1601 milliliters of water in the silver pitcher.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 102
+      }
+    },
+    {
+      "claim": "The silver pitcher contained at most 1.6 liters.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"? The copper pitcher held 1601 milliliters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The copper pitcher held 1601 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The silver pitcher contained at most 1.6 liters.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"? There were 1601 milliliters of water in the copper pitcher.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "There were 1601 milliliters of water in the copper pitcher.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 102
+      }
+    },
+    {
+      "claim": "The silver pitcher contained at most 1.6 liters.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"? The silver pitcher weighed 1600 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The silver pitcher weighed 1600 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The silver pitcher contained at most 1.6 liters.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"? The silver pitcher itself had a mass of 1600 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The silver pitcher contained at most 1.6 liters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The silver pitcher itself had a mass of 1600 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The burette contained less than 40 milliliters.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "standard",
+      "question": "Is this claim true: \"The burette contained less than 40 milliliters.\"? The burette contained 0.039 liters.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The burette contained less than 40 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The burette contained 0.039 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The burette contained less than 40 milliliters.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The burette contained less than 40 milliliters.\"? The liquid in the burette had a volume of 0.039 liters.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The burette contained less than 40 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The liquid in the burette had a volume of 0.039 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The burette contained less than 40 milliliters.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "standard",
+      "question": "Is this claim true: \"The burette contained less than 40 milliliters.\"? The burette contained 0.040 liters.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The burette contained less than 40 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The burette contained 0.040 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The burette contained less than 40 milliliters.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The burette contained less than 40 milliliters.\"? The liquid in the burette had a volume of 0.040 liters.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The burette contained less than 40 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The liquid in the burette had a volume of 0.040 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The burette contained less than 40 milliliters.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The burette contained less than 40 milliliters.\"? The cuvette contained 0.040 liters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The burette contained less than 40 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The cuvette contained 0.040 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The burette contained less than 40 milliliters.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The burette contained less than 40 milliliters.\"? The liquid in the cuvette had a volume of 0.040 liters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The burette contained less than 40 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The liquid in the cuvette had a volume of 0.040 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The burette contained less than 40 milliliters.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The burette contained less than 40 milliliters.\"? The burette measured 40 centimeters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The burette contained less than 40 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The burette measured 40 centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The burette contained less than 40 milliliters.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The burette contained less than 40 milliliters.\"? The burette was 40 centimeters long.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The burette contained less than 40 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The burette was 40 centimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The paper map cost at least 4.5 dollars.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "standard",
+      "question": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"? The paper map cost 450 cents.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The paper map cost 450 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The paper map cost at least 4.5 dollars.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"? The price charged for the paper map was 450 cents.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The price charged for the paper map was 450 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The paper map cost at least 4.5 dollars.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "standard",
+      "question": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"? The paper map cost 449 cents.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The paper map cost 449 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The paper map cost at least 4.5 dollars.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"? The price charged for the paper map was 449 cents.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The price charged for the paper map was 449 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The paper map cost at least 4.5 dollars.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"? The paper guide cost 449 cents.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The paper guide cost 449 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The paper map cost at least 4.5 dollars.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"? The price charged for the paper guide was 449 cents.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The price charged for the paper guide was 449 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The paper map cost at least 4.5 dollars.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"? The paper map weighed 450 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The paper map weighed 450 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The paper map cost at least 4.5 dollars.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"? The mass of the paper map was 450 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The paper map cost at least 4.5 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The mass of the paper map was 450 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue pin cost more than 65 cents.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "standard",
+      "question": "Is this claim true: \"The blue pin cost more than 65 cents.\"? The blue pin cost 0.66 dollars.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue pin cost more than 65 cents.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The blue pin cost 0.66 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue pin cost more than 65 cents.",
+      "kind": "support",
+      "expected": "yes",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The blue pin cost more than 65 cents.\"? The seller charged 0.66 dollars for the blue pin.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue pin cost more than 65 cents.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The seller charged 0.66 dollars for the blue pin.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue pin cost more than 65 cents.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "standard",
+      "question": "Is this claim true: \"The blue pin cost more than 65 cents.\"? The blue pin cost 0.65 dollars.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue pin cost more than 65 cents.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The blue pin cost 0.65 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue pin cost more than 65 cents.",
+      "kind": "contradiction",
+      "expected": "no",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The blue pin cost more than 65 cents.\"? The seller charged 0.65 dollars for the blue pin.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue pin cost more than 65 cents.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The seller charged 0.65 dollars for the blue pin.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue pin cost more than 65 cents.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The blue pin cost more than 65 cents.\"? The red pin cost 0.65 dollars.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue pin cost more than 65 cents.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The red pin cost 0.65 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue pin cost more than 65 cents.",
+      "kind": "other_object",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The blue pin cost more than 65 cents.\"? The seller charged 0.65 dollars for the red pin.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue pin cost more than 65 cents.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The seller charged 0.65 dollars for the red pin.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue pin cost more than 65 cents.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "standard",
+      "question": "Is this claim true: \"The blue pin cost more than 65 cents.\"? The blue pin measured 65 millimeters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue pin cost more than 65 cents.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The blue pin measured 65 millimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "claim": "The blue pin cost more than 65 cents.",
+      "kind": "other_property",
+      "expected": "uncertain",
+      "style": "paraphrase",
+      "question": "Is this claim true: \"The blue pin cost more than 65 cents.\"? The blue pin was 65 millimeters long.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue pin cost more than 65 cents.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The blue pin was 65 millimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "yes",
+      "claim": "The sample box weighed at most 1 kilogram.",
+      "question": "Is this claim true: \"The sample box weighed at most 1 kilogram.\"? The white case, also called the sample box, weighed 990 grams.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The sample box weighed at most 1 kilogram.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The white case, also called the sample box, weighed 990 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "no",
+      "claim": "The sample box weighed at most 1 kilogram.",
+      "question": "Is this claim true: \"The sample box weighed at most 1 kilogram.\"? The white case, also called the sample box, weighed 1010 grams.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The sample box weighed at most 1 kilogram.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The white case, also called the sample box, weighed 1010 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "uncertain",
+      "claim": "The sample box weighed at most 1 kilogram.",
+      "question": "Is this claim true: \"The sample box weighed at most 1 kilogram.\"? The white case, also called the field box, weighed 1010 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The sample box weighed at most 1 kilogram.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The white case, also called the field box, weighed 1010 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "yes",
+      "claim": "The fair ticket cost less than 3 dollars.",
+      "question": "Is this claim true: \"The fair ticket cost less than 3 dollars.\"? The green pass, also called the fair ticket, cost 299 cents.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The fair ticket cost less than 3 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The green pass, also called the fair ticket, cost 299 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "no",
+      "claim": "The fair ticket cost less than 3 dollars.",
+      "question": "Is this claim true: \"The fair ticket cost less than 3 dollars.\"? The green pass, also called the fair ticket, cost 300 cents.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The fair ticket cost less than 3 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The green pass, also called the fair ticket, cost 300 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "uncertain",
+      "claim": "The fair ticket cost less than 3 dollars.",
+      "question": "Is this claim true: \"The fair ticket cost less than 3 dollars.\"? The green pass, also called the bus ticket, cost 300 cents.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The fair ticket cost less than 3 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The green pass, also called the bus ticket, cost 300 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "yes",
+      "claim": "The brass strip measured more than 5 centimeters.",
+      "question": "Is this claim true: \"The brass strip measured more than 5 centimeters.\"? The narrow band, also called the brass strip, measured 51 millimeters.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The brass strip measured more than 5 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The narrow band, also called the brass strip, measured 51 millimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "no",
+      "claim": "The brass strip measured more than 5 centimeters.",
+      "question": "Is this claim true: \"The brass strip measured more than 5 centimeters.\"? The narrow band, also called the brass strip, measured 50 millimeters.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The brass strip measured more than 5 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The narrow band, also called the brass strip, measured 50 millimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "uncertain",
+      "claim": "The brass strip measured more than 5 centimeters.",
+      "question": "Is this claim true: \"The brass strip measured more than 5 centimeters.\"? The narrow band, also called the steel strip, measured 50 millimeters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The brass strip measured more than 5 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The narrow band, also called the steel strip, measured 50 millimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "yes",
+      "claim": "The rinse jar held at least 0.2 liters.",
+      "question": "Is this claim true: \"The rinse jar held at least 0.2 liters.\"? The rear vessel, also called the rinse jar, contained 200 milliliters.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The rinse jar held at least 0.2 liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The rear vessel, also called the rinse jar, contained 200 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "no",
+      "claim": "The rinse jar held at least 0.2 liters.",
+      "question": "Is this claim true: \"The rinse jar held at least 0.2 liters.\"? The rear vessel, also called the rinse jar, contained 199 milliliters.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The rinse jar held at least 0.2 liters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The rear vessel, also called the rinse jar, contained 199 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "alias",
+      "expected": "uncertain",
+      "claim": "The rinse jar held at least 0.2 liters.",
+      "question": "Is this claim true: \"The rinse jar held at least 0.2 liters.\"? The rear vessel, also called the waste jar, contained 199 milliliters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The rinse jar held at least 0.2 liters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The rear vessel, also called the waste jar, contained 199 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "yes",
+      "claim": "The sample pouch weighed less than 0.5 kilograms.",
+      "question": "Is this claim true: \"The sample pouch weighed less than 0.5 kilograms.\"? The sample pouch weighed 499 grams.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The sample pouch weighed less than 0.5 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The sample pouch weighed 499 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "no",
+      "claim": "The sample pouch weighed less than 0.5 kilograms.",
+      "question": "Is this claim true: \"The sample pouch weighed less than 0.5 kilograms.\"? The sample pouch weighed 500 grams.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The sample pouch weighed less than 0.5 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The sample pouch weighed 500 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "uncertain",
+      "claim": "The sample pouch weighed less than 0.5 kilograms.",
+      "question": "Is this claim true: \"The sample pouch weighed less than 0.5 kilograms.\"? The sample pouch cost 500 cents.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The sample pouch weighed less than 0.5 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The sample pouch cost 500 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "yes",
+      "claim": "The handle measured at least 12 centimeters.",
+      "question": "Is this claim true: \"The handle measured at least 12 centimeters.\"? The handle measured 120 millimeters.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The handle measured at least 12 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The handle measured 120 millimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "no",
+      "claim": "The handle measured at least 12 centimeters.",
+      "question": "Is this claim true: \"The handle measured at least 12 centimeters.\"? The handle measured 119 millimeters.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The handle measured at least 12 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The handle measured 119 millimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "uncertain",
+      "claim": "The handle measured at least 12 centimeters.",
+      "question": "Is this claim true: \"The handle measured at least 12 centimeters.\"? The mass of the handle was 120 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The handle measured at least 12 centimeters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The mass of the handle was 120 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "yes",
+      "claim": "The storage pot contained at most 2 liters.",
+      "question": "Is this claim true: \"The storage pot contained at most 2 liters.\"? The storage pot held 2000 milliliters.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The storage pot contained at most 2 liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The storage pot held 2000 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "no",
+      "claim": "The storage pot contained at most 2 liters.",
+      "question": "Is this claim true: \"The storage pot contained at most 2 liters.\"? The storage pot held 2001 milliliters.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The storage pot contained at most 2 liters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The storage pot held 2001 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "uncertain",
+      "claim": "The storage pot contained at most 2 liters.",
+      "question": "Is this claim true: \"The storage pot contained at most 2 liters.\"? The storage pot itself had a mass of 2000 grams.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The storage pot contained at most 2 liters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The storage pot itself had a mass of 2000 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "yes",
+      "claim": "The transit card cost more than 7 dollars.",
+      "question": "Is this claim true: \"The transit card cost more than 7 dollars.\"? The transit card cost 701 cents.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The transit card cost more than 7 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The transit card cost 701 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "no",
+      "claim": "The transit card cost more than 7 dollars.",
+      "question": "Is this claim true: \"The transit card cost more than 7 dollars.\"? The transit card cost 700 cents.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The transit card cost more than 7 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The transit card cost 700 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "uncertain",
+      "claim": "The transit card cost more than 7 dollars.",
+      "question": "Is this claim true: \"The transit card cost more than 7 dollars.\"? The transit card was 7 centimeters long.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The transit card cost more than 7 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The transit card was 7 centimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "yes",
+      "claim": "The bolt weighed more than 0.03 kilograms.",
+      "question": "Is this claim true: \"The bolt weighed more than 0.03 kilograms.\"? The scale reading for the bolt was 31 grams.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bolt weighed more than 0.03 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The scale reading for the bolt was 31 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "no",
+      "claim": "The bolt weighed more than 0.03 kilograms.",
+      "question": "Is this claim true: \"The bolt weighed more than 0.03 kilograms.\"? The scale reading for the bolt was 30 grams.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bolt weighed more than 0.03 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The scale reading for the bolt was 30 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "uncertain",
+      "claim": "The bolt weighed more than 0.03 kilograms.",
+      "question": "Is this claim true: \"The bolt weighed more than 0.03 kilograms.\"? The bolt measured 31 millimeters.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bolt weighed more than 0.03 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The bolt measured 31 millimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "yes",
+      "claim": "The narrow tube contained at least 0.4 liters.",
+      "question": "Is this claim true: \"The narrow tube contained at least 0.4 liters.\"? The liquid in the narrow tube had a volume of 400 milliliters.",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The narrow tube contained at least 0.4 liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The liquid in the narrow tube had a volume of 400 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "no",
+      "claim": "The narrow tube contained at least 0.4 liters.",
+      "question": "Is this claim true: \"The narrow tube contained at least 0.4 liters.\"? The liquid in the narrow tube had a volume of 399 milliliters.",
+      "result": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The narrow tube contained at least 0.4 liters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The liquid in the narrow tube had a volume of 399 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "style": "property_confirmation",
+      "expected": "uncertain",
+      "claim": "The narrow tube contained at least 0.4 liters.",
+      "question": "Is this claim true: \"The narrow tube contained at least 0.4 liters.\"? The price of the narrow tube was 400 cents.",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The narrow tube contained at least 0.4 liters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The price of the narrow tube was 400 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "measurement_gap",
+        "tokens": 0
+      }
+    }
+  ]
+}

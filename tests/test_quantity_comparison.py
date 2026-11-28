@@ -44,3 +44,9 @@ class QuantityTests(unittest.TestCase):
         ):
             with self.subTest(text=text):
                 self.assertEqual(quantity_role(question + text), expected)
+
+    def test_other_property_and_ambiguous_units(self):
+        question = 'Is this claim true: "The drum held at least 2 liters."? '
+        self.assertEqual(quantity_role(question + "The drum itself had a mass of 3 kilograms."), "gap")
+        self.assertIsNone(quantity_role(question + "The drum contained 3 kilograms."))
+        self.assertIsNone(quantity_role(question + "The drum weighed 3 kilograms and held 2 liters."))
