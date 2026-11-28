@@ -1,0 +1,1056 @@
+{
+  "model": "llama3.2:1b",
+  "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878",
+  "rows": [
+    {
+      "claim": "The blue jug holds more than 1.5 liters of water when full.",
+      "question": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"? Filling the empty blue jug to the brim takes exactly 1,600 milliliters of water.",
+      "style": 1,
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 103
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Filling the empty blue jug to the brim takes exactly 1,600 milliliters of water.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 113
+      }
+    },
+    {
+      "claim": "The blue jug holds more than 1.5 liters of water when full.",
+      "question": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"? When filled to the brim, the blue jug contains exactly 1,600 milliliters of water.",
+      "style": 2,
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 103
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "When filled to the brim, the blue jug contains exactly 1,600 milliliters of water.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 113
+      }
+    },
+    {
+      "claim": "The blue jug holds more than 1.5 liters of water when full.",
+      "question": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"? The blue jug holds exactly 1,500 milliliters of water when filled to the brim.",
+      "style": 1,
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 102
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The blue jug holds exactly 1,500 milliliters of water when filled to the brim.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 112
+      }
+    },
+    {
+      "claim": "The blue jug holds more than 1.5 liters of water when full.",
+      "question": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"? It takes exactly 1,500 milliliters of water to fill the empty blue jug completely.",
+      "style": 2,
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 101
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "It takes exactly 1,500 milliliters of water to fill the empty blue jug completely.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 111
+      }
+    },
+    {
+      "claim": "The blue jug holds more than 1.5 liters of water when full.",
+      "question": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"? The blue jug currently contains 1,200 milliliters of water and still has some room at the top.",
+      "style": 1,
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 104
+      },
+      "rei": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The blue jug currently contains 1,200 milliliters of water and still has some room at the top.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 114
+      }
+    },
+    {
+      "claim": "The blue jug holds more than 1.5 liters of water when full.",
+      "question": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"? There are 1,200 milliliters of water in the blue jug, which is only partly full.",
+      "style": 2,
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 103
+      },
+      "rei": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The blue jug holds more than 1.5 liters of water when full.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "There are 1,200 milliliters of water in the blue jug, which is only partly full.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 113
+      }
+    },
+    {
+      "claim": "The green curtain is at most 2 meters long.",
+      "question": "Is this claim true: \"The green curtain is at most 2 meters long.\"? The green curtain measures exactly 200 centimeters from top to bottom.",
+      "style": 1,
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 90
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The green curtain is at most 2 meters long.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The green curtain measures exactly 200 centimeters from top to bottom.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 100
+      }
+    },
+    {
+      "claim": "The green curtain is at most 2 meters long.",
+      "question": "Is this claim true: \"The green curtain is at most 2 meters long.\"? The distance from the top edge of the green curtain to its bottom edge is exactly 200 centimeters.",
+      "style": 2,
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The green curtain is at most 2 meters long.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The distance from the top edge of the green curtain to its bottom edge is exactly 200 centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 106
+      }
+    },
+    {
+      "claim": "The green curtain is at most 2 meters long.",
+      "question": "Is this claim true: \"The green curtain is at most 2 meters long.\"? The green curtain is at least 205 centimeters long.",
+      "style": 1,
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 88
+      },
+      "rei": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The green curtain is at most 2 meters long.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The green curtain is at least 205 centimeters long.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 98
+      }
+    },
+    {
+      "claim": "The green curtain is at most 2 meters long.",
+      "question": "Is this claim true: \"The green curtain is at most 2 meters long.\"? The top-to-bottom length of the green curtain is 205 centimeters or more.",
+      "style": 2,
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 93
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The green curtain is at most 2 meters long.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The top-to-bottom length of the green curtain is 205 centimeters or more.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 105
+      }
+    },
+    {
+      "claim": "The green curtain is at most 2 meters long.",
+      "question": "Is this claim true: \"The green curtain is at most 2 meters long.\"? The length of the green curtain is somewhere between 195 and 205 centimeters, inclusive.",
+      "style": 1,
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 95
+      },
+      "rei": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The green curtain is at most 2 meters long.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The length of the green curtain is somewhere between 195 and 205 centimeters, inclusive.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 105
+      }
+    },
+    {
+      "claim": "The green curtain is at most 2 meters long.",
+      "question": "Is this claim true: \"The green curtain is at most 2 meters long.\"? The green curtain measures at least 195 centimeters and at most 205 centimeters from top to bottom.",
+      "style": 2,
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 98
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The green curtain is at most 2 meters long.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The green curtain measures at least 195 centimeters and at most 205 centimeters from top to bottom.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 107
+      }
+    },
+    {
+      "claim": "Maya's walk from the station to the library took less than a quarter of an hour.",
+      "question": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"? Exactly 14 minutes and 50 seconds elapsed between Maya leaving the station on foot and reaching the library.",
+      "style": 1,
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 105
+      },
+      "rei": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "Exactly 14 minutes and 50 seconds elapsed between Maya leaving the station on foot and reaching the library.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "contradicts"
+        },
+        "tokens": 121
+      }
+    },
+    {
+      "claim": "Maya's walk from the station to the library took less than a quarter of an hour.",
+      "question": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"? Maya reached the library exactly 14 minutes and 50 seconds after setting out from the station on foot.",
+      "style": 2,
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 105
+      },
+      "rei": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "Maya reached the library exactly 14 minutes and 50 seconds after setting out from the station on foot.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "contradicts"
+        },
+        "tokens": 121
+      }
+    },
+    {
+      "claim": "Maya's walk from the station to the library took less than a quarter of an hour.",
+      "question": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"? Maya took exactly 900 seconds to walk from the station to the library.",
+      "style": 1,
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 99
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Maya took exactly 900 seconds to walk from the station to the library.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 109
+      }
+    },
+    {
+      "claim": "Maya's walk from the station to the library took less than a quarter of an hour.",
+      "question": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"? From the moment Maya left the station on foot until she reached the library, exactly 900 seconds passed.",
+      "style": 2,
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 105
+      },
+      "rei": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "From the moment Maya left the station on foot until she reached the library, exactly 900 seconds passed.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "contradicts"
+        },
+        "tokens": 121
+      }
+    },
+    {
+      "claim": "Maya's walk from the station to the library took less than a quarter of an hour.",
+      "question": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"? Maya completed the walk from the station to the library in 16 minutes or less.",
+      "style": 1,
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 101
+      },
+      "rei": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "Maya completed the walk from the station to the library in 16 minutes or less.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "contradicts"
+        },
+        "tokens": 117
+      }
+    },
+    {
+      "claim": "Maya's walk from the station to the library took less than a quarter of an hour.",
+      "question": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"? The walk from the station to the library took Maya at most 16 minutes.",
+      "style": 2,
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 100
+      },
+      "rei": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Maya's walk from the station to the library took less than a quarter of an hour.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The walk from the station to the library took Maya at most 16 minutes.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "contradicts"
+        },
+        "tokens": 116
+      }
+    },
+    {
+      "claim": "The bag of apples weighs at least half a kilogram more than the bag of pears.",
+      "question": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"? The bag of apples weighs exactly 1,750 grams, and the bag of pears weighs exactly 1,250 grams.",
+      "style": 1,
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 110
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The bag of apples weighs exactly 1,750 grams, and the bag of pears weighs exactly 1,250 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 120
+      }
+    },
+    {
+      "claim": "The bag of apples weighs at least half a kilogram more than the bag of pears.",
+      "question": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"? On the scale, the bag of pears weighed exactly 1,250 grams and the bag of apples weighed exactly 1,750 grams.",
+      "style": 2,
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 113
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "On the scale, the bag of pears weighed exactly 1,250 grams and the bag of apples weighed exactly 1,750 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 123
+      }
+    },
+    {
+      "claim": "The bag of apples weighs at least half a kilogram more than the bag of pears.",
+      "question": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"? The bag of apples weighs exactly 420 grams more than the bag of pears.",
+      "style": 1,
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 101
+      },
+      "rei": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The bag of apples weighs exactly 420 grams more than the bag of pears.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "contradicts"
+        },
+        "tokens": 117
+      }
+    },
+    {
+      "claim": "The bag of apples weighs at least half a kilogram more than the bag of pears.",
+      "question": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"? The bag of pears is lighter than the bag of apples by exactly 420 grams.",
+      "style": 2,
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 102
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The bag of pears is lighter than the bag of apples by exactly 420 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 112
+      }
+    },
+    {
+      "claim": "The bag of apples weighs at least half a kilogram more than the bag of pears.",
+      "question": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"? The bag of apples is heavier than the bag of pears by at least 400 grams.",
+      "style": 1,
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 103
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The bag of apples is heavier than the bag of pears by at least 400 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 113
+      }
+    },
+    {
+      "claim": "The bag of apples weighs at least half a kilogram more than the bag of pears.",
+      "question": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"? The bag of pears weighs at least 400 grams less than the bag of apples.",
+      "style": 2,
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 102
+      },
+      "rei": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bag of apples weighs at least half a kilogram more than the bag of pears.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The bag of pears weighs at least 400 grams less than the bag of apples.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 112
+      }
+    },
+    {
+      "claim": "The distance around the garden path is exactly 400 meters.",
+      "question": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"? Three complete laps of the garden path cover exactly 1.2 kilometers in total.",
+      "style": 1,
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 94
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Three complete laps of the garden path cover exactly 1.2 kilometers in total.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 104
+      }
+    },
+    {
+      "claim": "The distance around the garden path is exactly 400 meters.",
+      "question": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"? Walking all the way around the garden path three times covers a total distance of exactly 1.2 kilometers.",
+      "style": 2,
+      "expected": "yes",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 99
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Walking all the way around the garden path three times covers a total distance of exactly 1.2 kilometers.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 111
+      }
+    },
+    {
+      "claim": "The distance around the garden path is exactly 400 meters.",
+      "question": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"? Four complete laps of the garden path add up to exactly 1.5 kilometers.",
+      "style": 1,
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 94
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Four complete laps of the garden path add up to exactly 1.5 kilometers.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 104
+      }
+    },
+    {
+      "claim": "The distance around the garden path is exactly 400 meters.",
+      "question": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"? Walking all the way around the garden path four times covers exactly 1.5 kilometers in total.",
+      "style": 2,
+      "expected": "no",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Walking all the way around the garden path four times covers exactly 1.5 kilometers in total.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 106
+      }
+    },
+    {
+      "claim": "The distance around the garden path is exactly 400 meters.",
+      "question": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"? Two complete laps of the garden path cover no more than 800 meters in total.",
+      "style": 1,
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 94
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Two complete laps of the garden path cover no more than 800 meters in total.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 104
+      }
+    },
+    {
+      "claim": "The distance around the garden path is exactly 400 meters.",
+      "question": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"? Walking all the way around the garden path twice covers a total distance of at most 800 meters.",
+      "style": 2,
+      "expected": "uncertain",
+      "direct": {
+        "raw": "\"yes\"",
+        "value": "yes",
+        "stop": "stop",
+        "tokens": 97
+      },
+      "rei": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The distance around the garden path is exactly 400 meters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Walking all the way around the garden path twice covers a total distance of at most 800 meters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 106
+      }
+    }
+  ]
+}
