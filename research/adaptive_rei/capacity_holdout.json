@@ -1,0 +1,38 @@
+[
+  {
+    "claim": "The blue jug can hold at least 1.5 liters.",
+    "yes": "I poured a full 1.5 liters of water into the empty blue jug. It came right to the brim and stayed there.",
+    "no": "The empty blue jug was already full after I poured in 1.4 liters.",
+    "uncertain": "There’s a liter of lemonade in the blue jug, with some room left at the top."
+  },
+  {
+    "claim": "The glass pitcher holds more than 750 mL.",
+    "yes": "There’s 800 mL of cold tea in the glass pitcher right now.",
+    "no": "Filled all the way to the lip, the glass pitcher holds exactly 750 mL.",
+    "uncertain": "I poured 750 mL of tea into the empty glass pitcher. It all fit, but I didn’t check the level."
+  },
+  {
+    "claim": "The soup pot has a total capacity of less than 3 liters.",
+    "yes": "We ladled everything out of the brimful soup pot and measured it. There were 2.8 liters altogether.",
+    "no": "The soup pot has 3 liters of stock in it, and I can still stir without spilling any.",
+    "uncertain": "Dinner left us with 2 liters of broth in the soup pot. I could see bare metal above the broth."
+  },
+  {
+    "claim": "The bedside carafe holds at most 600 mL.",
+    "yes": "The instructions give the bedside carafe’s capacity as exactly 600 mL when filled to the brim.",
+    "no": "I emptied 650 mL of water into the bedside carafe last night, and all of it stayed inside.",
+    "uncertain": "I stopped filling the bedside carafe at the 500 mL mark so it would be easier to carry upstairs."
+  },
+  {
+    "claim": "The insulated flask has a total capacity of exactly 1 liter.",
+    "yes": "I measured the water it took to fill the empty insulated flask to the brim. It took exactly 1,000 mL.",
+    "no": "I poured a full liter into the empty insulated flask and there was still room for another splash.",
+    "uncertain": "I poured 400 mL from the insulated flask into my mug and measured the remaining 600 mL. I hadn’t checked how full the flask was before I poured."
+  },
+  {
+    "claim": "The watering can can hold at least 2 liters.",
+    "yes": "After I put 1.25 liters of water in the empty watering can, my daughter tipped in another 750 mL. None spilled or drained out.",
+    "no": "I started with an empty watering can and a measured 2 liters of water. When the can was brimful, I still had 100 mL left to pour.",
+    "uncertain": "I put 1.8 liters in the empty watering can and carried it to the windowsill. There was room for a little more."
+  }
+]
