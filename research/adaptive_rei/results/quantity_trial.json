@@ -1,0 +1,3518 @@
+{
+  "model": "llama3.2:1b",
+  "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878",
+  "rows": [
+    {
+      "suite": "previous",
+      "claim": "The kiln reached at least 800 degrees.",
+      "question": "Is this claim true: \"The kiln reached at least 800 degrees.\"? The kiln peaked at 805 degrees.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The kiln reached at least 800 degrees.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The kiln peaked at 805 degrees.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 94
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The kiln reached at least 800 degrees.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The kiln peaked at 805 degrees.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 94
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The kiln reached at least 800 degrees.",
+      "question": "Is this claim true: \"The kiln reached at least 800 degrees.\"? The kiln peaked at 795 degrees.",
+      "expected": "no",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The kiln reached at least 800 degrees.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The kiln peaked at 795 degrees.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 94
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The kiln reached at least 800 degrees.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The kiln peaked at 795 degrees.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 94
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "Fewer than six owls were counted.",
+      "question": "Is this claim true: \"Fewer than six owls were counted.\"? Observers counted exactly seven owls.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Fewer than six owls were counted.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "Observers counted exactly seven owls.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 93
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Fewer than six owls were counted.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "Observers counted exactly seven owls.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 93
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "Fewer than six owls were counted.",
+      "question": "Is this claim true: \"Fewer than six owls were counted.\"? Observers counted exactly five owls.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Fewer than six owls were counted.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Observers counted exactly five owls.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 92
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Fewer than six owls were counted.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Observers counted exactly five owls.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 92
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The cable exceeded ten meters in length.",
+      "question": "Is this claim true: \"The cable exceeded ten meters in length.\"? The cable measured exactly eleven meters.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cable exceeded ten meters in length.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The cable measured exactly eleven meters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cable exceeded ten meters in length.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The cable measured exactly eleven meters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The cable exceeded ten meters in length.",
+      "question": "Is this claim true: \"The cable exceeded ten meters in length.\"? The cable measured exactly nine meters.",
+      "expected": "no",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cable exceeded ten meters in length.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The cable measured exactly nine meters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The cable exceeded ten meters in length.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The cable measured exactly nine meters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The jug held at most four liters.",
+      "question": "Is this claim true: \"The jug held at most four liters.\"? The jug contained exactly five liters.",
+      "expected": "no",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The jug held at most four liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The jug contained exactly five liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The jug held at most four liters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The jug contained exactly five liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The jug held at most four liters.",
+      "question": "Is this claim true: \"The jug held at most four liters.\"? The jug contained exactly three liters.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The jug held at most four liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The jug contained exactly three liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The jug held at most four liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The jug contained exactly three liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The brass key was in drawer C.",
+      "question": "Is this claim true: \"The brass key was in drawer C.\"? The brass key lay in drawer C.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The brass key was in drawer C.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The brass key lay in drawer C.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The brass key was in drawer C.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The brass key lay in drawer C.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The brass key was in drawer C.",
+      "question": "Is this claim true: \"The brass key was in drawer C.\"? The brass key lay in drawer B.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The brass key was in drawer C.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The brass key lay in drawer B.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The brass key was in drawer C.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The brass key lay in drawer B.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The velvet sash was green.",
+      "question": "Is this claim true: \"The velvet sash was green.\"? The velvet sash was solid purple.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The velvet sash was green.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The velvet sash was solid purple.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The velvet sash was green.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The velvet sash was solid purple.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The velvet sash was green.",
+      "question": "Is this claim true: \"The velvet sash was green.\"? The velvet sash was solid green.",
+      "expected": "yes",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The velvet sash was green.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The velvet sash was solid green.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The velvet sash was green.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The velvet sash was solid green.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "Mira won the spelling final.",
+      "question": "Is this claim true: \"Mira won the spelling final.\"? The sole winner of the spelling final was Mira.",
+      "expected": "yes",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Mira won the spelling final.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The sole winner of the spelling final was Mira.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 93
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Mira won the spelling final.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The sole winner of the spelling final was Mira.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 93
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "Mira won the spelling final.",
+      "question": "Is this claim true: \"Mira won the spelling final.\"? The sole winner of the spelling final was Hugo.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Mira won the spelling final.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The sole winner of the spelling final was Hugo.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 92
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Mira won the spelling final.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The sole winner of the spelling final was Hugo.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 92
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The only stop on the shuttle route was Elm.",
+      "question": "Is this claim true: \"The only stop on the shuttle route was Elm.\"? The shuttle route had just one stop, Ash.",
+      "expected": "no",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The only stop on the shuttle route was Elm.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The shuttle route had just one stop, Ash.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 99
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The only stop on the shuttle route was Elm.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The shuttle route had just one stop, Ash.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 99
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The only stop on the shuttle route was Elm.",
+      "question": "Is this claim true: \"The only stop on the shuttle route was Elm.\"? The shuttle route had just one stop, Elm.",
+      "expected": "yes",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The only stop on the shuttle route was Elm.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The shuttle route had just one stop, Elm.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 96
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The only stop on the shuttle route was Elm.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The shuttle route had just one stop, Elm.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 96
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The bell rang before the curtain rose.",
+      "question": "Is this claim true: \"The bell rang before the curtain rose.\"? The bell rang once, before the curtain rose.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bell rang before the curtain rose.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The bell rang once, before the curtain rose.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 96
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bell rang before the curtain rose.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The bell rang once, before the curtain rose.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 96
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The bell rang before the curtain rose.",
+      "question": "Is this claim true: \"The bell rang before the curtain rose.\"? The bell rang once, after the curtain rose.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bell rang before the curtain rose.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The bell rang once, after the curtain rose.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 96
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The bell rang before the curtain rose.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The bell rang once, after the curtain rose.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 96
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The only delivery came after noon.",
+      "question": "Is this claim true: \"The only delivery came after noon.\"? The only delivery came before noon.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The only delivery came after noon.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The only delivery came before noon.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The only delivery came after noon.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The only delivery came before noon.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The only delivery came after noon.",
+      "question": "Is this claim true: \"The only delivery came after noon.\"? The only delivery came after noon.",
+      "expected": "yes",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The only delivery came after noon.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The only delivery came after noon.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 89
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The only delivery came after noon.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The only delivery came after noon.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 89
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The drum solo came first in the recital.",
+      "question": "Is this claim true: \"The drum solo came first in the recital.\"? In the recital the drum solo came first.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The drum solo came first in the recital.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "In the recital the drum solo came first.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 96
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The drum solo came first in the recital.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "In the recital the drum solo came first.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 96
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The drum solo came first in the recital.",
+      "question": "Is this claim true: \"The drum solo came first in the recital.\"? In the recital the drum solo came last.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The drum solo came first in the recital.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "In the recital the drum solo came last.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 96
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The drum solo came first in the recital.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "In the recital the drum solo came last.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 96
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The launch occurred on a weekend.",
+      "question": "Is this claim true: \"The launch occurred on a weekend.\"? The launch took place on a Monday.",
+      "expected": "no",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The launch occurred on a weekend.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The launch took place on a Monday.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The launch occurred on a weekend.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The launch took place on a Monday.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The launch occurred on a weekend.",
+      "question": "Is this claim true: \"The launch occurred on a weekend.\"? The launch took place on a Saturday.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The launch occurred on a weekend.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The launch took place on a Saturday.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The launch occurred on a weekend.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The launch took place on a Saturday.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The pantry latch was fastened.",
+      "question": "Is this claim true: \"The pantry latch was fastened.\"? The pantry latch was fastened.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pantry latch was fastened.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The pantry latch was fastened.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 89
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pantry latch was fastened.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The pantry latch was fastened.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 89
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The pantry latch was fastened.",
+      "question": "Is this claim true: \"The pantry latch was fastened.\"? The pantry latch was unfastened.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pantry latch was fastened.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The pantry latch was unfastened.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The pantry latch was fastened.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The pantry latch was unfastened.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The guest list included Rina.",
+      "question": "Is this claim true: \"The guest list included Rina.\"? The final guest list explicitly excluded Rina.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The guest list included Rina.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The final guest list explicitly excluded Rina.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The guest list included Rina.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The final guest list explicitly excluded Rina.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The guest list included Rina.",
+      "question": "Is this claim true: \"The guest list included Rina.\"? The final guest list explicitly included Rina.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The guest list included Rina.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The final guest list explicitly included Rina.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The guest list included Rina.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The final guest list explicitly included Rina.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The same tile survived the drop intact.",
+      "question": "Is this claim true: \"The same tile survived the drop intact.\"? After the drop that tile was intact.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The same tile survived the drop intact.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "After the drop that tile was intact.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The same tile survived the drop intact.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "After the drop that tile was intact.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The same tile survived the drop intact.",
+      "question": "Is this claim true: \"The same tile survived the drop intact.\"? After the drop that tile was shattered.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The same tile survived the drop intact.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "After the drop that tile was shattered.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The same tile survived the drop intact.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "After the drop that tile was shattered.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The ferry made its scheduled crossing.",
+      "question": "Is this claim true: \"The ferry made its scheduled crossing.\"? The operator canceled the scheduled ferry crossing.",
+      "expected": "no",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ferry made its scheduled crossing.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The operator canceled the scheduled ferry crossing.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ferry made its scheduled crossing.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The operator canceled the scheduled ferry crossing.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "previous",
+      "claim": "The ferry made its scheduled crossing.",
+      "question": "Is this claim true: \"The ferry made its scheduled crossing.\"? The operator completed the scheduled ferry crossing.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ferry made its scheduled crossing.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The operator completed the scheduled ferry crossing.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ferry made its scheduled crossing.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The operator completed the scheduled ferry crossing.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The tray held at least eight rolls.",
+      "question": "Is this claim true: \"The tray held at least eight rolls.\"? The tray held exactly eight rolls.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The tray held at least eight rolls.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The tray held exactly eight rolls.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 93
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The tray held at least eight rolls.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The tray held exactly eight rolls.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 93
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The tray held at least eight rolls.",
+      "question": "Is this claim true: \"The tray held at least eight rolls.\"? The tray held exactly seven rolls.",
+      "expected": "no",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The tray held at least eight rolls.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The tray held exactly seven rolls.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 93
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The tray held at least eight rolls.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The tray held exactly seven rolls.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 93
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The tray held at least eight rolls.",
+      "question": "Is this claim true: \"The tray held at least eight rolls.\"? The tray could hold ten rolls.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The tray held at least eight rolls.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The tray could hold ten rolls.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The tray held at least eight rolls.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The tray could hold ten rolls.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The ferry ticket cost less than twelve dollars.",
+      "question": "Is this claim true: \"The ferry ticket cost less than twelve dollars.\"? The ferry ticket cost eleven dollars.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ferry ticket cost less than twelve dollars.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The ferry ticket cost eleven dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ferry ticket cost less than twelve dollars.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The ferry ticket cost eleven dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The ferry ticket cost less than twelve dollars.",
+      "question": "Is this claim true: \"The ferry ticket cost less than twelve dollars.\"? The ferry ticket cost twelve dollars.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ferry ticket cost less than twelve dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The ferry ticket cost twelve dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ferry ticket cost less than twelve dollars.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The ferry ticket cost twelve dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The ferry ticket cost less than twelve dollars.",
+      "question": "Is this claim true: \"The ferry ticket cost less than twelve dollars.\"? A traveler brought twelve dollars to the ferry.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ferry ticket cost less than twelve dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "A traveler brought twelve dollars to the ferry.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 93
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ferry ticket cost less than twelve dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "A traveler brought twelve dollars to the ferry.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 93
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The yellow envelope was delivered to Bea.",
+      "question": "Is this claim true: \"The yellow envelope was delivered to Bea.\"? Bea received the yellow envelope.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The yellow envelope was delivered to Bea.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Bea received the yellow envelope.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 89
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The yellow envelope was delivered to Bea.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Bea received the yellow envelope.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 89
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The yellow envelope was delivered to Bea.",
+      "question": "Is this claim true: \"The yellow envelope was delivered to Bea.\"? Only Max received the yellow envelope.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The yellow envelope was delivered to Bea.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "Only Max received the yellow envelope.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The yellow envelope was delivered to Bea.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "Only Max received the yellow envelope.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The yellow envelope was delivered to Bea.",
+      "question": "Is this claim true: \"The yellow envelope was delivered to Bea.\"? Bea asked when the yellow envelope would arrive.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The yellow envelope was delivered to Bea.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "Bea asked when the yellow envelope would arrive.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 92
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The yellow envelope was delivered to Bea.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "Bea asked when the yellow envelope would arrive.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 92
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The stage light was on at noon.",
+      "question": "Is this claim true: \"The stage light was on at noon.\"? At noon the stage light was shining.",
+      "expected": "yes",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The stage light was on at noon.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "At noon the stage light was shining.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The stage light was on at noon.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "At noon the stage light was shining.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The stage light was on at noon.",
+      "question": "Is this claim true: \"The stage light was on at noon.\"? At noon the stage light was switched off.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The stage light was on at noon.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "At noon the stage light was switched off.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 92
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The stage light was on at noon.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "At noon the stage light was switched off.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 92
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The stage light was on at noon.",
+      "question": "Is this claim true: \"The stage light was on at noon.\"? The stage light was shining at ten.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The stage light was on at noon.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The stage light was shining at ten.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The stage light was on at noon.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The stage light was shining at ten.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The glass bead was inside the tin.",
+      "question": "Is this claim true: \"The glass bead was inside the tin.\"? The tin contained the glass bead.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The glass bead was inside the tin.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The tin contained the glass bead.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The glass bead was inside the tin.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The tin contained the glass bead.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The glass bead was inside the tin.",
+      "question": "Is this claim true: \"The glass bead was inside the tin.\"? The tin contained only a cork.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The glass bead was inside the tin.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The tin contained only a cork.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The glass bead was inside the tin.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The tin contained only a cork.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The glass bead was inside the tin.",
+      "question": "Is this claim true: \"The glass bead was inside the tin.\"? The glass bead was photographed beside a closed tin yesterday.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The glass bead was inside the tin.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The glass bead was photographed beside a closed tin yesterday.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 94
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The glass bead was inside the tin.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The glass bead was photographed beside a closed tin yesterday.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 94
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The runner finished before the whistle.",
+      "question": "Is this claim true: \"The runner finished before the whistle.\"? The runner crossed the finish line before the whistle.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The runner finished before the whistle.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The runner crossed the finish line before the whistle.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 92
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The runner finished before the whistle.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The runner crossed the finish line before the whistle.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 92
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The runner finished before the whistle.",
+      "question": "Is this claim true: \"The runner finished before the whistle.\"? The runner crossed the finish line after the whistle.",
+      "expected": "no",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The runner finished before the whistle.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The runner crossed the finish line after the whistle.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 92
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The runner finished before the whistle.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The runner crossed the finish line after the whistle.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 92
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The runner finished before the whistle.",
+      "question": "Is this claim true: \"The runner finished before the whistle.\"? A whistle was listed among the equipment for the race.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The runner finished before the whistle.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "A whistle was listed among the equipment for the race.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 93
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The runner finished before the whistle.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "A whistle was listed among the equipment for the race.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 93
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "Every table was reserved.",
+      "question": "Is this claim true: \"Every table was reserved.\"? All of the tables were reserved.",
+      "expected": "yes",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Every table was reserved.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "All of the tables were reserved.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 87
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Every table was reserved.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "All of the tables were reserved.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 87
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "Every table was reserved.",
+      "question": "Is this claim true: \"Every table was reserved.\"? One table was explicitly left unreserved.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Every table was reserved.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "One table was explicitly left unreserved.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 88
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Every table was reserved.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "One table was explicitly left unreserved.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 88
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "Every table was reserved.",
+      "question": "Is this claim true: \"Every table was reserved.\"? All the tables beside the window were reserved.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Every table was reserved.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "All the tables beside the window were reserved.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 89
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"Every table was reserved.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "All the tables beside the window were reserved.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 89
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The second page bore a signature.",
+      "question": "Is this claim true: \"The second page bore a signature.\"? The second page was signed by Ada.",
+      "expected": "yes",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The second page bore a signature.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The second page was signed by Ada.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The second page bore a signature.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The second page was signed by Ada.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 90
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The second page bore a signature.",
+      "question": "Is this claim true: \"The second page bore a signature.\"? The second page was entirely blank.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The second page bore a signature.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The second page was entirely blank.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 89
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The second page bore a signature.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The second page was entirely blank.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 89
+      }
+    },
+    {
+      "suite": "new",
+      "claim": "The second page bore a signature.",
+      "question": "Is this claim true: \"The second page bore a signature.\"? Ada signed the first page.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The second page bore a signature.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Ada signed the first page.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 88
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The second page bore a signature.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Ada signed the first page.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 88
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The red bag weighed at most 5 kilograms.",
+      "question": "Is this claim true: \"The red bag weighed at most 5 kilograms.\"? The red bag weighed exactly 5 kilograms.",
+      "expected": "yes",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The red bag weighed at most 5 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The red bag weighed exactly 5 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 94
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The red bag weighed at most 5 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The red bag weighed exactly 5 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The red bag weighed at most 5 kilograms.",
+      "question": "Is this claim true: \"The red bag weighed at most 5 kilograms.\"? The red bag weighed 5.1 kilograms.",
+      "expected": "no",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The red bag weighed at most 5 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The red bag weighed 5.1 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 95
+      },
+      "checked": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The red bag weighed at most 5 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The red bag weighed 5.1 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The red bag weighed at most 5 kilograms.",
+      "question": "Is this claim true: \"The red bag weighed at most 5 kilograms.\"? The blue bag weighed 6 kilograms.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The red bag weighed at most 5 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The blue bag weighed 6 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 93
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The red bag weighed at most 5 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The blue bag weighed 6 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 93
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The toll cost more than 3 dollars.",
+      "question": "Is this claim true: \"The toll cost more than 3 dollars.\"? The toll cost 4 dollars.",
+      "expected": "yes",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The toll cost more than 3 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The toll cost 4 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The toll cost more than 3 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The toll cost 4 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The toll cost more than 3 dollars.",
+      "question": "Is this claim true: \"The toll cost more than 3 dollars.\"? The toll cost 3 dollars.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The toll cost more than 3 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The toll cost 3 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The toll cost more than 3 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The toll cost 3 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The toll cost more than 3 dollars.",
+      "question": "Is this claim true: \"The toll cost more than 3 dollars.\"? The toll could cost 4 dollars.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The toll cost more than 3 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The toll could cost 4 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 92
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The toll cost more than 3 dollars.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The toll could cost 4 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 92
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The urn held less than two liters.",
+      "question": "Is this claim true: \"The urn held less than two liters.\"? The urn contained 1 liter.",
+      "expected": "yes",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The urn held less than two liters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The urn contained 1 liter.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The urn held less than two liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The urn contained 1 liter.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The urn held less than two liters.",
+      "question": "Is this claim true: \"The urn held less than two liters.\"? The urn contained exactly two liters.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The urn held less than two liters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The urn contained exactly two liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 90
+      },
+      "checked": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The urn held less than two liters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The urn contained exactly two liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The urn held less than two liters.",
+      "question": "Is this claim true: \"The urn held less than two liters.\"? The urn held at most 3 liters.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The urn held less than two liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The urn held at most 3 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 92
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The urn held less than two liters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The urn held at most 3 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 92
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The ribbon measured at least 7 meters.",
+      "question": "Is this claim true: \"The ribbon measured at least 7 meters.\"? The ribbon measured 7.2 meters.",
+      "expected": "yes",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ribbon measured at least 7 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The ribbon measured 7.2 meters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 93
+      },
+      "checked": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ribbon measured at least 7 meters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The ribbon measured 7.2 meters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The ribbon measured at least 7 meters.",
+      "question": "Is this claim true: \"The ribbon measured at least 7 meters.\"? The ribbon measured 6 meters.",
+      "expected": "no",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ribbon measured at least 7 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The ribbon measured 6 meters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "no",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ribbon measured at least 7 meters.\"",
+              "evidence": [
+                {
+                  "answer": "no",
+                  "strength": 2,
+                  "quote": "The ribbon measured 6 meters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "method": "exact_quantity",
+        "tokens": 0
+      }
+    },
+    {
+      "suite": "confirmation",
+      "claim": "The ribbon measured at least 7 meters.",
+      "question": "Is this claim true: \"The ribbon measured at least 7 meters.\"? The ribbon was measured in inches.",
+      "expected": "uncertain",
+      "base": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ribbon measured at least 7 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The ribbon was measured in inches.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      },
+      "checked": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The ribbon measured at least 7 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The ribbon was measured in inches.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      }
+    }
+  ]
+}

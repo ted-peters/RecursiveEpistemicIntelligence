@@ -1,0 +1,6 @@
+[
+ ["The red bag weighed at most 5 kilograms.", "The red bag weighed exactly 5 kilograms.", "The red bag weighed 5.1 kilograms.", "The blue bag weighed 6 kilograms."],
+ ["The toll cost more than 3 dollars.", "The toll cost 4 dollars.", "The toll cost 3 dollars.", "The toll could cost 4 dollars."],
+ ["The urn held less than two liters.", "The urn contained 1 liter.", "The urn contained exactly two liters.", "The urn held at most 3 liters."],
+ ["The ribbon measured at least 7 meters.", "The ribbon measured 7.2 meters.", "The ribbon measured 6 meters.", "The ribbon was measured in inches."]
+]

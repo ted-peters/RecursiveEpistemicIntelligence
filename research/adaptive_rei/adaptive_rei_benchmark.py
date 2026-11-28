@@ -6,6 +6,7 @@ import urllib.request
 
 from adaptive_rei_engine import POLICIES, Evidence, evaluate
 from evidence_schema import GRAPH
+from quantity_comparison import quantity_verdict
 
 CASES = [
     ("Did the package arrive? A signed delivery receipt identifies the package and its recipient.", "yes"),
@@ -262,10 +263,13 @@ REGRESSION_CASES = [
 ]
 
 
-def single_fact_verdict(url, model, question):
+def single_fact_verdict(url, model, question, *, check_contradiction=False, exact_quantities=True):
     claim, separator, passage = question.partition("?")
     if not separator or not claim.strip() or not passage.strip():
         raise ValueError("Supply one question followed by its evidence passage")
+    exact = quantity_verdict(question) if exact_quantities else None
+    if exact is not None:
+        return _single_fact_result(question, claim, passage, exact, method="exact_quantity", tokens=0)
     roles = {"supports": "yes", "contradicts": "no", "unresolved": "gap"}
     schema = {"type": "object", "properties": {
         "relation": {"type": "string", "enum": list(roles)}},
@@ -277,11 +281,30 @@ def single_fact_verdict(url, model, question):
     role = result.get("relation")
     if not isinstance(role, str) or role not in roles:
         return dict(answer=None, error="Missing or invalid relation", extraction=result, tokens=tokens)
-    item = dict(answer=roles[role], strength=2, quote=passage.strip(), requires=[])
+    check = {}
+    if check_contradiction and role != "contradicts":
+        instruction = ("Does this passage rule out the claim? A missing detail is compatible "
+                       "with the claim. Example: claim 'The gate was open at noon.' "
+                       "Passage 'It was closed at noon.' -> ruled_out. "
+                       "Passage 'It was closed at dawn.' -> compatible. "
+                       "Passage 'It stood open at noon.' -> compatible. Judge the new case.")
+        check_schema = {"type": "object", "properties": {
+            "finding": {"type": "string", "enum": ["ruled_out", "compatible"]}},
+            "required": ["finding"], "additionalProperties": False}
+        finding, extra = predict(url, model, instruction, question, max_tokens=32,
+                                 output_format=check_schema)
+        check = dict(contradiction_check=finding, check_tokens=extra)
+        tokens += extra
+        if finding.get("finding") == "ruled_out":
+            role = "contradicts"
+    return _single_fact_result(question, claim, passage, roles[role], extraction=result, tokens=tokens, **check)
+
+
+def _single_fact_result(question, claim, passage, role, **details):
+    item = dict(answer=role, strength=2, quote=passage.strip(), requires=[])
     graph = {"claims": [{"claim": claim.strip(), "evidence": [item]}]}
     decision = evaluate(parse_evidence(graph, question))[1]
-    return dict(answer=decision.answer, state=decision.state, extraction=result,
-                graph=graph, tokens=tokens)
+    return dict(answer=decision.answer, state=decision.state, graph=graph, **details)
 
 
 def captured_scanner_chain(graph):
