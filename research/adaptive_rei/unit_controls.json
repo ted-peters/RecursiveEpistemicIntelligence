@@ -1,0 +1,10 @@
+[
+ ["The satchel weighed at most 1.2 kilograms.", "The satchel weighed 1200 grams.", "The satchel weighed 1201 grams.", "The suitcase weighed 1201 grams."],
+ ["The clasp weighed more than 249 grams.", "The clasp weighed 0.250 kilograms.", "The clasp weighed 0.249 kilograms.", "The clasp could weigh 0.250 kilograms."],
+ ["The spool measured less than 2 meters.", "The spool measured 199 centimeters.", "The spool measured 200 centimeters.", "The spool measured 200 square centimeters."],
+ ["The rail measured at least 75 millimeters.", "The rail measured 7.5 centimeters.", "The rail measured 7.49 centimeters.", "The rail weighed 75 grams."],
+ ["The flask contained at least 0.75 liters.", "The flask held 750 milliliters.", "The flask held 749 milliliters.", "The flask held 750 grams."],
+ ["The vial held less than 9 milliliters.", "The vial contained 0.008 liters.", "The vial contained 0.009 liters.", "The vial could hold 0.009 liters."],
+ ["The stamp cost at most 1 dollar.", "The stamp cost 100 cents.", "The stamp cost 101 cents.", "The envelope cost 101 cents."],
+ ["The token cost more than 25 cents.", "The token cost 0.26 dollars.", "The token cost 0.25 dollars.", "Someone guessed the token cost 0.26 dollars."]
+]

@@ -1,0 +1,748 @@
+{
+  "model": "llama3.2:1b",
+  "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878",
+  "rows": [
+    {
+      "claim": "The satchel weighed at most 1.2 kilograms.",
+      "question": "Is this claim true: \"The satchel weighed at most 1.2 kilograms.\"? The satchel weighed 1200 grams.",
+      "expected": "yes",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The satchel weighed at most 1.2 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The satchel weighed 1200 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 98
+      }
+    },
+    {
+      "claim": "The satchel weighed at most 1.2 kilograms.",
+      "question": "Is this claim true: \"The satchel weighed at most 1.2 kilograms.\"? The satchel weighed 1201 grams.",
+      "expected": "no",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The satchel weighed at most 1.2 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The satchel weighed 1201 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 98
+      }
+    },
+    {
+      "claim": "The satchel weighed at most 1.2 kilograms.",
+      "question": "Is this claim true: \"The satchel weighed at most 1.2 kilograms.\"? The suitcase weighed 1201 grams.",
+      "expected": "uncertain",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The satchel weighed at most 1.2 kilograms.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The suitcase weighed 1201 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 96
+      }
+    },
+    {
+      "claim": "The clasp weighed more than 249 grams.",
+      "question": "Is this claim true: \"The clasp weighed more than 249 grams.\"? The clasp weighed 0.250 kilograms.",
+      "expected": "yes",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The clasp weighed more than 249 grams.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The clasp weighed 0.250 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 95
+      }
+    },
+    {
+      "claim": "The clasp weighed more than 249 grams.",
+      "question": "Is this claim true: \"The clasp weighed more than 249 grams.\"? The clasp weighed 0.249 kilograms.",
+      "expected": "no",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The clasp weighed more than 249 grams.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The clasp weighed 0.249 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 95
+      }
+    },
+    {
+      "claim": "The clasp weighed more than 249 grams.",
+      "question": "Is this claim true: \"The clasp weighed more than 249 grams.\"? The clasp could weigh 0.250 kilograms.",
+      "expected": "uncertain",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The clasp weighed more than 249 grams.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The clasp could weigh 0.250 kilograms.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 96
+      }
+    },
+    {
+      "claim": "The spool measured less than 2 meters.",
+      "question": "Is this claim true: \"The spool measured less than 2 meters.\"? The spool measured 199 centimeters.",
+      "expected": "yes",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The spool measured less than 2 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The spool measured 199 centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 94
+      }
+    },
+    {
+      "claim": "The spool measured less than 2 meters.",
+      "question": "Is this claim true: \"The spool measured less than 2 meters.\"? The spool measured 200 centimeters.",
+      "expected": "no",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The spool measured less than 2 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The spool measured 200 centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 94
+      }
+    },
+    {
+      "claim": "The spool measured less than 2 meters.",
+      "question": "Is this claim true: \"The spool measured less than 2 meters.\"? The spool measured 200 square centimeters.",
+      "expected": "uncertain",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The spool measured less than 2 meters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The spool measured 200 square centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 95
+      }
+    },
+    {
+      "claim": "The rail measured at least 75 millimeters.",
+      "question": "Is this claim true: \"The rail measured at least 75 millimeters.\"? The rail measured 7.5 centimeters.",
+      "expected": "yes",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The rail measured at least 75 millimeters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The rail measured 7.5 centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 95
+      }
+    },
+    {
+      "claim": "The rail measured at least 75 millimeters.",
+      "question": "Is this claim true: \"The rail measured at least 75 millimeters.\"? The rail measured 7.49 centimeters.",
+      "expected": "no",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The rail measured at least 75 millimeters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The rail measured 7.49 centimeters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 95
+      }
+    },
+    {
+      "claim": "The rail measured at least 75 millimeters.",
+      "question": "Is this claim true: \"The rail measured at least 75 millimeters.\"? The rail weighed 75 grams.",
+      "expected": "uncertain",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The rail measured at least 75 millimeters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The rail weighed 75 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 92
+      }
+    },
+    {
+      "claim": "The flask contained at least 0.75 liters.",
+      "question": "Is this claim true: \"The flask contained at least 0.75 liters.\"? The flask held 750 milliliters.",
+      "expected": "yes",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The flask contained at least 0.75 liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The flask held 750 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 95
+      }
+    },
+    {
+      "claim": "The flask contained at least 0.75 liters.",
+      "question": "Is this claim true: \"The flask contained at least 0.75 liters.\"? The flask held 749 milliliters.",
+      "expected": "no",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The flask contained at least 0.75 liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The flask held 749 milliliters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 95
+      }
+    },
+    {
+      "claim": "The flask contained at least 0.75 liters.",
+      "question": "Is this claim true: \"The flask contained at least 0.75 liters.\"? The flask held 750 grams.",
+      "expected": "uncertain",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The flask contained at least 0.75 liters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The flask held 750 grams.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 93
+      }
+    },
+    {
+      "claim": "The vial held less than 9 milliliters.",
+      "question": "Is this claim true: \"The vial held less than 9 milliliters.\"? The vial contained 0.008 liters.",
+      "expected": "yes",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The vial held less than 9 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The vial contained 0.008 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 97
+      }
+    },
+    {
+      "claim": "The vial held less than 9 milliliters.",
+      "question": "Is this claim true: \"The vial held less than 9 milliliters.\"? The vial contained 0.009 liters.",
+      "expected": "no",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The vial held less than 9 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The vial contained 0.009 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 97
+      }
+    },
+    {
+      "claim": "The vial held less than 9 milliliters.",
+      "question": "Is this claim true: \"The vial held less than 9 milliliters.\"? The vial could hold 0.009 liters.",
+      "expected": "uncertain",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The vial held less than 9 milliliters.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The vial could hold 0.009 liters.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 98
+      }
+    },
+    {
+      "claim": "The stamp cost at most 1 dollar.",
+      "question": "Is this claim true: \"The stamp cost at most 1 dollar.\"? The stamp cost 100 cents.",
+      "expected": "yes",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The stamp cost at most 1 dollar.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The stamp cost 100 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "claim": "The stamp cost at most 1 dollar.",
+      "question": "Is this claim true: \"The stamp cost at most 1 dollar.\"? The stamp cost 101 cents.",
+      "expected": "no",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The stamp cost at most 1 dollar.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The stamp cost 101 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "claim": "The stamp cost at most 1 dollar.",
+      "question": "Is this claim true: \"The stamp cost at most 1 dollar.\"? The envelope cost 101 cents.",
+      "expected": "uncertain",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The stamp cost at most 1 dollar.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The envelope cost 101 cents.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 91
+      }
+    },
+    {
+      "claim": "The token cost more than 25 cents.",
+      "question": "Is this claim true: \"The token cost more than 25 cents.\"? The token cost 0.26 dollars.",
+      "expected": "yes",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The token cost more than 25 cents.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "The token cost 0.26 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 93
+      }
+    },
+    {
+      "claim": "The token cost more than 25 cents.",
+      "question": "Is this claim true: \"The token cost more than 25 cents.\"? The token cost 0.25 dollars.",
+      "expected": "no",
+      "result": {
+        "answer": "uncertain",
+        "state": "unsupported",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The token cost more than 25 cents.\"",
+              "evidence": [
+                {
+                  "answer": "gap",
+                  "strength": 2,
+                  "quote": "The token cost 0.25 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "unresolved"
+        },
+        "tokens": 93
+      }
+    },
+    {
+      "claim": "The token cost more than 25 cents.",
+      "question": "Is this claim true: \"The token cost more than 25 cents.\"? Someone guessed the token cost 0.26 dollars.",
+      "expected": "uncertain",
+      "result": {
+        "answer": "yes",
+        "state": "substantiated",
+        "graph": {
+          "claims": [
+            {
+              "claim": "Is this claim true: \"The token cost more than 25 cents.\"",
+              "evidence": [
+                {
+                  "answer": "yes",
+                  "strength": 2,
+                  "quote": "Someone guessed the token cost 0.26 dollars.",
+                  "requires": []
+                }
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "relation": "supports"
+        },
+        "tokens": 95
+      }
+    }
+  ],
+  "prior_routes": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    "no",
+    "yes",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    "yes",
+    "no",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    "yes",
+    "no",
+    null,
+    "yes",
+    "no",
+    null,
+    "yes",
+    "no",
+    null,
+    "yes",
+    "no",
+    null
+  ]
+}

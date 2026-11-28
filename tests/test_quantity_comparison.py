@@ -23,3 +23,12 @@ class QuantityTests(unittest.TestCase):
                         "The pot held at most 3 liters.", "The pot contained fewer than 3 liters."):
             with self.subTest(passage=passage):
                 self.assertIsNone(quantity_verdict('Is this claim true: "The pot held at least two liters."? ' + passage))
+
+    def test_scaled_boundary_does_not_round_long_decimals(self):
+        q = 'Is this claim true: "The rail measured more than 1 meter."? '
+        self.assertEqual(quantity_verdict(q + "The rail measured 100.00000000000000000000000000001 centimeters."), "yes")
+        self.assertEqual(quantity_verdict(q + "The rail measured 100 centimeters."), "no")
+
+    def test_new_length_and_volume_units_cannot_mix(self):
+        q = 'Is this claim true: "The pipe measured at least 2 millimeters."? '
+        self.assertIsNone(quantity_verdict(q + "The pipe measured 2 milliliters."))
