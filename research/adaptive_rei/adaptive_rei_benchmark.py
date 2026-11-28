@@ -6,7 +6,7 @@ import urllib.request
 
 from adaptive_rei_engine import POLICIES, Evidence, evaluate
 from evidence_schema import GRAPH
-from quantity_comparison import quantity_verdict
+from quantity_comparison import quantity_role
 
 CASES = [
     ("Did the package arrive? A signed delivery receipt identifies the package and its recipient.", "yes"),
@@ -267,9 +267,9 @@ def single_fact_verdict(url, model, question, *, check_contradiction=False, exac
     claim, separator, passage = question.partition("?")
     if not separator or not claim.strip() or not passage.strip():
         raise ValueError("Supply one question followed by its evidence passage")
-    exact = quantity_verdict(question) if exact_quantities else None
+    exact = quantity_role(question) if exact_quantities else None
     if exact is not None:
-        return _single_fact_result(question, claim, passage, exact, method="exact_quantity", tokens=0)
+        return _single_fact_result(question, claim, passage, exact, method="measurement_subject_gap" if exact == "gap" else "exact_quantity", tokens=0)
     roles = {"supports": "yes", "contradicts": "no", "unresolved": "gap"}
     schema = {"type": "object", "properties": {
         "relation": {"type": "string", "enum": list(roles)}},
