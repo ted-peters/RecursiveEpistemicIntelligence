@@ -63,3 +63,23 @@ class QuantityTests(unittest.TestCase):
         self.assertEqual(quantity_role(q + "There were 1000 milliliters of water in the pot."), "gap")
         self.assertIsNone(quantity_role(q + "There were 1000 grams of water in the jug."))
         self.assertEqual(quantity_role(q + "The total volume of liquid in the jug was 900 milliliters."), "no")
+
+    def test_inclusive_ranges_against_small_integer_oracle(self):
+        for low in range(3):
+            for high in range(low, 3):
+                for limit in range(3):
+                    for wording, outcomes in (
+                        ("at most", [v <= limit for v in range(low, high + 1)]),
+                        ("at least", [v >= limit for v in range(low, high + 1)]),
+                        ("more than", [v > limit for v in range(low, high + 1)]),
+                        ("less than", [v < limit for v in range(low, high + 1)]),
+                    ):
+                        q = (f'Is this claim true: "The tile weighed {wording} {limit} grams."? '
+                             f'The tile weighed between {low} and {high} grams, inclusive.')
+                        expected = "yes" if all(outcomes) else "gap" if any(outcomes) else "no"
+                        with self.subTest(question=q):
+                            self.assertEqual(quantity_role(q), expected)
+
+    def test_reversed_range_is_unusable(self):
+        q = 'Is this claim true: "The tray cost at most two dollars."? '
+        self.assertEqual(quantity_role(q + "The tray cost between 3 and 1 dollars, inclusive."), "gap")
