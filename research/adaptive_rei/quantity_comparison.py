@@ -1,5 +1,6 @@
 """Resolve explicit bounds against an exact measurement of the same subject."""
 from decimal import Decimal
+from operator import ge, gt, le, lt
 import re
 
 WORDS = "zero one two three four five six seven eight nine ten eleven twelve".split()
@@ -8,8 +9,12 @@ SUBJECT = r"the [a-z]+(?: [a-z]+){0,5}?"
 FRAME = (rf"(?P<subject>{SUBJECT}) "
          r"(?P<verb>held|contained|weighed|cost|measured) ")
 VALUE = rf"(?P<number>{NUMBER}) (?P<unit>[a-z]+)"
+COMPARISONS = {"at least": ge, "at most": le, "less than": lt, "more than": gt}
 CLAIM = re.compile(FRAME + r"(?P<bound>at least|at most|less than|more than) " + VALUE)
 OBSERVATION = re.compile(FRAME + r"(?:exactly )?" + VALUE)
+# Shared unit and explicitly inclusive endpoints keep equality unambiguous.
+RANGE = re.compile(FRAME + rf"between (?P<number>{NUMBER}) and (?P<upper>{NUMBER}) "
+                   r"(?P<unit>[a-z]+),? inclusive")
 ALIAS = re.compile(rf"(?P<primary>{SUBJECT}), also called (?P<alias>{SUBJECT}), (?P<predicate>.+)")
 # A named liquid can be just part of the contents. Its volume bounds the total from below.
 LIQUID_PORTION = re.compile(
@@ -48,7 +53,7 @@ def observation(text):
     alias = ALIAS.fullmatch(text)
     if alias:
         text = alias["primary"] + " " + alias["predicate"]
-    fact = OBSERVATION.fullmatch(text)
+    fact = OBSERVATION.fullmatch(text) or RANGE.fullmatch(text)
     if fact:
         fields = fact.groupdict()
     elif portion := LIQUID_PORTION.fullmatch(text):
@@ -94,14 +99,18 @@ def quantity_role(question):
     if claim["subject"] not in subjects:
         return "gap"
     bound = normalized_value(claim["number"], claim_unit[1])
-    observed = normalized_value(fact["number"], fact_unit[1])
-    satisfied = {"at least": observed >= bound, "at most": observed <= bound,
-                 "less than": observed < bound, "more than": observed > bound}
-    holds = satisfied[claim["bound"]]
-    if fact.get("lower_bound"):
-        lower_limit_claim = claim["bound"] in ("at least", "more than")
-        if holds != lower_limit_claim:
+    low = normalized_value(fact["number"], fact_unit[1])
+    high = low
+    if "upper" in fact:
+        high = normalized_value(fact["upper"], fact_unit[1])
+        if high < low:
             return "gap"
+    elif fact.get("lower_bound"):
+        high = Decimal("Infinity")
+    compare = COMPARISONS[claim["bound"]]
+    holds = compare(low, bound)
+    if holds != compare(high, bound):
+        return "gap"
     return "yes" if holds else "no"
 
 
