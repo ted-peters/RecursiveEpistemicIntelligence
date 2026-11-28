@@ -1,0 +1,456 @@
+{
+  "revision": "8797b9b5b84d7550935267763dbb8f57ff171ef5",
+  "arm": "prose",
+  "model": "llama3.2:1b",
+  "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878",
+  "rows": [
+    {
+      "claim": "The kiln reached at least 800 degrees.",
+      "question": "Is this claim true: \"The kiln reached at least 800 degrees.\"? The kiln peaked at 805 degrees.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 76,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 76,
+      "answer": "no"
+    },
+    {
+      "claim": "The kiln reached at least 800 degrees.",
+      "question": "Is this claim true: \"The kiln reached at least 800 degrees.\"? The kiln peaked at 795 degrees.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 76,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 76,
+      "answer": "no"
+    },
+    {
+      "claim": "Fewer than six owls were counted.",
+      "question": "Is this claim true: \"Fewer than six owls were counted.\"? Observers counted exactly seven owls.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 73,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 73,
+      "answer": "no"
+    },
+    {
+      "claim": "Fewer than six owls were counted.",
+      "question": "Is this claim true: \"Fewer than six owls were counted.\"? Observers counted exactly five owls.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 73,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 73,
+      "answer": "no"
+    },
+    {
+      "claim": "The cable exceeded ten meters in length.",
+      "question": "Is this claim true: \"The cable exceeded ten meters in length.\"? The cable measured exactly eleven meters.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The cable exceeded ten meters in length.",
+      "question": "Is this claim true: \"The cable exceeded ten meters in length.\"? The cable measured exactly nine meters.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The jug held at most four liters.",
+      "question": "Is this claim true: \"The jug held at most four liters.\"? The jug contained exactly five liters.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The jug held at most four liters.",
+      "question": "Is this claim true: \"The jug held at most four liters.\"? The jug contained exactly three liters.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The brass key was in drawer C.",
+      "question": "Is this claim true: \"The brass key was in drawer C.\"? The brass key lay in drawer C.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 73,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 73,
+      "answer": "no"
+    },
+    {
+      "claim": "The brass key was in drawer C.",
+      "question": "Is this claim true: \"The brass key was in drawer C.\"? The brass key lay in drawer B.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 73,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 73,
+      "answer": "no"
+    },
+    {
+      "claim": "The velvet sash was green.",
+      "question": "Is this claim true: \"The velvet sash was green.\"? The velvet sash was solid purple.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The velvet sash was green.",
+      "question": "Is this claim true: \"The velvet sash was green.\"? The velvet sash was solid green.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "Mira won the spelling final.",
+      "question": "Is this claim true: \"Mira won the spelling final.\"? The sole winner of the spelling final was Mira.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 74,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 74,
+      "answer": "no"
+    },
+    {
+      "claim": "Mira won the spelling final.",
+      "question": "Is this claim true: \"Mira won the spelling final.\"? The sole winner of the spelling final was Hugo.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 74,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 74,
+      "answer": "no"
+    },
+    {
+      "claim": "The only stop on the shuttle route was Elm.",
+      "question": "Is this claim true: \"The only stop on the shuttle route was Elm.\"? The shuttle route had just one stop, Ash.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 76,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 76,
+      "answer": "no"
+    },
+    {
+      "claim": "The only stop on the shuttle route was Elm.",
+      "question": "Is this claim true: \"The only stop on the shuttle route was Elm.\"? The shuttle route had just one stop, Elm.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 76,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 76,
+      "answer": "no"
+    },
+    {
+      "claim": "The bell rang before the curtain rose.",
+      "question": "Is this claim true: \"The bell rang before the curtain rose.\"? The bell rang once, before the curtain rose.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 75,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 75,
+      "answer": "no"
+    },
+    {
+      "claim": "The bell rang before the curtain rose.",
+      "question": "Is this claim true: \"The bell rang before the curtain rose.\"? The bell rang once, after the curtain rose.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 75,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 75,
+      "answer": "no"
+    },
+    {
+      "claim": "The only delivery came after noon.",
+      "question": "Is this claim true: \"The only delivery came after noon.\"? The only delivery came before noon.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 70,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 70,
+      "answer": "no"
+    },
+    {
+      "claim": "The only delivery came after noon.",
+      "question": "Is this claim true: \"The only delivery came after noon.\"? The only delivery came after noon.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 70,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 70,
+      "answer": "no"
+    },
+    {
+      "claim": "The drum solo came first in the recital.",
+      "question": "Is this claim true: \"The drum solo came first in the recital.\"? In the recital the drum solo came first.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 76,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 76,
+      "answer": "no"
+    },
+    {
+      "claim": "The drum solo came first in the recital.",
+      "question": "Is this claim true: \"The drum solo came first in the recital.\"? In the recital the drum solo came last.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 76,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 76,
+      "answer": "no"
+    },
+    {
+      "claim": "The launch occurred on a weekend.",
+      "question": "Is this claim true: \"The launch occurred on a weekend.\"? The launch took place on a Monday.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The launch occurred on a weekend.",
+      "question": "Is this claim true: \"The launch occurred on a weekend.\"? The launch took place on a Saturday.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The pantry latch was fastened.",
+      "question": "Is this claim true: \"The pantry latch was fastened.\"? The pantry latch was fastened.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 71,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 71,
+      "answer": "no"
+    },
+    {
+      "claim": "The pantry latch was fastened.",
+      "question": "Is this claim true: \"The pantry latch was fastened.\"? The pantry latch was unfastened.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The guest list included Rina.",
+      "question": "Is this claim true: \"The guest list included Rina.\"? The final guest list explicitly excluded Rina.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 73,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 73,
+      "answer": "no"
+    },
+    {
+      "claim": "The guest list included Rina.",
+      "question": "Is this claim true: \"The guest list included Rina.\"? The final guest list explicitly included Rina.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 73,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 73,
+      "answer": "no"
+    },
+    {
+      "claim": "The same tile survived the drop intact.",
+      "question": "Is this claim true: \"The same tile survived the drop intact.\"? After the drop that tile was intact.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The same tile survived the drop intact.",
+      "question": "Is this claim true: \"The same tile survived the drop intact.\"? After the drop that tile was shattered.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The ferry made its scheduled crossing.",
+      "question": "Is this claim true: \"The ferry made its scheduled crossing.\"? The operator canceled the scheduled ferry crossing.",
+      "expected": "no",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    },
+    {
+      "claim": "The ferry made its scheduled crossing.",
+      "question": "Is this claim true: \"The ferry made its scheduled crossing.\"? The operator completed the scheduled ferry crossing.",
+      "expected": "yes",
+      "result": {
+        "answer": "no",
+        "initial_answer": "no",
+        "initial_tokens": 72,
+        "review_tokens": 0,
+        "citation": null
+      },
+      "tokens": 72,
+      "answer": "no"
+    }
+  ]
+}
