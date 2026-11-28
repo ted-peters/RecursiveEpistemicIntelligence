@@ -50,3 +50,16 @@ class QuantityTests(unittest.TestCase):
         self.assertEqual(quantity_role(question + "The drum itself had a mass of 3 kilograms."), "gap")
         self.assertIsNone(quantity_role(question + "The drum contained 3 kilograms."))
         self.assertIsNone(quantity_role(question + "The drum weighed 3 kilograms and held 2 liters."))
+
+    def test_partial_volume_at_boundary(self):
+        for bound, expected in (("at most", "gap"), ("at least", "yes"),
+                                ("less than", "no"), ("more than", "gap")):
+            with self.subTest(bound=bound):
+                q = f'Is this claim true: "The jug held {bound} 1 liter."? '
+                self.assertEqual(quantity_role(q + "There were 1000 milliliters of water in the jug."), expected)
+
+    def test_partial_volume_requires_matching_container_and_volume_unit(self):
+        q = 'Is this claim true: "The jug held at least 1 liter."? '
+        self.assertEqual(quantity_role(q + "There were 1000 milliliters of water in the pot."), "gap")
+        self.assertIsNone(quantity_role(q + "There were 1000 grams of water in the jug."))
+        self.assertEqual(quantity_role(q + "The total volume of liquid in the jug was 900 milliliters."), "no")

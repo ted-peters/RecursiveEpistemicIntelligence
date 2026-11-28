@@ -11,7 +11,12 @@ VALUE = rf"(?P<number>{NUMBER}) (?P<unit>[a-z]+)"
 CLAIM = re.compile(FRAME + r"(?P<bound>at least|at most|less than|more than) " + VALUE)
 OBSERVATION = re.compile(FRAME + r"(?:exactly )?" + VALUE)
 ALIAS = re.compile(rf"(?P<primary>{SUBJECT}), also called (?P<alias>{SUBJECT}), (?P<predicate>.+)")
+# A named liquid can be just part of the contents. Its volume bounds the total from below.
+LIQUID_PORTION = re.compile(
+    rf"there (?:was|were) {VALUE} of (?:water|milk|juice|oil) in (?P<subject>{SUBJECT})"
+)
 MEASUREMENT_FORMS = [
+    ("contained", rf"the total volume of liquid in (?P<subject>{SUBJECT}) was {VALUE}"),
     ("weighed", rf"the (?:scale reading for|mass of) (?P<subject>{SUBJECT}) was {VALUE}"),
     ("weighed", rf"(?P<subject>{SUBJECT})(?: itself)? had a mass of {VALUE}"),
     ("weighed", rf"on the scale, (?P<subject>{SUBJECT}) registered {VALUE}"),
@@ -46,6 +51,8 @@ def observation(text):
     fact = OBSERVATION.fullmatch(text)
     if fact:
         fields = fact.groupdict()
+    elif portion := LIQUID_PORTION.fullmatch(text):
+        fields = dict(portion.groupdict(), verb="contained", lower_bound=True)
     else:
         for verb, pattern in MEASUREMENT_FORMS:
             fact = re.fullmatch(pattern, text)
@@ -75,6 +82,8 @@ def quantity_role(question):
     fact_unit = UNITS.get(fact["unit"].removesuffix("s"))
     if not claim_unit or not fact_unit:
         return None
+    if fact.get("lower_bound") and fact_unit[0] != "volume":
+        return None
     if claim_unit[0] != fact_unit[0]:
         if PROPERTY.get(claim["verb"]) == claim_unit[0] and PROPERTY.get(fact["verb"]) == fact_unit[0]:
             return "gap"
@@ -88,7 +97,12 @@ def quantity_role(question):
     observed = normalized_value(fact["number"], fact_unit[1])
     satisfied = {"at least": observed >= bound, "at most": observed <= bound,
                  "less than": observed < bound, "more than": observed > bound}
-    return "yes" if satisfied[claim["bound"]] else "no"
+    holds = satisfied[claim["bound"]]
+    if fact.get("lower_bound"):
+        lower_limit_claim = claim["bound"] in ("at least", "more than")
+        if holds != lower_limit_claim:
+            return "gap"
+    return "yes" if holds else "no"
 
 
 def quantity_verdict(question):
