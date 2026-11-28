@@ -269,7 +269,7 @@ def single_fact_verdict(url, model, question, *, check_contradiction=False, exac
         raise ValueError("Supply one question followed by its evidence passage")
     exact = quantity_role(question) if exact_quantities else None
     if exact is not None:
-        return _single_fact_result(question, claim, passage, exact, method="measurement_subject_gap" if exact == "gap" else "exact_quantity", tokens=0)
+        return _single_fact_result(question, claim, passage, exact, method="measurement_gap" if exact == "gap" else "exact_quantity", tokens=0)
     roles = {"supports": "yes", "contradicts": "no", "unresolved": "gap"}
     schema = {"type": "object", "properties": {
         "relation": {"type": "string", "enum": list(roles)}},

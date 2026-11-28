@@ -13,12 +13,16 @@ OBSERVATION = re.compile(FRAME + r"(?:exactly )?" + VALUE)
 ALIAS = re.compile(rf"(?P<primary>{SUBJECT}), also called (?P<alias>{SUBJECT}), (?P<predicate>.+)")
 MEASUREMENT_FORMS = [
     ("weighed", rf"the (?:scale reading for|mass of) (?P<subject>{SUBJECT}) was {VALUE}"),
+    ("weighed", rf"(?P<subject>{SUBJECT})(?: itself)? had a mass of {VALUE}"),
     ("weighed", rf"on the scale, (?P<subject>{SUBJECT}) registered {VALUE}"),
     ("measured", rf"(?:end to end, )?(?P<subject>{SUBJECT}) was {VALUE} long"),
     ("cost", rf"the price (?:charged for|of) (?P<subject>{SUBJECT}) was {VALUE}"),
     ("cost", rf"the seller charged {VALUE} for (?P<subject>{SUBJECT})"),
     ("contained", rf"the liquid in (?P<subject>{SUBJECT}) had a volume of {VALUE}"),
 ]
+PROPERTY = {"weighed": "mass", "cost": "money", "measured": "length",
+            "held": "volume", "contained": "volume"}
+
 # Each exponent converts a value to the smallest supported unit in its group.
 UNITS = {
     "liter": ("volume", 3), "milliliter": ("volume", 0),
@@ -67,12 +71,16 @@ def quantity_role(question):
     if not claim or not reading:
         return None
     fact, subjects = reading
-    verbs = {claim["verb"], fact["verb"]}
-    if len(verbs) > 1 and verbs != {"held", "contained"}:
-        return None
     claim_unit = UNITS.get(claim["unit"].removesuffix("s"))
     fact_unit = UNITS.get(fact["unit"].removesuffix("s"))
-    if not claim_unit or not fact_unit or claim_unit[0] != fact_unit[0]:
+    if not claim_unit or not fact_unit:
+        return None
+    if claim_unit[0] != fact_unit[0]:
+        if PROPERTY.get(claim["verb"]) == claim_unit[0] and PROPERTY.get(fact["verb"]) == fact_unit[0]:
+            return "gap"
+        return None
+    verbs = {claim["verb"], fact["verb"]}
+    if len(verbs) > 1 and verbs != {"held", "contained"}:
         return None
     if claim["subject"] not in subjects:
         return "gap"

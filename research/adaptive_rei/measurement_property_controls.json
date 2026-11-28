@@ -1,0 +1,8 @@
+[
+ ["The sample pouch weighed less than 0.5 kilograms.", "The sample pouch weighed 499 grams.", "The sample pouch weighed 500 grams.", "The sample pouch cost 500 cents."],
+ ["The handle measured at least 12 centimeters.", "The handle measured 120 millimeters.", "The handle measured 119 millimeters.", "The mass of the handle was 120 grams."],
+ ["The storage pot contained at most 2 liters.", "The storage pot held 2000 milliliters.", "The storage pot held 2001 milliliters.", "The storage pot itself had a mass of 2000 grams."],
+ ["The transit card cost more than 7 dollars.", "The transit card cost 701 cents.", "The transit card cost 700 cents.", "The transit card was 7 centimeters long."],
+ ["The bolt weighed more than 0.03 kilograms.", "The scale reading for the bolt was 31 grams.", "The scale reading for the bolt was 30 grams.", "The bolt measured 31 millimeters."],
+ ["The narrow tube contained at least 0.4 liters.", "The liquid in the narrow tube had a volume of 400 milliliters.", "The liquid in the narrow tube had a volume of 399 milliliters.", "The price of the narrow tube was 400 cents."]
+]
