@@ -52,6 +52,8 @@ def observation(text):
             return None
     subjects = {fields["subject"]}
     if alias:
+        if fields["subject"] != alias["primary"]:
+            return None
         subjects.add(alias["alias"])
     return fields, subjects
 

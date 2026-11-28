@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 EXPERIMENT = Path(__file__).resolve().parents[1] / "research" / "adaptive_rei"
 with patch.object(sys, "path", [str(EXPERIMENT), *sys.path]):
-    from quantity_comparison import quantity_verdict
+    from quantity_comparison import quantity_role, quantity_verdict
 
 
 class QuantityTests(unittest.TestCase):
@@ -32,3 +32,15 @@ class QuantityTests(unittest.TestCase):
     def test_new_length_and_volume_units_cannot_mix(self):
         q = 'Is this claim true: "The pipe measured at least 2 millimeters."? '
         self.assertIsNone(quantity_verdict(q + "The pipe measured 2 milliliters."))
+
+    def test_subject_identity_and_alias_scope(self):
+        question = 'Is this claim true: "The field bag weighed at most 1 kilogram."? '
+        for text, expected in (
+            ("The scale reading for the tool bag was 1010 grams.", "gap"),
+            ("The scale reading for the field bag was 1010 grams.", "no"),
+            ("The pack, also called the field bag, weighed 990 grams.", "yes"),
+            ("The pack, also called the field bag, never weighed 990 grams.", None),
+            ("The tool bag weighed 1010 grams. The field bag weighed less.", None),
+        ):
+            with self.subTest(text=text):
+                self.assertEqual(quantity_role(question + text), expected)
