@@ -1,0 +1,8 @@
+[
+ ["The brass weight weighed at most 1 kilogram.", "The brass weight weighed between 980 and 1000 grams, inclusive.", "The brass weight weighed between 1001 and 1008 grams, inclusive.", "The brass weight weighed between 1000 and 1001 grams, inclusive."],
+ ["The wooden slat measured less than 0.5 meters.", "The wooden slat measured between 48 and 49 centimeters, inclusive.", "The wooden slat measured between 50 and 51 centimeters, inclusive.", "The wooden slat measured between 49 and 50 centimeters, inclusive."],
+ ["The entry badge cost more than 2 dollars.", "The entry badge cost between 201 and 210 cents, inclusive.", "The entry badge cost between 190 and 200 cents, inclusive.", "The entry badge cost between 200 and 201 cents, inclusive."],
+ ["The stone jug contained at least 0.6 liters.", "The stone jug held between 600 and 620 milliliters, inclusive.", "The stone jug held between 580 and 599 milliliters, inclusive.", "The stone jug held between 599 and 600 milliliters, inclusive."],
+ ["The camera case weighed at least 350 grams.", "The camera case weighed between 0.35 and 0.35 kilograms, inclusive.", "The camera case weighed between 0.34 and 0.349 kilograms, inclusive.", "The lens case weighed between 0.36 and 0.38 kilograms, inclusive."],
+ ["The tin cup held at most 0.25 liters.", "The tin cup held between 250 and 250 milliliters, inclusive.", "The tin cup held between 251 and 253 milliliters, inclusive.", "The tin cup weighed between 251 and 253 grams, inclusive."]
+]
